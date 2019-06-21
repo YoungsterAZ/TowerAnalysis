@@ -1,0 +1,5 @@
+// -*- c++ -*-
+#ifndef PROCNAMES_ICC
+#define PROCNAMES_ICC
+static const std::vector<std::string> procNames = { "JAPU+INCL", "JAPU+TIME", "CSPU+INCL", "CSPU+TIME", "CSSK+INCL", "CSSK+TIME" };
+#endif

@@ -1,0 +1,1214 @@
+\hypertarget{classSlidingWindow_1_1Window}{}\section{Sliding\+Window\+:\+:Window Class Reference}
+\label{classSlidingWindow_1_1Window}\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+
+
+\hyperlink{classSlidingWindow_1_1Window}{Window} collector.  
+
+
+
+
+{\ttfamily \#include $<$Sliding\+Window.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structSlidingWindow_1_1Window_1_1__sortObjects}{\+\_\+sort\+Objects}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{Indent}{\bf Data types}\par
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ double $>$ \hyperlink{classSlidingWindow_1_1Window_abc07b028eea17a8713e74a556b9d1ad2}{data\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Real number list type. \end{DoxyCompactList}\item 
+typedef std\+::vector$<$ \hyperlink{classSlidingWindow_1_1Window_abc07b028eea17a8713e74a556b9d1ad2}{data\+\_\+t} $>$ \hyperlink{classSlidingWindow_1_1Window_a86da88957da29f042341ff4b0413316e}{collector\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Real number matrix type (2-\/dimensional) \end{DoxyCompactList}\item 
+typedef std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \hyperlink{classSlidingWindow_1_1Window_a0ee13c18faf2f2ec3855b6449ef765e0}{object\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Object list type. \end{DoxyCompactList}\item 
+typedef std\+::vector$<$ \hyperlink{classSlidingWindow_1_1Window_a0ee13c18faf2f2ec3855b6449ef765e0}{object\+\_\+t} $>$ \hyperlink{classSlidingWindow_1_1Window_a3883a474287703a42cf8971ba8ef6884}{object\+\_\+collector\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Object matrix type (2-\/dimensional) \end{DoxyCompactList}\item 
+typedef \hyperlink{classSlidingWindow_1_1Bin}{Bin} \hyperlink{classSlidingWindow_1_1Window_a9bbfc142a52e17a3e1c51093edfe936f}{bin\+\_\+t}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classSlidingWindow_1_1Bin}{Bin} descriptor type. \end{DoxyCompactList}\item 
+typedef std\+::vector$<$ \hyperlink{classSlidingWindow_1_1Window_a9bbfc142a52e17a3e1c51093edfe936f}{bin\+\_\+t} $>$ \hyperlink{classSlidingWindow_1_1Window_a71c711c04a16a1f32a9731f80e73b5e8}{binning\+\_\+t}
+\begin{DoxyCompactList}\small\item\em List of bin descriptors type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSlidingWindow_1_1Window_adaccac4f0906832d5417de50a82fb068}{Window} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classSlidingWindow_1_1Window_a4e940851f8491269fa36c267a94713c0}{Window} (const std\+::string \&p\+Name, size\+\_\+t n\+Bins, double \hyperlink{classSlidingWindow_1_1Window_a9f134cb80a395f11025c5d0fa1465852}{min}, double \hyperlink{classSlidingWindow_1_1Window_a57ad1e073130318a845129c8d92dae4c}{max}, double window, bool store\+Objects=false)
+\begin{DoxyCompactList}\small\item\em Loaded constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classSlidingWindow_1_1Window_aeacafc20517bb5509871450e75151fca}{$\sim$\+Window} ()
+\begin{DoxyCompactList}\small\item\em Base class destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf Configurations and states}\par
+{\em Book sliding window collector
+
+
+\begin{DoxyParams}{Parameters}
+{\em prn} & controls printout; if {\ttfamily true} (default) details of the collector configuration are printed, else printing is suppressed. \\
+\hline
+\end{DoxyParams}
+}\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classSlidingWindow_1_1Window_a553cfe27c9cc1b3c8830652aa3380cc3}{book} (bool prn=true)
+\begin{DoxyCompactList}\small\item\em Check if void areas contribute to median. \end{DoxyCompactList}\item 
+bool \hyperlink{classSlidingWindow_1_1Window_a1d2d499fbb6a6e7681c71df13e8f4a4c}{use\+Zero\+Suppression} () const 
+\begin{DoxyCompactList}\small\item\em Check if void areas contribute to median. \end{DoxyCompactList}\item 
+void \hyperlink{classSlidingWindow_1_1Window_a2d621b897887a5eaa7f8deda24ca8740}{set\+Zero\+Suppression} (bool turn\+On=true)
+\begin{DoxyCompactList}\small\item\em Turn on/off void area contribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Add data and objects}\par
+{\em Add a list of objects to the collector
+
+The object is assumed to be a {\ttfamily fastjet\+::\+Pseudo\+Jet} with a valid area associated. If no area is found, $ \rho = 0 $ is added to the data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mom} & reference to non-\/modifiable vector of {\ttfamily fastjet\+::\+Pseudo\+Jet} typed objects \\
+\hline
+\end{DoxyParams}
+}\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classSlidingWindow_1_1Window_aa8463b76b792d875ded8616db02e8c09}{add} (const \hyperlink{classSlidingWindow_1_1Window_a0ee13c18faf2f2ec3855b6449ef765e0}{object\+\_\+t} \&mom)
+\begin{DoxyCompactList}\small\item\em Add a single object with area to the collector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class O\+BJ $>$ }\\bool \hyperlink{classSlidingWindow_1_1Window_a172533181c0916537bb48c3b6d56d2ec}{add\+Object} (const O\+BJ \&obj, double \hyperlink{classSlidingWindow_1_1Window_a76aea1b4663a127bae0fd7a67a0b52b3}{area}=0.)
+\begin{DoxyCompactList}\small\item\em Add a single object with area to the collector. \end{DoxyCompactList}\item 
+bool \hyperlink{classSlidingWindow_1_1Window_a5367773eb3a8d3733e234be5f6bba901}{add\+Object} (const fastjet\+::\+Pseudo\+Jet \&fj, double \hyperlink{classSlidingWindow_1_1Window_a76aea1b4663a127bae0fd7a67a0b52b3}{area}=0.)
+\begin{DoxyCompactList}\small\item\em Add a single object with area to the collector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{classSlidingWindow_1_1Window_a53b2cc3cc4fe5090e947d58aa05b943c}{median} (\hyperlink{classSlidingWindow_1_1Window_abc07b028eea17a8713e74a556b9d1ad2}{data\+\_\+t} \&values)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classSlidingWindow_1_1Window_aa7c8ebbf1c8f8733347cf4b89839ae40}{module\+Name} (const std\+::string \&method)
+\item 
+double \hyperlink{classSlidingWindow_1_1Window_a76aea1b4663a127bae0fd7a67a0b52b3}{area} (int root\+Idx) const 
+\item 
+double \hyperlink{classSlidingWindow_1_1Window_a5cedad1cc29cde1eaffcdae9eb6054fa}{center} (int root\+Idx) const 
+\item 
+double \hyperlink{classSlidingWindow_1_1Window_a4ae79a4961c9116fad3ed61c12ef7a6a}{low\+Edge} (int root\+Idx) const 
+\item 
+double \hyperlink{classSlidingWindow_1_1Window_a69ff1bc463409ab3254a67a1fb6052e8}{up\+Edge} (int root\+Idx) const 
+\item 
+const \hyperlink{classSlidingWindow_1_1Bin}{Bin} \& \hyperlink{classSlidingWindow_1_1Window_a3d5b8a5cbd556cccfb783b38b5aad70b}{bin} (int root\+Idx) const 
+\item 
+bool \hyperlink{classSlidingWindow_1_1Window_a0b5c696522d85d8f98617e1acbc42a34}{integrate} (const fastjet\+::\+Pseudo\+Jet \&p\+Mom)
+\item 
+bool \hyperlink{classSlidingWindow_1_1Window_ac49709dfb4a0c531153a48908ddd0301}{integrate} (const fastjet\+::\+Pseudo\+Jet \&p\+Mom, double \hyperlink{classSlidingWindow_1_1Window_a76aea1b4663a127bae0fd7a67a0b52b3}{area})
+\item 
+void \hyperlink{classSlidingWindow_1_1Window_a1abf7b58633a333df3a6f27b2e1e0df2}{setup\+Collector} ()
+\item 
+void \hyperlink{classSlidingWindow_1_1Window_a6943bd7a73fb6122845c18c956822a58}{reset\+Collector} ()
+\item 
+double \hyperlink{classSlidingWindow_1_1Window_ade380e81afc10699fbcdd354159f7215}{median} (\hyperlink{classSlidingWindow_1_1Window_a0ee13c18faf2f2ec3855b6449ef765e0}{object\+\_\+t} \&jet)
+\item 
+bool \hyperlink{classSlidingWindow_1_1Window_afc74b5dbbe5144bc11dedb8980436858}{is\+Complete} (const fastjet\+::\+Pseudo\+Jet \&jet) const 
+\item 
+double \hyperlink{classSlidingWindow_1_1Window_a0ab685b6c22237c1ef01afe98ce3e0ac}{rho\+From\+Jet} (const fastjet\+::\+Pseudo\+Jet \&jet) const 
+\item 
+int \hyperlink{classSlidingWindow_1_1Window_a98c3c6acfc89fa989470a195dac46dcb}{get\+Voids} (const \hyperlink{classSlidingWindow_1_1Window_abc07b028eea17a8713e74a556b9d1ad2}{data\+\_\+t} \&areas, const \hyperlink{classSlidingWindow_1_1Window_a9bbfc142a52e17a3e1c51093edfe936f}{bin\+\_\+t} \&\hyperlink{classSlidingWindow_1_1Window_a3d5b8a5cbd556cccfb783b38b5aad70b}{bin})
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSlidingWindow_1_1Window_a71c711c04a16a1f32a9731f80e73b5e8}{binning\+\_\+t} \hyperlink{classSlidingWindow_1_1Window_a3f4acfc8faac69f90803bdbce13828bc}{m\+\_\+bins}
+\item 
+\hyperlink{classSlidingWindow_1_1Window_a86da88957da29f042341ff4b0413316e}{collector\+\_\+t} \hyperlink{classSlidingWindow_1_1Window_a37032250670011a5a2fdff0a0c406ba3}{m\+\_\+collector}
+\item 
+\hyperlink{classSlidingWindow_1_1Window_a86da88957da29f042341ff4b0413316e}{collector\+\_\+t} \hyperlink{classSlidingWindow_1_1Window_ac3654a276b9c1e8ca2d03a18ab23336d}{m\+\_\+areas}
+\item 
+\hyperlink{classSlidingWindow_1_1Window_a3883a474287703a42cf8971ba8ef6884}{object\+\_\+collector\+\_\+t} \hyperlink{classSlidingWindow_1_1Window_a05a54515c6d4c39b28f524d6cb491cec}{m\+\_\+objects}
+\item 
+size\+\_\+t \hyperlink{classSlidingWindow_1_1Window_a3766b935d338405d7e475770233fcea3}{m\+\_\+n\+Bins}
+\item 
+double \hyperlink{classSlidingWindow_1_1Window_a76de5f0c8ec2471d87122221bd8704fe}{m\+\_\+min}
+\item 
+double \hyperlink{classSlidingWindow_1_1Window_a8432b5cb2b2905277fce6156bbea4884}{m\+\_\+max}
+\item 
+double \hyperlink{classSlidingWindow_1_1Window_a29f03954035661fea490d9442e730f47}{m\+\_\+window}
+\item 
+double \hyperlink{classSlidingWindow_1_1Window_a290b3c6a5a678ce8651b650758e20401}{m\+\_\+bin\+Width}
+\item 
+size\+\_\+t \hyperlink{classSlidingWindow_1_1Window_a94679f3f59d0fb1cfe3a0ea3992f7198}{m\+\_\+adjust\+Bins}
+\item 
+size\+\_\+t \hyperlink{classSlidingWindow_1_1Window_a742d6f030de136c948ef0bd62fd11bb2}{m\+\_\+adjust\+Bin\+Range}
+\item 
+double \hyperlink{classSlidingWindow_1_1Window_ae0d29d89f73402d85c3bac1cc295d4c4}{m\+\_\+adjust\+Min}
+\item 
+double \hyperlink{classSlidingWindow_1_1Window_aeb0cb796c71f6fc4029a03ce839fe759}{m\+\_\+adjust\+Max}
+\item 
+double \hyperlink{classSlidingWindow_1_1Window_aa1ae0483bbbcdb0334d3356f279ef2b7}{m\+\_\+adjust\+Bin\+Width}
+\item 
+bool \hyperlink{classSlidingWindow_1_1Window_af8a01fa818b69a4c3abe07e1f6c738c9}{m\+\_\+first\+Call}
+\item 
+bool \hyperlink{classSlidingWindow_1_1Window_a760dc31d2bafceaabcb58261d0766d63}{m\+\_\+is\+Dead}
+\item 
+bool \hyperlink{classSlidingWindow_1_1Window_a70c04eb01ffc3d64680c11d0e0b2c4e8}{m\+\_\+store\+Objects}
+\item 
+bool \hyperlink{classSlidingWindow_1_1Window_abc51f8686319ba77efe62878ebf8bb8e}{m\+\_\+update\+Profile}
+\item 
+bool \hyperlink{classSlidingWindow_1_1Window_a07c0d538384a9a35d5bfb2b341f41fae}{m\+\_\+use\+Zero\+Suppression}
+\item 
+std\+::string \hyperlink{classSlidingWindow_1_1Window_a91d8a34cff48db9b83909c8d3ea8320a}{m\+\_\+name}
+\item 
+T\+H1D $\ast$ \hyperlink{classSlidingWindow_1_1Window_a6b488ac4c3f0f5d0562479df27e31dbd}{h\+\_\+spread\+Profile}
+\item 
+T\+H1D $\ast$ \hyperlink{classSlidingWindow_1_1Window_a64de3976873889730213091ea196eee9}{h\+\_\+area\+Profile}
+\item 
+T\+H1D $\ast$ \hyperlink{classSlidingWindow_1_1Window_abe926d32bb55044c3ab6ae69d6ed7503}{h\+\_\+median\+Profile}
+\item 
+T\+H1D $\ast$ \hyperlink{classSlidingWindow_1_1Window_af23a441ea30a49948e3d3a77ac921127}{h\+\_\+entries\+Profile}
+\item 
+T\+Profile $\ast$ \hyperlink{classSlidingWindow_1_1Window_abd3e78a58ed38aaefef14afd2a27e448}{p\+\_\+event\+Profile}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static size\+\_\+t \hyperlink{classSlidingWindow_1_1Window_a9e500dcaf7c2a18fd5a2e8f1775704c2}{m\+\_\+invalid\+Index}
+\item 
+static std\+::string \hyperlink{classSlidingWindow_1_1Window_a963bd3e616c1936117625416b97775b2}{\+\_\+named\+\_\+algo\+\_\+\+Window}
+\end{DoxyCompactItemize}
+\subsection*{Operations and data access}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classSlidingWindow_1_1Window_aab38992dcb5d21c9b42d0dfc2d5d6b70}{reset} ()
+\begin{DoxyCompactList}\small\item\em Reset the collector. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \hyperlink{classSlidingWindow_1_1Window_a4ce7cbe7a8bc9c3a3e8b5d5ac74300ba}{bin\+Index} (double value) const 
+\begin{DoxyCompactList}\small\item\em Return the window bin index for a given value. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classSlidingWindow_1_1Window_a07c2d3226451be44b674498f0d47fbaa}{root\+Bin\+Index} (double value) const 
+\begin{DoxyCompactList}\small\item\em Return the window bin index for R\+O\+OT histograms for a given value. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classSlidingWindow_1_1Window_a019814f4ba2c35edc996e2b2133ec9ce}{root\+Bin\+Index} (size\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em Convert the window bin index into the corresponding R\+O\+OT histogram bin index. \end{DoxyCompactList}\item 
+bool \hyperlink{classSlidingWindow_1_1Window_a13ae48dc79b651da691ddf04e012b7ec}{find\+All\+Bins} (double value, std\+::vector$<$ size\+\_\+t $>$ \&indices) const 
+\begin{DoxyCompactList}\small\item\em Find all windows a value is contained in. \end{DoxyCompactList}\item 
+const \hyperlink{classSlidingWindow_1_1Window_a71c711c04a16a1f32a9731f80e73b5e8}{binning\+\_\+t} \& \hyperlink{classSlidingWindow_1_1Window_a4f5edd9ab13664503267c782a35d69a0}{binning} () const 
+\begin{DoxyCompactList}\small\item\em Return all bin descriptions. \end{DoxyCompactList}\item 
+double \hyperlink{classSlidingWindow_1_1Window_ae6e240862b8c40f2c965f50848f3adad}{window\+Size} () const 
+\begin{DoxyCompactList}\small\item\em Return nominal window width (size -\/ actual window in a given bin may be smaller) \end{DoxyCompactList}\item 
+double \hyperlink{classSlidingWindow_1_1Window_a9f134cb80a395f11025c5d0fa1465852}{min} () const 
+\begin{DoxyCompactList}\small\item\em Lower value range limit for sliding windows. \end{DoxyCompactList}\item 
+double \hyperlink{classSlidingWindow_1_1Window_a57ad1e073130318a845129c8d92dae4c}{max} () const 
+\begin{DoxyCompactList}\small\item\em Upper value range limit for sliding windows. \end{DoxyCompactList}\item 
+double \hyperlink{classSlidingWindow_1_1Window_a23fe1a632194bc586c7f9852f3e074b5}{adjusted\+Min} () const 
+\begin{DoxyCompactList}\small\item\em Adjusted lower value range limit for sliding window (after symmetrization) \end{DoxyCompactList}\item 
+double \hyperlink{classSlidingWindow_1_1Window_a8cfa3f86e61cfb558b71fc070a82f553}{adjusted\+Max} () const 
+\begin{DoxyCompactList}\small\item\em Adjusted upper value range limit for sliding window (after symmetrization) \end{DoxyCompactList}\item 
+T\+H1D $\ast$ \hyperlink{classSlidingWindow_1_1Window_a86d931b16c66ede031e568c9bf095245}{area\+Profile} ()
+\begin{DoxyCompactList}\small\item\em Reset the collector. \end{DoxyCompactList}\item 
+T\+Profile $\ast$ \hyperlink{classSlidingWindow_1_1Window_af4485ccec8660fad543a20b98b10d76e}{event\+Profile} ()
+\begin{DoxyCompactList}\small\item\em Reset the collector. \end{DoxyCompactList}\item 
+T\+H1D $\ast$ \hyperlink{classSlidingWindow_1_1Window_a2f635b99980da8f83ad16c865b1d9378}{spread\+Profile} ()
+\begin{DoxyCompactList}\small\item\em Reset the collector. \end{DoxyCompactList}\item 
+T\+H1D $\ast$ \hyperlink{classSlidingWindow_1_1Window_ace2ce2aa3b66eea31ef1f03acff976b2}{median\+Profile} ()
+\begin{DoxyCompactList}\small\item\em Reset the collector. \end{DoxyCompactList}\item 
+T\+H1D $\ast$ \hyperlink{classSlidingWindow_1_1Window_a8981fc06aac580eeaf0a47f075f5d7e0}{entries\+Profile} ()
+\begin{DoxyCompactList}\small\item\em Reset the collector. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{classSlidingWindow_1_1Window_a77d21efe15501ae7d293f1107ee1f884}{find\+Medians} ()
+\begin{DoxyCompactList}\small\item\em Reset the collector. \end{DoxyCompactList}\item 
+const \hyperlink{classSlidingWindow_1_1Window_a86da88957da29f042341ff4b0413316e}{collector\+\_\+t} \& \hyperlink{classSlidingWindow_1_1Window_acd125998cc557744021e2177572dcb26}{rho\+Collection} () const 
+\begin{DoxyCompactList}\small\item\em Reset the collector. \end{DoxyCompactList}\item 
+const \hyperlink{classSlidingWindow_1_1Window_a86da88957da29f042341ff4b0413316e}{collector\+\_\+t} \& \hyperlink{classSlidingWindow_1_1Window_a8724fe27d8ce5285ac18687337e8d051}{area\+Collection} () const 
+\begin{DoxyCompactList}\small\item\em Reset the collector. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classSlidingWindow_1_1Window_a54fbc911abec5ef96753330dd9f7dff1}{entries\+Collection} () const 
+\begin{DoxyCompactList}\small\item\em Reset the collector. \end{DoxyCompactList}\item 
+const \hyperlink{classSlidingWindow_1_1Window_a3883a474287703a42cf8971ba8ef6884}{object\+\_\+collector\+\_\+t} \& \hyperlink{classSlidingWindow_1_1Window_a6739836c037dab15b40402e9b843e596}{object\+Collection} () const 
+\begin{DoxyCompactList}\small\item\em Reset the collector. \end{DoxyCompactList}\item 
+const std\+::string \& \hyperlink{classSlidingWindow_1_1Window_a6e73fa686560987efd9f6638f21ce498}{name} () const 
+\begin{DoxyCompactList}\small\item\em Reset the collector. \end{DoxyCompactList}\item 
+bool \hyperlink{classSlidingWindow_1_1Window_a9dda3fd75fd3a0c4e9100ab7b265b5fa}{operator$<$} (const \hyperlink{classSlidingWindow_1_1Window}{Window} \&wdow) const 
+\begin{DoxyCompactList}\small\item\em Reset the collector. \end{DoxyCompactList}\item 
+bool \hyperlink{classSlidingWindow_1_1Window_a67c4b776bbfa88884d034ffe8e482c90}{operator$>$} (const \hyperlink{classSlidingWindow_1_1Window}{Window} \&wdow) const 
+\begin{DoxyCompactList}\small\item\em Reset the collector. \end{DoxyCompactList}\item 
+bool \hyperlink{classSlidingWindow_1_1Window_a2f875343fe56bd7640fa35ecc047232e}{operator==} (const \hyperlink{classSlidingWindow_1_1Window}{Window} \&wdow) const 
+\begin{DoxyCompactList}\small\item\em Reset the collector. \end{DoxyCompactList}\item 
+static const std\+::string \& \hyperlink{classSlidingWindow_1_1Window_a545617bc70be6e22a50e79d147eb3c75}{alg\+Name} ()
+\begin{DoxyCompactList}\small\item\em Reset the collector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classSlidingWindow_1_1Window}{Window} collector. 
+
+Collects data and objects in (overlapping) windows. The windows area characterized by a width and an area. The covered value space is defined by a minimum and maximum value, and the number of steps the windows slide between these two values. Data and objects are stored in each window they contribute to.
+
+The window width is fixed across the full range, except when the window gets close to the limits sliding range. At the correspondign edges the window width is reduced such that the window does not extend beyond the range delimiters.
+
+The collected data can be analyzed and a median value can be returned for each window. As this collector is intended to be used to measure the median transverse momentum density $ \rho $, which is calculated for each entry using the transverse momentum $ p_{\rm T} $ and an associated (user-\/provided) area in $ (\eta,\phi) $ space, $ A_{\eta\phi} $. After all signals are collected into the respective windows, uncovered (void) areas can exist for a window with area $ A_{\rm window} $ if $ \sum A_{\eta\phi} < A_{\rm window} $. This uncovered area is not considered part of the {\itshape catchment area} defined by the implemented area association strategy, and thus can be associated with $ \rho = 0 $. Its size affects the median $ \rho $ in the window.
+
+\begin{DoxyNote}{Note}
+In case of Voronoi areas, $ \sum A_{\eta\phi} \geq A_{\rm window} $ is expected, thus no void areas. This is partly a limitation of the present implementation, as it only allows positive (physical) signals to contribute to the $ \rho $ measurement. 
+\end{DoxyNote}
+
+
+Definition at line 109 of file Sliding\+Window.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!bin\+\_\+t@{bin\+\_\+t}}
+\index{bin\+\_\+t@{bin\+\_\+t}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{bin\+\_\+t}{bin_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Bin} {\bf Sliding\+Window\+::\+Window\+::bin\+\_\+t}}\hypertarget{classSlidingWindow_1_1Window_a9bbfc142a52e17a3e1c51093edfe936f}{}\label{classSlidingWindow_1_1Window_a9bbfc142a52e17a3e1c51093edfe936f}
+
+
+\hyperlink{classSlidingWindow_1_1Bin}{Bin} descriptor type. 
+
+
+
+Definition at line 119 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!binning\+\_\+t@{binning\+\_\+t}}
+\index{binning\+\_\+t@{binning\+\_\+t}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{binning\+\_\+t}{binning_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<${\bf bin\+\_\+t}$>$ {\bf Sliding\+Window\+::\+Window\+::binning\+\_\+t}}\hypertarget{classSlidingWindow_1_1Window_a71c711c04a16a1f32a9731f80e73b5e8}{}\label{classSlidingWindow_1_1Window_a71c711c04a16a1f32a9731f80e73b5e8}
+
+
+List of bin descriptors type. 
+
+
+
+Definition at line 120 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!collector\+\_\+t@{collector\+\_\+t}}
+\index{collector\+\_\+t@{collector\+\_\+t}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{collector\+\_\+t}{collector_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<${\bf data\+\_\+t}$>$ {\bf Sliding\+Window\+::\+Window\+::collector\+\_\+t}}\hypertarget{classSlidingWindow_1_1Window_a86da88957da29f042341ff4b0413316e}{}\label{classSlidingWindow_1_1Window_a86da88957da29f042341ff4b0413316e}
+
+
+Real number matrix type (2-\/dimensional) 
+
+
+
+Definition at line 116 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!data\+\_\+t@{data\+\_\+t}}
+\index{data\+\_\+t@{data\+\_\+t}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{data\+\_\+t}{data_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<$double$>$ {\bf Sliding\+Window\+::\+Window\+::data\+\_\+t}}\hypertarget{classSlidingWindow_1_1Window_abc07b028eea17a8713e74a556b9d1ad2}{}\label{classSlidingWindow_1_1Window_abc07b028eea17a8713e74a556b9d1ad2}
+
+
+Real number list type. 
+
+
+
+Definition at line 115 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!object\+\_\+collector\+\_\+t@{object\+\_\+collector\+\_\+t}}
+\index{object\+\_\+collector\+\_\+t@{object\+\_\+collector\+\_\+t}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{object\+\_\+collector\+\_\+t}{object_collector_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<${\bf object\+\_\+t}$>$ {\bf Sliding\+Window\+::\+Window\+::object\+\_\+collector\+\_\+t}}\hypertarget{classSlidingWindow_1_1Window_a3883a474287703a42cf8971ba8ef6884}{}\label{classSlidingWindow_1_1Window_a3883a474287703a42cf8971ba8ef6884}
+
+
+Object matrix type (2-\/dimensional) 
+
+
+
+Definition at line 118 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!object\+\_\+t@{object\+\_\+t}}
+\index{object\+\_\+t@{object\+\_\+t}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{object\+\_\+t}{object_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<$fastjet\+::\+Pseudo\+Jet$>$ {\bf Sliding\+Window\+::\+Window\+::object\+\_\+t}}\hypertarget{classSlidingWindow_1_1Window_a0ee13c18faf2f2ec3855b6449ef765e0}{}\label{classSlidingWindow_1_1Window_a0ee13c18faf2f2ec3855b6449ef765e0}
+
+
+Object list type. 
+
+
+
+Definition at line 117 of file Sliding\+Window.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!Window@{Window}}
+\index{Window@{Window}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{Window()}{Window()}}]{\setlength{\rightskip}{0pt plus 5cm}Sliding\+Window\+::\+Window\+::\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSlidingWindow_1_1Window_adaccac4f0906832d5417de50a82fb068}{}\label{classSlidingWindow_1_1Window_adaccac4f0906832d5417de50a82fb068}
+
+
+Default constructor. 
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!Window@{Window}}
+\index{Window@{Window}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{Window(const std\+::string \&p\+Name, size\+\_\+t n\+Bins, double min, double max, double window, bool store\+Objects=false)}{Window(const std::string &pName, size_t nBins, double min, double max, double window, bool storeObjects=false)}}]{\setlength{\rightskip}{0pt plus 5cm}Sliding\+Window\+::\+Window\+::\+Window (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{p\+Name, }
+\item[{size\+\_\+t}]{n\+Bins, }
+\item[{double}]{min, }
+\item[{double}]{max, }
+\item[{double}]{window, }
+\item[{bool}]{store\+Objects = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\hypertarget{classSlidingWindow_1_1Window_a4e940851f8491269fa36c267a94713c0}{}\label{classSlidingWindow_1_1Window_a4e940851f8491269fa36c267a94713c0}
+
+
+Loaded constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Name} & name of sliding window collector \\
+\hline
+{\em n\+Bins} & number of bins (steps) for sliding window \\
+\hline
+{\em min} & lower edge of sliding window range \\
+\hline
+{\em max} & upper edge of sliding window range \\
+\hline
+\end{DoxyParams}
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!````~Window@{$\sim$\+Window}}
+\index{````~Window@{$\sim$\+Window}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{$\sim$\+Window()}{~Window()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Sliding\+Window\+::\+Window\+::$\sim$\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classSlidingWindow_1_1Window_aeacafc20517bb5509871450e75151fca}{}\label{classSlidingWindow_1_1Window_aeacafc20517bb5509871450e75151fca}
+
+
+Base class destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!add@{add}}
+\index{add@{add}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{add(const object\+\_\+t \&mom)}{add(const object_t &mom)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Sliding\+Window\+::\+Window\+::add (
+\begin{DoxyParamCaption}
+\item[{const {\bf object\+\_\+t} \&}]{mom}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_aa8463b76b792d875ded8616db02e8c09}{}\label{classSlidingWindow_1_1Window_aa8463b76b792d875ded8616db02e8c09}
+
+
+Add a single object with area to the collector. 
+
+The object can be of any type providing an interface {\ttfamily O\+B\+J\+::pt()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & reference to non-\/modifiable object \\
+\hline
+{\em area} & user-\/provided area measure (default is 0) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 159 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!add\+Object@{add\+Object}}
+\index{add\+Object@{add\+Object}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{add\+Object(const O\+B\+J \&obj, double area=0.)}{addObject(const OBJ &obj, double area=0.)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class O\+BJ $>$ bool Sliding\+Window\+::\+Window\+::add\+Object (
+\begin{DoxyParamCaption}
+\item[{const O\+BJ \&}]{obj, }
+\item[{double}]{area = {\ttfamily 0.}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_a172533181c0916537bb48c3b6d56d2ec}{}\label{classSlidingWindow_1_1Window_a172533181c0916537bb48c3b6d56d2ec}
+
+
+Add a single object with area to the collector. 
+
+The object can be of any type providing an interface {\ttfamily O\+B\+J\+::pt()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & reference to non-\/modifiable object \\
+\hline
+{\em area} & user-\/provided area measure (default is 0) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 174 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!add\+Object@{add\+Object}}
+\index{add\+Object@{add\+Object}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{add\+Object(const fastjet\+::\+Pseudo\+Jet \&fj, double area=0.)}{addObject(const fastjet::PseudoJet &fj, double area=0.)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Sliding\+Window\+::\+Window\+::add\+Object (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{fj, }
+\item[{double}]{area = {\ttfamily 0.}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_a5367773eb3a8d3733e234be5f6bba901}{}\label{classSlidingWindow_1_1Window_a5367773eb3a8d3733e234be5f6bba901}
+
+
+Add a single object with area to the collector. 
+
+The object can be of any type providing an interface {\ttfamily O\+B\+J\+::pt()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & reference to non-\/modifiable object \\
+\hline
+{\em area} & user-\/provided area measure (default is 0) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 181 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!adjusted\+Max@{adjusted\+Max}}
+\index{adjusted\+Max@{adjusted\+Max}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{adjusted\+Max() const }{adjustedMax() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Window\+::adjusted\+Max (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_a8cfa3f86e61cfb558b71fc070a82f553}{}\label{classSlidingWindow_1_1Window_a8cfa3f86e61cfb558b71fc070a82f553}
+
+
+Adjusted upper value range limit for sliding window (after symmetrization) 
+
+
+
+Definition at line 203 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!adjusted\+Min@{adjusted\+Min}}
+\index{adjusted\+Min@{adjusted\+Min}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{adjusted\+Min() const }{adjustedMin() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Window\+::adjusted\+Min (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_a23fe1a632194bc586c7f9852f3e074b5}{}\label{classSlidingWindow_1_1Window_a23fe1a632194bc586c7f9852f3e074b5}
+
+
+Adjusted lower value range limit for sliding window (after symmetrization) 
+
+
+
+Definition at line 202 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!alg\+Name@{alg\+Name}}
+\index{alg\+Name@{alg\+Name}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{alg\+Name()}{algName()}}]{\setlength{\rightskip}{0pt plus 5cm}static const std\+::string\& Sliding\+Window\+::\+Window\+::alg\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classSlidingWindow_1_1Window_a545617bc70be6e22a50e79d147eb3c75}{}\label{classSlidingWindow_1_1Window_a545617bc70be6e22a50e79d147eb3c75}
+
+
+Reset the collector. 
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!area@{area}}
+\index{area@{area}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{area(int root\+Idx) const }{area(int rootIdx) const }}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Window\+::area (
+\begin{DoxyParamCaption}
+\item[{int}]{root\+Idx}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a76aea1b4663a127bae0fd7a67a0b52b3}{}\label{classSlidingWindow_1_1Window_a76aea1b4663a127bae0fd7a67a0b52b3}
+
+
+Definition at line 305 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!area\+Collection@{area\+Collection}}
+\index{area\+Collection@{area\+Collection}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{area\+Collection() const }{areaCollection() const }}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf collector\+\_\+t}\& Sliding\+Window\+::\+Window\+::area\+Collection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_a8724fe27d8ce5285ac18687337e8d051}{}\label{classSlidingWindow_1_1Window_a8724fe27d8ce5285ac18687337e8d051}
+
+
+Reset the collector. 
+
+
+
+Definition at line 213 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!area\+Profile@{area\+Profile}}
+\index{area\+Profile@{area\+Profile}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{area\+Profile()}{areaProfile()}}]{\setlength{\rightskip}{0pt plus 5cm}T\+H1D$\ast$ Sliding\+Window\+::\+Window\+::area\+Profile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_a86d931b16c66ede031e568c9bf095245}{}\label{classSlidingWindow_1_1Window_a86d931b16c66ede031e568c9bf095245}
+
+
+Reset the collector. 
+
+
+
+Definition at line 204 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!bin@{bin}}
+\index{bin@{bin}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{bin(int root\+Idx) const }{bin(int rootIdx) const }}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Sliding\+Window\+::\+Bin} \& Sliding\+Window\+::\+Window\+::bin (
+\begin{DoxyParamCaption}
+\item[{int}]{root\+Idx}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a3d5b8a5cbd556cccfb783b38b5aad70b}{}\label{classSlidingWindow_1_1Window_a3d5b8a5cbd556cccfb783b38b5aad70b}
+
+
+Definition at line 321 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!bin\+Index@{bin\+Index}}
+\index{bin\+Index@{bin\+Index}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{bin\+Index(double value) const }{binIndex(double value) const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\+\_\+t Sliding\+Window\+::\+Window\+::bin\+Index (
+\begin{DoxyParamCaption}
+\item[{double}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classSlidingWindow_1_1Window_a4ce7cbe7a8bc9c3a3e8b5d5ac74300ba}{}\label{classSlidingWindow_1_1Window_a4ce7cbe7a8bc9c3a3e8b5d5ac74300ba}
+
+
+Return the window bin index for a given value. 
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!binning@{binning}}
+\index{binning@{binning}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{binning() const }{binning() const }}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf binning\+\_\+t}\& Sliding\+Window\+::\+Window\+::binning (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_a4f5edd9ab13664503267c782a35d69a0}{}\label{classSlidingWindow_1_1Window_a4f5edd9ab13664503267c782a35d69a0}
+
+
+Return all bin descriptions. 
+
+
+
+Definition at line 198 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!book@{book}}
+\index{book@{book}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{book(bool prn=true)}{book(bool prn=true)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Sliding\+Window\+::\+Window\+::book (
+\begin{DoxyParamCaption}
+\item[{bool}]{prn = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\hypertarget{classSlidingWindow_1_1Window_a553cfe27c9cc1b3c8830652aa3380cc3}{}\label{classSlidingWindow_1_1Window_a553cfe27c9cc1b3c8830652aa3380cc3}
+
+
+Check if void areas contribute to median. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if void areas (areas not occupied by signals) are not included in median 
+\end{DoxyReturn}
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!center@{center}}
+\index{center@{center}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{center(int root\+Idx) const }{center(int rootIdx) const }}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Window\+::center (
+\begin{DoxyParamCaption}
+\item[{int}]{root\+Idx}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a5cedad1cc29cde1eaffcdae9eb6054fa}{}\label{classSlidingWindow_1_1Window_a5cedad1cc29cde1eaffcdae9eb6054fa}
+
+
+Definition at line 309 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!entries\+Collection@{entries\+Collection}}
+\index{entries\+Collection@{entries\+Collection}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{entries\+Collection() const }{entriesCollection() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ int $>$ Sliding\+Window\+::\+Window\+::entries\+Collection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_a54fbc911abec5ef96753330dd9f7dff1}{}\label{classSlidingWindow_1_1Window_a54fbc911abec5ef96753330dd9f7dff1}
+
+
+Reset the collector. 
+
+
+
+Definition at line 346 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!entries\+Profile@{entries\+Profile}}
+\index{entries\+Profile@{entries\+Profile}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{entries\+Profile()}{entriesProfile()}}]{\setlength{\rightskip}{0pt plus 5cm}T\+H1D $\ast$ Sliding\+Window\+::\+Window\+::entries\+Profile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_a8981fc06aac580eeaf0a47f075f5d7e0}{}\label{classSlidingWindow_1_1Window_a8981fc06aac580eeaf0a47f075f5d7e0}
+
+
+Reset the collector. 
+
+
+
+Definition at line 353 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!event\+Profile@{event\+Profile}}
+\index{event\+Profile@{event\+Profile}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{event\+Profile()}{eventProfile()}}]{\setlength{\rightskip}{0pt plus 5cm}T\+Profile$\ast$ Sliding\+Window\+::\+Window\+::event\+Profile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_af4485ccec8660fad543a20b98b10d76e}{}\label{classSlidingWindow_1_1Window_af4485ccec8660fad543a20b98b10d76e}
+
+
+Reset the collector. 
+
+
+
+Definition at line 205 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!find\+All\+Bins@{find\+All\+Bins}}
+\index{find\+All\+Bins@{find\+All\+Bins}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{find\+All\+Bins(double value, std\+::vector$<$ size\+\_\+t $>$ \&indices) const }{findAllBins(double value, std::vector< size_t > &indices) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Sliding\+Window\+::\+Window\+::find\+All\+Bins (
+\begin{DoxyParamCaption}
+\item[{double}]{value, }
+\item[{std\+::vector$<$ size\+\_\+t $>$ \&}]{indices}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSlidingWindow_1_1Window_a13ae48dc79b651da691ddf04e012b7ec}{}\label{classSlidingWindow_1_1Window_a13ae48dc79b651da691ddf04e012b7ec}
+
+
+Find all windows a value is contained in. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the value contributes to any described window, else {\ttfamily false} 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & value to be checked \\
+\hline
+{\em indices} & list of window indices the value contributes to (empty if value does not overlap with any window) \\
+\hline
+\end{DoxyParams}
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!find\+Medians@{find\+Medians}}
+\index{find\+Medians@{find\+Medians}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{find\+Medians()}{findMedians()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$double$>$ Sliding\+Window\+::\+Window\+::find\+Medians (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSlidingWindow_1_1Window_a77d21efe15501ae7d293f1107ee1f884}{}\label{classSlidingWindow_1_1Window_a77d21efe15501ae7d293f1107ee1f884}
+
+
+Reset the collector. 
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!get\+Voids@{get\+Voids}}
+\index{get\+Voids@{get\+Voids}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{get\+Voids(const data\+\_\+t \&areas, const bin\+\_\+t \&bin)}{getVoids(const data_t &areas, const bin_t &bin)}}]{\setlength{\rightskip}{0pt plus 5cm}int Sliding\+Window\+::\+Window\+::get\+Voids (
+\begin{DoxyParamCaption}
+\item[{const {\bf data\+\_\+t} \&}]{areas, }
+\item[{const {\bf bin\+\_\+t} \&}]{bin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a98c3c6acfc89fa989470a195dac46dcb}{}\label{classSlidingWindow_1_1Window_a98c3c6acfc89fa989470a195dac46dcb}
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!integrate@{integrate}}
+\index{integrate@{integrate}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{integrate(const fastjet\+::\+Pseudo\+Jet \&p\+Mom)}{integrate(const fastjet::PseudoJet &pMom)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Sliding\+Window\+::\+Window\+::integrate (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{p\+Mom}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a0b5c696522d85d8f98617e1acbc42a34}{}\label{classSlidingWindow_1_1Window_a0b5c696522d85d8f98617e1acbc42a34}
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!integrate@{integrate}}
+\index{integrate@{integrate}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{integrate(const fastjet\+::\+Pseudo\+Jet \&p\+Mom, double area)}{integrate(const fastjet::PseudoJet &pMom, double area)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Sliding\+Window\+::\+Window\+::integrate (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{p\+Mom, }
+\item[{double}]{area}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_ac49709dfb4a0c531153a48908ddd0301}{}\label{classSlidingWindow_1_1Window_ac49709dfb4a0c531153a48908ddd0301}
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!is\+Complete@{is\+Complete}}
+\index{is\+Complete@{is\+Complete}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{is\+Complete(const fastjet\+::\+Pseudo\+Jet \&jet) const }{isComplete(const fastjet::PseudoJet &jet) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Sliding\+Window\+::\+Window\+::is\+Complete (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{jet}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_afc74b5dbbe5144bc11dedb8980436858}{}\label{classSlidingWindow_1_1Window_afc74b5dbbe5144bc11dedb8980436858}
+
+
+Definition at line 332 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!low\+Edge@{low\+Edge}}
+\index{low\+Edge@{low\+Edge}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{low\+Edge(int root\+Idx) const }{lowEdge(int rootIdx) const }}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Window\+::low\+Edge (
+\begin{DoxyParamCaption}
+\item[{int}]{root\+Idx}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a4ae79a4961c9116fad3ed61c12ef7a6a}{}\label{classSlidingWindow_1_1Window_a4ae79a4961c9116fad3ed61c12ef7a6a}
+
+
+Definition at line 313 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!max@{max}}
+\index{max@{max}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{max() const }{max() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Window\+::max (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_a57ad1e073130318a845129c8d92dae4c}{}\label{classSlidingWindow_1_1Window_a57ad1e073130318a845129c8d92dae4c}
+
+
+Upper value range limit for sliding windows. 
+
+
+
+Definition at line 201 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!median@{median}}
+\index{median@{median}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{median(data\+\_\+t \&values)}{median(data_t &values)}}]{\setlength{\rightskip}{0pt plus 5cm}static double Sliding\+Window\+::\+Window\+::median (
+\begin{DoxyParamCaption}
+\item[{{\bf data\+\_\+t} \&}]{values}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classSlidingWindow_1_1Window_a53b2cc3cc4fe5090e947d58aa05b943c}{}\label{classSlidingWindow_1_1Window_a53b2cc3cc4fe5090e947d58aa05b943c}
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!median@{median}}
+\index{median@{median}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{median(object\+\_\+t \&jet)}{median(object_t &jet)}}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Window\+::median (
+\begin{DoxyParamCaption}
+\item[{{\bf object\+\_\+t} \&}]{jet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_ade380e81afc10699fbcdd354159f7215}{}\label{classSlidingWindow_1_1Window_ade380e81afc10699fbcdd354159f7215}
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!median\+Profile@{median\+Profile}}
+\index{median\+Profile@{median\+Profile}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{median\+Profile()}{medianProfile()}}]{\setlength{\rightskip}{0pt plus 5cm}T\+H1D$\ast$ Sliding\+Window\+::\+Window\+::median\+Profile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_ace2ce2aa3b66eea31ef1f03acff976b2}{}\label{classSlidingWindow_1_1Window_ace2ce2aa3b66eea31ef1f03acff976b2}
+
+
+Reset the collector. 
+
+
+
+Definition at line 207 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!min@{min}}
+\index{min@{min}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{min() const }{min() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Window\+::min (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_a9f134cb80a395f11025c5d0fa1465852}{}\label{classSlidingWindow_1_1Window_a9f134cb80a395f11025c5d0fa1465852}
+
+
+Lower value range limit for sliding windows. 
+
+
+
+Definition at line 200 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!module\+Name@{module\+Name}}
+\index{module\+Name@{module\+Name}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{module\+Name(const std\+::string \&method)}{moduleName(const std::string &method)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Sliding\+Window\+::\+Window\+::module\+Name (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{method}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_aa7c8ebbf1c8f8733347cf4b89839ae40}{}\label{classSlidingWindow_1_1Window_aa7c8ebbf1c8f8733347cf4b89839ae40}
+
+
+Definition at line 364 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!name@{name}}
+\index{name@{name}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{name() const }{name() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string\& Sliding\+Window\+::\+Window\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_a6e73fa686560987efd9f6638f21ce498}{}\label{classSlidingWindow_1_1Window_a6e73fa686560987efd9f6638f21ce498}
+
+
+Reset the collector. 
+
+
+
+Definition at line 217 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!object\+Collection@{object\+Collection}}
+\index{object\+Collection@{object\+Collection}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{object\+Collection() const }{objectCollection() const }}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf object\+\_\+collector\+\_\+t}\& Sliding\+Window\+::\+Window\+::object\+Collection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_a6739836c037dab15b40402e9b843e596}{}\label{classSlidingWindow_1_1Window_a6739836c037dab15b40402e9b843e596}
+
+
+Reset the collector. 
+
+
+
+Definition at line 215 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{operator$<$(const Window \&wdow) const }{operator<(const Window &wdow) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Sliding\+Window\+::\+Window\+::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Window} \&}]{wdow}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_a9dda3fd75fd3a0c4e9100ab7b265b5fa}{}\label{classSlidingWindow_1_1Window_a9dda3fd75fd3a0c4e9100ab7b265b5fa}
+
+
+Reset the collector. 
+
+
+
+Definition at line 301 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!operator==@{operator==}}
+\index{operator==@{operator==}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{operator==(const Window \&wdow) const }{operator==(const Window &wdow) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Sliding\+Window\+::\+Window\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Window} \&}]{wdow}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_a2f875343fe56bd7640fa35ecc047232e}{}\label{classSlidingWindow_1_1Window_a2f875343fe56bd7640fa35ecc047232e}
+
+
+Reset the collector. 
+
+
+
+Definition at line 303 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{operator$>$(const Window \&wdow) const }{operator>(const Window &wdow) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Sliding\+Window\+::\+Window\+::operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Window} \&}]{wdow}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_a67c4b776bbfa88884d034ffe8e482c90}{}\label{classSlidingWindow_1_1Window_a67c4b776bbfa88884d034ffe8e482c90}
+
+
+Reset the collector. 
+
+
+
+Definition at line 302 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!reset@{reset}}
+\index{reset@{reset}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{reset()}{reset()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Sliding\+Window\+::\+Window\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classSlidingWindow_1_1Window_aab38992dcb5d21c9b42d0dfc2d5d6b70}{}\label{classSlidingWindow_1_1Window_aab38992dcb5d21c9b42d0dfc2d5d6b70}
+
+
+Reset the collector. 
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!reset\+Collector@{reset\+Collector}}
+\index{reset\+Collector@{reset\+Collector}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{reset\+Collector()}{resetCollector()}}]{\setlength{\rightskip}{0pt plus 5cm}void Sliding\+Window\+::\+Window\+::reset\+Collector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a6943bd7a73fb6122845c18c956822a58}{}\label{classSlidingWindow_1_1Window_a6943bd7a73fb6122845c18c956822a58}
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!rho\+Collection@{rho\+Collection}}
+\index{rho\+Collection@{rho\+Collection}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{rho\+Collection() const }{rhoCollection() const }}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf collector\+\_\+t}\& Sliding\+Window\+::\+Window\+::rho\+Collection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_acd125998cc557744021e2177572dcb26}{}\label{classSlidingWindow_1_1Window_acd125998cc557744021e2177572dcb26}
+
+
+Reset the collector. 
+
+
+
+Definition at line 212 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!rho\+From\+Jet@{rho\+From\+Jet}}
+\index{rho\+From\+Jet@{rho\+From\+Jet}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{rho\+From\+Jet(const fastjet\+::\+Pseudo\+Jet \&jet) const }{rhoFromJet(const fastjet::PseudoJet &jet) const }}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Window\+::rho\+From\+Jet (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{jet}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a0ab685b6c22237c1ef01afe98ce3e0ac}{}\label{classSlidingWindow_1_1Window_a0ab685b6c22237c1ef01afe98ce3e0ac}
+
+
+Definition at line 334 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!root\+Bin\+Index@{root\+Bin\+Index}}
+\index{root\+Bin\+Index@{root\+Bin\+Index}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{root\+Bin\+Index(double value) const }{rootBinIndex(double value) const }}]{\setlength{\rightskip}{0pt plus 5cm}int Sliding\+Window\+::\+Window\+::root\+Bin\+Index (
+\begin{DoxyParamCaption}
+\item[{double}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classSlidingWindow_1_1Window_a07c2d3226451be44b674498f0d47fbaa}{}\label{classSlidingWindow_1_1Window_a07c2d3226451be44b674498f0d47fbaa}
+
+
+Return the window bin index for R\+O\+OT histograms for a given value. 
+
+
+
+Definition at line 325 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!root\+Bin\+Index@{root\+Bin\+Index}}
+\index{root\+Bin\+Index@{root\+Bin\+Index}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{root\+Bin\+Index(size\+\_\+t index) const }{rootBinIndex(size_t index) const }}]{\setlength{\rightskip}{0pt plus 5cm}int Sliding\+Window\+::\+Window\+::root\+Bin\+Index (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classSlidingWindow_1_1Window_a019814f4ba2c35edc996e2b2133ec9ce}{}\label{classSlidingWindow_1_1Window_a019814f4ba2c35edc996e2b2133ec9ce}
+
+
+Convert the window bin index into the corresponding R\+O\+OT histogram bin index. 
+
+
+
+Definition at line 328 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!setup\+Collector@{setup\+Collector}}
+\index{setup\+Collector@{setup\+Collector}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{setup\+Collector()}{setupCollector()}}]{\setlength{\rightskip}{0pt plus 5cm}void Sliding\+Window\+::\+Window\+::setup\+Collector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a1abf7b58633a333df3a6f27b2e1e0df2}{}\label{classSlidingWindow_1_1Window_a1abf7b58633a333df3a6f27b2e1e0df2}
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!set\+Zero\+Suppression@{set\+Zero\+Suppression}}
+\index{set\+Zero\+Suppression@{set\+Zero\+Suppression}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{set\+Zero\+Suppression(bool turn\+On=true)}{setZeroSuppression(bool turnOn=true)}}]{\setlength{\rightskip}{0pt plus 5cm}void Sliding\+Window\+::\+Window\+::set\+Zero\+Suppression (
+\begin{DoxyParamCaption}
+\item[{bool}]{turn\+On = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_a2d621b897887a5eaa7f8deda24ca8740}{}\label{classSlidingWindow_1_1Window_a2d621b897887a5eaa7f8deda24ca8740}
+
+
+Turn on/off void area contribution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em turn\+On} & if {\ttfamily true} (default) excludes void areas from median determination. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 338 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!spread\+Profile@{spread\+Profile}}
+\index{spread\+Profile@{spread\+Profile}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{spread\+Profile()}{spreadProfile()}}]{\setlength{\rightskip}{0pt plus 5cm}T\+H1D$\ast$ Sliding\+Window\+::\+Window\+::spread\+Profile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_a2f635b99980da8f83ad16c865b1d9378}{}\label{classSlidingWindow_1_1Window_a2f635b99980da8f83ad16c865b1d9378}
+
+
+Reset the collector. 
+
+
+
+Definition at line 206 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!up\+Edge@{up\+Edge}}
+\index{up\+Edge@{up\+Edge}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{up\+Edge(int root\+Idx) const }{upEdge(int rootIdx) const }}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Window\+::up\+Edge (
+\begin{DoxyParamCaption}
+\item[{int}]{root\+Idx}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a69ff1bc463409ab3254a67a1fb6052e8}{}\label{classSlidingWindow_1_1Window_a69ff1bc463409ab3254a67a1fb6052e8}
+
+
+Definition at line 317 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!use\+Zero\+Suppression@{use\+Zero\+Suppression}}
+\index{use\+Zero\+Suppression@{use\+Zero\+Suppression}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{use\+Zero\+Suppression() const }{useZeroSuppression() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Sliding\+Window\+::\+Window\+::use\+Zero\+Suppression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_a1d2d499fbb6a6e7681c71df13e8f4a4c}{}\label{classSlidingWindow_1_1Window_a1d2d499fbb6a6e7681c71df13e8f4a4c}
+
+
+Check if void areas contribute to median. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if void areas (areas not occupied by signals) are not included in median 
+\end{DoxyReturn}
+
+
+Definition at line 337 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!window\+Size@{window\+Size}}
+\index{window\+Size@{window\+Size}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{window\+Size() const }{windowSize() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Window\+::window\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Window_ae6e240862b8c40f2c965f50848f3adad}{}\label{classSlidingWindow_1_1Window_ae6e240862b8c40f2c965f50848f3adad}
+
+
+Return nominal window width (size -\/ actual window in a given bin may be smaller) 
+
+
+
+Definition at line 199 of file Sliding\+Window.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!\+\_\+named\+\_\+algo\+\_\+\+Window@{\+\_\+named\+\_\+algo\+\_\+\+Window}}
+\index{\+\_\+named\+\_\+algo\+\_\+\+Window@{\+\_\+named\+\_\+algo\+\_\+\+Window}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{\+\_\+named\+\_\+algo\+\_\+\+Window}{_named_algo_Window}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Sliding\+Window\+::\+Window\+::\+\_\+named\+\_\+algo\+\_\+\+Window\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a963bd3e616c1936117625416b97775b2}{}\label{classSlidingWindow_1_1Window_a963bd3e616c1936117625416b97775b2}
+
+
+Definition at line 267 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!h\+\_\+area\+Profile@{h\+\_\+area\+Profile}}
+\index{h\+\_\+area\+Profile@{h\+\_\+area\+Profile}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{h\+\_\+area\+Profile}{h_areaProfile}}]{\setlength{\rightskip}{0pt plus 5cm}T\+H1D$\ast$ Sliding\+Window\+::\+Window\+::h\+\_\+area\+Profile\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a64de3976873889730213091ea196eee9}{}\label{classSlidingWindow_1_1Window_a64de3976873889730213091ea196eee9}
+
+
+Definition at line 262 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!h\+\_\+entries\+Profile@{h\+\_\+entries\+Profile}}
+\index{h\+\_\+entries\+Profile@{h\+\_\+entries\+Profile}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{h\+\_\+entries\+Profile}{h_entriesProfile}}]{\setlength{\rightskip}{0pt plus 5cm}T\+H1D$\ast$ Sliding\+Window\+::\+Window\+::h\+\_\+entries\+Profile\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_af23a441ea30a49948e3d3a77ac921127}{}\label{classSlidingWindow_1_1Window_af23a441ea30a49948e3d3a77ac921127}
+
+
+Definition at line 264 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!h\+\_\+median\+Profile@{h\+\_\+median\+Profile}}
+\index{h\+\_\+median\+Profile@{h\+\_\+median\+Profile}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{h\+\_\+median\+Profile}{h_medianProfile}}]{\setlength{\rightskip}{0pt plus 5cm}T\+H1D$\ast$ Sliding\+Window\+::\+Window\+::h\+\_\+median\+Profile\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_abe926d32bb55044c3ab6ae69d6ed7503}{}\label{classSlidingWindow_1_1Window_abe926d32bb55044c3ab6ae69d6ed7503}
+
+
+Definition at line 263 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!h\+\_\+spread\+Profile@{h\+\_\+spread\+Profile}}
+\index{h\+\_\+spread\+Profile@{h\+\_\+spread\+Profile}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{h\+\_\+spread\+Profile}{h_spreadProfile}}]{\setlength{\rightskip}{0pt plus 5cm}T\+H1D$\ast$ Sliding\+Window\+::\+Window\+::h\+\_\+spread\+Profile\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a6b488ac4c3f0f5d0562479df27e31dbd}{}\label{classSlidingWindow_1_1Window_a6b488ac4c3f0f5d0562479df27e31dbd}
+
+
+Definition at line 261 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+adjust\+Bin\+Range@{m\+\_\+adjust\+Bin\+Range}}
+\index{m\+\_\+adjust\+Bin\+Range@{m\+\_\+adjust\+Bin\+Range}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+adjust\+Bin\+Range}{m_adjustBinRange}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t Sliding\+Window\+::\+Window\+::m\+\_\+adjust\+Bin\+Range\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a742d6f030de136c948ef0bd62fd11bb2}{}\label{classSlidingWindow_1_1Window_a742d6f030de136c948ef0bd62fd11bb2}
+
+
+Definition at line 245 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+adjust\+Bins@{m\+\_\+adjust\+Bins}}
+\index{m\+\_\+adjust\+Bins@{m\+\_\+adjust\+Bins}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+adjust\+Bins}{m_adjustBins}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t Sliding\+Window\+::\+Window\+::m\+\_\+adjust\+Bins\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a94679f3f59d0fb1cfe3a0ea3992f7198}{}\label{classSlidingWindow_1_1Window_a94679f3f59d0fb1cfe3a0ea3992f7198}
+
+
+Definition at line 244 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+adjust\+Bin\+Width@{m\+\_\+adjust\+Bin\+Width}}
+\index{m\+\_\+adjust\+Bin\+Width@{m\+\_\+adjust\+Bin\+Width}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+adjust\+Bin\+Width}{m_adjustBinWidth}}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Window\+::m\+\_\+adjust\+Bin\+Width\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_aa1ae0483bbbcdb0334d3356f279ef2b7}{}\label{classSlidingWindow_1_1Window_aa1ae0483bbbcdb0334d3356f279ef2b7}
+
+
+Definition at line 248 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+adjust\+Max@{m\+\_\+adjust\+Max}}
+\index{m\+\_\+adjust\+Max@{m\+\_\+adjust\+Max}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+adjust\+Max}{m_adjustMax}}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Window\+::m\+\_\+adjust\+Max\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_aeb0cb796c71f6fc4029a03ce839fe759}{}\label{classSlidingWindow_1_1Window_aeb0cb796c71f6fc4029a03ce839fe759}
+
+
+Definition at line 247 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+adjust\+Min@{m\+\_\+adjust\+Min}}
+\index{m\+\_\+adjust\+Min@{m\+\_\+adjust\+Min}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+adjust\+Min}{m_adjustMin}}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Window\+::m\+\_\+adjust\+Min\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_ae0d29d89f73402d85c3bac1cc295d4c4}{}\label{classSlidingWindow_1_1Window_ae0d29d89f73402d85c3bac1cc295d4c4}
+
+
+Definition at line 246 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+areas@{m\+\_\+areas}}
+\index{m\+\_\+areas@{m\+\_\+areas}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+areas}{m_areas}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf collector\+\_\+t} Sliding\+Window\+::\+Window\+::m\+\_\+areas\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_ac3654a276b9c1e8ca2d03a18ab23336d}{}\label{classSlidingWindow_1_1Window_ac3654a276b9c1e8ca2d03a18ab23336d}
+
+
+Definition at line 234 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+bins@{m\+\_\+bins}}
+\index{m\+\_\+bins@{m\+\_\+bins}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+bins}{m_bins}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf binning\+\_\+t} Sliding\+Window\+::\+Window\+::m\+\_\+bins\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a3f4acfc8faac69f90803bdbce13828bc}{}\label{classSlidingWindow_1_1Window_a3f4acfc8faac69f90803bdbce13828bc}
+
+
+Definition at line 232 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+bin\+Width@{m\+\_\+bin\+Width}}
+\index{m\+\_\+bin\+Width@{m\+\_\+bin\+Width}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+bin\+Width}{m_binWidth}}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Window\+::m\+\_\+bin\+Width\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a290b3c6a5a678ce8651b650758e20401}{}\label{classSlidingWindow_1_1Window_a290b3c6a5a678ce8651b650758e20401}
+
+
+Definition at line 242 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+collector@{m\+\_\+collector}}
+\index{m\+\_\+collector@{m\+\_\+collector}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+collector}{m_collector}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf collector\+\_\+t} Sliding\+Window\+::\+Window\+::m\+\_\+collector\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a37032250670011a5a2fdff0a0c406ba3}{}\label{classSlidingWindow_1_1Window_a37032250670011a5a2fdff0a0c406ba3}
+
+
+Definition at line 233 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+first\+Call@{m\+\_\+first\+Call}}
+\index{m\+\_\+first\+Call@{m\+\_\+first\+Call}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+first\+Call}{m_firstCall}}]{\setlength{\rightskip}{0pt plus 5cm}bool Sliding\+Window\+::\+Window\+::m\+\_\+first\+Call\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_af8a01fa818b69a4c3abe07e1f6c738c9}{}\label{classSlidingWindow_1_1Window_af8a01fa818b69a4c3abe07e1f6c738c9}
+
+
+Definition at line 251 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+invalid\+Index@{m\+\_\+invalid\+Index}}
+\index{m\+\_\+invalid\+Index@{m\+\_\+invalid\+Index}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+invalid\+Index}{m_invalidIndex}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t Sliding\+Window\+::\+Window\+::m\+\_\+invalid\+Index\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a9e500dcaf7c2a18fd5a2e8f1775704c2}{}\label{classSlidingWindow_1_1Window_a9e500dcaf7c2a18fd5a2e8f1775704c2}
+
+
+Definition at line 257 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+is\+Dead@{m\+\_\+is\+Dead}}
+\index{m\+\_\+is\+Dead@{m\+\_\+is\+Dead}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+is\+Dead}{m_isDead}}]{\setlength{\rightskip}{0pt plus 5cm}bool Sliding\+Window\+::\+Window\+::m\+\_\+is\+Dead\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a760dc31d2bafceaabcb58261d0766d63}{}\label{classSlidingWindow_1_1Window_a760dc31d2bafceaabcb58261d0766d63}
+
+
+Definition at line 252 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+max@{m\+\_\+max}}
+\index{m\+\_\+max@{m\+\_\+max}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+max}{m_max}}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Window\+::m\+\_\+max\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a8432b5cb2b2905277fce6156bbea4884}{}\label{classSlidingWindow_1_1Window_a8432b5cb2b2905277fce6156bbea4884}
+
+
+Definition at line 240 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+min@{m\+\_\+min}}
+\index{m\+\_\+min@{m\+\_\+min}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+min}{m_min}}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Window\+::m\+\_\+min\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a76de5f0c8ec2471d87122221bd8704fe}{}\label{classSlidingWindow_1_1Window_a76de5f0c8ec2471d87122221bd8704fe}
+
+
+Definition at line 239 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+name@{m\+\_\+name}}
+\index{m\+\_\+name@{m\+\_\+name}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+name}{m_name}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Sliding\+Window\+::\+Window\+::m\+\_\+name\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a91d8a34cff48db9b83909c8d3ea8320a}{}\label{classSlidingWindow_1_1Window_a91d8a34cff48db9b83909c8d3ea8320a}
+
+
+Definition at line 256 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+n\+Bins@{m\+\_\+n\+Bins}}
+\index{m\+\_\+n\+Bins@{m\+\_\+n\+Bins}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+n\+Bins}{m_nBins}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t Sliding\+Window\+::\+Window\+::m\+\_\+n\+Bins\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a3766b935d338405d7e475770233fcea3}{}\label{classSlidingWindow_1_1Window_a3766b935d338405d7e475770233fcea3}
+
+
+Definition at line 238 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+objects@{m\+\_\+objects}}
+\index{m\+\_\+objects@{m\+\_\+objects}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+objects}{m_objects}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf object\+\_\+collector\+\_\+t} Sliding\+Window\+::\+Window\+::m\+\_\+objects\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a05a54515c6d4c39b28f524d6cb491cec}{}\label{classSlidingWindow_1_1Window_a05a54515c6d4c39b28f524d6cb491cec}
+
+
+Definition at line 235 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+store\+Objects@{m\+\_\+store\+Objects}}
+\index{m\+\_\+store\+Objects@{m\+\_\+store\+Objects}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+store\+Objects}{m_storeObjects}}]{\setlength{\rightskip}{0pt plus 5cm}bool Sliding\+Window\+::\+Window\+::m\+\_\+store\+Objects\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a70c04eb01ffc3d64680c11d0e0b2c4e8}{}\label{classSlidingWindow_1_1Window_a70c04eb01ffc3d64680c11d0e0b2c4e8}
+
+
+Definition at line 253 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+update\+Profile@{m\+\_\+update\+Profile}}
+\index{m\+\_\+update\+Profile@{m\+\_\+update\+Profile}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+update\+Profile}{m_updateProfile}}]{\setlength{\rightskip}{0pt plus 5cm}bool Sliding\+Window\+::\+Window\+::m\+\_\+update\+Profile\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_abc51f8686319ba77efe62878ebf8bb8e}{}\label{classSlidingWindow_1_1Window_abc51f8686319ba77efe62878ebf8bb8e}
+
+
+Definition at line 254 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+use\+Zero\+Suppression@{m\+\_\+use\+Zero\+Suppression}}
+\index{m\+\_\+use\+Zero\+Suppression@{m\+\_\+use\+Zero\+Suppression}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+use\+Zero\+Suppression}{m_useZeroSuppression}}]{\setlength{\rightskip}{0pt plus 5cm}bool Sliding\+Window\+::\+Window\+::m\+\_\+use\+Zero\+Suppression\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a07c0d538384a9a35d5bfb2b341f41fae}{}\label{classSlidingWindow_1_1Window_a07c0d538384a9a35d5bfb2b341f41fae}
+
+
+Definition at line 255 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!m\+\_\+window@{m\+\_\+window}}
+\index{m\+\_\+window@{m\+\_\+window}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{m\+\_\+window}{m_window}}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Window\+::m\+\_\+window\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_a29f03954035661fea490d9442e730f47}{}\label{classSlidingWindow_1_1Window_a29f03954035661fea490d9442e730f47}
+
+
+Definition at line 241 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}!p\+\_\+event\+Profile@{p\+\_\+event\+Profile}}
+\index{p\+\_\+event\+Profile@{p\+\_\+event\+Profile}!Sliding\+Window\+::\+Window@{Sliding\+Window\+::\+Window}}
+\subsubsection[{\texorpdfstring{p\+\_\+event\+Profile}{p_eventProfile}}]{\setlength{\rightskip}{0pt plus 5cm}T\+Profile$\ast$ Sliding\+Window\+::\+Window\+::p\+\_\+event\+Profile\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classSlidingWindow_1_1Window_abd3e78a58ed38aaefef14afd2a27e448}{}\label{classSlidingWindow_1_1Window_abd3e78a58ed38aaefef14afd2a27e448}
+
+
+Definition at line 265 of file Sliding\+Window.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{SlidingWindow_8h}{Sliding\+Window.\+h}\end{DoxyCompactItemize}

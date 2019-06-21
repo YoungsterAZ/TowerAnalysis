@@ -1,0 +1,208 @@
+\hypertarget{structAnalysisHelper}{}\section{Analysis\+Helper Struct Reference}
+\label{structAnalysisHelper}\index{Analysis\+Helper@{Analysis\+Helper}}
+
+
+Analysis helper functions.  
+
+
+
+
+{\ttfamily \#include $<$Analysis\+Helper\+Core.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class H $>$ }\\static H $\ast$ \hyperlink{structAnalysisHelper_aed9c208e64246584fdd10a188121c137}{book1D} (const std\+::string \&name, const std\+::string \&title, int nxbins, double xmin, double xmax, const std\+::string xtitle=\char`\"{}\char`\"{}, const std\+::string \&ytitle=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em @ brief Book 1d histogram (any R\+O\+OT type like T\+H1D, T\+H1F, T\+Profile, ...) \end{DoxyCompactList}\item 
+{\footnotesize template$<$class H $>$ }\\static H $\ast$ \hyperlink{structAnalysisHelper_aeaac2042accbd686e35518691e6b181b}{book2D} (const std\+::string \&name, const std\+::string \&title, int nxbins, double xmin, double xmax, int nybins, double ymin, double ymax, const std\+::string xtitle=\char`\"{}\char`\"{}, const std\+::string \&ytitle=\char`\"{}\char`\"{}, const std\+::string \&ztitle=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Book 2d histogram (any R\+O\+OT type like T\+H2D, T\+H2F, T\+Profile2D, ...) \end{DoxyCompactList}\item 
+static int \hyperlink{structAnalysisHelper_a8d8a117fe4692b12e538cf9f7b922e3a}{write\+Hists} (const std\+::string \&fname, const std\+::string \&ftag=\char`\"{}R\+E\+C\+R\+E\+A\+TE\char`\"{}, bool noempty=true)
+\begin{DoxyCompactList}\small\item\em Write histograms to file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Analysis helper functions. 
+
+This is implemented as a {\ttfamily struct} to avoid warnings concerning unused functions in name spaces (to be fixed?) 
+
+Definition at line 59 of file Analysis\+Helper\+Core.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{Analysis\+Helper@{Analysis\+Helper}!book1D@{book1D}}
+\index{book1D@{book1D}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{book1\+D(const std\+::string \&name, const std\+::string \&title, int nxbins, double xmin, double xmax, const std\+::string xtitle="""", const std\+::string \&ytitle="""")}{book1D(const std::string &name, const std::string &title, int nxbins, double xmin, double xmax, const std::string xtitle="", const std::string &ytitle="")}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class H $>$ static H$\ast$ Analysis\+Helper\+::book1D (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{nxbins, }
+\item[{double}]{xmin, }
+\item[{double}]{xmax, }
+\item[{const std\+::string}]{xtitle = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const std\+::string \&}]{ytitle = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_aed9c208e64246584fdd10a188121c137}{}\label{structAnalysisHelper_aed9c208e64246584fdd10a188121c137}
+
+
+@ brief Book 1d histogram (any R\+O\+OT type like T\+H1D, T\+H1F, T\+Profile, ...) 
+
+\begin{DoxyReturn}{Returns}
+pointer to histogram of user specified type.
+\end{DoxyReturn}
+This function automatically registers the booked histogram with a background histogram manager. This way the histogram is added to the output list and written out if {\ttfamily \hyperlink{structAnalysisHelper_a8d8a117fe4692b12e538cf9f7b922e3a}{Analysis\+Helper\+::write\+Hists()}} is invoked. It also invokes the {\ttfamily T\+H1\+::\+Sumw2()} method for correct error treatment. The template specifier should be the desired concrete histogram type.
+
+Example\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// book histogram}
+TH1D* h = AnalysisHelper::book1D<TH1D>(\textcolor{stringliteral}{"test"},\textcolor{stringliteral}{"test"},100,0.,1.);
+\textcolor{comment}{// fill histogram}
+h->Fill(0.5);
+\textcolor{comment}{// write histogram to file "test.root"}
+\hyperlink{structAnalysisHelper_a8d8a117fe4692b12e538cf9f7b922e3a}{AnalysisHelper::writeHists}(\textcolor{stringliteral}{"test.root"});
+\end{DoxyCode}
+
+
+If axis titles should be saved with the histogram, do for titles on both axis (\char`\"{}entries\char`\"{} can be omitted to not add a title to the y axis).
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// book histogram }
+TH1D* h = AnalysisHelper::book1D<TH1D>(\textcolor{stringliteral}{"test"},\textcolor{stringliteral}{"test"},100,0.,1.,\textcolor{stringliteral}{"x value"},\textcolor{stringliteral}{"entries"});
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & histogram name (unique histogram identifier) \\
+\hline
+{\em title} & histogram title \\
+\hline
+{\em nxbins} & number of bins on x axis \\
+\hline
+{\em xmin} & lower boundary of x value range \\
+\hline
+{\em xmax} & upper boundary of x value range \\
+\hline
+{\em xtitle} & x axis title (optional, default is no title) \\
+\hline
+{\em ytitle} & y axis title (optional, default is no title) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 95 of file Analysis\+Helper\+Core.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!book2D@{book2D}}
+\index{book2D@{book2D}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{book2\+D(const std\+::string \&name, const std\+::string \&title, int nxbins, double xmin, double xmax, int nybins, double ymin, double ymax, const std\+::string xtitle="""", const std\+::string \&ytitle="""", const std\+::string \&ztitle="""")}{book2D(const std::string &name, const std::string &title, int nxbins, double xmin, double xmax, int nybins, double ymin, double ymax, const std::string xtitle="", const std::string &ytitle="", const std::string &ztitle="")}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class H $>$ static H$\ast$ Analysis\+Helper\+::book2D (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{nxbins, }
+\item[{double}]{xmin, }
+\item[{double}]{xmax, }
+\item[{int}]{nybins, }
+\item[{double}]{ymin, }
+\item[{double}]{ymax, }
+\item[{const std\+::string}]{xtitle = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const std\+::string \&}]{ytitle = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const std\+::string \&}]{ztitle = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_aeaac2042accbd686e35518691e6b181b}{}\label{structAnalysisHelper_aeaac2042accbd686e35518691e6b181b}
+
+
+Book 2d histogram (any R\+O\+OT type like T\+H2D, T\+H2F, T\+Profile2D, ...) 
+
+\begin{DoxyReturn}{Returns}
+pointer to histogram of user specified type.
+\end{DoxyReturn}
+This function automatically registers the booked histogram with a background histogram manager. This way the histogram is added to the output list and written out if {\ttfamily \hyperlink{structAnalysisHelper_a8d8a117fe4692b12e538cf9f7b922e3a}{Analysis\+Helper\+::write\+Hists()}} is invoked. It also invokes the {\ttfamily T\+H1\+::\+Sumw2()} method for correct error treatment. The template specifier should be the desired concrete histogram type.
+
+Example\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// book histogram}
+TH1D* h = AnalysisHelper::book1D<TH1D>(\textcolor{stringliteral}{"test"},\textcolor{stringliteral}{"test"},100,0.,1.);
+\textcolor{comment}{// fill histogram}
+h->Fill(0.5);
+\textcolor{comment}{// write histogram to file "test.root"}
+\hyperlink{structAnalysisHelper_a8d8a117fe4692b12e538cf9f7b922e3a}{AnalysisHelper::writeHists}(\textcolor{stringliteral}{"test.root"});
+\end{DoxyCode}
+
+
+If axis titles should be saved with the histogram, do for titles on both axis (\char`\"{}entries\char`\"{} can be omitted to not add a title to the y axis).
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// book histogram }
+TH1D* h = AnalysisHelper::book1D<TH1D>(\textcolor{stringliteral}{"test"},\textcolor{stringliteral}{"test"},100,0.,1.,\textcolor{stringliteral}{"x value"},\textcolor{stringliteral}{"entries"});
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & histogram name (unique histogram identifier) \\
+\hline
+{\em title} & histogram title \\
+\hline
+{\em nxbins} & number of bins on x axis \\
+\hline
+{\em xmin} & lower boundary of x value range \\
+\hline
+{\em xmax} & upper boundary of x value range \\
+\hline
+{\em xtitle} & x axis title (optional, default is no title) \\
+\hline
+{\em ytitle} & y axis title (optional, default is no title) \\
+\hline
+{\em nybins} & number of bins on y axis \\
+\hline
+{\em ymin} & lower boundary of y value range \\
+\hline
+{\em ymax} & upper boundary of y value range \\
+\hline
+{\em ztitle} & z axis title (optional, default is no title) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 111 of file Analysis\+Helper\+Core.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!write\+Hists@{write\+Hists}}
+\index{write\+Hists@{write\+Hists}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{write\+Hists(const std\+::string \&fname, const std\+::string \&ftag=""R\+E\+C\+R\+E\+A\+TE"", bool noempty=true)}{writeHists(const std::string &fname, const std::string &ftag="RECREATE", bool noempty=true)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Analysis\+Helper\+::write\+Hists (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{fname, }
+\item[{const std\+::string \&}]{ftag = {\ttfamily \char`\"{}RECREATE\char`\"{}}, }
+\item[{bool}]{noempty = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a8d8a117fe4692b12e538cf9f7b922e3a}{}\label{structAnalysisHelper_a8d8a117fe4692b12e538cf9f7b922e3a}
+
+
+Write histograms to file. 
+
+\begin{DoxyReturn}{Returns}
+Returns the number of histograms written to file. A return value of -\/1 indicates a file problem.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & name of file to be written to (should have the \char`\"{}.\+root\char`\"{} extension) \\
+\hline
+{\em ftag} & tag associated with file access (optional argument); default {\ttfamily R\+E\+C\+R\+E\+A\+TE} -\/ overwite existing file with same name, alternative is {\ttfamily W\+R\+I\+TE} -\/ create a new file for output which fails of a file with the same given name already exists \\
+\hline
+{\em noempty} & flag to control histogram output (optional argument); default {\ttfamily true} suppresses saving empty histograms to file; if {\ttfamily false} all histograms are written \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 129 of file Analysis\+Helper\+Core.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{AnalysisHelperCore_8h}{Analysis\+Helper\+Core.\+h}\end{DoxyCompactItemize}

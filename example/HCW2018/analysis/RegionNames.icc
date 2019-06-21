@@ -1,0 +1,5 @@
+// -*- c++ -*-
+#ifndef REGIONNAMES_ICC
+#define REGIONNAMES_ICC
+std::vector<std::string> regionNames = { "00_15", "15_25", "25_32", "32_49" };
+#endif

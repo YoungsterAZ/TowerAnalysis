@@ -1,0 +1,795 @@
+\hypertarget{structAnalysisHelper}{}\section{Analysis\+Helper Struct Reference}
+\label{structAnalysisHelper}\index{Analysis\+Helper@{Analysis\+Helper}}
+
+
+Collection of useful functions to support analysis.  
+
+
+
+
+{\ttfamily \#include $<$Analysis\+Helper.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structAnalysisHelper_1_1CaloSignal}{Calo\+Signal}
+\begin{DoxyCompactList}\small\item\em Pseudo\+Jet representation of calorimeter signals (general aspects) \end{DoxyCompactList}\item 
+struct \hyperlink{structAnalysisHelper_1_1Event}{Event}
+\item 
+struct \hyperlink{structAnalysisHelper_1_1FastJet}{Fast\+Jet}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structAnalysisHelper_1_1FastJet}{Fast\+Jet} helpers. \end{DoxyCompactList}\item 
+struct \hyperlink{structAnalysisHelper_1_1PseudoJetGetter}{Pseudo\+Jet\+Getter}
+\item 
+struct \hyperlink{structAnalysisHelper_1_1TopoCluster}{Topo\+Cluster}
+\begin{DoxyCompactList}\small\item\em Pseudo\+Jet representation of topo-\/cluster. \end{DoxyCompactList}\item 
+struct \hyperlink{structAnalysisHelper_1_1TopoTower}{Topo\+Tower}
+\begin{DoxyCompactList}\small\item\em Pseudo\+Jet representation of standard topo-\/tower $ \Delta\eta\times\Delta\phi = 0.1\times 0.1 $. \end{DoxyCompactList}\item 
+struct \hyperlink{structAnalysisHelper_1_1TopoTowerFine}{Topo\+Tower\+Fine}
+\begin{DoxyCompactList}\small\item\em Pseudo\+Jet representation of topo-\/tower. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{structAnalysisHelper_aa57f0b93d44ecf911f696233d1261536}{read\+Cfg} (const std\+::string \&fname)
+\begin{DoxyCompactList}\small\item\em Read configuration file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class H $>$ }\\static H $\ast$ \hyperlink{structAnalysisHelper_a48c5bba742f7eebaffd6d925031ddeeb}{book1D} (const std\+::string \&name, const std\+::string \&title, int nbins, double xmin, double xmax, const std\+::string xtitle=\char`\"{}\char`\"{}, const std\+::string \&ytitle=\char`\"{}\char`\"{})
+\item 
+{\footnotesize template$<$class H $>$ }\\static H $\ast$ \hyperlink{structAnalysisHelper_a868cc395e90f06fa8a63a2f5fbbef4c6}{book2D} (const std\+::string \&name, const std\+::string \&title, int nxbins, double xmin, double xmax, int nybins, double ymin, double ymax, const std\+::string xtitle=\char`\"{}\char`\"{}, const std\+::string \&ytitle=\char`\"{}\char`\"{})
+\item 
+static int \hyperlink{structAnalysisHelper_a8d8a117fe4692b12e538cf9f7b922e3a}{write\+Hists} (const std\+::string \&fname, const std\+::string \&ftag=\char`\"{}R\+E\+C\+R\+E\+A\+TE\char`\"{}, bool noempty=true)
+\item 
+static void \hyperlink{structAnalysisHelper_af9edc04923cd574a2b32773657355b3e}{print\+Calo\+Signal} (const std\+::string \&module, const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&pj\+Vec)
+\item 
+{\footnotesize template$<$class T $>$ }\\static std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \hyperlink{structAnalysisHelper_ab4bb8ee731c60efc2ac291c9de4e6c01}{apply\+Lepton\+Isolation} (T $\ast$data, const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&jets)
+\item 
+static std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \hyperlink{structAnalysisHelper_aa5434096d3f526cdd97288f61935dea4}{find\+Jets} (const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&input, double p\+Tmin, double rap\+Min, double rap\+Max, const fastjet\+::\+Jet\+Definition \&jet\+Def, const fastjet\+::\+Area\+Definition \&area\+Def)
+\item 
+{\footnotesize template$<$class T $>$ }\\static std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \hyperlink{structAnalysisHelper_ac00152ad334bb568f92c0408c763a8ce}{topo\+Cluster\+Jets} (T $\ast$data, const std\+::string \&scale=\char`\"{}lcw\char`\"{}, double p\+Tmin=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_af7dbdbda43aa5be9d83a31fc3b41ac14}{Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin}, double rap\+Min=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_a5e056f65c8f2f9b0ad358760fc0f4481}{Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min}, double rap\+Max=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_ada7395a2f03291db87208b68e4030d92}{Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max}, fastjet\+::\+Jet\+Definition jet\+Def=\hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_ae0c23bbd5e0420037cbbb9f7929da17f}{Analysis\+::\+Config\+::\+Reco\+Jet\+::definition}, fastjet\+::\+Area\+Definition area\+Def=\hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_a327f69062972ac03aac1dd7464fe778b}{Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def})
+\item 
+static std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \hyperlink{structAnalysisHelper_a893662e8309586c09aaf8109896fbe11}{topo\+Cluster\+Jets} (const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&csig, double p\+Tmin=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_af7dbdbda43aa5be9d83a31fc3b41ac14}{Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin}, double rap\+Min=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_a5e056f65c8f2f9b0ad358760fc0f4481}{Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min}, double rap\+Max=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_ada7395a2f03291db87208b68e4030d92}{Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max}, fastjet\+::\+Jet\+Definition jet\+Def=\hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_ae0c23bbd5e0420037cbbb9f7929da17f}{Analysis\+::\+Config\+::\+Reco\+Jet\+::definition}, fastjet\+::\+Area\+Definition area\+Def=\hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_a327f69062972ac03aac1dd7464fe778b}{Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def})
+\item 
+{\footnotesize template$<$class T $>$ }\\static std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \hyperlink{structAnalysisHelper_abefdecbf82a252f475a15879fefdf22b}{topo\+Tower\+Jets} (T $\ast$data, const std\+::string \&scale=\char`\"{}lcw\char`\"{}, double p\+Tmin=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_af7dbdbda43aa5be9d83a31fc3b41ac14}{Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin}, double rap\+Min=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_a5e056f65c8f2f9b0ad358760fc0f4481}{Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min}, double rap\+Max=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_ada7395a2f03291db87208b68e4030d92}{Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max}, fastjet\+::\+Jet\+Definition jet\+Def=\hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_ae0c23bbd5e0420037cbbb9f7929da17f}{Analysis\+::\+Config\+::\+Reco\+Jet\+::definition}, fastjet\+::\+Area\+Definition area\+Def=\hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_a327f69062972ac03aac1dd7464fe778b}{Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def})
+\item 
+static std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \hyperlink{structAnalysisHelper_a995bbedf564a8eaeae68e2b2971081ae}{topo\+Tower\+Jets} (const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&csig, double p\+Tmin=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_af7dbdbda43aa5be9d83a31fc3b41ac14}{Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin}, double rap\+Min=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_a5e056f65c8f2f9b0ad358760fc0f4481}{Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min}, double rap\+Max=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_ada7395a2f03291db87208b68e4030d92}{Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max}, fastjet\+::\+Jet\+Definition jet\+Def=\hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_ae0c23bbd5e0420037cbbb9f7929da17f}{Analysis\+::\+Config\+::\+Reco\+Jet\+::definition}, fastjet\+::\+Area\+Definition area\+Def=\hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_a327f69062972ac03aac1dd7464fe778b}{Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def})
+\item 
+{\footnotesize template$<$class T $>$ }\\static std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \hyperlink{structAnalysisHelper_a2e958064b95043ba9ee041addb45e9de}{topo\+Tower\+Fine\+Jets} (T $\ast$data, const std\+::string \&scale=\char`\"{}lcw\char`\"{}, double p\+Tmin=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_af7dbdbda43aa5be9d83a31fc3b41ac14}{Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin}, double rap\+Min=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_a5e056f65c8f2f9b0ad358760fc0f4481}{Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min}, double rap\+Max=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_ada7395a2f03291db87208b68e4030d92}{Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max}, fastjet\+::\+Jet\+Definition jet\+Def=\hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_ae0c23bbd5e0420037cbbb9f7929da17f}{Analysis\+::\+Config\+::\+Reco\+Jet\+::definition}, fastjet\+::\+Area\+Definition area\+Def=\hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_a327f69062972ac03aac1dd7464fe778b}{Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def})
+\item 
+static std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \hyperlink{structAnalysisHelper_a252c063dc80a8b79e6248038269bbb9d}{topo\+Tower\+Fine\+Jets} (const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&csig, double p\+Tmin=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_af7dbdbda43aa5be9d83a31fc3b41ac14}{Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin}, double rap\+Min=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_a5e056f65c8f2f9b0ad358760fc0f4481}{Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min}, double rap\+Max=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_ada7395a2f03291db87208b68e4030d92}{Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max}, fastjet\+::\+Jet\+Definition jet\+Def=\hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_ae0c23bbd5e0420037cbbb9f7929da17f}{Analysis\+::\+Config\+::\+Reco\+Jet\+::definition}, fastjet\+::\+Area\+Definition area\+Def=\hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_a327f69062972ac03aac1dd7464fe778b}{Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def})
+\item 
+{\footnotesize template$<$class T $>$ }\\static std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \hyperlink{structAnalysisHelper_a40295de22cc9dc83894510aa373763e2}{calo\+Jets} (const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&csig, double p\+Tmin=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_af7dbdbda43aa5be9d83a31fc3b41ac14}{Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin}, double rap\+Min=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_a5e056f65c8f2f9b0ad358760fc0f4481}{Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min}, double rap\+Max=\hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_ada7395a2f03291db87208b68e4030d92}{Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max}, fastjet\+::\+Jet\+Definition jet\+Def=\hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_ae0c23bbd5e0420037cbbb9f7929da17f}{Analysis\+::\+Config\+::\+Reco\+Jet\+::definition}, fastjet\+::\+Area\+Definition area\+Def=\hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_a327f69062972ac03aac1dd7464fe778b}{Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def})
+\item 
+{\footnotesize template$<$class T $>$ }\\static std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \hyperlink{structAnalysisHelper_ab026a5fb00af407a144f3cd990f00fe4}{truth\+Jets} (T $\ast$data, double p\+Tmin, double rap\+Min, double rap\+Max, bool do\+Lepton\+Isol=true)
+\item 
+{\footnotesize template$<$class T $>$ }\\static std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \hyperlink{structAnalysisHelper_af341b0497231263281ad0b12cd15e832}{truth\+Jets} (T $\ast$data, fastjet\+::\+Jet\+Definition jet\+Def=\hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_a15280a9c639a88c02bf1e3794b6ec29d}{Analysis\+::\+Config\+::\+Truth\+Jet\+::definition}, fastjet\+::\+Area\+Definition area\+Def=\hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_aaaf974e7a2655200c6cd5aa5b6f86f90}{Analysis\+::\+Config\+::\+Truth\+Jet\+::area\+Def}, double p\+Tmin=\hyperlink{namespaceAnalysis_1_1Select_1_1TruthJet_a861b3fa8b899e322a5f8a8d04a707220}{Analysis\+::\+Select\+::\+Truth\+Jet\+::p\+Tmin}, double rap\+Min=\hyperlink{namespaceAnalysis_1_1Select_1_1TruthJet_ac25d5e19383f354b51fb4eec2d0b5d97}{Analysis\+::\+Select\+::\+Truth\+Jet\+::rap\+Min}, double rap\+Max=\hyperlink{namespaceAnalysis_1_1Select_1_1TruthJet_a1f15c201f6726e1fb1251c65df7204cf}{Analysis\+::\+Select\+::\+Truth\+Jet\+::rap\+Max})
+\item 
+static size\+\_\+t \hyperlink{structAnalysisHelper_a509f97174575766528894801855cfd77}{match\+Jets} (const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&\hyperlink{structAnalysisHelper_ab026a5fb00af407a144f3cd990f00fe4}{truth\+Jets}, const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&reco\+Jets, std\+::vector$<$ int $>$ \&truth\+Jet\+Idx, std\+::vector$<$ int $>$ \&reco\+Jet\+Idx, std\+::vector$<$ double $>$ \&deltaR, double r\+Match=\hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_ad59f2cab2bdc032b32b4ce0321ecfbb1}{Analysis\+::\+Select\+::\+Matched\+Jet\+::matchR})
+\item 
+static bool \hyperlink{structAnalysisHelper_a104c3904efd47e507f7e20aa4096ab5c}{check\+Min\+Dist} (const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&pjet, size\+\_\+t njets, double p\+Tmin)
+\item 
+static bool \hyperlink{structAnalysisHelper_a5a7154a962779f54caa41a223b0a3225}{invariant\+Mass} (const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&jets, double \&minv, size\+\_\+t \&ijet, size\+\_\+t \&jjet)
+\item 
+static double \hyperlink{structAnalysisHelper_a9c7d26925c1bb55a5f71a29c03a84c9d}{invariant\+Mass} (const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&jets, size\+\_\+t \&n\+Jets, size\+\_\+t n\+Jets\+Max, double minM)
+\item 
+static double \hyperlink{structAnalysisHelper_ac1de158225503c4bf21b28c80f57aa5b}{invariant\+Mass} (const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&jets, size\+\_\+t \&n\+Jets)
+\item 
+{\footnotesize template$<$class T $>$ }\\static double \hyperlink{structAnalysisHelper_a0644063767044703c33477d0219ad82a}{calculate\+Truth\+Jet\+P\+TD} (T $\ast$data, const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static double \hyperlink{structAnalysisHelper_ad8db9b718fc465ce1ba1335d70f4d7ae}{calculate\+P\+TD} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static double \hyperlink{structAnalysisHelper_a93bc92874d7f2ace01aa6c7263bd5fff}{calculate\+Calo\+Jet\+P\+TD} (const fastjet\+::\+Pseudo\+Jet \&cjet)
+\item 
+static \hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdb}{Analysis\+::\+Select\+::\+Event\+::\+Failure\+Lvl} \hyperlink{structAnalysisHelper_a11ae81406fba4d4220ff2a0ee295cd2b}{accept\+Truth\+Jet\+Event} (const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&\hyperlink{structAnalysisHelper_ab026a5fb00af407a144f3cd990f00fe4}{truth\+Jets}, unsigned int \&pass\+Lvl, size\+\_\+t \&i\+Jet, size\+\_\+t \&j\+Jet, double \&inv\+Mass, double \&rap\+Gap)
+\item 
+static int \hyperlink{structAnalysisHelper_a606fb197c293e08f782e4f63bfd72e86}{ndigits} (int n)
+\item 
+static size\+\_\+t \hyperlink{structAnalysisHelper_ae90a02cc4c75381b3f4f89a11d3d8086}{num\+Constits} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static void \hyperlink{structAnalysisHelper_af0d142b1a86984f4f91ee8fe305a6223}{print\+Banner} (const std\+::string \&module, \hyperlink{namespaceAnalysis_1_1Config_1_1Input_a4fbe1ba2d37856e6b9784b4999d5268a}{Analysis\+::\+Config\+::\+Input\+::\+Selector} sel)
+\item 
+static void \hyperlink{structAnalysisHelper_a83df30344dbb309403b9010f6bf785b0}{print\+Banner} (const std\+::string \&module, const std\+::string \&signal)
+\item 
+static int \hyperlink{structAnalysisHelper_ab8c81f26a5c90ec94349606e30be0bbc}{print\+Pulse} (const std\+::string \&module, int nevt, int ntot)
+\item 
+static std\+::vector$<$ int $>$ \hyperlink{structAnalysisHelper_ac5e8954f898f2e9f131239bf9ba5b120}{get\+Signal\+Jets} (const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&pjvec, std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&sigpj, double ptmin, double rho, double sigma)
+\item 
+static std\+::vector$<$ int $>$ \hyperlink{structAnalysisHelper_ad2424142d8b7535bc84f3818b29f572b}{get\+Signal\+Jets} (const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&pjvec, std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&sigpj, double rho, double sigma)
+\item 
+static std\+::vector$<$ int $>$ \hyperlink{structAnalysisHelper_a7815615d415341f476c0c94547186d04}{get\+Signal\+Jets} (const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&pjvec, std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&sigpj, \hyperlink{classSlidingWindow_1_1Window}{Sliding\+Window\+::\+Window} \&rho\+Prof, double ptmin)
+\item 
+static std\+::vector$<$ int $>$ \hyperlink{structAnalysisHelper_a74b9a8522485671658a2ce7e41335234}{get\+Signal\+Jets} (const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&pjvec, std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&sigpj, \hyperlink{classSlidingWindow_1_1Window}{Sliding\+Window\+::\+Window} \&rho\+Prof)
+\item 
+static std\+::vector$<$ int $>$ \hyperlink{structAnalysisHelper_afd6b9f18847c6e0d1848b16807caebb1}{get\+Signal\+Jets} (const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&pjvec, std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&sigpj, \hyperlink{classSlidingWindow_1_1Window}{Sliding\+Window\+::\+Window} \&rho\+Prof, double ptmin, bool use\+Sigma, double rap\+Min=\hyperlink{namespaceAnalysis_1_1Config_1_1RhoProfile_a6a12ebe70b6648825eead16dff1159fd}{Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Min}, double rap\+Max=\hyperlink{namespaceAnalysis_1_1Config_1_1RhoProfile_ab78a2585916e0761da7090b86d5c762b}{Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Max})
+\item 
+static std\+::vector$<$ int $>$ \hyperlink{structAnalysisHelper_a17353636d708a92d6968f406a1fbc1c9}{get\+Signal\+Jets} (const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&pjvec, std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&sigpj, \hyperlink{classSlidingWindow_1_1Window}{Sliding\+Window\+::\+Window} \&rho\+Prof, bool use\+Sigma, double rap\+Min=\hyperlink{namespaceAnalysis_1_1Config_1_1RhoProfile_a6a12ebe70b6648825eead16dff1159fd}{Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Min}, double rap\+Max=\hyperlink{namespaceAnalysis_1_1Config_1_1RhoProfile_ab78a2585916e0761da7090b86d5c762b}{Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Max})
+\item 
+{\footnotesize template$<$class H $>$ }\\static H $\ast$ \hyperlink{structAnalysisHelper_aed9c208e64246584fdd10a188121c137}{book1D} (const std\+::string \&name, const std\+::string \&title, int nxbins, double xmin, double xmax, const std\+::string xtitle=\char`\"{}\char`\"{}, const std\+::string \&ytitle=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em @ brief Book 1d histogram (any R\+O\+OT type like T\+H1D, T\+H1F, T\+Profile, ...) \end{DoxyCompactList}\item 
+{\footnotesize template$<$class H $>$ }\\static H $\ast$ \hyperlink{structAnalysisHelper_aeaac2042accbd686e35518691e6b181b}{book2D} (const std\+::string \&name, const std\+::string \&title, int nxbins, double xmin, double xmax, int nybins, double ymin, double ymax, const std\+::string xtitle=\char`\"{}\char`\"{}, const std\+::string \&ytitle=\char`\"{}\char`\"{}, const std\+::string \&ztitle=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Book 2d histogram (any R\+O\+OT type like T\+H2D, T\+H2F, T\+Profile2D, ...) \end{DoxyCompactList}\item 
+static int \hyperlink{structAnalysisHelper_a8d8a117fe4692b12e538cf9f7b922e3a}{write\+Hists} (const std\+::string \&fname, const std\+::string \&ftag=\char`\"{}R\+E\+C\+R\+E\+A\+TE\char`\"{}, bool noempty=true)
+\begin{DoxyCompactList}\small\item\em Write histograms to file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Collection of useful functions to support analysis. 
+
+\hyperlink{namespaceAnalysis}{Analysis} helper functions.
+
+The {\ttfamily \hyperlink{structAnalysisHelper}{Analysis\+Helper}} strcuture can also be referred to as {\ttfamily AH} .
+
+This is implemented as a {\ttfamily struct} to avoid warnings concerning unused functions in name spaces (to be fixed?) 
+
+Definition at line 204 of file Analysis\+Helper.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{Analysis\+Helper@{Analysis\+Helper}!accept\+Truth\+Jet\+Event@{accept\+Truth\+Jet\+Event}}
+\index{accept\+Truth\+Jet\+Event@{accept\+Truth\+Jet\+Event}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{accept\+Truth\+Jet\+Event(const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&truth\+Jets, unsigned int \&pass\+Lvl, size\+\_\+t \&i\+Jet, size\+\_\+t \&j\+Jet, double \&inv\+Mass, double \&rap\+Gap)}{acceptTruthJetEvent(const std::vector< fastjet::PseudoJet > &truthJets, unsigned int &passLvl, size_t &iJet, size_t &jJet, double &invMass, double &rapGap)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Analysis\+::\+Select\+::\+Event\+::\+Failure\+Lvl} Analysis\+Helper\+::accept\+Truth\+Jet\+Event (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{truth\+Jets, }
+\item[{unsigned int \&}]{pass\+Lvl, }
+\item[{size\+\_\+t \&}]{i\+Jet, }
+\item[{size\+\_\+t \&}]{j\+Jet, }
+\item[{double \&}]{inv\+Mass, }
+\item[{double \&}]{rap\+Gap}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a11ae81406fba4d4220ff2a0ee295cd2b}{}\label{structAnalysisHelper_a11ae81406fba4d4220ff2a0ee295cd2b}
+
+
+Definition at line 1047 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!apply\+Lepton\+Isolation@{apply\+Lepton\+Isolation}}
+\index{apply\+Lepton\+Isolation@{apply\+Lepton\+Isolation}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{apply\+Lepton\+Isolation(\+T $\ast$data, const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&jets)}{applyLeptonIsolation(T *data, const std::vector< fastjet::PseudoJet > &jets)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ static std\+::vector$<$fastjet\+::\+Pseudo\+Jet$>$ Analysis\+Helper\+::apply\+Lepton\+Isolation (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{data, }
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{jets}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_ab4bb8ee731c60efc2ac291c9de4e6c01}{}\label{structAnalysisHelper_ab4bb8ee731c60efc2ac291c9de4e6c01}
+
+
+Definition at line 739 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!book1D@{book1D}}
+\index{book1D@{book1D}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{book1\+D(const std\+::string \&name, const std\+::string \&title, int nxbins, double xmin, double xmax, const std\+::string xtitle="""", const std\+::string \&ytitle="""")}{book1D(const std::string &name, const std::string &title, int nxbins, double xmin, double xmax, const std::string xtitle="", const std::string &ytitle="")}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class H $>$ static H$\ast$ Analysis\+Helper\+::book1D (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{nxbins, }
+\item[{double}]{xmin, }
+\item[{double}]{xmax, }
+\item[{const std\+::string}]{xtitle = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const std\+::string \&}]{ytitle = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_aed9c208e64246584fdd10a188121c137}{}\label{structAnalysisHelper_aed9c208e64246584fdd10a188121c137}
+
+
+@ brief Book 1d histogram (any R\+O\+OT type like T\+H1D, T\+H1F, T\+Profile, ...) 
+
+\begin{DoxyReturn}{Returns}
+pointer to histogram of user specified type.
+\end{DoxyReturn}
+This function automatically registers the booked histogram with a background histogram manager. This way the histogram is added to the output list and written out if {\ttfamily \hyperlink{structAnalysisHelper_a8d8a117fe4692b12e538cf9f7b922e3a}{Analysis\+Helper\+::write\+Hists()}} is invoked. It also invokes the {\ttfamily T\+H1\+::\+Sumw2()} method for correct error treatment. The template specifier should be the desired concrete histogram type.
+
+Example\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// book histogram}
+TH1D* h = AnalysisHelper::book1D<TH1D>(\textcolor{stringliteral}{"test"},\textcolor{stringliteral}{"test"},100,0.,1.);
+\textcolor{comment}{// fill histogram}
+h->Fill(0.5);
+\textcolor{comment}{// write histogram to file "test.root"}
+\hyperlink{structAnalysisHelper_a8d8a117fe4692b12e538cf9f7b922e3a}{AnalysisHelper::writeHists}(\textcolor{stringliteral}{"test.root"});
+\end{DoxyCode}
+
+
+If axis titles should be saved with the histogram, do for titles on both axis (\char`\"{}entries\char`\"{} can be omitted to not add a title to the y axis).
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// book histogram }
+TH1D* h = AnalysisHelper::book1D<TH1D>(\textcolor{stringliteral}{"test"},\textcolor{stringliteral}{"test"},100,0.,1.,\textcolor{stringliteral}{"x value"},\textcolor{stringliteral}{"entries"});
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & histogram name (unique histogram identifier) \\
+\hline
+{\em title} & histogram title \\
+\hline
+{\em nxbins} & number of bins on x axis \\
+\hline
+{\em xmin} & lower boundary of x value range \\
+\hline
+{\em xmax} & upper boundary of x value range \\
+\hline
+{\em xtitle} & x axis title (optional, default is no title) \\
+\hline
+{\em ytitle} & y axis title (optional, default is no title) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 95 of file Analysis\+Helper\+Core.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!book1D@{book1D}}
+\index{book1D@{book1D}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{book1\+D(const std\+::string \&name, const std\+::string \&title, int nbins, double xmin, double xmax, const std\+::string xtitle="""", const std\+::string \&ytitle="""")}{book1D(const std::string &name, const std::string &title, int nbins, double xmin, double xmax, const std::string xtitle="", const std::string &ytitle="")}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class H $>$ static H$\ast$ Analysis\+Helper\+::book1D (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{nbins, }
+\item[{double}]{xmin, }
+\item[{double}]{xmax, }
+\item[{const std\+::string}]{xtitle = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const std\+::string \&}]{ytitle = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a48c5bba742f7eebaffd6d925031ddeeb}{}\label{structAnalysisHelper_a48c5bba742f7eebaffd6d925031ddeeb}
+
+
+Definition at line 504 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!book2D@{book2D}}
+\index{book2D@{book2D}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{book2\+D(const std\+::string \&name, const std\+::string \&title, int nxbins, double xmin, double xmax, int nybins, double ymin, double ymax, const std\+::string xtitle="""", const std\+::string \&ytitle="""", const std\+::string \&ztitle="""")}{book2D(const std::string &name, const std::string &title, int nxbins, double xmin, double xmax, int nybins, double ymin, double ymax, const std::string xtitle="", const std::string &ytitle="", const std::string &ztitle="")}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class H $>$ static H$\ast$ Analysis\+Helper\+::book2D (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{nxbins, }
+\item[{double}]{xmin, }
+\item[{double}]{xmax, }
+\item[{int}]{nybins, }
+\item[{double}]{ymin, }
+\item[{double}]{ymax, }
+\item[{const std\+::string}]{xtitle = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const std\+::string \&}]{ytitle = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const std\+::string \&}]{ztitle = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_aeaac2042accbd686e35518691e6b181b}{}\label{structAnalysisHelper_aeaac2042accbd686e35518691e6b181b}
+
+
+Book 2d histogram (any R\+O\+OT type like T\+H2D, T\+H2F, T\+Profile2D, ...) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nybins} & number of bins on y axis \\
+\hline
+{\em ymin} & lower boundary of y value range \\
+\hline
+{\em ymax} & upper boundary of y value range \\
+\hline
+{\em ztitle} & z axis title (optional, default is no title) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 111 of file Analysis\+Helper\+Core.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!book2D@{book2D}}
+\index{book2D@{book2D}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{book2\+D(const std\+::string \&name, const std\+::string \&title, int nxbins, double xmin, double xmax, int nybins, double ymin, double ymax, const std\+::string xtitle="""", const std\+::string \&ytitle="""")}{book2D(const std::string &name, const std::string &title, int nxbins, double xmin, double xmax, int nybins, double ymin, double ymax, const std::string xtitle="", const std::string &ytitle="")}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class H $>$ static H$\ast$ Analysis\+Helper\+::book2D (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{nxbins, }
+\item[{double}]{xmin, }
+\item[{double}]{xmax, }
+\item[{int}]{nybins, }
+\item[{double}]{ymin, }
+\item[{double}]{ymax, }
+\item[{const std\+::string}]{xtitle = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const std\+::string \&}]{ytitle = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a868cc395e90f06fa8a63a2f5fbbef4c6}{}\label{structAnalysisHelper_a868cc395e90f06fa8a63a2f5fbbef4c6}
+
+
+Definition at line 515 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!calculate\+Calo\+Jet\+P\+TD@{calculate\+Calo\+Jet\+P\+TD}}
+\index{calculate\+Calo\+Jet\+P\+TD@{calculate\+Calo\+Jet\+P\+TD}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{calculate\+Calo\+Jet\+P\+T\+D(const fastjet\+::\+Pseudo\+Jet \&cjet)}{calculateCaloJetPTD(const fastjet::PseudoJet &cjet)}}]{\setlength{\rightskip}{0pt plus 5cm}static double Analysis\+Helper\+::calculate\+Calo\+Jet\+P\+TD (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{cjet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a93bc92874d7f2ace01aa6c7263bd5fff}{}\label{structAnalysisHelper_a93bc92874d7f2ace01aa6c7263bd5fff}
+
+
+Definition at line 1023 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!calculate\+P\+TD@{calculate\+P\+TD}}
+\index{calculate\+P\+TD@{calculate\+P\+TD}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{calculate\+P\+T\+D(const fastjet\+::\+Pseudo\+Jet \&pj)}{calculatePTD(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static double Analysis\+Helper\+::calculate\+P\+TD (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_ad8db9b718fc465ce1ba1335d70f4d7ae}{}\label{structAnalysisHelper_ad8db9b718fc465ce1ba1335d70f4d7ae}
+
+
+Definition at line 1011 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!calculate\+Truth\+Jet\+P\+TD@{calculate\+Truth\+Jet\+P\+TD}}
+\index{calculate\+Truth\+Jet\+P\+TD@{calculate\+Truth\+Jet\+P\+TD}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{calculate\+Truth\+Jet\+P\+T\+D(\+T $\ast$data, const fastjet\+::\+Pseudo\+Jet \&pj)}{calculateTruthJetPTD(T *data, const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ static double Analysis\+Helper\+::calculate\+Truth\+Jet\+P\+TD (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{data, }
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a0644063767044703c33477d0219ad82a}{}\label{structAnalysisHelper_a0644063767044703c33477d0219ad82a}
+
+
+Definition at line 997 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!calo\+Jets@{calo\+Jets}}
+\index{calo\+Jets@{calo\+Jets}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{calo\+Jets(const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&csig, double p\+Tmin=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin, double rap\+Min=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min, double rap\+Max=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max, fastjet\+::\+Jet\+Definition jet\+Def=\+Analysis\+::\+Config\+::\+Reco\+Jet\+::definition, fastjet\+::\+Area\+Definition area\+Def=\+Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def)}{caloJets(const std::vector< fastjet::PseudoJet > &csig, double pTmin=Analysis::Select::RecoJet::pTmin, double rapMin=Analysis::Select::RecoJet::rapMin, double rapMax=Analysis::Select::RecoJet::rapMax, fastjet::JetDefinition jetDef=Analysis::Config::RecoJet::definition, fastjet::AreaDefinition areaDef=Analysis::Config::RecoJet::areaDef)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ static std\+::vector$<$fastjet\+::\+Pseudo\+Jet$>$ Analysis\+Helper\+::calo\+Jets (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{csig, }
+\item[{double}]{p\+Tmin = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin}}, }
+\item[{double}]{rap\+Min = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min}}, }
+\item[{double}]{rap\+Max = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max}}, }
+\item[{fastjet\+::\+Jet\+Definition}]{jet\+Def = {\ttfamily {\bf Analysis\+::\+Config\+::\+Reco\+Jet\+::definition}}, }
+\item[{fastjet\+::\+Area\+Definition}]{area\+Def = {\ttfamily {\bf Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a40295de22cc9dc83894510aa373763e2}{}\label{structAnalysisHelper_a40295de22cc9dc83894510aa373763e2}
+
+
+Definition at line 829 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!check\+Min\+Dist@{check\+Min\+Dist}}
+\index{check\+Min\+Dist@{check\+Min\+Dist}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{check\+Min\+Dist(const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&pjet, size\+\_\+t njets, double p\+Tmin)}{checkMinDist(const std::vector< fastjet::PseudoJet > &pjet, size_t njets, double pTmin)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+Helper\+::check\+Min\+Dist (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{pjet, }
+\item[{size\+\_\+t}]{njets, }
+\item[{double}]{p\+Tmin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a104c3904efd47e507f7e20aa4096ab5c}{}\label{structAnalysisHelper_a104c3904efd47e507f7e20aa4096ab5c}
+
+
+Definition at line 930 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!find\+Jets@{find\+Jets}}
+\index{find\+Jets@{find\+Jets}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{find\+Jets(const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&input, double p\+Tmin, double rap\+Min, double rap\+Max, const fastjet\+::\+Jet\+Definition \&jet\+Def, const fastjet\+::\+Area\+Definition \&area\+Def)}{findJets(const std::vector< fastjet::PseudoJet > &input, double pTmin, double rapMin, double rapMax, const fastjet::JetDefinition &jetDef, const fastjet::AreaDefinition &areaDef)}}]{\setlength{\rightskip}{0pt plus 5cm}static std\+::vector$<$fastjet\+::\+Pseudo\+Jet$>$ Analysis\+Helper\+::find\+Jets (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{input, }
+\item[{double}]{p\+Tmin, }
+\item[{double}]{rap\+Min, }
+\item[{double}]{rap\+Max, }
+\item[{const fastjet\+::\+Jet\+Definition \&}]{jet\+Def, }
+\item[{const fastjet\+::\+Area\+Definition \&}]{area\+Def}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_aa5434096d3f526cdd97288f61935dea4}{}\label{structAnalysisHelper_aa5434096d3f526cdd97288f61935dea4}
+
+
+Definition at line 760 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!get\+Signal\+Jets@{get\+Signal\+Jets}}
+\index{get\+Signal\+Jets@{get\+Signal\+Jets}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{get\+Signal\+Jets(const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&pjvec, std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&sigpj, double ptmin, double rho, double sigma)}{getSignalJets(const std::vector< fastjet::PseudoJet > &pjvec, std::vector< fastjet::PseudoJet > &sigpj, double ptmin, double rho, double sigma)}}]{\setlength{\rightskip}{0pt plus 5cm}static std\+::vector$<$int$>$ Analysis\+Helper\+::get\+Signal\+Jets (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{pjvec, }
+\item[{std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{sigpj, }
+\item[{double}]{ptmin, }
+\item[{double}]{rho, }
+\item[{double}]{sigma}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_ac5e8954f898f2e9f131239bf9ba5b120}{}\label{structAnalysisHelper_ac5e8954f898f2e9f131239bf9ba5b120}
+
+
+Definition at line 1193 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!get\+Signal\+Jets@{get\+Signal\+Jets}}
+\index{get\+Signal\+Jets@{get\+Signal\+Jets}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{get\+Signal\+Jets(const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&pjvec, std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&sigpj, double rho, double sigma)}{getSignalJets(const std::vector< fastjet::PseudoJet > &pjvec, std::vector< fastjet::PseudoJet > &sigpj, double rho, double sigma)}}]{\setlength{\rightskip}{0pt plus 5cm}static std\+::vector$<$int$>$ Analysis\+Helper\+::get\+Signal\+Jets (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{pjvec, }
+\item[{std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{sigpj, }
+\item[{double}]{rho, }
+\item[{double}]{sigma}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_ad2424142d8b7535bc84f3818b29f572b}{}\label{structAnalysisHelper_ad2424142d8b7535bc84f3818b29f572b}
+
+
+Definition at line 1205 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!get\+Signal\+Jets@{get\+Signal\+Jets}}
+\index{get\+Signal\+Jets@{get\+Signal\+Jets}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{get\+Signal\+Jets(const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&pjvec, std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&sigpj, Sliding\+Window\+::\+Window \&rho\+Prof, double ptmin)}{getSignalJets(const std::vector< fastjet::PseudoJet > &pjvec, std::vector< fastjet::PseudoJet > &sigpj, SlidingWindow::Window &rhoProf, double ptmin)}}]{\setlength{\rightskip}{0pt plus 5cm}static std\+::vector$<$int$>$ Analysis\+Helper\+::get\+Signal\+Jets (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{pjvec, }
+\item[{std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{sigpj, }
+\item[{{\bf Sliding\+Window\+::\+Window} \&}]{rho\+Prof, }
+\item[{double}]{ptmin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a7815615d415341f476c0c94547186d04}{}\label{structAnalysisHelper_a7815615d415341f476c0c94547186d04}
+
+
+Definition at line 1208 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!get\+Signal\+Jets@{get\+Signal\+Jets}}
+\index{get\+Signal\+Jets@{get\+Signal\+Jets}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{get\+Signal\+Jets(const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&pjvec, std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&sigpj, Sliding\+Window\+::\+Window \&rho\+Prof)}{getSignalJets(const std::vector< fastjet::PseudoJet > &pjvec, std::vector< fastjet::PseudoJet > &sigpj, SlidingWindow::Window &rhoProf)}}]{\setlength{\rightskip}{0pt plus 5cm}static std\+::vector$<$int$>$ Analysis\+Helper\+::get\+Signal\+Jets (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{pjvec, }
+\item[{std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{sigpj, }
+\item[{{\bf Sliding\+Window\+::\+Window} \&}]{rho\+Prof}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a74b9a8522485671658a2ce7e41335234}{}\label{structAnalysisHelper_a74b9a8522485671658a2ce7e41335234}
+
+
+Definition at line 1223 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!get\+Signal\+Jets@{get\+Signal\+Jets}}
+\index{get\+Signal\+Jets@{get\+Signal\+Jets}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{get\+Signal\+Jets(const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&pjvec, std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&sigpj, Sliding\+Window\+::\+Window \&rho\+Prof, double ptmin, bool use\+Sigma, double rap\+Min=\+Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Min, double rap\+Max=\+Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Max)}{getSignalJets(const std::vector< fastjet::PseudoJet > &pjvec, std::vector< fastjet::PseudoJet > &sigpj, SlidingWindow::Window &rhoProf, double ptmin, bool useSigma, double rapMin=Analysis::Config::RhoProfile::rapCtrlMin, double rapMax=Analysis::Config::RhoProfile::rapCtrlMax)}}]{\setlength{\rightskip}{0pt plus 5cm}static std\+::vector$<$int$>$ Analysis\+Helper\+::get\+Signal\+Jets (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{pjvec, }
+\item[{std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{sigpj, }
+\item[{{\bf Sliding\+Window\+::\+Window} \&}]{rho\+Prof, }
+\item[{double}]{ptmin, }
+\item[{bool}]{use\+Sigma, }
+\item[{double}]{rap\+Min = {\ttfamily {\bf Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Min}}, }
+\item[{double}]{rap\+Max = {\ttfamily {\bf Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Max}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_afd6b9f18847c6e0d1848b16807caebb1}{}\label{structAnalysisHelper_afd6b9f18847c6e0d1848b16807caebb1}
+
+
+Definition at line 1227 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!get\+Signal\+Jets@{get\+Signal\+Jets}}
+\index{get\+Signal\+Jets@{get\+Signal\+Jets}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{get\+Signal\+Jets(const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&pjvec, std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&sigpj, Sliding\+Window\+::\+Window \&rho\+Prof, bool use\+Sigma, double rap\+Min=\+Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Min, double rap\+Max=\+Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Max)}{getSignalJets(const std::vector< fastjet::PseudoJet > &pjvec, std::vector< fastjet::PseudoJet > &sigpj, SlidingWindow::Window &rhoProf, bool useSigma, double rapMin=Analysis::Config::RhoProfile::rapCtrlMin, double rapMax=Analysis::Config::RhoProfile::rapCtrlMax)}}]{\setlength{\rightskip}{0pt plus 5cm}static std\+::vector$<$int$>$ Analysis\+Helper\+::get\+Signal\+Jets (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{pjvec, }
+\item[{std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{sigpj, }
+\item[{{\bf Sliding\+Window\+::\+Window} \&}]{rho\+Prof, }
+\item[{bool}]{use\+Sigma, }
+\item[{double}]{rap\+Min = {\ttfamily {\bf Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Min}}, }
+\item[{double}]{rap\+Max = {\ttfamily {\bf Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Max}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a17353636d708a92d6968f406a1fbc1c9}{}\label{structAnalysisHelper_a17353636d708a92d6968f406a1fbc1c9}
+
+
+Definition at line 1247 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!invariant\+Mass@{invariant\+Mass}}
+\index{invariant\+Mass@{invariant\+Mass}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{invariant\+Mass(const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&jets, double \&minv, size\+\_\+t \&ijet, size\+\_\+t \&jjet)}{invariantMass(const std::vector< fastjet::PseudoJet > &jets, double &minv, size_t &ijet, size_t &jjet)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+Helper\+::invariant\+Mass (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{jets, }
+\item[{double \&}]{minv, }
+\item[{size\+\_\+t \&}]{ijet, }
+\item[{size\+\_\+t \&}]{jjet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a5a7154a962779f54caa41a223b0a3225}{}\label{structAnalysisHelper_a5a7154a962779f54caa41a223b0a3225}
+
+
+Definition at line 951 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!invariant\+Mass@{invariant\+Mass}}
+\index{invariant\+Mass@{invariant\+Mass}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{invariant\+Mass(const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&jets, size\+\_\+t \&n\+Jets, size\+\_\+t n\+Jets\+Max, double min\+M)}{invariantMass(const std::vector< fastjet::PseudoJet > &jets, size_t &nJets, size_t nJetsMax, double minM)}}]{\setlength{\rightskip}{0pt plus 5cm}static double Analysis\+Helper\+::invariant\+Mass (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{jets, }
+\item[{size\+\_\+t \&}]{n\+Jets, }
+\item[{size\+\_\+t}]{n\+Jets\+Max, }
+\item[{double}]{minM}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a9c7d26925c1bb55a5f71a29c03a84c9d}{}\label{structAnalysisHelper_a9c7d26925c1bb55a5f71a29c03a84c9d}
+
+
+Definition at line 985 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!invariant\+Mass@{invariant\+Mass}}
+\index{invariant\+Mass@{invariant\+Mass}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{invariant\+Mass(const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&jets, size\+\_\+t \&n\+Jets)}{invariantMass(const std::vector< fastjet::PseudoJet > &jets, size_t &nJets)}}]{\setlength{\rightskip}{0pt plus 5cm}static double Analysis\+Helper\+::invariant\+Mass (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{jets, }
+\item[{size\+\_\+t \&}]{n\+Jets}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_ac1de158225503c4bf21b28c80f57aa5b}{}\label{structAnalysisHelper_ac1de158225503c4bf21b28c80f57aa5b}
+
+
+Definition at line 993 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!match\+Jets@{match\+Jets}}
+\index{match\+Jets@{match\+Jets}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{match\+Jets(const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&truth\+Jets, const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&reco\+Jets, std\+::vector$<$ int $>$ \&truth\+Jet\+Idx, std\+::vector$<$ int $>$ \&reco\+Jet\+Idx, std\+::vector$<$ double $>$ \&delta\+R, double r\+Match=\+Analysis\+::\+Select\+::\+Matched\+Jet\+::match\+R)}{matchJets(const std::vector< fastjet::PseudoJet > &truthJets, const std::vector< fastjet::PseudoJet > &recoJets, std::vector< int > &truthJetIdx, std::vector< int > &recoJetIdx, std::vector< double > &deltaR, double rMatch=Analysis::Select::MatchedJet::matchR)}}]{\setlength{\rightskip}{0pt plus 5cm}static size\+\_\+t Analysis\+Helper\+::match\+Jets (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{truth\+Jets, }
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{reco\+Jets, }
+\item[{std\+::vector$<$ int $>$ \&}]{truth\+Jet\+Idx, }
+\item[{std\+::vector$<$ int $>$ \&}]{reco\+Jet\+Idx, }
+\item[{std\+::vector$<$ double $>$ \&}]{deltaR, }
+\item[{double}]{r\+Match = {\ttfamily {\bf Analysis\+::\+Select\+::\+Matched\+Jet\+::matchR}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a509f97174575766528894801855cfd77}{}\label{structAnalysisHelper_a509f97174575766528894801855cfd77}
+
+
+Definition at line 887 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!ndigits@{ndigits}}
+\index{ndigits@{ndigits}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{ndigits(int n)}{ndigits(int n)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Analysis\+Helper\+::ndigits (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a606fb197c293e08f782e4f63bfd72e86}{}\label{structAnalysisHelper_a606fb197c293e08f782e4f63bfd72e86}
+
+
+Definition at line 1090 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!num\+Constits@{num\+Constits}}
+\index{num\+Constits@{num\+Constits}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{num\+Constits(const fastjet\+::\+Pseudo\+Jet \&pj)}{numConstits(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static size\+\_\+t Analysis\+Helper\+::num\+Constits (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_ae90a02cc4c75381b3f4f89a11d3d8086}{}\label{structAnalysisHelper_ae90a02cc4c75381b3f4f89a11d3d8086}
+
+
+Definition at line 1094 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!print\+Banner@{print\+Banner}}
+\index{print\+Banner@{print\+Banner}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{print\+Banner(const std\+::string \&module, Analysis\+::\+Config\+::\+Input\+::\+Selector sel)}{printBanner(const std::string &module, Analysis::Config::Input::Selector sel)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Analysis\+Helper\+::print\+Banner (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{module, }
+\item[{{\bf Analysis\+::\+Config\+::\+Input\+::\+Selector}}]{sel}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_af0d142b1a86984f4f91ee8fe305a6223}{}\label{structAnalysisHelper_af0d142b1a86984f4f91ee8fe305a6223}
+
+
+Definition at line 1102 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!print\+Banner@{print\+Banner}}
+\index{print\+Banner@{print\+Banner}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{print\+Banner(const std\+::string \&module, const std\+::string \&signal)}{printBanner(const std::string &module, const std::string &signal)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Analysis\+Helper\+::print\+Banner (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{module, }
+\item[{const std\+::string \&}]{signal}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a83df30344dbb309403b9010f6bf785b0}{}\label{structAnalysisHelper_a83df30344dbb309403b9010f6bf785b0}
+
+
+Definition at line 1121 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!print\+Calo\+Signal@{print\+Calo\+Signal}}
+\index{print\+Calo\+Signal@{print\+Calo\+Signal}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{print\+Calo\+Signal(const std\+::string \&module, const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&pj\+Vec)}{printCaloSignal(const std::string &module, const std::vector< fastjet::PseudoJet > &pjVec)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Analysis\+Helper\+::print\+Calo\+Signal (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{module, }
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{pj\+Vec}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_af9edc04923cd574a2b32773657355b3e}{}\label{structAnalysisHelper_af9edc04923cd574a2b32773657355b3e}
+
+
+Definition at line 700 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!print\+Pulse@{print\+Pulse}}
+\index{print\+Pulse@{print\+Pulse}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{print\+Pulse(const std\+::string \&module, int nevt, int ntot)}{printPulse(const std::string &module, int nevt, int ntot)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Analysis\+Helper\+::print\+Pulse (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{module, }
+\item[{int}]{nevt, }
+\item[{int}]{ntot}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_ab8c81f26a5c90ec94349606e30be0bbc}{}\label{structAnalysisHelper_ab8c81f26a5c90ec94349606e30be0bbc}
+
+
+Definition at line 1123 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!read\+Cfg@{read\+Cfg}}
+\index{read\+Cfg@{read\+Cfg}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{read\+Cfg(const std\+::string \&fname)}{readCfg(const std::string &fname)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+Helper\+::read\+Cfg (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{fname}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_aa57f0b93d44ecf911f696233d1261536}{}\label{structAnalysisHelper_aa57f0b93d44ecf911f696233d1261536}
+
+
+Read configuration file. 
+
+This function reads the configuration file and interprets the statements in it. Format\+: 
+\begin{DoxyCode}
+<variable name> = <value>
+\end{DoxyCode}
+ where {\ttfamily } $<$variable name$>$=\char`\"{}\char`\"{}$>$ is the full name of the variable to be configured (including full scope). Lines starting with {\ttfamily \#} are considered comments and therefore ignored by the parser.
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if configuration file could be opened and read 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & name of configuration file (full path if needed) \\
+\hline
+\end{DoxyParams}
+$<$ Frame for print-\/out
+
+$<$ Name of module 
+
+Definition at line 222 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!topo\+Cluster\+Jets@{topo\+Cluster\+Jets}}
+\index{topo\+Cluster\+Jets@{topo\+Cluster\+Jets}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{topo\+Cluster\+Jets(\+T $\ast$data, const std\+::string \&scale=""lcw"", double p\+Tmin=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin, double rap\+Min=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min, double rap\+Max=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max, fastjet\+::\+Jet\+Definition jet\+Def=\+Analysis\+::\+Config\+::\+Reco\+Jet\+::definition, fastjet\+::\+Area\+Definition area\+Def=\+Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def)}{topoClusterJets(T *data, const std::string &scale="lcw", double pTmin=Analysis::Select::RecoJet::pTmin, double rapMin=Analysis::Select::RecoJet::rapMin, double rapMax=Analysis::Select::RecoJet::rapMax, fastjet::JetDefinition jetDef=Analysis::Config::RecoJet::definition, fastjet::AreaDefinition areaDef=Analysis::Config::RecoJet::areaDef)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ static std\+::vector$<$fastjet\+::\+Pseudo\+Jet$>$ Analysis\+Helper\+::topo\+Cluster\+Jets (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{data, }
+\item[{const std\+::string \&}]{scale = {\ttfamily \char`\"{}lcw\char`\"{}}, }
+\item[{double}]{p\+Tmin = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin}}, }
+\item[{double}]{rap\+Min = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min}}, }
+\item[{double}]{rap\+Max = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max}}, }
+\item[{fastjet\+::\+Jet\+Definition}]{jet\+Def = {\ttfamily {\bf Analysis\+::\+Config\+::\+Reco\+Jet\+::definition}}, }
+\item[{fastjet\+::\+Area\+Definition}]{area\+Def = {\ttfamily {\bf Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_ac00152ad334bb568f92c0408c763a8ce}{}\label{structAnalysisHelper_ac00152ad334bb568f92c0408c763a8ce}
+
+
+Definition at line 775 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!topo\+Cluster\+Jets@{topo\+Cluster\+Jets}}
+\index{topo\+Cluster\+Jets@{topo\+Cluster\+Jets}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{topo\+Cluster\+Jets(const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&csig, double p\+Tmin=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin, double rap\+Min=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min, double rap\+Max=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max, fastjet\+::\+Jet\+Definition jet\+Def=\+Analysis\+::\+Config\+::\+Reco\+Jet\+::definition, fastjet\+::\+Area\+Definition area\+Def=\+Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def)}{topoClusterJets(const std::vector< fastjet::PseudoJet > &csig, double pTmin=Analysis::Select::RecoJet::pTmin, double rapMin=Analysis::Select::RecoJet::rapMin, double rapMax=Analysis::Select::RecoJet::rapMax, fastjet::JetDefinition jetDef=Analysis::Config::RecoJet::definition, fastjet::AreaDefinition areaDef=Analysis::Config::RecoJet::areaDef)}}]{\setlength{\rightskip}{0pt plus 5cm}static std\+::vector$<$fastjet\+::\+Pseudo\+Jet$>$ Analysis\+Helper\+::topo\+Cluster\+Jets (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{csig, }
+\item[{double}]{p\+Tmin = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin}}, }
+\item[{double}]{rap\+Min = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min}}, }
+\item[{double}]{rap\+Max = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max}}, }
+\item[{fastjet\+::\+Jet\+Definition}]{jet\+Def = {\ttfamily {\bf Analysis\+::\+Config\+::\+Reco\+Jet\+::definition}}, }
+\item[{fastjet\+::\+Area\+Definition}]{area\+Def = {\ttfamily {\bf Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a893662e8309586c09aaf8109896fbe11}{}\label{structAnalysisHelper_a893662e8309586c09aaf8109896fbe11}
+
+
+Definition at line 783 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!topo\+Tower\+Fine\+Jets@{topo\+Tower\+Fine\+Jets}}
+\index{topo\+Tower\+Fine\+Jets@{topo\+Tower\+Fine\+Jets}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{topo\+Tower\+Fine\+Jets(\+T $\ast$data, const std\+::string \&scale=""lcw"", double p\+Tmin=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin, double rap\+Min=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min, double rap\+Max=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max, fastjet\+::\+Jet\+Definition jet\+Def=\+Analysis\+::\+Config\+::\+Reco\+Jet\+::definition, fastjet\+::\+Area\+Definition area\+Def=\+Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def)}{topoTowerFineJets(T *data, const std::string &scale="lcw", double pTmin=Analysis::Select::RecoJet::pTmin, double rapMin=Analysis::Select::RecoJet::rapMin, double rapMax=Analysis::Select::RecoJet::rapMax, fastjet::JetDefinition jetDef=Analysis::Config::RecoJet::definition, fastjet::AreaDefinition areaDef=Analysis::Config::RecoJet::areaDef)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ static std\+::vector$<$fastjet\+::\+Pseudo\+Jet$>$ Analysis\+Helper\+::topo\+Tower\+Fine\+Jets (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{data, }
+\item[{const std\+::string \&}]{scale = {\ttfamily \char`\"{}lcw\char`\"{}}, }
+\item[{double}]{p\+Tmin = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin}}, }
+\item[{double}]{rap\+Min = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min}}, }
+\item[{double}]{rap\+Max = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max}}, }
+\item[{fastjet\+::\+Jet\+Definition}]{jet\+Def = {\ttfamily {\bf Analysis\+::\+Config\+::\+Reco\+Jet\+::definition}}, }
+\item[{fastjet\+::\+Area\+Definition}]{area\+Def = {\ttfamily {\bf Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a2e958064b95043ba9ee041addb45e9de}{}\label{structAnalysisHelper_a2e958064b95043ba9ee041addb45e9de}
+
+
+Definition at line 811 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!topo\+Tower\+Fine\+Jets@{topo\+Tower\+Fine\+Jets}}
+\index{topo\+Tower\+Fine\+Jets@{topo\+Tower\+Fine\+Jets}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{topo\+Tower\+Fine\+Jets(const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&csig, double p\+Tmin=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin, double rap\+Min=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min, double rap\+Max=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max, fastjet\+::\+Jet\+Definition jet\+Def=\+Analysis\+::\+Config\+::\+Reco\+Jet\+::definition, fastjet\+::\+Area\+Definition area\+Def=\+Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def)}{topoTowerFineJets(const std::vector< fastjet::PseudoJet > &csig, double pTmin=Analysis::Select::RecoJet::pTmin, double rapMin=Analysis::Select::RecoJet::rapMin, double rapMax=Analysis::Select::RecoJet::rapMax, fastjet::JetDefinition jetDef=Analysis::Config::RecoJet::definition, fastjet::AreaDefinition areaDef=Analysis::Config::RecoJet::areaDef)}}]{\setlength{\rightskip}{0pt plus 5cm}static std\+::vector$<$fastjet\+::\+Pseudo\+Jet$>$ Analysis\+Helper\+::topo\+Tower\+Fine\+Jets (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{csig, }
+\item[{double}]{p\+Tmin = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin}}, }
+\item[{double}]{rap\+Min = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min}}, }
+\item[{double}]{rap\+Max = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max}}, }
+\item[{fastjet\+::\+Jet\+Definition}]{jet\+Def = {\ttfamily {\bf Analysis\+::\+Config\+::\+Reco\+Jet\+::definition}}, }
+\item[{fastjet\+::\+Area\+Definition}]{area\+Def = {\ttfamily {\bf Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a252c063dc80a8b79e6248038269bbb9d}{}\label{structAnalysisHelper_a252c063dc80a8b79e6248038269bbb9d}
+
+
+Definition at line 819 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!topo\+Tower\+Jets@{topo\+Tower\+Jets}}
+\index{topo\+Tower\+Jets@{topo\+Tower\+Jets}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{topo\+Tower\+Jets(\+T $\ast$data, const std\+::string \&scale=""lcw"", double p\+Tmin=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin, double rap\+Min=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min, double rap\+Max=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max, fastjet\+::\+Jet\+Definition jet\+Def=\+Analysis\+::\+Config\+::\+Reco\+Jet\+::definition, fastjet\+::\+Area\+Definition area\+Def=\+Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def)}{topoTowerJets(T *data, const std::string &scale="lcw", double pTmin=Analysis::Select::RecoJet::pTmin, double rapMin=Analysis::Select::RecoJet::rapMin, double rapMax=Analysis::Select::RecoJet::rapMax, fastjet::JetDefinition jetDef=Analysis::Config::RecoJet::definition, fastjet::AreaDefinition areaDef=Analysis::Config::RecoJet::areaDef)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ static std\+::vector$<$fastjet\+::\+Pseudo\+Jet$>$ Analysis\+Helper\+::topo\+Tower\+Jets (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{data, }
+\item[{const std\+::string \&}]{scale = {\ttfamily \char`\"{}lcw\char`\"{}}, }
+\item[{double}]{p\+Tmin = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin}}, }
+\item[{double}]{rap\+Min = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min}}, }
+\item[{double}]{rap\+Max = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max}}, }
+\item[{fastjet\+::\+Jet\+Definition}]{jet\+Def = {\ttfamily {\bf Analysis\+::\+Config\+::\+Reco\+Jet\+::definition}}, }
+\item[{fastjet\+::\+Area\+Definition}]{area\+Def = {\ttfamily {\bf Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_abefdecbf82a252f475a15879fefdf22b}{}\label{structAnalysisHelper_abefdecbf82a252f475a15879fefdf22b}
+
+
+Definition at line 793 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!topo\+Tower\+Jets@{topo\+Tower\+Jets}}
+\index{topo\+Tower\+Jets@{topo\+Tower\+Jets}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{topo\+Tower\+Jets(const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&csig, double p\+Tmin=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin, double rap\+Min=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min, double rap\+Max=\+Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max, fastjet\+::\+Jet\+Definition jet\+Def=\+Analysis\+::\+Config\+::\+Reco\+Jet\+::definition, fastjet\+::\+Area\+Definition area\+Def=\+Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def)}{topoTowerJets(const std::vector< fastjet::PseudoJet > &csig, double pTmin=Analysis::Select::RecoJet::pTmin, double rapMin=Analysis::Select::RecoJet::rapMin, double rapMax=Analysis::Select::RecoJet::rapMax, fastjet::JetDefinition jetDef=Analysis::Config::RecoJet::definition, fastjet::AreaDefinition areaDef=Analysis::Config::RecoJet::areaDef)}}]{\setlength{\rightskip}{0pt plus 5cm}static std\+::vector$<$fastjet\+::\+Pseudo\+Jet$>$ Analysis\+Helper\+::topo\+Tower\+Jets (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \&}]{csig, }
+\item[{double}]{p\+Tmin = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin}}, }
+\item[{double}]{rap\+Min = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min}}, }
+\item[{double}]{rap\+Max = {\ttfamily {\bf Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max}}, }
+\item[{fastjet\+::\+Jet\+Definition}]{jet\+Def = {\ttfamily {\bf Analysis\+::\+Config\+::\+Reco\+Jet\+::definition}}, }
+\item[{fastjet\+::\+Area\+Definition}]{area\+Def = {\ttfamily {\bf Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a995bbedf564a8eaeae68e2b2971081ae}{}\label{structAnalysisHelper_a995bbedf564a8eaeae68e2b2971081ae}
+
+
+Definition at line 801 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!truth\+Jets@{truth\+Jets}}
+\index{truth\+Jets@{truth\+Jets}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{truth\+Jets(\+T $\ast$data, double p\+Tmin, double rap\+Min, double rap\+Max, bool do\+Lepton\+Isol=true)}{truthJets(T *data, double pTmin, double rapMin, double rapMax, bool doLeptonIsol=true)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ static std\+::vector$<$fastjet\+::\+Pseudo\+Jet$>$ Analysis\+Helper\+::truth\+Jets (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{data, }
+\item[{double}]{p\+Tmin, }
+\item[{double}]{rap\+Min, }
+\item[{double}]{rap\+Max, }
+\item[{bool}]{do\+Lepton\+Isol = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_ab026a5fb00af407a144f3cd990f00fe4}{}\label{structAnalysisHelper_ab026a5fb00af407a144f3cd990f00fe4}
+
+
+Definition at line 840 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!truth\+Jets@{truth\+Jets}}
+\index{truth\+Jets@{truth\+Jets}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{truth\+Jets(\+T $\ast$data, fastjet\+::\+Jet\+Definition jet\+Def=\+Analysis\+::\+Config\+::\+Truth\+Jet\+::definition, fastjet\+::\+Area\+Definition area\+Def=\+Analysis\+::\+Config\+::\+Truth\+Jet\+::area\+Def, double p\+Tmin=\+Analysis\+::\+Select\+::\+Truth\+Jet\+::p\+Tmin, double rap\+Min=\+Analysis\+::\+Select\+::\+Truth\+Jet\+::rap\+Min, double rap\+Max=\+Analysis\+::\+Select\+::\+Truth\+Jet\+::rap\+Max)}{truthJets(T *data, fastjet::JetDefinition jetDef=Analysis::Config::TruthJet::definition, fastjet::AreaDefinition areaDef=Analysis::Config::TruthJet::areaDef, double pTmin=Analysis::Select::TruthJet::pTmin, double rapMin=Analysis::Select::TruthJet::rapMin, double rapMax=Analysis::Select::TruthJet::rapMax)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ static std\+::vector$<$fastjet\+::\+Pseudo\+Jet$>$ Analysis\+Helper\+::truth\+Jets (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{data, }
+\item[{fastjet\+::\+Jet\+Definition}]{jet\+Def = {\ttfamily {\bf Analysis\+::\+Config\+::\+Truth\+Jet\+::definition}}, }
+\item[{fastjet\+::\+Area\+Definition}]{area\+Def = {\ttfamily {\bf Analysis\+::\+Config\+::\+Truth\+Jet\+::area\+Def}}, }
+\item[{double}]{p\+Tmin = {\ttfamily {\bf Analysis\+::\+Select\+::\+Truth\+Jet\+::p\+Tmin}}, }
+\item[{double}]{rap\+Min = {\ttfamily {\bf Analysis\+::\+Select\+::\+Truth\+Jet\+::rap\+Min}}, }
+\item[{double}]{rap\+Max = {\ttfamily {\bf Analysis\+::\+Select\+::\+Truth\+Jet\+::rap\+Max}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_af341b0497231263281ad0b12cd15e832}{}\label{structAnalysisHelper_af341b0497231263281ad0b12cd15e832}
+
+
+Definition at line 874 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!write\+Hists@{write\+Hists}}
+\index{write\+Hists@{write\+Hists}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{write\+Hists(const std\+::string \&fname, const std\+::string \&ftag=""R\+E\+C\+R\+E\+A\+TE"", bool noempty=true)}{writeHists(const std::string &fname, const std::string &ftag="RECREATE", bool noempty=true)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Analysis\+Helper\+::write\+Hists (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{fname, }
+\item[{const std\+::string \&}]{ftag = {\ttfamily \char`\"{}RECREATE\char`\"{}}, }
+\item[{bool}]{noempty = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a8d8a117fe4692b12e538cf9f7b922e3a}{}\label{structAnalysisHelper_a8d8a117fe4692b12e538cf9f7b922e3a}
+
+
+Write histograms to file. 
+
+\begin{DoxyReturn}{Returns}
+Returns the number of histograms written to file. A return value of -\/1 indicates a file problem.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & name of file to be written to (should have the \char`\"{}.\+root\char`\"{} extension) \\
+\hline
+{\em ftag} & tag associated with file access (optional argument); default {\ttfamily R\+E\+C\+R\+E\+A\+TE} -\/ overwite existing file with same name, alternative is {\ttfamily W\+R\+I\+TE} -\/ create a new file for output which fails of a file with the same given name already exists \\
+\hline
+{\em noempty} & flag to control histogram output (optional argument); default {\ttfamily true} suppresses saving empty histograms to file; if {\ttfamily false} all histograms are written \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 129 of file Analysis\+Helper\+Core.\+h.
+
+\index{Analysis\+Helper@{Analysis\+Helper}!write\+Hists@{write\+Hists}}
+\index{write\+Hists@{write\+Hists}!Analysis\+Helper@{Analysis\+Helper}}
+\subsubsection[{\texorpdfstring{write\+Hists(const std\+::string \&fname, const std\+::string \&ftag=""R\+E\+C\+R\+E\+A\+TE"", bool noempty=true)}{writeHists(const std::string &fname, const std::string &ftag="RECREATE", bool noempty=true)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Analysis\+Helper\+::write\+Hists (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{fname, }
+\item[{const std\+::string \&}]{ftag = {\ttfamily \char`\"{}RECREATE\char`\"{}}, }
+\item[{bool}]{noempty = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_a8d8a117fe4692b12e538cf9f7b922e3a}{}\label{structAnalysisHelper_a8d8a117fe4692b12e538cf9f7b922e3a}
+
+
+Definition at line 526 of file Analysis\+Helper.\+h.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{AnalysisHelper_8h}{Analysis\+Helper.\+h}\item 
+\hyperlink{AnalysisHelperCore_8h}{Analysis\+Helper\+Core.\+h}\end{DoxyCompactItemize}

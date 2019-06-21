@@ -1,0 +1,38 @@
+\hypertarget{XMLData_8h}{}\section{X\+M\+L\+Data.\+h File Reference}
+\label{XMLData_8h}\index{X\+M\+L\+Data.\+h@{X\+M\+L\+Data.\+h}}
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$cstdio$>$}\\*
+{\ttfamily \#include \char`\"{}X\+M\+L\+Dict.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}X\+M\+L\+Data.\+icc\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classXMLData}{X\+M\+L\+Data}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{XMLData_8h_afb148a7685215d5cdd7b9698fac2bb90}{C\+H\+E\+C\+K\+\_\+\+S\+I\+ZE}(C,  N)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{X\+M\+L\+Data.\+h@{X\+M\+L\+Data.\+h}!C\+H\+E\+C\+K\+\_\+\+S\+I\+ZE@{C\+H\+E\+C\+K\+\_\+\+S\+I\+ZE}}
+\index{C\+H\+E\+C\+K\+\_\+\+S\+I\+ZE@{C\+H\+E\+C\+K\+\_\+\+S\+I\+ZE}!X\+M\+L\+Data.\+h@{X\+M\+L\+Data.\+h}}
+\subsubsection[{\texorpdfstring{C\+H\+E\+C\+K\+\_\+\+S\+I\+ZE}{CHECK_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+H\+E\+C\+K\+\_\+\+S\+I\+ZE(
+\begin{DoxyParamCaption}
+\item[{}]{C, }
+\item[{}]{N}
+\end{DoxyParamCaption}
+)}\hypertarget{XMLData_8h_afb148a7685215d5cdd7b9698fac2bb90}{}\label{XMLData_8h_afb148a7685215d5cdd7b9698fac2bb90}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} ( C->size() != N ) \{         \(\backslash\)
+  std::string msg(\textcolor{stringliteral}{"XMLWriter - ERROR inconsistent data "});  \(\backslash\)
+  msg += #C;                            \(\backslash\)
+  msg += \textcolor{stringliteral}{"->size = %uz, should be %uz\(\backslash\)n"};           \(\backslash\)
+  printf(msg.c\_str(), C->size(), N);                \(\backslash\)
+  return -1;                            \(\backslash\)
+  \}
+\end{DoxyCode}

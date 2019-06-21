@@ -1,0 +1,34 @@
+// -*- c++ -*- 
+#include "ProbThresholds.icc"
+
+double xl(-0.0025); double dx(0.005); int nb(65); double xh(xl+(double)nb*dx);
+
+allHists.resize(lThresholds.size()-1,(TH1D*)0);
+sigHists.resize(lThresholds.size()-1,(TH1D*)0);
+bckHists.resize(lThresholds.size()-1,(TH1D*)0);
+
+for ( size_t i(1); i<lThresholds.size(); ++i ) {
+  std::string hname(TString::Format("h_var_all_%03.0f_%03.0f",std::max(std::abs(lThresholds.at(i-1)*100.),0.),std::min(std::abs(lThresholds.at(i)*100.),100.)).Data());
+  std::string sname(TString::Format("h_var_sig_%03.0f_%03.0f",std::max(std::abs(lThresholds.at(i-1)*100.),0.),std::min(std::abs(lThresholds.at(i)*100.),100.)).Data());
+  std::string bname(TString::Format("h_var_bck_%03.0f_%03.0f",std::max(std::abs(lThresholds.at(i-1)*100.),0.),std::min(std::abs(lThresholds.at(i)*100.),100.)).Data());
+  allHists[i-1] = new TH1D(hname.c_str(),"variable",nb,xl,xh); allHists[i-1]->Sumw2();
+  sigHists[i-1] = new TH1D(sname.c_str(),"variable",nb,xl,xh); sigHists[i-1]->Sumw2();
+  bckHists[i-1] = new TH1D(bname.c_str(),"variable",nb,xl,xh); bckHists[i-1]->Sumw2();
+ }
+
+printf("Module[WProbThresholds] - *DONE* histogram booking, list sizes %zu (all) %zu (signal) %zu (pile-up)\n",allHists.size(),sigHists.size(),bckHists.size());
+
+for ( size_t i(0); i<allHists.size(); ++i ) {
+  if ( allHists.at(i) != 0 ) { 
+    allHists[i]->SetLineColor(hlColor.at(i)); allHists[i]->SetMarkerColor(hmColor.at(i)); allHists[i]->SetMarkerStyle(20); allHists[i]->SetMarkerSize(0.75);
+    sigHists[i]->SetLineColor(hlColor.at(i)); sigHists[i]->SetMarkerColor(hmColor.at(i)); sigHists[i]->SetMarkerStyle(22); sigHists[i]->SetMarkerSize(0.75);
+    bckHists[i]->SetLineColor(hlColor.at(i)); bckHists[i]->SetMarkerColor(hmColor.at(i)); bckHists[i]->SetMarkerStyle(23); bckHists[i]->SetMarkerSize(0.75);
+  } else {
+    printf("Module[WProbThresholds] - *PROBLEM* index %2zu cannot allocate expected histogram for this index\n",i);
+  }
+}
+
+printf("Module[WProbThresholds] - *DONE* histogram styling\n");
+
+
+

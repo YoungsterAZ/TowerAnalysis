@@ -1,0 +1,562 @@
+#define JetAnalysisExample_cxx
+#include "JetAnalysisExample.h"
+#include <TH2.h>
+#include <TStyle.h>
+#include <TCanvas.h>
+#include <TH1D.h>
+#include <TH2D.h>
+#include <TString.h>
+
+#include <vector>
+#include <string>
+
+#include "fastjet/JetDefinition.hh"
+#include "fastjet/PseudoJet.hh"
+#include "fastjet/ClusterSequenceArea.hh"
+#include "fastjet/Selector.hh"
+
+#include "AnalysisData.h"
+#include "AnalysisUtils.h"
+#include "AnalysisHelper.h"
+
+/////////////////////////////////////////////////
+// Do not touch the constructor implementation //
+/////////////////////////////////////////////////
+
+JetAnalysisExample::JetAnalysisExample(TChain* tchain,const std::string& cfgFile) : fChain(0), _cfgFile(cfgFile), _cfgRead(false), _isDead(false)
+{
+  if ( tchain == 0 ) {
+    PRINT_ERROR( "JetAnalysisExample::JetAnalysisExample", "invald pointer to TChain (%p)", (void*)tchain );
+    _isDead = true;
+  } else { 
+    // load chain
+    _cfgRead = AH::readCfg(_cfgFile);
+    if ( !_cfgRead ) { 
+      PRINT_ERROR( "JetAnalysisExample::JetAnalysisExample", "cannot read specified configuration file \042%s\042 - module is turned off",_cfgFile.c_str() );
+      _isDead = true;
+    } else {
+      AH::printBanner("JetAnalysisExample::JetAnalysisExample",Analysis::Config::Input::collection);
+      PRINT_INFO( "JetAnalysisExample::JetAnalysisExample", "read configuration file \042%s\042",_cfgFile.c_str() );
+      int nfile = Analysis::Config::Input::nFiles = -1 ? 40 : Analysis::Config::Input::nFiles;
+      for ( int ifile(0); ifile < nfile; ++ifile ) {
+	std::string fname(TString::Format(Analysis::Config::Input::fileMask.c_str(),Analysis::Config::Input::dataDir.c_str(),ifile).Data());
+	PRINT_INFO("JetAnalysisExample::JetAnalysisExample","connect file \042%s\042 to chain \042%s\042",fname.c_str(),tchain->GetName());
+	tchain->Add(fname.c_str());
+      }
+      _isDead = tchain->GetListOfFiles()->IsEmpty();
+      Init(tchain);
+    }
+  }
+}
+
+
+/////////////////////////////////
+// Analysis playground: Loop() //
+/////////////////////////////////
+
+void JetAnalysisExample::Loop(Long64_t nreq)
+{
+  static std::string _mname = "JetAnalysisExample::Loop";
+
+  //////////////
+  // Preamble //
+  //////////////
+
+  // consistency check
+  if ( _isDead ) {
+    PRINT_ERROR("JetAnalysisExample::Loop","module is dead (likely no valid input file found\n");
+    return;
+  }
+
+  if (fChain == 0) return;
+
+  // total number of entries
+  Long64_t nentries = fChain->GetEntries();
+
+  /////////////////////
+  // Book histograms //
+  /////////////////////
+
+  //--------------------------------------------------------------------------------
+  // There are three levels of simlar distributions:
+  //
+  // [Initial] plot quantities from events passing the very basic initial selection
+  //           (in this code: histogram names ending with <selection_tag> = _ini) 
+  // [Accept]  plot quantities from events passing a refined selection
+  //           (in this code: histogram names ending with <selection_tag> = _acc)
+  // [Final]   plot quantities from events passing the final selection
+  //           (in this code: histogram names ending with <selection_tag> = _fin)
+  //
+  // The code is set up to store the histograms in the output file in a directory
+  // structure following the event selections:
+  //
+  // Initial/<histogram_name>
+  // Accept/<histogram_name>
+  // Final/<histogram_name>
+  //
+  // where <histogram_name> does not include any of the _ini, _acc, or _fin tags.
+  // Histogram names are constructed using "tjet" for truth jets, "rjet" for reco
+  // jets, and "mjet" for matched reco jets. Variables holding pointers to 
+  // 1-dimensional histograms start with "h_", while 2-dimensional distributions 
+  // start with "d_". The general convention used in this code is (e.g. for a 
+  // 1-dimensional histograms):
+  //
+  // h_<object>_<var>_<selection_tag>  (variable name in code)
+  // <selection_name>/h_<object>_<var> (histogram on file)
+  //
+  // Additional qualifiers may be added to the histogram name, like "lead" for
+  // leading jet and "subl" for subleading jet.
+  //
+  //  <object> | object type | comments
+  // ==========*=============*====================================================
+  // tjet      |    jet      | truth (particle) jet 
+  // rjet      |    jet      | reconstructed (calorimeter) jet
+  // mjet      |    jet      | matched reconstructed jet 
+  // ----------+-------------+----------------------------------------------------
+  // evnt      |   event     | whole event variables like invariant mass etc.
+  //    
+  //---------------------------------------------------------------------------------
+
+  // binning number of jets/event
+  int njBin(200); double njMin(-0.5); double njMax(njMin+njBin);
+
+  // binning in pT [GeV]
+  int ptBin(200); double ptMin(0.); double ptMax(2000.);
+
+  // binning in rapidity/pseudorapidity (central bin has center at 0)
+  int rapBin(101); double rapMin(-5.05); double rapMax(5.05);
+
+  // binning in phi (central bin has center at 0);
+  int phiBin(65); double phiMin(-3.25); double phiMax(3.35);
+
+  // binning in invariant mass
+  int imBin(200); double imMin(0.); double imMax(4000.);
+
+  // low jet multiplicity binning
+  int njlBin(10); double njlMin(-0.5); double njlMax(9.5);
+
+  // jet constituent binning
+  int njcBin(500); double njcMin(-0.5); double njcMax(njcMin+njcBin);
+
+  // rapidity gap binning
+  int gapBin(rapBin); double gapMin(0.); double gapMax(2.*rapMax);
+
+  // delta R binning
+  int drBin(100); double drMin(0.); double drMax(2.);
+
+  // PtD binning
+  int ptdBin(110); double ptdMin(-0.05); double ptdMax(1.05);
+  
+  // PtD ratio binning
+  int rptdBin(250); double rptdMin(-0.5); double rptdMax(24.5);
+
+  // [Initial] >>------------------------------------------------------------------------------------------------------------------------------------------------------------
+  // inclusive truth jets
+  TH1D* h_tjet_num_ini      = AH::book1D<TH1D>("Initial/h_tjet_num","Number of truth jets",njBin,njMin,njMax,   "N_{jet}^{truth}",    "Entries");
+  TH1D* h_tjet_pt_ini       = AH::book1D<TH1D>("Initial/h_tjet_pt", "Truth jet p_{T}",     ptBin,ptMin,ptMax,   "p_{T}^{truth} [GeV]","Entries");
+  TH1D* h_tjet_rap_ini      = AH::book1D<TH1D>("Initial/h_tjet_rap","Truth jet rapidity",  rapBin,rapMin,rapMax,"y^{truth}",          "Entries");
+  TH1D* h_tjet_phi_ini      = AH::book1D<TH1D>("Initial/h_tjet_phi","Truth jet #phi",      phiBin,phiMin,phiMax,"#phi^{truth}",       "Entries");
+  TH2D* d_tjet_num_rap_ini  = AH::book2D<TH2D>("Initial/d_tjet_num_eta","N_{const}^{truth jet} vs y",rapBin,rapMin,rapMax,njcBin,njcMin,njcMax,"y^{truth}","N_{const}^{truth}");
+  TH2D* d_tjet_rap_pt_ini = AH::book2D<TH2D>("Initial/d_tjet_rap_vs_pt","rap^{truth jet} vs pt",rapBin,rapMin,rapMax,ptBin,ptMin,ptMax,"pt^{truth}","rap^{truth}"); 
+  // inclusive reco jets
+  TH1D* h_rjet_num_ini      = AH::book1D<TH1D>("Initial/h_rjet_num","Number of truth jets",njBin,njMin,njMax,   "N_{jet}^{truth}",    "Entries");
+  TH1D* h_rjet_pt_ini       = AH::book1D<TH1D>("Initial/h_rjet_pt", "Truth jet p_{T}",     ptBin,ptMin,ptMax,   "p_{T}^{truth} [GeV]","Entries");
+  TH1D* h_rjet_rap_ini      = AH::book1D<TH1D>("Initial/h_rjet_rap","Truth jet rapidity",  rapBin,rapMin,rapMax,"y^{truth}",          "Entries");
+  TH1D* h_rjet_phi_ini      = AH::book1D<TH1D>("Initial/h_rjet_phi","Truth jet #phi",      phiBin,phiMin,phiMax,"#phi^{truth}",       "Entries");
+  TH2D* d_rjet_num_rap_ini  = AH::book2D<TH2D>("Initial/d_rjet_num_eta","N_{const}^{truth jet} vs y",rapBin,rapMin,rapMax,njcBin,njcMin,njcMax,"y^{truth}","N_{const}^{truth}");
+  TH2D* d_rjet_rap_pt_ini = AH::book2D<TH2D>("Initial/d_rjet_rap_vs_pt","rap^{truth jet} vs pt",rapBin,rapMin,rapMax,ptBin,ptMin,ptMax,"pt^{truth}","rap^{truth}"); 
+  // event quantities
+  TH1D* h_evnt_m_ini     = AH::book1D<TH1D>("Initial/h_evnt_m",  "Truth jet invariant mass M_{inv}",imBin,imMin,imMax,   "M_{inv}^{truth} [GeV]",           "Entries"); 
+  TH1D* h_evnt_njm_ini   = AH::book1D<TH1D>("Initial/h_evnt_njm","N_{jet}^{truth} for M_{inv}",     njlBin,njlMin,njlMax,"N_{jet}^{truth} used for M_{inv}","Entries");
+  TH1D* h_evnt_gap_ini   = AH::book1D<TH1D>("Initial/h_evnt_gap","Truth jet rapidity gap",          gapBin,gapMin,gapMax,"#Deltay^{truth}",                 "Entries");
+  // [Initial] <<------------------------------------------------------------------------------------------------------------------------------------------------------------
+  // [Final] >>--------------------------------------------------------------------------------------------------------------------------------------------------------------
+  // inclusive truth jets
+  TH1D* h_tjet_num_fin = AH::book1D<TH1D>("Final/h_tjet_num","Number of truth jets",njBin,njMin,njMax,   "N_{jet}^{truth}",    "Entries");
+  TH1D* h_tjet_pt_fin  = AH::book1D<TH1D>("Final/h_tjet_pt", "Truth jet p_{T}",     ptBin,ptMin,ptMax,   "p_{T}^{truth} [GeV]","Entries");
+  TH1D* h_tjet_rap_fin = AH::book1D<TH1D>("Final/h_tjet_rap","Truth jet rapidity",  rapBin,rapMin,rapMax,"y^{truth}",          "Entries");
+  TH1D* h_tjet_phi_fin = AH::book1D<TH1D>("Final/h_tjet_phi","Truth jet #phi",      phiBin,phiMin,phiMax,"#phi^{truth}",       "Entries");
+  TH2D* d_tjet_num_rap_fin  = AH::book2D<TH2D>("Final/d_tjet_num_eta","N_{const}^{truth jet} vs y",rapBin,rapMin,rapMax,njcBin,njcMin,njcMax,"y^{truth}","N_{const}^{truth}");
+  TH2D* d_tjet_rap_pt_fin  = AH::book2D<TH2D>("Final/d_tjet_rap_vs_pt","rap^{truth jet} vs pt",rapBin,rapMin,rapMax,ptBin,ptMin,ptMax,"pt^{truth}","rap^{truth}");
+  // inclusive reco jets
+  TH1D* h_rjet_num_fin = AH::book1D<TH1D>("Final/h_rjet_num","Number of truth jets",njBin,njMin,njMax,   "N_{jet}^{truth}",    "Entries");
+  TH1D* h_rjet_pt_fin  = AH::book1D<TH1D>("Final/h_rjet_pt", "Truth jet p_{T}",     ptBin,ptMin,ptMax,   "p_{T}^{truth} [GeV]","Entries");
+  TH1D* h_rjet_rap_fin = AH::book1D<TH1D>("Final/h_rjet_rap","Truth jet rapidity",  rapBin,rapMin,rapMax,"y^{truth}",          "Entries");
+  TH1D* h_rjet_phi_fin = AH::book1D<TH1D>("Final/h_rjet_phi","Truth jet #phi",      phiBin,phiMin,phiMax,"#phi^{truth}",       "Entries");
+  TH2D* d_rjet_num_rap_fin  = AH::book2D<TH2D>("Final/d_rjet_num_eta","N_{const}^{truth jet} vs y",rapBin,rapMin,rapMax,njcBin,njcMin,njcMax,"y^{truth}","N_{const}^{truth}");
+  TH2D* d_rjet_rap_pt_fin  = AH::book2D<TH2D>("Final/d_rjet_rap_vs_pt","rap^{truth jet} vs pt",rapBin,rapMin,rapMax,ptBin,ptMin,ptMax,"pt^{truth}","rap^{truth}");
+  // inclusive matched reco jets
+  TH1D* h_mjet_num_fin = AH::book1D<TH1D>("Final/h_mjet_num","Number of truth jets",njBin,njMin,njMax,   "N_{jet}^{truth}",    "Entries");
+  TH1D* h_mjet_pt_fin  = AH::book1D<TH1D>("Final/h_mjet_pt", "Truth jet p_{T}",     ptBin,ptMin,ptMax,   "p_{T}^{truth} [GeV]","Entries");
+  TH1D* h_mjet_rap_fin = AH::book1D<TH1D>("Final/h_mjet_rap","Truth jet rapidity",  rapBin,rapMin,rapMax,"y^{truth}",          "Entries");
+  TH1D* h_mjet_phi_fin = AH::book1D<TH1D>("Final/h_mjet_phi","Truth jet #phi",      phiBin,phiMin,phiMax,"#phi^{truth}",       "Entries");
+  TH2D* d_mjet_num_rap_fin  = AH::book2D<TH2D>("Final/d_mjet_num_eta","N_{const}^{truth jet} vs y",rapBin,rapMin,rapMax,njcBin,njcMin,njcMax,"y^{truth}","N_{const}^{truth}");
+  TH2D* d_mjet_rap_pt_fin  = AH::book2D<TH2D>("Final/d_mjet_rap_vs_pt","rap^{truth jet} vs pt",rapBin,rapMin,rapMax,ptBin,ptMin,ptMax,"pt^{truth}","rap^{truth}");
+  // event quantities
+  TH1D* h_evnt_m_fin     = AH::book1D<TH1D>("Final/h_evnt_m",  "Truth jet invariant mass M_{inv}",imBin,imMin,imMax,   "M_{inv}^{truth} [GeV]",           "Entries"); 
+  TH1D* h_evnt_njm_fin   = AH::book1D<TH1D>("Final/h_evnt_njm","N_{jet}^{truth} for M_{inv}",     njlBin,njlMin,njlMax,"N_{jet}^{truth} used for M_{inv}","Entries");
+  TH1D* h_evnt_gap_fin   = AH::book1D<TH1D>("Final/h_evnt_gap","Truth jet rapidity gap",          gapBin,gapMin,gapMax,"#Deltay^{truth}",                 "Entries");
+  // [Final] <<--------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+  ///////////////////
+  // Analysis cuts //
+  ///////////////////
+
+  //----------------------------------------------------------------------------
+  // Here you can enter analysis cuts for e.g. event and object selection.
+  // You can declare your own variables, but if you use AnalysisHelper functions, 
+  // you should use the (static) variables available in the Analysis::Select
+  // namespace. For exmaple, to change the pT threshold for truth jets from the
+  // default 20 GeV to 40 GeV, uncomment the following line:
+  //
+  // Analysis::Select::TruthJet::pTmin = 40000.;   // remember this is MeV!
+  //
+  // Similar for reconstructed (calorimeter) jets, uncommenting
+  //
+  // Analysis::Select::RecoJet::rapMin = -2.5;      
+  //
+  // changes the lower boundary of the rapidity range from the default -4.5 to 2.5.
+  // A cut flow histogram is booked belwo to keep track of the number of surviving
+  // events after a given selection is applied. This is useful for e.g. efficiency
+  // measurements. 
+  //------------------------------------------------------------------------------
+
+  // read external configuration file
+  if ( !_cfgRead ) { 
+    if  ( !_cfgFile.empty() && _cfgFile !="" ) { 
+      AH::readCfg(_cfgFile); 
+    } else { 
+      PRINT_INFO(_mname,"default configuration");
+    }
+  }
+
+  // figure out which calorimeter signal we will use
+  bool doTopoCluster(false);
+  bool doTopoTower(false);
+  bool doTopoTowerFine(false);
+  PRINT_INFO(_mname,"#-----------------------------------------");
+  if ( Analysis::Config::Input::isTopoCluster() ) {
+    PRINT_INFO(_mname,"# analyzing TopoCluster");
+    doTopoCluster = true;
+  } else if ( Analysis::Config::Input::isTopoTower() ) {
+    PRINT_INFO(_mname,"# analyzing TopoTower (0.1 x 0.1 grid)");
+    doTopoTower = true;
+  } else if ( Analysis::Config::Input::isTopoTowerFine() ) {
+    PRINT_INFO(_mname,"# analyzing TopoTower (0.05 x 0.05 grid)");
+    doTopoTowerFine = true;
+  } else {
+    PRINT_ERROR(_mname,"# no valid signal input type!!!!");
+    PRINT_INFO(_mname,"#-----------------------------------------");
+    return;
+  }
+  PRINT_INFO(_mname,"#-----------------------------------------");
+
+  // cut flow histogram
+  TH1D* h_cutflow = AH::book1D<TH1D>("h_cutflow","h_cutflow",20,-0.5,19.5);
+  // tags to be used as axis labels in the cut flow histogram
+  std::vector<std::string> cutTags;                                                                                            /* cut index */
+  cutTags.push_back(std::string("EventsIn"));                                                                                  /*      0    */
+  cutTags.push_back(std::string("Data consistent"));                                                                           /*      1    */
+  cutTags.push_back(std::string(TString::Format("N_{jet}^{truth} #geq %zu",Analysis::Select::TruthJet::numMin).Data()));       /*      2    */
+  cutTags.push_back(std::string(TString::Format("#Delta y^{truth} > %3.1f",Analysis::Select::Event::rapGap).Data()));          /*      3    */
+  cutTags.push_back(std::string("y_{jet,1}^{truth} #times y_{jet,2}^{truth} < 0"));                                            /*      4    */
+  cutTags.push_back(std::string(TString::Format("dR_{iso}^{truth} > %3.1f",Analysis::Select::TruthJet::isoDeltaR).Data()));    /*      5    */
+  cutTags.push_back(std::string(TString::Format("%6.1f < M_{inv} < %6.1f GeV",                                                 /*      6    */
+						Analysis::Select::Event::minMinv/1000.,                                        /*           */
+						Analysis::Select::Event::maxMinv/1000.).Data()));                              /*           */
+  cutTags.push_back(std::string("Invalid indices"));                                                                           /*      7    */ 
+  cutTags.push_back(std::string(TString::Format("N_{jet}^{matched} #geq %zu",Analysis::Select::MatchedJet::numMin).Data()));   /*      8    */
+  cutTags.push_back(std::string(TString::Format("No matching jets for signal").Data()));                                       /*      9    */
+  cutTags.push_back(std::string(TString::Format("N_{jet}^{filtered} #geq %zu",Analysis::Select::MatchedJet::numMin).Data()));  /*     10    */
+
+  for ( size_t i(0); i<cutTags.size(); ++i ) { h_cutflow->GetXaxis()->SetBinLabel((int)i+1,cutTags.at(i).c_str()); } 
+
+  ////////////////
+  // Event loop //
+  ////////////////
+
+  // check on number of events
+  int nd = AH::ndigits((int)nentries);
+  Long64_t nn = nreq != 0 ? nreq : (Long64_t)Analysis::Config::Input::nEvents;
+  if ( nn != -1 ) { 
+    if ( nn > nentries ) { 
+      PRINT_INFO(_mname,"requested number of event to be analyzed %*i, available %*i, effective %*i",nd,(int)nn,nd,(int)nentries,nd,(int)nentries);
+    } else {
+      PRINT_INFO(_mname,"requested number of event to be analyzed %*i, available  %*i",nd,(int)nn,nd,(int)nentries);
+      nentries = nn;
+    }
+  } else { 
+    PRINT_INFO(_mname,"number of events to be analyzed %*i (from entries scan)",nd,(int)nentries);
+  }
+
+  Long64_t nbytes = 0, nb = 0;
+
+  int ievt(0);
+  for (Long64_t jentry=0; jentry<nentries;jentry++) {
+
+    /////////////////////////
+    // Allocate next event //
+    /////////////////////////
+
+    Long64_t ientry = LoadTree(jentry);
+
+    // check if done
+    if (ientry < 0) break;
+    nb = fChain->GetEntry(jentry);   nbytes += nb;
+
+    // message ticker
+    ievt = AH::printPulse("JetAnalysisExample::Loop",ievt,(int)nentries);
+
+    //////////////////////
+    // Build truth jets //
+    //////////////////////
+
+    // cut flow
+    /* 0 */ h_cutflow->Fill(cutTags.at(0).c_str(),1.);
+    //    std::cout << jentry << " -> enter" << std::endl;
+
+    // use helper function to get selected truth jets 
+    std::vector<fastjet::PseudoJet> tjet = AH::truthJets(this,Analysis::Select::TruthJet::pTmin,Analysis::Select::TruthJet::rapMin,Analysis::Select::TruthJet::rapMax);
+    // require at least one truth jet
+    if ( tjet.size() < 2 ) { continue; }
+    /* 1 */ h_cutflow->Fill(cutTags.at(1).c_str(),1.);
+
+    //////////////////////////////////////////////////////////////////
+    // Get the correct calorimeter signal and the corresponding jet //
+    //////////////////////////////////////////////////////////////////
+
+    std::vector<fastjet::PseudoJet> calosignal;
+    std::vector<fastjet::PseudoJet> calojet;                                   
+    if ( doTopoCluster ) { 
+      calosignal = AH::PseudoJetGetter::getTopoClusters(this,"lcw");
+      calojet = AH::topoClusterJets(this,"lcw",Analysis::Select::RecoJet::pTmin);
+    } else if ( doTopoTower ) { 
+      calosignal = AH::PseudoJetGetter::getTopoTowers(this,"lcw");
+      calojet = AH::topoTowerJets(this,"lcw",Analysis::Select::RecoJet::pTmin);
+    } else if ( doTopoTowerFine ) { 
+      calosignal = AH::PseudoJetGetter::getTopoTowersFine(this,"lcw");
+      calojet = AH::topoTowerFineJets(this,"lcw",Analysis::Select::RecoJet::pTmin);
+    }
+
+    // std::cout << jentry << " -> pickup" << std::endl;
+
+
+
+    ///////////////////////////////////////
+    // Select events based on truth jets //
+    ///////////////////////////////////////
+
+    // variable filled by the accept event function 
+    unsigned int passlvl(0); // this tells us a bit about what happened when selecting events (bit pattern)         
+    double minv(0.);         // highest invariant mass from jets
+    size_t njets(2);         // this is the actual number of jets used to calculate the invariant mass
+    double rapgap(0.);       // rapidity distance between two leading jets
+
+    // check if event passes
+    size_t ijet(0); size_t jjet(0);
+    Analysis::Select::Event::FailureLvl checkPass = AH::acceptTruthJetEvent(tjet,passlvl,ijet,jjet,minv,rapgap);
+    // std::cout << jentry << " -> select" << std::endl;
+
+    ////////////////////////////////////////////////////////////////////////////
+    // First round of plots (most inclusive, only very basic event selection) //
+    ////////////////////////////////////////////////////////////////////////////
+
+    // number of jets
+    double ntjets = (double)tjet.size();
+    double ncjets = (double)calojet.size();
+
+    // fill event level plots
+    h_tjet_num_ini->Fill(ntjets);                                // original number of truth jets
+    h_rjet_num_ini->Fill(ncjets);
+    h_evnt_m_ini->Fill(minv/1000.);                                           // truth invariant mass of collision system
+    h_evnt_njm_ini->Fill((double)njets);                                      // number of jets used to calculate invariant mass
+    h_evnt_gap_ini->Fill(rapgap);                                             // rapidity distance between two leading truth jets
+
+    // fill truth jet level plots
+    for ( size_t i(0); i<tjet.size(); ++i ) {
+      // pick up and rescale variables as needed
+      double pT(tjet.at(i).pt()/1000.); double rap(tjet.at(i).rap()); double phi(tjet.at(i).phi_std());
+      size_t nc = AH::numConstits(tjet.at(i));
+      // all jets
+      h_tjet_pt_ini->Fill(pT); h_tjet_rap_ini->Fill(rap); h_tjet_phi_ini->Fill(phi);
+      d_tjet_num_rap_ini->Fill(rap,(double)nc); d_tjet_rap_pt_ini->Fill(rap,pT);
+    } // fill jet properties
+    for ( size_t i(0); i<calojet.size(); ++i ) {
+      // pick up and rescale variables as needed
+      double pT(calojet.at(i).pt()/1000.); double rap(calojet.at(i).rap()); double phi(calojet.at(i).phi_std());
+      size_t nc = AH::numConstits(calojet.at(i));
+      // all jets
+      h_rjet_pt_ini->Fill(pT); h_rjet_rap_ini->Fill(rap); h_rjet_phi_ini->Fill(phi);
+      d_rjet_num_rap_ini->Fill(rap,(double)nc); d_rjet_rap_pt_ini->Fill(rap,pT);
+    }
+
+    // skip event if failed but check at which state of the event selection
+    if ( Analysis::Select::Event::check(checkPass,Analysis::Select::Event::FailNTruthJet) )  { continue; }
+    /* 2 */ h_cutflow->Fill(cutTags.at(2).c_str(),1.);
+    if ( Analysis::Select::Event::check(checkPass,Analysis::Select::Event::FailRapGap) )     { continue; }
+    /* 3 */ h_cutflow->Fill(cutTags.at(3).c_str(),1.);
+    if ( Analysis::Select::Event::check(checkPass,Analysis::Select::Event::FailHemisphere) ) { continue; }
+    /* 4 */ h_cutflow->Fill(cutTags.at(4).c_str(),1.);
+    if ( Analysis::Select::Event::check(checkPass,Analysis::Select::Event::FailIsolation) )  { continue; }
+    /* 5 */ h_cutflow->Fill(cutTags.at(5).c_str(),1.);
+    if ( Analysis::Select::Event::check(checkPass,Analysis::Select::Event::FailMinv) )       { continue; }
+    /* 6 */ h_cutflow->Fill(cutTags.at(6).c_str(),1.);                 
+    if ( ijet > tjet.size() || jjet > tjet.size() || ijet == jjet ) { continue; }
+    /* 7 */ h_cutflow->Fill(cutTags.at(7).c_str(),1.);
+
+    /////////////////////
+    // Final selection //
+    /////////////////////
+
+    // reject if both jets with highest mass are not matched
+    //    if ( nmfilter < 2 ) { continue; }
+    /* 8 */ h_cutflow->Fill(cutTags.at(8).c_str(),1.);
+
+    // }
+
+    // fill event level plots
+    h_tjet_num_fin->Fill(ntjets);
+    h_evnt_m_fin->Fill(minv/1000.);           
+    h_evnt_njm_fin->Fill((double)njets);      
+    h_evnt_gap_fin->Fill(rapgap);                
+
+    // fill truth jet level plots
+    for ( size_t i(0); i<tjet.size(); ++i ) {
+      double pT(tjet.at(i).pt()/1000.); double rap(tjet.at(i).rap()); double phi(tjet.at(i).phi_std());
+      size_t nc = AH::numConstits(tjet.at(i));
+      // all jets
+      h_tjet_pt_fin->Fill(pT); h_tjet_rap_fin->Fill(rap); h_tjet_phi_fin->Fill(phi);
+      d_tjet_num_rap_fin->Fill(rap,(double)nc); d_tjet_rap_pt_fin->Fill(rap,pT);
+    } // fill jet properties
+ 
+    ////////////////
+    // Match jets //
+    ////////////////
+
+    // find closest matches
+    std::vector<int>    truthJetIdx;  // indices of matched truth jet in their container
+    std::vector<int>    recoJetIdx;   // indices of matched reco jet in their container
+    std::vector<double> deltaR;       // delta R between them
+    size_t nmatch = AH::matchJets(tjet,calojet,truthJetIdx,recoJetIdx,deltaR,2.);  // find all matches with deltaR < 2
+    // std::cout << jentry << " -> match" << std::endl;
+
+    //
+    // the idea is: truthJetIdx[0] points to tjet[truthJetIdx[0]] which matches calojet[recoJetIdx[0]]
+    std::map<double,std::pair<int,int> > matchJets;
+    std::map<int,std::pair<int,double> > truthLookup;
+    std::map<int,std::pair<int,double> > recoLookup;
+    for ( size_t i(0); i<truthJetIdx.size(); ++i ) {
+      matchJets[deltaR[i]]       = std::pair<int,int>(truthJetIdx[i],recoJetIdx[i]);
+      truthLookup[recoJetIdx[i]] = std::pair<int,double>(truthJetIdx[i],deltaR[i]);
+      recoLookup[truthJetIdx[i]] =  std::pair<int,double>(recoJetIdx[i],deltaR[i]);
+    }
+
+    // select only tight matches
+    auto fm(matchJets.begin());
+    size_t nmfilter(0);
+    while ( fm != matchJets.end() ) {
+      if ( fm->first < Analysis::Select::MatchedJet::matchR ) {
+	++fm; ++nmfilter;
+      } else {
+	auto fr = recoLookup.find(fm->second.second);
+	auto ft = truthLookup.find(fm->second.first);
+	if ( fr != recoLookup.end() ) { recoLookup.erase(fr); } 
+	// std::cout << jentry << " -> removed reco at " << fm->second.second <<  std::endl;
+	if ( ft != truthLookup.end() ) { truthLookup.erase(ft); }
+	// std::cout << jentry << " -> removed truth at " << fm->second.first <<  std::endl;
+	fm = matchJets.erase(fm);
+	// std::cout << jentry << " -> removed link" <<  std::endl;
+      }
+    }
+
+    // check if the truth signal jets have matches
+    if ( recoLookup.find(ijet) == recoLookup.end() || recoLookup.find(jjet) == recoLookup.end() ) { continue; }
+    /* 9 */ h_cutflow->Fill(cutTags.at(9).c_str(),1.);
+
+    //   std::cout << "step 1" << std::endl;
+
+    // classify signal and pile-up jets
+
+    ////////////////////////////////////////////////////////////////
+    // Inclusive plots after event selection for all matched jets //
+    ////////////////////////////////////////////////////////////////
+
+    /////////////////////
+    // Final selection //
+    /////////////////////
+
+    // reject if both jets with highest mass are not matched
+    if ( nmfilter < 2 ) { continue; }
+    /* 10 */ h_cutflow->Fill(cutTags.at(10).c_str(),1.);
+
+    // std::cout << jentry << " -> step 2" << std::endl;
+
+    // fill event level plots
+    h_tjet_num_fin->Fill(ntjets);
+
+    h_evnt_m_fin->Fill(minv/1000.);           
+    h_evnt_njm_fin->Fill((double)njets);      
+    h_evnt_gap_fin->Fill(rapgap);                
+
+    // fill truth jet level plots
+    for ( size_t i(0); i<tjet.size(); ++i ) {
+      double pT(tjet.at(i).pt()/1000.); double rap(tjet.at(i).rap()); double phi(tjet.at(i).phi_std());
+      size_t nc = AH::numConstits(tjet.at(i));
+      // all jets
+      h_tjet_pt_fin->Fill(pT); h_tjet_rap_fin->Fill(rap); h_tjet_phi_fin->Fill(phi);
+      d_tjet_num_rap_fin->Fill(rap,(double)nc); d_tjet_rap_pt_fin->Fill(rap,(double)nc);
+    } // fill jet properties
+
+    // all calorimeter jets
+    for ( size_t i(0); i<calojet.size(); ++i ) {
+      // pick up and rescale variables as needed
+      double pT(calojet.at(i).pt()/1000.); double rap(calojet.at(i).rap()); double phi(calojet.at(i).phi_std());
+      size_t nc = AH::numConstits(calojet.at(i));
+      // all jets
+      h_rjet_pt_fin->Fill(pT); h_rjet_rap_fin->Fill(rap); h_rjet_phi_fin->Fill(phi);
+      d_rjet_num_rap_fin->Fill(rap,(double)nc); d_rjet_rap_pt_fin->Fill(rap,pT);
+    }
+
+    // matched calorimeter jets
+    for ( auto fm(matchJets.begin()); fm != matchJets.end(); ++fm ) {
+      int tidx(fm->second.first); 
+      int cidx(fm->second.second);
+      double dr(fm->first);
+      //
+      double pT(calojet.at(cidx).pt()/1000.); double rap(calojet.at(cidx).rap()); double phi(calojet.at(cidx).phi_std());
+      size_t nc = AH::numConstits(calojet.at(cidx));
+      // all jets
+      h_mjet_pt_fin->Fill(pT); h_mjet_rap_fin->Fill(rap); h_mjet_phi_fin->Fill(phi);
+      d_mjet_num_rap_fin->Fill(rap,(double)nc); d_mjet_rap_pt_fin->Fill(rap,pT);
+    }
+
+  } // event loop 
+
+  ////////////
+  // Output //
+  ////////////
+
+  double ie = h_cutflow->GetBinContent(1);
+  if ( ie > 0. ) { 
+    nd = AnalysisHelper::ndigits((int)ie);               
+    // preview finds maximum string length 
+    size_t kd(0);
+    for ( int i(1); i<=h_cutflow->GetNbinsX(); ++i ) {
+      std::string xlabel(h_cutflow->GetXaxis()->GetBinLabel(i)); 
+      if ( xlabel.length() > kd ) { kd = xlabel.length(); } 
+    }
+    // print summary
+    PRINT_INFO(_mname,"[begin] cutflow summary >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+    for ( int i(1); i<=h_cutflow->GetNbinsX(); ++i ) {
+      std::string tag(h_cutflow->GetXaxis()->GetBinLabel(i));
+      if ( !tag.empty() && tag !="" ) { 
+	PRINT_INFO(_mname,"events after cut %*s (bin %2i): %*i (%5.1f%%)",
+	       (int)kd,tag.c_str(),i,nd,(int)h_cutflow->GetBinContent(i),h_cutflow->GetBinContent(i)/ie*100.);
+      }
+    }
+    PRINT_INFO(_mname,"[end]   Cutflow summary <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+  }
+
+  // write histograms to output file
+  int nhists = AH::writeHists(Analysis::Config::Output::file);
+}

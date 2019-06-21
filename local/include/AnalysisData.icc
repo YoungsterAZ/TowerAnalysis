@@ -1,0 +1,23 @@
+// -*- c++ -*-
+
+      ///@copydoc Analysis::Config::JetFinder::radius
+      ///@copydoc Analysis::Config::JetFinder::algo
+      ///@copydoc Analysis::Config::JetFinder::definition
+      ///@copydoc Analysis::Config::JetFinder::setJetDefinition()
+      ///@copydoc Analysis::Config::JetFinder::areaType
+      ///@copydoc Analysis::Config::JetFinder::voronoiSpec
+      ///@copydoc Analysis::Config::JetFinder::ghostedSpec
+      ///@copydoc Analysis::Config::JetFinder::areaDef
+      ///@copydoc Analysis::Config::JetFinder::setupVoronoi()
+      ///@copydoc Analysis::Config::JetFinder::setupGhosted()
+
+      ///@copydoc Analysis::Config::JetFinder::radius
+      ///@copydoc Analysis::Config::JetFinder::algo
+      ///@copydoc Analysis::Config::JetFinder::definition
+      ///@copydoc Analysis::Config::JetFinder::setJetDefinition()
+      ///@copydoc Analysis::Config::JetFinder::areaType
+      ///@copydoc Analysis::Config::JetFinder::voronoiSpec
+      ///@copydoc Analysis::Config::JetFinder::ghostedSpec
+      ///@copydoc Analysis::Config::JetFinder::areaDef
+      ///@copydoc Analysis::Config::JetFinder::setupVoronoi()
+      ///@copydoc Analysis::Config::JetFinder::setupGhosted()

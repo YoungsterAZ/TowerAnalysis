@@ -1,0 +1,308 @@
+\hypertarget{classHistUtils_1_1HistMgr}{}\section{Hist\+Utils\+:\+:Hist\+Mgr Class Reference}
+\label{classHistUtils_1_1HistMgr}\index{Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}}
+
+
+Histogram manager.  
+
+
+
+
+{\ttfamily \#include $<$Analysis\+Helper.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classHistUtils_1_1HistMgr}{Hist\+Mgr} $\ast$ \hyperlink{classHistUtils_1_1HistMgr_a470a4d54f8b7f7e305aa43fb48f99e9c}{instance} ()
+\begin{DoxyCompactList}\small\item\em Access to object. \end{DoxyCompactList}\item 
+static \hyperlink{classHistUtils_1_1HistMgr}{Hist\+Mgr} $\ast$ \hyperlink{classHistUtils_1_1HistMgr_a470a4d54f8b7f7e305aa43fb48f99e9c}{instance} ()
+\begin{DoxyCompactList}\small\item\em Access to object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf Histogram cache management}\par
+{\em Add a histogram to cache
+
+
+\begin{DoxyParams}{Parameters}
+{\em hptr} & base class pointer to histogram to be added. \\
+\hline
+\end{DoxyParams}
+}\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classHistUtils_1_1HistMgr_a0ddb91771b282ca41a4b7b916f8e7e2c}{add} (T\+H1 $\ast$hptr)
+\begin{DoxyCompactList}\small\item\em Remove a histogram from cache. \end{DoxyCompactList}\item 
+static void \hyperlink{classHistUtils_1_1HistMgr_a0f2238621b12aa2e768f804344d15915}{remove} (T\+H1 $\ast$hptr)
+\begin{DoxyCompactList}\small\item\em Remove a histogram from cache. \end{DoxyCompactList}\item 
+static void \hyperlink{classHistUtils_1_1HistMgr_a43c6a46f880d56f843ecf0b6d920426d}{clear} ()
+\begin{DoxyCompactList}\small\item\em Clear cache. \end{DoxyCompactList}\item 
+static size\+\_\+t \hyperlink{classHistUtils_1_1HistMgr_a9af371f98ca15a96b7090e6ab3785998}{write} (bool noempty=true)
+\begin{DoxyCompactList}\small\item\em Write known histograms. \end{DoxyCompactList}\item 
+static void \hyperlink{classHistUtils_1_1HistMgr_a0ddb91771b282ca41a4b7b916f8e7e2c}{add} (T\+H1 $\ast$hptr)
+\begin{DoxyCompactList}\small\item\em Remove a histogram from cache. \end{DoxyCompactList}\item 
+static void \hyperlink{classHistUtils_1_1HistMgr_a0f2238621b12aa2e768f804344d15915}{remove} (T\+H1 $\ast$hptr)
+\begin{DoxyCompactList}\small\item\em Remove a histogram from cache. \end{DoxyCompactList}\item 
+static void \hyperlink{classHistUtils_1_1HistMgr_a43c6a46f880d56f843ecf0b6d920426d}{clear} ()
+\begin{DoxyCompactList}\small\item\em Clear cache. \end{DoxyCompactList}\item 
+static size\+\_\+t \hyperlink{classHistUtils_1_1HistMgr_a9af371f98ca15a96b7090e6ab3785998}{write} (bool noempty=true)
+\begin{DoxyCompactList}\small\item\em Write known histograms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHistUtils_1_1HistMgr_a1ab05ff224b8260bab8e9f2e4c9c9b12}{Hist\+Mgr} ()
+\begin{DoxyCompactList}\small\item\em Protected constructor for singleton pattern. \end{DoxyCompactList}\item 
+\hyperlink{classHistUtils_1_1HistMgr_a1ab05ff224b8260bab8e9f2e4c9c9b12}{Hist\+Mgr} ()
+\begin{DoxyCompactList}\small\item\em Protected constructor for singleton pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classHistUtils_1_1HistMgr}{Hist\+Mgr} $\ast$ \hyperlink{classHistUtils_1_1HistMgr_a9941e8757f5e3dabfc24422822857fe6}{\+\_\+instance} = 0
+\begin{DoxyCompactList}\small\item\em Pointer to only object. \end{DoxyCompactList}\item 
+static std\+::list$<$ T\+H1 $\ast$ $>$ \hyperlink{classHistUtils_1_1HistMgr_a2f35b5aff01c50080e7ea59309f69842}{\+\_\+hlist} = std\+::list$<$T\+H1$\ast$$>$()
+\begin{DoxyCompactList}\small\item\em List of known histograms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Histogram manager. 
+
+This object manages histograms (presently collects them for write to output file). Implemented as a singleton (one object instance/job only. Typically used in the background. 
+
+Definition at line 163 of file Analysis\+Helper.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}!Hist\+Mgr@{Hist\+Mgr}}
+\index{Hist\+Mgr@{Hist\+Mgr}!Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}}
+\subsubsection[{\texorpdfstring{Hist\+Mgr()}{HistMgr()}}]{\setlength{\rightskip}{0pt plus 5cm}Hist\+Utils\+::\+Hist\+Mgr\+::\+Hist\+Mgr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classHistUtils_1_1HistMgr_a1ab05ff224b8260bab8e9f2e4c9c9b12}{}\label{classHistUtils_1_1HistMgr_a1ab05ff224b8260bab8e9f2e4c9c9b12}
+
+
+Protected constructor for singleton pattern. 
+
+
+
+Definition at line 171 of file Analysis\+Helper.\+h.
+
+\index{Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}!Hist\+Mgr@{Hist\+Mgr}}
+\index{Hist\+Mgr@{Hist\+Mgr}!Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}}
+\subsubsection[{\texorpdfstring{Hist\+Mgr()}{HistMgr()}}]{\setlength{\rightskip}{0pt plus 5cm}Hist\+Utils\+::\+Hist\+Mgr\+::\+Hist\+Mgr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classHistUtils_1_1HistMgr_a1ab05ff224b8260bab8e9f2e4c9c9b12}{}\label{classHistUtils_1_1HistMgr_a1ab05ff224b8260bab8e9f2e4c9c9b12}
+
+
+Protected constructor for singleton pattern. 
+
+
+
+Definition at line 28 of file Analysis\+Helper\+Core.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}!add@{add}}
+\index{add@{add}!Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}}
+\subsubsection[{\texorpdfstring{add(\+T\+H1 $\ast$hptr)}{add(TH1 *hptr)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Hist\+Utils\+::\+Hist\+Mgr\+::add (
+\begin{DoxyParamCaption}
+\item[{T\+H1 $\ast$}]{hptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classHistUtils_1_1HistMgr_a0ddb91771b282ca41a4b7b916f8e7e2c}{}\label{classHistUtils_1_1HistMgr_a0ddb91771b282ca41a4b7b916f8e7e2c}
+
+
+Remove a histogram from cache. 
+
+
+
+Definition at line 36 of file Analysis\+Helper\+Core.\+h.
+
+\index{Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}!add@{add}}
+\index{add@{add}!Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}}
+\subsubsection[{\texorpdfstring{add(\+T\+H1 $\ast$hptr)}{add(TH1 *hptr)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Hist\+Utils\+::\+Hist\+Mgr\+::add (
+\begin{DoxyParamCaption}
+\item[{T\+H1 $\ast$}]{hptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classHistUtils_1_1HistMgr_a0ddb91771b282ca41a4b7b916f8e7e2c}{}\label{classHistUtils_1_1HistMgr_a0ddb91771b282ca41a4b7b916f8e7e2c}
+
+
+Remove a histogram from cache. 
+
+
+
+Definition at line 178 of file Analysis\+Helper.\+h.
+
+\index{Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}!clear@{clear}}
+\index{clear@{clear}!Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}}
+\subsubsection[{\texorpdfstring{clear()}{clear()}}]{\setlength{\rightskip}{0pt plus 5cm}static void Hist\+Utils\+::\+Hist\+Mgr\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classHistUtils_1_1HistMgr_a43c6a46f880d56f843ecf0b6d920426d}{}\label{classHistUtils_1_1HistMgr_a43c6a46f880d56f843ecf0b6d920426d}
+
+
+Clear cache. 
+
+
+
+Definition at line 41 of file Analysis\+Helper\+Core.\+h.
+
+\index{Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}!clear@{clear}}
+\index{clear@{clear}!Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}}
+\subsubsection[{\texorpdfstring{clear()}{clear()}}]{\setlength{\rightskip}{0pt plus 5cm}static void Hist\+Utils\+::\+Hist\+Mgr\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classHistUtils_1_1HistMgr_a43c6a46f880d56f843ecf0b6d920426d}{}\label{classHistUtils_1_1HistMgr_a43c6a46f880d56f843ecf0b6d920426d}
+
+
+Clear cache. 
+
+
+
+Definition at line 182 of file Analysis\+Helper.\+h.
+
+\index{Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}!instance@{instance}}
+\index{instance@{instance}!Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}}
+\subsubsection[{\texorpdfstring{instance()}{instance()}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Hist\+Mgr}$\ast$ Hist\+Utils\+::\+Hist\+Mgr\+::instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classHistUtils_1_1HistMgr_a470a4d54f8b7f7e305aa43fb48f99e9c}{}\label{classHistUtils_1_1HistMgr_a470a4d54f8b7f7e305aa43fb48f99e9c}
+
+
+Access to object. 
+
+
+
+Definition at line 31 of file Analysis\+Helper\+Core.\+h.
+
+\index{Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}!instance@{instance}}
+\index{instance@{instance}!Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}}
+\subsubsection[{\texorpdfstring{instance()}{instance()}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Hist\+Mgr}$\ast$ Hist\+Utils\+::\+Hist\+Mgr\+::instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classHistUtils_1_1HistMgr_a470a4d54f8b7f7e305aa43fb48f99e9c}{}\label{classHistUtils_1_1HistMgr_a470a4d54f8b7f7e305aa43fb48f99e9c}
+
+
+Access to object. 
+
+
+
+Definition at line 174 of file Analysis\+Helper.\+h.
+
+\index{Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}!remove@{remove}}
+\index{remove@{remove}!Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}}
+\subsubsection[{\texorpdfstring{remove(\+T\+H1 $\ast$hptr)}{remove(TH1 *hptr)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Hist\+Utils\+::\+Hist\+Mgr\+::remove (
+\begin{DoxyParamCaption}
+\item[{T\+H1 $\ast$}]{hptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classHistUtils_1_1HistMgr_a0f2238621b12aa2e768f804344d15915}{}\label{classHistUtils_1_1HistMgr_a0f2238621b12aa2e768f804344d15915}
+
+
+Remove a histogram from cache. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hptr} & base class pointer to histogram to be removed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file Analysis\+Helper\+Core.\+h.
+
+\index{Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}!remove@{remove}}
+\index{remove@{remove}!Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}}
+\subsubsection[{\texorpdfstring{remove(\+T\+H1 $\ast$hptr)}{remove(TH1 *hptr)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Hist\+Utils\+::\+Hist\+Mgr\+::remove (
+\begin{DoxyParamCaption}
+\item[{T\+H1 $\ast$}]{hptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classHistUtils_1_1HistMgr_a0f2238621b12aa2e768f804344d15915}{}\label{classHistUtils_1_1HistMgr_a0f2238621b12aa2e768f804344d15915}
+
+
+Remove a histogram from cache. 
+
+
+
+Definition at line 180 of file Analysis\+Helper.\+h.
+
+\index{Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}!write@{write}}
+\index{write@{write}!Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}}
+\subsubsection[{\texorpdfstring{write(bool noempty=true)}{write(bool noempty=true)}}]{\setlength{\rightskip}{0pt plus 5cm}static size\+\_\+t Hist\+Utils\+::\+Hist\+Mgr\+::write (
+\begin{DoxyParamCaption}
+\item[{bool}]{noempty = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classHistUtils_1_1HistMgr_a9af371f98ca15a96b7090e6ab3785998}{}\label{classHistUtils_1_1HistMgr_a9af371f98ca15a96b7090e6ab3785998}
+
+
+Write known histograms. 
+
+\begin{DoxyReturn}{Returns}
+Number of histograms written. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em noempty} & do not write empty histograms if {\ttfamily true} (optional, default {\ttfamily true}) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 46 of file Analysis\+Helper\+Core.\+h.
+
+\index{Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}!write@{write}}
+\index{write@{write}!Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}}
+\subsubsection[{\texorpdfstring{write(bool noempty=true)}{write(bool noempty=true)}}]{\setlength{\rightskip}{0pt plus 5cm}static size\+\_\+t Hist\+Utils\+::\+Hist\+Mgr\+::write (
+\begin{DoxyParamCaption}
+\item[{bool}]{noempty = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classHistUtils_1_1HistMgr_a9af371f98ca15a96b7090e6ab3785998}{}\label{classHistUtils_1_1HistMgr_a9af371f98ca15a96b7090e6ab3785998}
+
+
+Write known histograms. 
+
+\begin{DoxyReturn}{Returns}
+Number of histograms written. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em noempty} & do not write empty histograms if {\ttfamily true} (optional, default {\ttfamily true}) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 187 of file Analysis\+Helper.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}!\+\_\+hlist@{\+\_\+hlist}}
+\index{\+\_\+hlist@{\+\_\+hlist}!Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}}
+\subsubsection[{\texorpdfstring{\+\_\+hlist}{_hlist}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::list$<$ T\+H1 $\ast$ $>$ Hist\+Utils\+::\+Hist\+Mgr\+::\+\_\+hlist = std\+::list$<$T\+H1$\ast$$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{classHistUtils_1_1HistMgr_a2f35b5aff01c50080e7ea59309f69842}{}\label{classHistUtils_1_1HistMgr_a2f35b5aff01c50080e7ea59309f69842}
+
+
+List of known histograms. 
+
+Histogram pointer cache. 
+
+Definition at line 169 of file Analysis\+Helper.\+h.
+
+\index{Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}!\+\_\+instance@{\+\_\+instance}}
+\index{\+\_\+instance@{\+\_\+instance}!Hist\+Utils\+::\+Hist\+Mgr@{Hist\+Utils\+::\+Hist\+Mgr}}
+\subsubsection[{\texorpdfstring{\+\_\+instance}{_instance}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hist\+Utils\+::\+Hist\+Mgr} $\ast$ Hist\+Utils\+::\+Hist\+Mgr\+::\+\_\+instance = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{classHistUtils_1_1HistMgr_a9941e8757f5e3dabfc24422822857fe6}{}\label{classHistUtils_1_1HistMgr_a9941e8757f5e3dabfc24422822857fe6}
+
+
+Pointer to only object. 
+
+Singleton pattern pre-\/set.
+
+Pointer to only manager object. 
+
+Definition at line 167 of file Analysis\+Helper.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{AnalysisHelper_8h}{Analysis\+Helper.\+h}\item 
+\hyperlink{AnalysisHelperCore_8h}{Analysis\+Helper\+Core.\+h}\end{DoxyCompactItemize}

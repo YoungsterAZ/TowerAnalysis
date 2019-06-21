@@ -1,0 +1,144 @@
+\hypertarget{AnalysisUtils_8h}{}\section{Analysis\+Utils.\+h File Reference}
+\label{AnalysisUtils_8h}\index{Analysis\+Utils.\+h@{Analysis\+Utils.\+h}}
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$cstdio$>$}\\*
+{\ttfamily \#include $<$cstdarg$>$}\\*
+{\ttfamily \#include $<$typeinfo$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include \char`\"{}Analysis\+Data.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classAnalysis_1_1Svc_1_1Msg_1_1Handler}{Analysis\+::\+Svc\+::\+Msg\+::\+Handler}
+\item 
+struct \hyperlink{structAnalysis_1_1Print}{Analysis\+::\+Print}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceAnalysis}{Analysis}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceAnalysis}{Analysis} configuration data. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1Svc}{Analysis\+::\+Svc}
+\item 
+ \hyperlink{namespaceAnalysis_1_1Svc_1_1Msg}{Analysis\+::\+Svc\+::\+Msg}
+\item 
+ \hyperlink{namespaceAnalysis_1_1Svc_1_1Msg_1_1Limits}{Analysis\+::\+Svc\+::\+Msg\+::\+Limits}
+\item 
+ \hyperlink{namespaceAnalysis_1_1Svc_1_1Msg_1_1Counts}{Analysis\+::\+Svc\+::\+Msg\+::\+Counts}
+\item 
+ \hyperlink{namespaceAnalysis_1_1Utils}{Analysis\+::\+Utils}
+\item 
+ \hyperlink{namespaceAnalysis_1_1Utils_1_1Types}{Analysis\+::\+Utils\+::\+Types}
+\item 
+ \hyperlink{namespaceAnalysis_1_1Utils_1_1String}{Analysis\+::\+Utils\+::\+String}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{AnalysisUtils_8h_a5c16aa5b113f79fcec5c5a3b945b57fc}{D\+E\+F\+\_\+\+M\+S\+G\+\_\+\+F\+O\+R\+M\+A\+T\+T\+ER}(F\+MT,  M\+SG)
+\item 
+\#define \hyperlink{AnalysisUtils_8h_a69d4fe9bbd3c4c72562c9165199a7ee8}{D\+E\+F\+\_\+\+M\+O\+D\+\_\+\+F\+O\+R\+M\+A\+T\+T\+ER}(M\+O\+DN,  M\+O\+DF,  W)
+\item 
+\#define \hyperlink{AnalysisUtils_8h_ab8f9f84cb1e03f892ce740d4b451e754}{D\+E\+F\+\_\+\+T\+Y\+P\+E\+N\+A\+ME}(T\+Y\+PE,  A\+RG)
+\item 
+\#define \hyperlink{AnalysisUtils_8h_ab661429fea513fabd0171e4f3ad75049}{P\+R\+I\+N\+T\+\_\+\+I\+N\+FO}~\hyperlink{structAnalysis_1_1Print_a7bb82c77b836600b33213c45a162e0ad}{Analysis\+::\+Print\+::\+Info}
+\item 
+\#define \hyperlink{AnalysisUtils_8h_a5afac022edfda81af3303265fcb323f1}{P\+R\+I\+N\+T\+\_\+\+W\+A\+R\+N\+I\+NG}~\hyperlink{structAnalysis_1_1Print_a28d497b97a03f791ba09f733a76cf470}{Analysis\+::\+Print\+::\+Warning}
+\item 
+\#define \hyperlink{AnalysisUtils_8h_aa0004d1735f5c5a47cd385525c5bdbc0}{P\+R\+I\+N\+T\+\_\+\+E\+R\+R\+OR}~\hyperlink{structAnalysis_1_1Print_a66f3a4641455cbf87826051059017b73}{Analysis\+::\+Print\+::\+Error}
+\item 
+\#define \hyperlink{AnalysisUtils_8h_ac3118bc144fa7b17c1410b6eb11b1395}{P\+R\+I\+N\+T\+\_\+\+D\+E\+B\+UG}~\hyperlink{structAnalysis_1_1Print_a7a587a37126cd9b3b6a90f643066572e}{Analysis\+::\+Print\+::\+Debug}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\std\+::string \hyperlink{namespaceAnalysis_1_1Utils_1_1Types_aa5e7a61eebd6443d0c245a0df3ed301e}{Analysis\+::\+Utils\+::\+Types\+::type\+Name} (T arg)
+\item 
+{\footnotesize template$<$$>$ }\\std\+::string \hyperlink{namespaceAnalysis_1_1Utils_1_1Types_adebb24900d27e8699c823f173852d71f}{Analysis\+::\+Utils\+::\+Types\+::type\+Name} (std\+::string)
+\item 
+{\footnotesize template$<$$>$ }\\std\+::string \hyperlink{namespaceAnalysis_1_1Utils_1_1Types_a83ceec27b4a4e91a4dc50c874f8f0d99}{Analysis\+::\+Utils\+::\+Types\+::type\+Name} (size\+\_\+t)
+\item 
+{\footnotesize template$<$$>$ }\\std\+::string \hyperlink{namespaceAnalysis_1_1Utils_1_1Types_af6bfb00ebba0bcd8d973764f67896c2e}{Analysis\+::\+Utils\+::\+Types\+::type\+Name} (int)
+\item 
+{\footnotesize template$<$$>$ }\\std\+::string \hyperlink{namespaceAnalysis_1_1Utils_1_1Types_a57ebc9b06d2e6a29fdbd635440c99dab}{Analysis\+::\+Utils\+::\+Types\+::type\+Name} (long)
+\item 
+{\footnotesize template$<$$>$ }\\std\+::string \hyperlink{namespaceAnalysis_1_1Utils_1_1Types_a9cdf83d750cb3af673e1df1215373dbe}{Analysis\+::\+Utils\+::\+Types\+::type\+Name} (float)
+\item 
+{\footnotesize template$<$$>$ }\\std\+::string \hyperlink{namespaceAnalysis_1_1Utils_1_1Types_a916399950116452e07f81b9ef00cb07c}{Analysis\+::\+Utils\+::\+Types\+::type\+Name} (double)
+\item 
+{\footnotesize template$<$class T $>$ }\\bool \hyperlink{namespaceAnalysis_1_1Utils_1_1String_a5c38eb223350773b701e90115a17b901}{Analysis\+::\+Utils\+::\+String\+::fetch\+Value} (const std\+::string \&astr, const std\+::string \&kstr, T \&value)
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{namespaceAnalysis_1_1Utils_1_1String_af7858a7241abdd189842fa1beb2df634}{Analysis\+::\+Utils\+::\+String\+::fetch\+Value} (const std\+::string \&astr, const std\+::string \&kstr, std\+::string \&value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{Analysis\+Utils.\+h@{Analysis\+Utils.\+h}!D\+E\+F\+\_\+\+M\+O\+D\+\_\+\+F\+O\+R\+M\+A\+T\+T\+ER@{D\+E\+F\+\_\+\+M\+O\+D\+\_\+\+F\+O\+R\+M\+A\+T\+T\+ER}}
+\index{D\+E\+F\+\_\+\+M\+O\+D\+\_\+\+F\+O\+R\+M\+A\+T\+T\+ER@{D\+E\+F\+\_\+\+M\+O\+D\+\_\+\+F\+O\+R\+M\+A\+T\+T\+ER}!Analysis\+Utils.\+h@{Analysis\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+F\+\_\+\+M\+O\+D\+\_\+\+F\+O\+R\+M\+A\+T\+T\+ER}{DEF_MOD_FORMATTER}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+F\+\_\+\+M\+O\+D\+\_\+\+F\+O\+R\+M\+A\+T\+T\+ER(
+\begin{DoxyParamCaption}
+\item[{}]{M\+O\+DN, }
+\item[{}]{M\+O\+DF, }
+\item[{}]{W}
+\end{DoxyParamCaption}
+)}\hypertarget{AnalysisUtils_8h_a69d4fe9bbd3c4c72562c9165199a7ee8}{}\label{AnalysisUtils_8h_a69d4fe9bbd3c4c72562c9165199a7ee8}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} ( MODN.length() > (size\_t) W ) \{                 \(\backslash\)
+    MODF = std::string(\textcolor{stringliteral}{"["}) + MODN.substr(0, W );           \(\backslash\)
+    for ( \textcolor{keywordtype}{size\_t} i(MODF.length()-3); i<MODF.length(); ++i ) \{       \(\backslash\)
+      MODF[i] = \textcolor{charliteral}{'.'};                            \(\backslash\)
+    \}                                   \(\backslash\)
+    MODF += std::string(\textcolor{stringliteral}{"]"});                       \(\backslash\)
+  \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( MODN.length() == (size\_t) W ) \{               \(\backslash\)
+    MODF = std::string(\textcolor{stringliteral}{"["}) + MODN + std::string(\textcolor{stringliteral}{"]"});          \(\backslash\)
+  \} \textcolor{keywordflow}{else} \{                              \(\backslash\)
+    MODF = std::string(\textcolor{stringliteral}{"["}) + MODN + std::string(\textcolor{stringliteral}{"]"});          \(\backslash\)
+    for ( \textcolor{keywordtype}{size\_t} i(MODN.length()); i < (size\_t) W ; ++i ) \{ MODF += std::string(\textcolor{stringliteral}{" "}); \} \(\backslash\)
+  \}
+\end{DoxyCode}
+\index{Analysis\+Utils.\+h@{Analysis\+Utils.\+h}!D\+E\+F\+\_\+\+M\+S\+G\+\_\+\+F\+O\+R\+M\+A\+T\+T\+ER@{D\+E\+F\+\_\+\+M\+S\+G\+\_\+\+F\+O\+R\+M\+A\+T\+T\+ER}}
+\index{D\+E\+F\+\_\+\+M\+S\+G\+\_\+\+F\+O\+R\+M\+A\+T\+T\+ER@{D\+E\+F\+\_\+\+M\+S\+G\+\_\+\+F\+O\+R\+M\+A\+T\+T\+ER}!Analysis\+Utils.\+h@{Analysis\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+F\+\_\+\+M\+S\+G\+\_\+\+F\+O\+R\+M\+A\+T\+T\+ER}{DEF_MSG_FORMATTER}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+F\+\_\+\+M\+S\+G\+\_\+\+F\+O\+R\+M\+A\+T\+T\+ER(
+\begin{DoxyParamCaption}
+\item[{}]{F\+MT, }
+\item[{}]{M\+SG}
+\end{DoxyParamCaption}
+)}\hypertarget{AnalysisUtils_8h_a5c16aa5b113f79fcec5c5a3b945b57fc}{}\label{AnalysisUtils_8h_a5c16aa5b113f79fcec5c5a3b945b57fc}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{static} \textcolor{keywordtype}{char} \_buffer[1024];          \(\backslash\)
+  va\_list args;                 \(\backslash\)
+  va\_start(args, FMT );             \(\backslash\)
+  vsprintf(\_buffer, FMT.c\_str(),args);      \(\backslash\)
+  va\_end(args);                 \(\backslash\)
+  std::string MSG (\_buffer);
+\end{DoxyCode}
+\index{Analysis\+Utils.\+h@{Analysis\+Utils.\+h}!D\+E\+F\+\_\+\+T\+Y\+P\+E\+N\+A\+ME@{D\+E\+F\+\_\+\+T\+Y\+P\+E\+N\+A\+ME}}
+\index{D\+E\+F\+\_\+\+T\+Y\+P\+E\+N\+A\+ME@{D\+E\+F\+\_\+\+T\+Y\+P\+E\+N\+A\+ME}!Analysis\+Utils.\+h@{Analysis\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+F\+\_\+\+T\+Y\+P\+E\+N\+A\+ME}{DEF_TYPENAME}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+F\+\_\+\+T\+Y\+P\+E\+N\+A\+ME(
+\begin{DoxyParamCaption}
+\item[{}]{T\+Y\+PE, }
+\item[{}]{A\+RG}
+\end{DoxyParamCaption}
+)}\hypertarget{AnalysisUtils_8h_ab8f9f84cb1e03f892ce740d4b451e754}{}\label{AnalysisUtils_8h_ab8f9f84cb1e03f892ce740d4b451e754}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{template}<>                  \(\backslash\)
+  std::string \hyperlink{namespaceAnalysis_1_1Utils_1_1Types_a916399950116452e07f81b9ef00cb07c}{typeName}( TYPE ARG )      \(\backslash\)
+  \{ \textcolor{keywordflow}{return} std::string( #TYPE ); \}
+\end{DoxyCode}
+\index{Analysis\+Utils.\+h@{Analysis\+Utils.\+h}!P\+R\+I\+N\+T\+\_\+\+D\+E\+B\+UG@{P\+R\+I\+N\+T\+\_\+\+D\+E\+B\+UG}}
+\index{P\+R\+I\+N\+T\+\_\+\+D\+E\+B\+UG@{P\+R\+I\+N\+T\+\_\+\+D\+E\+B\+UG}!Analysis\+Utils.\+h@{Analysis\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{P\+R\+I\+N\+T\+\_\+\+D\+E\+B\+UG}{PRINT_DEBUG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+I\+N\+T\+\_\+\+D\+E\+B\+UG~{\bf Analysis\+::\+Print\+::\+Debug}}\hypertarget{AnalysisUtils_8h_ac3118bc144fa7b17c1410b6eb11b1395}{}\label{AnalysisUtils_8h_ac3118bc144fa7b17c1410b6eb11b1395}
+\index{Analysis\+Utils.\+h@{Analysis\+Utils.\+h}!P\+R\+I\+N\+T\+\_\+\+E\+R\+R\+OR@{P\+R\+I\+N\+T\+\_\+\+E\+R\+R\+OR}}
+\index{P\+R\+I\+N\+T\+\_\+\+E\+R\+R\+OR@{P\+R\+I\+N\+T\+\_\+\+E\+R\+R\+OR}!Analysis\+Utils.\+h@{Analysis\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{P\+R\+I\+N\+T\+\_\+\+E\+R\+R\+OR}{PRINT_ERROR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+I\+N\+T\+\_\+\+E\+R\+R\+OR~{\bf Analysis\+::\+Print\+::\+Error}}\hypertarget{AnalysisUtils_8h_aa0004d1735f5c5a47cd385525c5bdbc0}{}\label{AnalysisUtils_8h_aa0004d1735f5c5a47cd385525c5bdbc0}
+\index{Analysis\+Utils.\+h@{Analysis\+Utils.\+h}!P\+R\+I\+N\+T\+\_\+\+I\+N\+FO@{P\+R\+I\+N\+T\+\_\+\+I\+N\+FO}}
+\index{P\+R\+I\+N\+T\+\_\+\+I\+N\+FO@{P\+R\+I\+N\+T\+\_\+\+I\+N\+FO}!Analysis\+Utils.\+h@{Analysis\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{P\+R\+I\+N\+T\+\_\+\+I\+N\+FO}{PRINT_INFO}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+I\+N\+T\+\_\+\+I\+N\+FO~{\bf Analysis\+::\+Print\+::\+Info}}\hypertarget{AnalysisUtils_8h_ab661429fea513fabd0171e4f3ad75049}{}\label{AnalysisUtils_8h_ab661429fea513fabd0171e4f3ad75049}
+\index{Analysis\+Utils.\+h@{Analysis\+Utils.\+h}!P\+R\+I\+N\+T\+\_\+\+W\+A\+R\+N\+I\+NG@{P\+R\+I\+N\+T\+\_\+\+W\+A\+R\+N\+I\+NG}}
+\index{P\+R\+I\+N\+T\+\_\+\+W\+A\+R\+N\+I\+NG@{P\+R\+I\+N\+T\+\_\+\+W\+A\+R\+N\+I\+NG}!Analysis\+Utils.\+h@{Analysis\+Utils.\+h}}
+\subsubsection[{\texorpdfstring{P\+R\+I\+N\+T\+\_\+\+W\+A\+R\+N\+I\+NG}{PRINT_WARNING}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+I\+N\+T\+\_\+\+W\+A\+R\+N\+I\+NG~{\bf Analysis\+::\+Print\+::\+Warning}}\hypertarget{AnalysisUtils_8h_a5afac022edfda81af3303265fcb323f1}{}\label{AnalysisUtils_8h_a5afac022edfda81af3303265fcb323f1}

@@ -1,0 +1,95 @@
+// -*- c++ -*-
+template<class T>
+long int XMLData::fillEvent(T* data,long int jentry)
+{
+  static char buffer[2048];
+
+  long int ientry = data->LoadTree(jentry);
+  if (ientry < 0) {
+    printf("XMLData - INFO  end of data reached unexpectedly after %ld bytes read and %zu lines written\n",_nbytes,_event.size());
+    return ientry;
+  }
+  _nbytes += data->fChain->GetEntry(jentry);
+
+  _records = 0;
+
+  _openEvt();
+
+  // pile-up measures (EM) 
+  sprintf(buffer,XMLDict::Format::rhoBegin.c_str(),"EM","Akt4JetArea",1,3,"median sigma area");
+  _openBlock(buffer);
+  sprintf(buffer,"    %10.3f %10.3f %10.3f",data->event_rho_em,data->event_sigma_em,data->event_area_em);
+  _addToEvt(buffer);
+  _closeBlock(XMLDict::Format::rhoEnd);
+
+  // pile-up measures (LCW) 
+  sprintf(buffer,XMLDict::Format::rhoBegin.c_str(),"LCW","Akt4JetArea",1,3,"median sigma area");
+  _openBlock(buffer);
+  sprintf(buffer,"    %10.3f %10.3f %10.3f",data->event_rho_lcw,data->event_sigma_lcw,data->event_area_lcw); ++_records;
+  _addToEvt(buffer);
+  _closeBlock(XMLDict::Format::rhoEnd);
+
+  // pile-up conditions 
+  sprintf(buffer,"%s     %10.3f %s",XMLDict::Format::muBegin.c_str(),data->event_mu,XMLDict::Format::muEnd.c_str());    _addToEvt(buffer); ++_records;
+  sprintf(buffer,"%s    %10i %s",XMLDict::Format::npvBegin.c_str(),data->event_npv,XMLDict::Format::npvEnd.c_str());   _addToEvt(buffer); ++_records;
+  sprintf(buffer,XMLDict::Format::weightBegin.c_str(),"MC");
+  std::string tmpStr(buffer);
+  sprintf(buffer,"%s     %10.3g %s",tmpStr.c_str(),data->event_weight,XMLDict::Format::weightEnd.c_str());              _addToEvt(buffer); ++_records;
+
+  // tower collections
+  sprintf(buffer,XMLDict::Format::signalBegin.c_str(),"CaloTopoCluster","kine moment");
+  _openBlock(buffer);
+  sprintf(buffer,XMLDict::Format::kineBegin.c_str(),10,data->topoclus_em_e->size(),"E_em Pt_em Eta_em Phi_em E_lcw Pt_lcw eta_lcw phi_lcw time significance");
+  _openBlock(buffer);
+  size_t nclus(data->topoclus_em_e->size());
+  CHECK_SIZE( data->topoclus_em_pt,   nclus );
+  CHECK_SIZE( data->topoclus_em_eta,  nclus );
+  CHECK_SIZE( data->topoclus_em_phi,  nclus );
+  CHECK_SIZE( data->topoclus_lcw_e,   nclus );
+  CHECK_SIZE( data->topoclus_lcw_pt,  nclus );
+  CHECK_SIZE( data->topoclus_lcw_eta, nclus );
+  CHECK_SIZE( data->topoclus_lcw_phi, nclus );
+  CHECK_SIZE( data->topoclus_em_time, nclus );
+  CHECK_SIZE( data->topoclus_em_sign, nclus );
+  //  printf("XMLData - DEBUG tuple size for <topoclus> is %zu\n",nclus);
+  for ( size_t i(0); i<data->topoclus_em_e->size(); ++i ) {
+    sprintf(buffer,"      %12.3e %12.3e %6.3f %6.3f %12.3e %12.3e %6.3f %6.3f %10.3f %10.3f",
+	    data->topoclus_em_e->at(i),    data->topoclus_em_pt->at(i),  data->topoclus_em_eta->at(i),  data->topoclus_em_phi->at(i),
+	    data->topoclus_lcw_e->at(i),   data->topoclus_lcw_pt->at(i), data->topoclus_lcw_eta->at(i), data->topoclus_lcw_phi->at(i),
+	    data->topoclus_em_time->at(i), data->topoclus_em_sign->at(i));
+    _addToEvt(buffer); ++_records;
+  }
+  _closeBlock(XMLDict::Format::kineEnd.c_str());
+  _closeBlock(XMLDict::Format::signalEnd.c_str());
+
+  // tower collections
+  sprintf(buffer,XMLDict::Format::signalBegin.c_str(),"CaloTopoTower","kine moment");
+  _openBlock(buffer);
+  sprintf(buffer,XMLDict::Format::kineBegin.c_str(),10,data->ttownorm_em_e->size(),"E_em Pt_em Eta_em Phi_em E_lcw Pt_lcw eta_lcw phi_lcw time significance");
+  _openBlock(buffer);
+  nclus = data->ttownorm_em_e->size();
+  CHECK_SIZE( data->ttownorm_em_pt,   nclus );
+  CHECK_SIZE( data->ttownorm_em_eta,  nclus );
+  CHECK_SIZE( data->ttownorm_em_phi,  nclus );
+  CHECK_SIZE( data->ttownorm_lcw_e,   nclus );
+  CHECK_SIZE( data->ttownorm_lcw_pt,  nclus );
+  CHECK_SIZE( data->ttownorm_lcw_eta, nclus );
+  CHECK_SIZE( data->ttownorm_lcw_phi, nclus );
+  CHECK_SIZE( data->ttownorm_em_time, nclus );
+  CHECK_SIZE( data->ttownorm_em_sign, nclus );
+  //  printf("XMLData - DEBUG tuple size for <ttownorm> is %zu\n",nclus);
+  for ( size_t i(0); i<data->ttownorm_em_e->size(); ++i ) {
+    sprintf(buffer,"      %12.3e %12.3e %6.3f %6.3f %12.3e %12.3e %6.3f %6.3f %10.3f %10.3f",
+	    data->ttownorm_em_e->at(i),    data->ttownorm_em_pt->at(i),  data->ttownorm_em_eta->at(i),  data->ttownorm_em_phi->at(i),
+	    data->ttownorm_lcw_e->at(i),   data->ttownorm_lcw_pt->at(i), data->ttownorm_lcw_eta->at(i), data->ttownorm_lcw_phi->at(i),
+	    data->ttownorm_em_time->at(i), data->ttownorm_em_sign->at(i));
+    _addToEvt(buffer); ++_records;
+  }
+  _closeBlock(XMLDict::Format::kineEnd.c_str());
+  _closeBlock(XMLDict::Format::signalEnd.c_str());
+
+  _closeEvt();
+  //  printf("XMLData - DEBUG event tag \140%s\140\n",_event.front().c_str());
+
+  return ientry;
+}

@@ -1,0 +1,27 @@
+// -*- c++ -*- 
+#ifndef PROBTHRESHOLDS_ICC
+#define PROBTHRESHOLDS_ICC
+printf("Module[ProbThresholds] - setting up configs and caches:\n");
+
+std::vector<double>      lThresholds = { -0.0001, 0.2, 0.4, 0.6, 0.8, 1.0001 };
+//std::vector<int>         hlColor     = { kRed+4, kRed+2, kRed, kOrange+10 };
+std::vector<int>         hlColor     = { kBlack, kGreen+2,  kBlue,    kViolet,     kRed        };
+std::vector<int>         hfColor     = { kGray,  kGreen-10, kCyan-10, kMagenta-10, kYellow-10  };
+std::vector<int>         hmColor(hlColor);
+std::vector<std::string> hKey;
+for ( size_t i(0); i<lThresholds.size()-1; ++i ) { hKey.push_back(TString::Format("P_{signal}^{jet} #geq %.0f%%",std::abs(lThresholds.at(i)*100.)).Data()); }
+
+printf("Module[ProbThresholds] - *DONE* probablity binning, histogram colors and keys\n");
+
+std::vector<TH1D*>  allHists(lThresholds.size()-1,(TH1D*)0);
+std::vector<TH1D*>  sigHists(lThresholds.size()-1,(TH1D*)0);
+std::vector<TH1D*>  bckHists(lThresholds.size()-1,(TH1D*)0);
+
+ 
+TH1D* h_probBins = new TH1D("h_probBins","h_propBins",lThresholds.size()-1,&lThresholds[0]);
+
+printf("Module[ProbThresholds] - *DONE* histogram cache set up, sizes %zu (all) %zu (signal) %zu (pile-up)\n",allHists.size(),sigHists.size(),bckHists.size());
+#endif
+
+
+

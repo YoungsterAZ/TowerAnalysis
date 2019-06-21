@@ -1,0 +1,135 @@
+\hypertarget{namespaceAnalysis_1_1Select_1_1MatchedJet}{}\section{Analysis\+:\+:Select\+:\+:Matched\+Jet Namespace Reference}
+\label{namespaceAnalysis_1_1Select_1_1MatchedJet}\index{Analysis\+::\+Select\+::\+Matched\+Jet@{Analysis\+::\+Select\+::\+Matched\+Jet}}
+
+
+Matched detector jet.  
+
+
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_a70d769912979c438eb760d8a20cccbe0}{p\+Tmin} = Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin
+\begin{DoxyCompactList}\small\item\em $ p_{\rm T,jet}^{\rm min} [MeV] $ \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_a228bc6198c8f81574a0a079278850e20}{eta\+Min} = -\/4.\+5
+\begin{DoxyCompactList}\small\item\em Lower boundary of $ \eta $ range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_aace30370f95bae87ac3c44a942dc718d}{eta\+Max} = 4.\+5
+\begin{DoxyCompactList}\small\item\em Upper boundary of $ \eta $ range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_a4b14791609e4c5ca3c66c1811cbab05c}{rap\+Min} = \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_a228bc6198c8f81574a0a079278850e20}{eta\+Min}
+\begin{DoxyCompactList}\small\item\em Lower boundary of rapidity range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_ac94f07d8da9fb774050861e765aa7f9e}{rap\+Max} = \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_aace30370f95bae87ac3c44a942dc718d}{eta\+Max}
+\begin{DoxyCompactList}\small\item\em Upper boundary of rapidity range. \end{DoxyCompactList}\item 
+static size\+\_\+t \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_a528450e4a45949ec4d94d15cfaef73ce}{num\+Min} = Analysis\+::\+Select\+::\+Truth\+Jet\+::num\+Min
+\begin{DoxyCompactList}\small\item\em Minimum number of jets with $ p_{\rm T,jet} > p_{\rm T,jet}^{\rm min} $ required. \end{DoxyCompactList}\item 
+static size\+\_\+t \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_afc778d9fb3fb78bc47fe0d1cabbde8ad}{num\+Max} = Analysis\+::\+Select\+::\+Truth\+Jet\+::num\+Max
+\begin{DoxyCompactList}\small\item\em Maximum number of jets with $ p_{\rm T,jet} > p_{\rm T,jet}^{\rm min} $ considered. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_a1fd4c19e756cb09ffce16b4e28f29b1e}{iso\+DeltaR} = std\+::numeric\+\_\+limits$<$double$>$\+::min()
+\begin{DoxyCompactList}\small\item\em Isolation radius against other matched jets. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_ad59f2cab2bdc032b32b4ce0321ecfbb1}{matchR} = 0.\+4
+\begin{DoxyCompactList}\small\item\em $ R_{\rm match} $ such that $ \Delta R = \sqrt{\Delta y^{2}+\Delta\phi^{2}} < R_{\rm match} $ is matched \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Matched detector jet. 
+
+Selection criteria for detecotr jet matched to a truth jet 
+
+\subsection{Variable Documentation}
+\index{Analysis\+::\+Select\+::\+Matched\+Jet@{Analysis\+::\+Select\+::\+Matched\+Jet}!eta\+Max@{eta\+Max}}
+\index{eta\+Max@{eta\+Max}!Analysis\+::\+Select\+::\+Matched\+Jet@{Analysis\+::\+Select\+::\+Matched\+Jet}}
+\subsubsection[{\texorpdfstring{eta\+Max}{etaMax}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Select\+::\+Matched\+Jet\+::eta\+Max = 4.\+5\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Select_1_1MatchedJet_aace30370f95bae87ac3c44a942dc718d}{}\label{namespaceAnalysis_1_1Select_1_1MatchedJet_aace30370f95bae87ac3c44a942dc718d}
+
+
+Upper boundary of $ \eta $ range. 
+
+
+
+Definition at line 191 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Select\+::\+Matched\+Jet@{Analysis\+::\+Select\+::\+Matched\+Jet}!eta\+Min@{eta\+Min}}
+\index{eta\+Min@{eta\+Min}!Analysis\+::\+Select\+::\+Matched\+Jet@{Analysis\+::\+Select\+::\+Matched\+Jet}}
+\subsubsection[{\texorpdfstring{eta\+Min}{etaMin}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Select\+::\+Matched\+Jet\+::eta\+Min = -\/4.\+5\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Select_1_1MatchedJet_a228bc6198c8f81574a0a079278850e20}{}\label{namespaceAnalysis_1_1Select_1_1MatchedJet_a228bc6198c8f81574a0a079278850e20}
+
+
+Lower boundary of $ \eta $ range. 
+
+
+
+Definition at line 190 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Select\+::\+Matched\+Jet@{Analysis\+::\+Select\+::\+Matched\+Jet}!iso\+DeltaR@{iso\+DeltaR}}
+\index{iso\+DeltaR@{iso\+DeltaR}!Analysis\+::\+Select\+::\+Matched\+Jet@{Analysis\+::\+Select\+::\+Matched\+Jet}}
+\subsubsection[{\texorpdfstring{iso\+DeltaR}{isoDeltaR}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Select\+::\+Matched\+Jet\+::iso\+DeltaR = std\+::numeric\+\_\+limits$<$double$>$\+::min()\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Select_1_1MatchedJet_a1fd4c19e756cb09ffce16b4e28f29b1e}{}\label{namespaceAnalysis_1_1Select_1_1MatchedJet_a1fd4c19e756cb09ffce16b4e28f29b1e}
+
+
+Isolation radius against other matched jets. 
+
+
+
+Definition at line 196 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Select\+::\+Matched\+Jet@{Analysis\+::\+Select\+::\+Matched\+Jet}!matchR@{matchR}}
+\index{matchR@{matchR}!Analysis\+::\+Select\+::\+Matched\+Jet@{Analysis\+::\+Select\+::\+Matched\+Jet}}
+\subsubsection[{\texorpdfstring{matchR}{matchR}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Select\+::\+Matched\+Jet\+::matchR = 0.\+4\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Select_1_1MatchedJet_ad59f2cab2bdc032b32b4ce0321ecfbb1}{}\label{namespaceAnalysis_1_1Select_1_1MatchedJet_ad59f2cab2bdc032b32b4ce0321ecfbb1}
+
+
+$ R_{\rm match} $ such that $ \Delta R = \sqrt{\Delta y^{2}+\Delta\phi^{2}} < R_{\rm match} $ is matched 
+
+
+
+Definition at line 197 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Select\+::\+Matched\+Jet@{Analysis\+::\+Select\+::\+Matched\+Jet}!num\+Max@{num\+Max}}
+\index{num\+Max@{num\+Max}!Analysis\+::\+Select\+::\+Matched\+Jet@{Analysis\+::\+Select\+::\+Matched\+Jet}}
+\subsubsection[{\texorpdfstring{num\+Max}{numMax}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t Analysis\+::\+Select\+::\+Matched\+Jet\+::num\+Max = Analysis\+::\+Select\+::\+Truth\+Jet\+::num\+Max\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Select_1_1MatchedJet_afc778d9fb3fb78bc47fe0d1cabbde8ad}{}\label{namespaceAnalysis_1_1Select_1_1MatchedJet_afc778d9fb3fb78bc47fe0d1cabbde8ad}
+
+
+Maximum number of jets with $ p_{\rm T,jet} > p_{\rm T,jet}^{\rm min} $ considered. 
+
+
+
+Definition at line 195 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Select\+::\+Matched\+Jet@{Analysis\+::\+Select\+::\+Matched\+Jet}!num\+Min@{num\+Min}}
+\index{num\+Min@{num\+Min}!Analysis\+::\+Select\+::\+Matched\+Jet@{Analysis\+::\+Select\+::\+Matched\+Jet}}
+\subsubsection[{\texorpdfstring{num\+Min}{numMin}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t Analysis\+::\+Select\+::\+Matched\+Jet\+::num\+Min = Analysis\+::\+Select\+::\+Truth\+Jet\+::num\+Min\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Select_1_1MatchedJet_a528450e4a45949ec4d94d15cfaef73ce}{}\label{namespaceAnalysis_1_1Select_1_1MatchedJet_a528450e4a45949ec4d94d15cfaef73ce}
+
+
+Minimum number of jets with $ p_{\rm T,jet} > p_{\rm T,jet}^{\rm min} $ required. 
+
+
+
+Definition at line 194 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Select\+::\+Matched\+Jet@{Analysis\+::\+Select\+::\+Matched\+Jet}!p\+Tmin@{p\+Tmin}}
+\index{p\+Tmin@{p\+Tmin}!Analysis\+::\+Select\+::\+Matched\+Jet@{Analysis\+::\+Select\+::\+Matched\+Jet}}
+\subsubsection[{\texorpdfstring{p\+Tmin}{pTmin}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Select\+::\+Matched\+Jet\+::p\+Tmin = Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Select_1_1MatchedJet_a70d769912979c438eb760d8a20cccbe0}{}\label{namespaceAnalysis_1_1Select_1_1MatchedJet_a70d769912979c438eb760d8a20cccbe0}
+
+
+$ p_{\rm T,jet}^{\rm min} [MeV] $ 
+
+
+
+Definition at line 189 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Select\+::\+Matched\+Jet@{Analysis\+::\+Select\+::\+Matched\+Jet}!rap\+Max@{rap\+Max}}
+\index{rap\+Max@{rap\+Max}!Analysis\+::\+Select\+::\+Matched\+Jet@{Analysis\+::\+Select\+::\+Matched\+Jet}}
+\subsubsection[{\texorpdfstring{rap\+Max}{rapMax}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Select\+::\+Matched\+Jet\+::rap\+Max = {\bf eta\+Max}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Select_1_1MatchedJet_ac94f07d8da9fb774050861e765aa7f9e}{}\label{namespaceAnalysis_1_1Select_1_1MatchedJet_ac94f07d8da9fb774050861e765aa7f9e}
+
+
+Upper boundary of rapidity range. 
+
+
+
+Definition at line 193 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Select\+::\+Matched\+Jet@{Analysis\+::\+Select\+::\+Matched\+Jet}!rap\+Min@{rap\+Min}}
+\index{rap\+Min@{rap\+Min}!Analysis\+::\+Select\+::\+Matched\+Jet@{Analysis\+::\+Select\+::\+Matched\+Jet}}
+\subsubsection[{\texorpdfstring{rap\+Min}{rapMin}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Select\+::\+Matched\+Jet\+::rap\+Min = {\bf eta\+Min}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Select_1_1MatchedJet_a4b14791609e4c5ca3c66c1811cbab05c}{}\label{namespaceAnalysis_1_1Select_1_1MatchedJet_a4b14791609e4c5ca3c66c1811cbab05c}
+
+
+Lower boundary of rapidity range. 
+
+
+
+Definition at line 192 of file Analysis\+Data.\+h.
+

@@ -1,0 +1,55 @@
+\hypertarget{AnalysisHelperCore_8h}{}\section{Analysis\+Helper\+Core.\+h File Reference}
+\label{AnalysisHelperCore_8h}\index{Analysis\+Helper\+Core.\+h@{Analysis\+Helper\+Core.\+h}}
+{\ttfamily \#include \char`\"{}Hist\+Utils.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$list$>$}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$T\+H1.\+h$>$}\\*
+{\ttfamily \#include $<$T\+File.\+h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classHistUtils_1_1HistMgr}{Hist\+Utils\+::\+Hist\+Mgr}
+\begin{DoxyCompactList}\small\item\em Histogram manager. \end{DoxyCompactList}\item 
+struct \hyperlink{structAnalysisHelper}{Analysis\+Helper}
+\begin{DoxyCompactList}\small\item\em Collection of useful functions to support analysis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceHistUtils}{Hist\+Utils}
+\begin{DoxyCompactList}\small\item\em Histogram utilities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structAnalysisHelper}{Analysis\+Helper} \hyperlink{AnalysisHelperCore_8h_a0c2a264adb48da831b33653dcd897b74}{AH}
+\begin{DoxyCompactList}\small\item\em Alternative (short) access. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{Analysis\+Helper\+Core.\+h@{Analysis\+Helper\+Core.\+h}!AH@{AH}}
+\index{AH@{AH}!Analysis\+Helper\+Core.\+h@{Analysis\+Helper\+Core.\+h}}
+\subsubsection[{\texorpdfstring{AH}{AH}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Analysis\+Helper} {\bf AH}}\hypertarget{AnalysisHelperCore_8h_a0c2a264adb48da831b33653dcd897b74}{}\label{AnalysisHelperCore_8h_a0c2a264adb48da831b33653dcd897b74}
+
+
+Alternative (short) access. 
+
+The functions in {\ttfamily \hyperlink{structAnalysisHelper}{Analysis\+Helper}} can be accessed by
+
+
+\begin{DoxyCode}
+1 int nhist = AnalysisHelper::writeHists("test.root");
+\end{DoxyCode}
+
+
+or
+
+
+\begin{DoxyCode}
+1 int nhist = AH::writeHists("test.root");
+\end{DoxyCode}
+
+
+This feature is introduced for backward compatibility in various analysis code environments. 
+
+Definition at line 154 of file Analysis\+Helper\+Core.\+h.
+

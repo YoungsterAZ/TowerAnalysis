@@ -1,0 +1,112 @@
+\hypertarget{namespaceAnalysis_1_1Select_1_1RecoJet}{}\section{Analysis\+:\+:Select\+:\+:Reco\+Jet Namespace Reference}
+\label{namespaceAnalysis_1_1Select_1_1RecoJet}\index{Analysis\+::\+Select\+::\+Reco\+Jet@{Analysis\+::\+Select\+::\+Reco\+Jet}}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_af7dbdbda43aa5be9d83a31fc3b41ac14}{p\+Tmin} = 20000.
+\begin{DoxyCompactList}\small\item\em $ p_{\rm T,jet}^{\rm min} [MeV] $ \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_ac41d804583ac29fe7c1f64a692b8a747}{eta\+Min} = -\/4.\+5
+\begin{DoxyCompactList}\small\item\em Lower boundary of $ \eta $ range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_ae6e8687dcd257798bc0849d786c4a7e0}{eta\+Max} = 4.\+5
+\begin{DoxyCompactList}\small\item\em Upper boundary of $ \eta $ range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_a5e056f65c8f2f9b0ad358760fc0f4481}{rap\+Min} = \hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_ac41d804583ac29fe7c1f64a692b8a747}{eta\+Min}
+\begin{DoxyCompactList}\small\item\em Lower boundary of rapidity range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_ada7395a2f03291db87208b68e4030d92}{rap\+Max} = \hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_ae6e8687dcd257798bc0849d786c4a7e0}{eta\+Max}
+\begin{DoxyCompactList}\small\item\em Upper boundary of rapidity range. \end{DoxyCompactList}\item 
+static size\+\_\+t \hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_a66b9735f564115b3ac0b7a823291b689}{num\+Min} = 0
+\begin{DoxyCompactList}\small\item\em Minimum number of jets with $ p_{\rm T,jet} > p_{\rm T,jet}^{\rm min} $ required. \end{DoxyCompactList}\item 
+static size\+\_\+t \hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_a2ebaef4812757f83c5b2a29519e93e6d}{num\+Max} = std\+::numeric\+\_\+limits$<$size\+\_\+t$>$\+::max()
+\begin{DoxyCompactList}\small\item\em Maximum number of jets with $ p_{\rm T,jet} > p_{\rm T,jet}^{\rm min} $ considered. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_a731f85162ee98774ae0a5f52aab27498}{iso\+DeltaR} = std\+::numeric\+\_\+limits$<$double$>$\+::min()
+\begin{DoxyCompactList}\small\item\em Minimum angular distance between the two jets with highest $ p_{\rm T,jet} $ required. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\index{Analysis\+::\+Select\+::\+Reco\+Jet@{Analysis\+::\+Select\+::\+Reco\+Jet}!eta\+Max@{eta\+Max}}
+\index{eta\+Max@{eta\+Max}!Analysis\+::\+Select\+::\+Reco\+Jet@{Analysis\+::\+Select\+::\+Reco\+Jet}}
+\subsubsection[{\texorpdfstring{eta\+Max}{etaMax}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Select\+::\+Reco\+Jet\+::eta\+Max = 4.\+5\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Select_1_1RecoJet_ae6e8687dcd257798bc0849d786c4a7e0}{}\label{namespaceAnalysis_1_1Select_1_1RecoJet_ae6e8687dcd257798bc0849d786c4a7e0}
+
+
+Upper boundary of $ \eta $ range. 
+
+
+
+Definition at line 165 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Select\+::\+Reco\+Jet@{Analysis\+::\+Select\+::\+Reco\+Jet}!eta\+Min@{eta\+Min}}
+\index{eta\+Min@{eta\+Min}!Analysis\+::\+Select\+::\+Reco\+Jet@{Analysis\+::\+Select\+::\+Reco\+Jet}}
+\subsubsection[{\texorpdfstring{eta\+Min}{etaMin}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Select\+::\+Reco\+Jet\+::eta\+Min = -\/4.\+5\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Select_1_1RecoJet_ac41d804583ac29fe7c1f64a692b8a747}{}\label{namespaceAnalysis_1_1Select_1_1RecoJet_ac41d804583ac29fe7c1f64a692b8a747}
+
+
+Lower boundary of $ \eta $ range. 
+
+
+
+Definition at line 164 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Select\+::\+Reco\+Jet@{Analysis\+::\+Select\+::\+Reco\+Jet}!iso\+DeltaR@{iso\+DeltaR}}
+\index{iso\+DeltaR@{iso\+DeltaR}!Analysis\+::\+Select\+::\+Reco\+Jet@{Analysis\+::\+Select\+::\+Reco\+Jet}}
+\subsubsection[{\texorpdfstring{iso\+DeltaR}{isoDeltaR}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Select\+::\+Reco\+Jet\+::iso\+DeltaR = std\+::numeric\+\_\+limits$<$double$>$\+::min()\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Select_1_1RecoJet_a731f85162ee98774ae0a5f52aab27498}{}\label{namespaceAnalysis_1_1Select_1_1RecoJet_a731f85162ee98774ae0a5f52aab27498}
+
+
+Minimum angular distance between the two jets with highest $ p_{\rm T,jet} $ required. 
+
+
+
+Definition at line 170 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Select\+::\+Reco\+Jet@{Analysis\+::\+Select\+::\+Reco\+Jet}!num\+Max@{num\+Max}}
+\index{num\+Max@{num\+Max}!Analysis\+::\+Select\+::\+Reco\+Jet@{Analysis\+::\+Select\+::\+Reco\+Jet}}
+\subsubsection[{\texorpdfstring{num\+Max}{numMax}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t Analysis\+::\+Select\+::\+Reco\+Jet\+::num\+Max = std\+::numeric\+\_\+limits$<$size\+\_\+t$>$\+::max()\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Select_1_1RecoJet_a2ebaef4812757f83c5b2a29519e93e6d}{}\label{namespaceAnalysis_1_1Select_1_1RecoJet_a2ebaef4812757f83c5b2a29519e93e6d}
+
+
+Maximum number of jets with $ p_{\rm T,jet} > p_{\rm T,jet}^{\rm min} $ considered. 
+
+
+
+Definition at line 169 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Select\+::\+Reco\+Jet@{Analysis\+::\+Select\+::\+Reco\+Jet}!num\+Min@{num\+Min}}
+\index{num\+Min@{num\+Min}!Analysis\+::\+Select\+::\+Reco\+Jet@{Analysis\+::\+Select\+::\+Reco\+Jet}}
+\subsubsection[{\texorpdfstring{num\+Min}{numMin}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t Analysis\+::\+Select\+::\+Reco\+Jet\+::num\+Min = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Select_1_1RecoJet_a66b9735f564115b3ac0b7a823291b689}{}\label{namespaceAnalysis_1_1Select_1_1RecoJet_a66b9735f564115b3ac0b7a823291b689}
+
+
+Minimum number of jets with $ p_{\rm T,jet} > p_{\rm T,jet}^{\rm min} $ required. 
+
+
+
+Definition at line 168 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Select\+::\+Reco\+Jet@{Analysis\+::\+Select\+::\+Reco\+Jet}!p\+Tmin@{p\+Tmin}}
+\index{p\+Tmin@{p\+Tmin}!Analysis\+::\+Select\+::\+Reco\+Jet@{Analysis\+::\+Select\+::\+Reco\+Jet}}
+\subsubsection[{\texorpdfstring{p\+Tmin}{pTmin}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin = 20000.\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Select_1_1RecoJet_af7dbdbda43aa5be9d83a31fc3b41ac14}{}\label{namespaceAnalysis_1_1Select_1_1RecoJet_af7dbdbda43aa5be9d83a31fc3b41ac14}
+
+
+$ p_{\rm T,jet}^{\rm min} [MeV] $ 
+
+
+
+Definition at line 163 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Select\+::\+Reco\+Jet@{Analysis\+::\+Select\+::\+Reco\+Jet}!rap\+Max@{rap\+Max}}
+\index{rap\+Max@{rap\+Max}!Analysis\+::\+Select\+::\+Reco\+Jet@{Analysis\+::\+Select\+::\+Reco\+Jet}}
+\subsubsection[{\texorpdfstring{rap\+Max}{rapMax}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max = {\bf eta\+Max}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Select_1_1RecoJet_ada7395a2f03291db87208b68e4030d92}{}\label{namespaceAnalysis_1_1Select_1_1RecoJet_ada7395a2f03291db87208b68e4030d92}
+
+
+Upper boundary of rapidity range. 
+
+
+
+Definition at line 167 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Select\+::\+Reco\+Jet@{Analysis\+::\+Select\+::\+Reco\+Jet}!rap\+Min@{rap\+Min}}
+\index{rap\+Min@{rap\+Min}!Analysis\+::\+Select\+::\+Reco\+Jet@{Analysis\+::\+Select\+::\+Reco\+Jet}}
+\subsubsection[{\texorpdfstring{rap\+Min}{rapMin}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min = {\bf eta\+Min}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Select_1_1RecoJet_a5e056f65c8f2f9b0ad358760fc0f4481}{}\label{namespaceAnalysis_1_1Select_1_1RecoJet_a5e056f65c8f2f9b0ad358760fc0f4481}
+
+
+Lower boundary of rapidity range. 
+
+
+
+Definition at line 166 of file Analysis\+Data.\+h.
+

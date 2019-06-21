@@ -1,0 +1,20 @@
+// -*- c++ -*-
+#ifndef VARNAMES_ICC
+#define VARNAMES_ICC
+
+static const size_t varIndexPt  = 0;
+static const size_t varIndexM   = 1;
+static const size_t varIndexW   = 2;
+static const size_t varIndexPtD = 3;
+static const size_t varIndexNC  = 4; 
+static const size_t varIndexMoP = 5;
+
+static std::vector<std::string> varName  = { "pt",               "m",            "w",      "ptd",      "nc",             "mopt"                };
+static std::vector<std::string> varUnit  = { "GeV",              "GeV",          "",       "",         "",               ""                    };
+static std::vector<std::string> varLabel = { "p_{T}^{jet} [GeV]","m^{jet} [GeV]","w^{jet}","P_{T}^{D}","N_{const}^{jet}","m^{jet}/p_{T}^{jet}" };
+static std::vector<size_t>      varIndex = { varIndexPt,         varIndexM,      varIndexW,varIndexPtD,varIndexNC,       varIndexMoP           };
+
+static std::map<std::string,int> varNameIndex;
+static std::map<int,std::string> varIndexName;
+for ( size_t i(0); i<varName.size(); ++i ) { varNameIndex[varName.at(i)] = varIndex.at(i); varIndexName[varIndex.at(i)] = varName.at(i); }
+#endif

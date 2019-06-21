@@ -1,0 +1,119 @@
+
+#include <vector>
+#include <string>
+#include <map>
+
+#include <boost/tuple/tuple.hpp>
+
+#include <TH1D.h>
+#include <TString.h>
+#include <TGraphAsymmErrors.h>
+#include <TCanvas.h>
+
+#include "HistHelper.h"
+#include "ReadMLFile.h"
+
+// struct DataEntry {
+//   double xave;
+//   double dxlt;
+//   double dxrt;
+//   double yave;
+//   double dyup;
+//   double dydn;
+//   DataEntry(double x,double exl,double exr,double y,double eyu;double eyd)
+//     : xave(x), dxlt(exl), dxr(exr), yave(y), dyup(eyu), dydn(eyd) { }
+//   DataEntry() : DataEntry(0.,0.,0.,0.,0.,0.) { }
+//   DataEntry(const DataEntry& de) : DataEntry(de.xave,de.dxlt,de.dxrt,de.yave,de.dyup.de.dydn) { }
+// };
+
+void plotAvePt() {
+
+  typedef boost::tuples::tuple<double,double,double,double,double,double> data_t;
+
+#include "FileNames.icc"
+
+  std::vector<std::string> ystr = { "00_15", "15_25", "25_32", "32_49" };
+  std::vector<double>      ylow = { 0.,      1.5,     2.5,      3.2    };
+  std::vector<double>      yhgh = { 1.5,     2.5,     3.2,      4.5    };
+
+  std::map<std::string,data_t>  ymap;             
+  for ( size_t i(0); i<ystr.size(); ++i ) { 
+    double yave((ylow.at(i)+yhgh.at(i))/2.);
+    double ydlf(yave-ylow.at(i));
+    double ydrt(yhgh.at(i)-yave);
+    ymap[ystr.at(i)] = data_t(ylow.at(i),yhgh.at(i),yave,ydlf,ydrt,0.);
+  }
+
+  std::vector<std::string> fstr = { "JAPU+INCL", "JAPU+TIME", "CSPU+INCL", "CSPU+TIME", "CSSK+INCL", "CSSK+TIME" };
+
+  TH1D* _frame = new TH1D("_frame","_frame",100,0.,5.);
+  _frame->GetXaxis()->SetTitle("y^{jet}");
+  _frame->GetYaxis()->SetTitle("#LTp_{T}#GT(y) [GeV]");
+  _frame->SetMinimum(0.);
+  _frame->SetMaximum(1000.);
+ 
+  // loop pile-up suppression + mode
+  for ( auto fs : fstr ) {
+    printf("plotAvePt - pile-up mode <%s>\n",fs.c_str());
+    // pT for different calorimeter signal defs and signal types
+    //                               y      dy_l   dy_r   <Pt>   dPt_up dPt_down
+    std::vector<boost::tuples::tuple<double,double,double,double,double,double> > tcsig;  // topo-cluster (signal) 
+    std::vector<boost::tuples::tuple<double,double,double,double,double,double> > tcbck;  // topo-cluster (background)
+    std::vector<boost::tuples::tuple<double,double,double,double,double,double> > ttsig;  // topo-tower 0.1 x 0.1 (signal) 
+    std::vector<boost::tuples::tuple<double,double,double,double,double,double> > ttbck;  // topo-tower 0.1 x 0.1 (background)
+    std::vector<boost::tuples::tuple<double,double,double,double,double,double> > tfsig;  // topo-tower 0.05 x 0.05 (signal) 
+    std::vector<boost::tuples::tuple<double,double,double,double,double,double> > tfbck;  // topo-tower 0.05 x 0.05 (background)
+    // loop rapidity regions
+    for ( auto ys : ystr ) { 
+      printf("plotAvePt - pile-up mode <%s> collect all for y range [%s]\n",fs.c_str(),ys.c_str());
+      // signal histograms for averages
+      TH1D* h_tcsig = new TH1D(TString::Format("%s_%s_topoclus_pt_sig",fs.c_str(),ys.c_str()).Data(),"jet pt",150.,0.,1500.); h_tcsig->Sumw2();
+      TH1D* h_ttsig = new TH1D(TString::Format("%s_%s_topotow_pt_sig", fs.c_str(),ys.c_str()).Data(),"jet pt",150.,0.,1500.); h_ttsig->Sumw2();
+      TH1D* h_tfsig = new TH1D(TString::Format("%s_%s_topotowf_pt_sig",fs.c_str(),ys.c_str()).Data(),"jet pt",150.,0.,1500.); h_tfsig->Sumw2();
+      // background histograms for averages
+      TH1D* h_tcbck = new TH1D(TString::Format("%s_%s_topoclus_pt_bck",fs.c_str(),ys.c_str()).Data(),"jet pt",150.,0.,1500.); h_tcbck->Sumw2();
+      TH1D* h_ttbck = new TH1D(TString::Format("%s_%s_topotow_pt_bck", fs.c_str(),ys.c_str()).Data(),"jet pt",150.,0.,1500.); h_ttbck->Sumw2();
+      TH1D* h_tfbck = new TH1D(TString::Format("%s-%s_topotowf_pt_bck",fs.c_str(),ys.c_str()).Data(),"jet pt",150.,0.,1500.); h_tfbck->Sumw2();
+      // extract data
+      for ( auto fn : fnames ) { 
+	double xval(0.); double xlft(0.); double xrgt(0.);
+	if ( fn.find(ys) != std::string::npos ) {
+	  ReadMLFile indata(fn);
+	  if ( fn.find("topoclus") != std::string::npos ) {  
+	    indata.fillPt<TH1D>(h_tcsig,h_tcbck); 
+	    xval = 0.; xlft = 0.; xrgt = 0.; HistHelper::Hist::stats(h_tcsig,xval,xlft,xrgt);
+	    tcsig.push_back(data_t(ymap[ys].get<2>(),ymap[ys].get<3>(),ymap[ys].get<4>(),xval,xlft,xrgt));
+	    xval = 0.; xlft = 0.; xrgt = 0.; HistHelper::Hist::stats(h_tcbck,xval,xlft,xrgt);
+	    tcbck.push_back(data_t(ymap[ys].get<2>(),ymap[ys].get<3>(),ymap[ys].get<4>(),xval,xlft,xrgt));
+	  } else if ( fn.find("topotowf") != std::string::npos ) { 
+	    indata.fillPt<TH1D>(h_tfsig,h_tfbck); 
+	    xval = 0.; xlft = 0.; xrgt = 0.; HistHelper::Hist::stats(h_tfsig,xval,xlft,xrgt);
+	    tfsig.push_back(data_t(ymap[ys].get<2>(),ymap[ys].get<3>(),ymap[ys].get<4>(),xval,xlft,xrgt));
+	    xval = 0.; xlft = 0.; xrgt = 0.; HistHelper::Hist::stats(h_tfbck,xval,xlft,xrgt);
+	    tfbck.push_back(data_t(ymap[ys].get<2>(),ymap[ys].get<3>(),ymap[ys].get<4>(),xval,xlft,xrgt));
+	  } else if ( fn.find("topotow")  != std::string::npos ) { 
+	    indata.fillPt<TH1D>(h_ttsig,h_ttbck); 
+	    xval = 0.; xlft = 0.; xrgt = 0.; HistHelper::Hist::stats(h_ttsig,xval,xlft,xrgt);
+	    ttsig.push_back(data_t(ymap[ys].get<2>(),ymap[ys].get<3>(),ymap[ys].get<4>(),xval,xlft,xrgt));
+	    xval = 0.; xlft = 0.; xrgt = 0.; HistHelper::Hist::stats(h_ttbck,xval,xlft,xrgt);
+	    ttbck.push_back(data_t(ymap[ys].get<2>(),ymap[ys].get<3>(),ymap[ys].get<4>(),xval,xlft,xrgt));
+	  } // fill for various calorimeter signals 
+	} // region picker
+      } // loop on file name
+    } // loop on regions
+    // plotting
+    TCanvas* aa = new TCanvas(TString::Format("%s_PtAveSignal",fs.c_str()).Data(),TString::Format("<%s> AvePt",fs.c_str()).Data());
+    std::vector<double> uval; std::vector<double> ulft; std::vector<double> urgt;
+    std::vector<double> vval; std::vector<double> vlft; std::vector<double> vrgt;
+    for ( auto dd : tcsig ) { 
+      printf("plotAvePt pile-up mode <%s> topo-cluster  signal y+-dy = %.2f-%.2f+%.2f; <Pt> = %.2f-%.2f+%.2f GeV\n",
+	     fs.c_str(),dd.get<0>(),dd.get<1>(),dd.get<2>(),dd.get<3>(),dd.get<4>(),dd.get<5>());
+      uval.push_back(dd.get<0>()); ulft.push_back(dd.get<1>()); urgt.push_back(dd.get<2>());
+      vval.push_back(dd.get<3>()); vlft.push_back(dd.get<4>()); vrgt.push_back(dd.get<5>());
+    }
+    TGraphAsymmErrors* gtcsig = HistHelper::Data::fillTGraphAsymmErrors(uval,vval,ulft,urgt,vlft,vrgt);
+    _frame->DrawCopy("axis");
+    HistHelper::Draw::setCommonStyle(gtcsig,kRed,20,0.75);
+    gtcsig->Draw("p same");
+  } // pile-up suppression configurations
+}

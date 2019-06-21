@@ -1,0 +1,345 @@
+\hypertarget{AnalysisData_8h}{}\section{Analysis\+Data.\+h File Reference}
+\label{AnalysisData_8h}\index{Analysis\+Data.\+h@{Analysis\+Data.\+h}}
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$limits$>$}\\*
+{\ttfamily \#include \char`\"{}fastjet/\+Pseudo\+Jet.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fastjet/\+Jet\+Definition.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fastjet/\+Area\+Definition.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fastjet/\+Cluster\+Sequence.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fastjet/\+Cluster\+Sequence\+Area.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Analysis\+Data\+\_\+jetcfg.\+icc\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo}{Analysis\+::\+Fast\+Jet\+::\+User\+Info}
+\begin{DoxyCompactList}\small\item\em Attachment of general user information to {\ttfamily fastjet\+::\+Pseudo\+Jet}. \end{DoxyCompactList}\item 
+class \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo}{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}
+\item 
+class \hyperlink{classAnalysis_1_1FastJet_1_1TruthJetInfo}{Analysis\+::\+Fast\+Jet\+::\+Truth\+Jet\+Info}
+\item 
+class \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo}{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceAnalysis}{Analysis}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceAnalysis}{Analysis} configuration data. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1Config}{Analysis\+::\+Config}
+\begin{DoxyCompactList}\small\item\em Configuration parameters. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1Config_1_1Job}{Analysis\+::\+Config\+::\+Job}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceAnalysis_1_1Config_1_1Job}{Job} configuration. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1Config_1_1Input}{Analysis\+::\+Config\+::\+Input}
+\begin{DoxyCompactList}\small\item\em Define input. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1Config_1_1Output}{Analysis\+::\+Config\+::\+Output}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceAnalysis_1_1Config_1_1Output}{Output} file specifications. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder}{Analysis\+::\+Config\+::\+Jet\+Finder}
+\item 
+ \hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet}{Analysis\+::\+Config\+::\+Reco\+Jet}
+\begin{DoxyCompactList}\small\item\em Reconstructed (detector) jet. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet}{Analysis\+::\+Config\+::\+Truth\+Jet}
+\begin{DoxyCompactList}\small\item\em Truth (generated particle level) jet. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1Config_1_1RhoProfile}{Analysis\+::\+Config\+::\+Rho\+Profile}
+\begin{DoxyCompactList}\small\item\em Configuration for $ \rho(\eta) $ measurement. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1Select}{Analysis\+::\+Select}
+\begin{DoxyCompactList}\small\item\em Configuration of selections. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet}{Analysis\+::\+Select\+::\+Reco\+Jet}
+\item 
+ \hyperlink{namespaceAnalysis_1_1Select_1_1TruthJet}{Analysis\+::\+Select\+::\+Truth\+Jet}
+\begin{DoxyCompactList}\small\item\em Truth (generated particle level) jet. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet}{Analysis\+::\+Select\+::\+Matched\+Jet}
+\begin{DoxyCompactList}\small\item\em Matched detector jet. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal}{Analysis\+::\+Select\+::\+Calo\+Signal}
+\item 
+ \hyperlink{namespaceAnalysis_1_1Select_1_1Particle}{Analysis\+::\+Select\+::\+Particle}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceAnalysis_1_1Select_1_1Particle}{Particle} selection. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1Select_1_1Event}{Analysis\+::\+Select\+::\+Event}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceAnalysis_1_1Select_1_1Event}{Event} selection parameters. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1FastJet}{Analysis\+::\+Fast\+Jet}
+\begin{DoxyCompactList}\small\item\em {\ttfamily \hyperlink{namespaceAnalysis_1_1FastJet}{Fast\+Jet}} related data structures \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespaceAnalysis_1_1Config_1_1Input_a4fbe1ba2d37856e6b9784b4999d5268a}{Analysis\+::\+Config\+::\+Input\+::\+Selector} \{ \hyperlink{namespaceAnalysis_1_1Config_1_1Input_a4fbe1ba2d37856e6b9784b4999d5268aa314665a30d375cd30c58b262159a7742}{Analysis\+::\+Config\+::\+Input\+::\+Topo\+Cluster} = 0x11, 
+\hyperlink{namespaceAnalysis_1_1Config_1_1Input_a4fbe1ba2d37856e6b9784b4999d5268aaed118233c2f6356936e24cc848d97b64}{Analysis\+::\+Config\+::\+Input\+::\+Topo\+Tower} =0x21, 
+\hyperlink{namespaceAnalysis_1_1Config_1_1Input_a4fbe1ba2d37856e6b9784b4999d5268aa2180f436367feb0818a05ef720ff19a2}{Analysis\+::\+Config\+::\+Input\+::\+Topo\+Tower\+Fine} =0x22, 
+\hyperlink{namespaceAnalysis_1_1Config_1_1Input_a4fbe1ba2d37856e6b9784b4999d5268aa18e62acb2e8539c61f5a9a2cd005cd52}{Analysis\+::\+Config\+::\+Input\+::\+Unknown} =0x00
+ \}\begin{DoxyCompactList}\small\item\em Available input data type tags. \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdb}{Analysis\+::\+Select\+::\+Event\+::\+Failure\+Lvl} \{ \\*
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdbab300d88a5e45155c13d5fa8a7ddc2936}{Analysis\+::\+Select\+::\+Event\+::\+Pass} = 0x1000, 
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdba056fdc52ce5e130e3852eb60f858dae5}{Analysis\+::\+Select\+::\+Event\+::\+Pass\+Truth\+Jet} = 0x1010, 
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdbab24a0d589dc8ab9acd357289823a21d6}{Analysis\+::\+Select\+::\+Event\+::\+Pass\+N\+Truth\+Jet} = 0x1011, 
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdba9deb9f05fec7e9c940d316129702eb43}{Analysis\+::\+Select\+::\+Event\+::\+Pass\+Reco\+Jet} = 0x1020, 
+\\*
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdba6cef4b182b0e542eacc17c48e848704b}{Analysis\+::\+Select\+::\+Event\+::\+Pass\+N\+Reco\+Jet} = 0x1021, 
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdba1e121929bcd30b7e486e043304fc8db3}{Analysis\+::\+Select\+::\+Event\+::\+Pass\+Leptons} = 0x1040, 
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdba062782fa83f5c1a4e59975b92cb4db28}{Analysis\+::\+Select\+::\+Event\+::\+Pass\+Topology} = 0x1080, 
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdba66457f70b0c4e422ae854d1c58ff84e5}{Analysis\+::\+Select\+::\+Event\+::\+Pass\+Minv} = 0x1081, 
+\\*
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdba0d92604fea84b8d1ce773870ede176c3}{Analysis\+::\+Select\+::\+Event\+::\+Pass\+Rap\+Gap} = 0x1082, 
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdba3584a8beaf61e1b99aa3111b0d007b2b}{Analysis\+::\+Select\+::\+Event\+::\+Pass\+Isolation} = 0x1084, 
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdba75b06ade68c8cbc18b581c238e5d1e32}{Analysis\+::\+Select\+::\+Event\+::\+Pass\+Hemisphere} = 0x1088, 
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdba01e747858390d8d05231b4a4535e1883}{Analysis\+::\+Select\+::\+Event\+::\+Fail} = 0x2000, 
+\\*
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdbac83d3bed08489f6b3869d602227f7ddf}{Analysis\+::\+Select\+::\+Event\+::\+Fail\+Truth\+Jet} = 0x2010, 
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdba5a195e7ae14465ad63e5e356c2165171}{Analysis\+::\+Select\+::\+Event\+::\+Fail\+N\+Truth\+Jet} = 0x2011, 
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdba4fc823d811862d9ea803460769b09014}{Analysis\+::\+Select\+::\+Event\+::\+Fail\+Reco\+Jet} = 0x2020, 
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdba3d9b0bd548c0e94001e62169d09ff24f}{Analysis\+::\+Select\+::\+Event\+::\+Fail\+N\+Reco\+Jet} = 0x2021, 
+\\*
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdba97124ed642db2a7edda639a0cede8ee7}{Analysis\+::\+Select\+::\+Event\+::\+Fail\+Topology} = 0x2040, 
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdbaca2bd3f83d6513fd00031ed535a98452}{Analysis\+::\+Select\+::\+Event\+::\+Fail\+Minv} = 0x2041, 
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdbab43e0417bc2c0be2deb2619022a0c6b1}{Analysis\+::\+Select\+::\+Event\+::\+Fail\+Rap\+Gap} = 0x2042, 
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdba72cefeddba1285fc71003c6eab8c0c32}{Analysis\+::\+Select\+::\+Event\+::\+Fail\+Isolation} = 0x2044, 
+\\*
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdba11941daf89d8650bbd65447d8c0c1a6c}{Analysis\+::\+Select\+::\+Event\+::\+Fail\+Hemisphere} = 0x2048, 
+\hyperlink{namespaceAnalysis_1_1Select_1_1Event_a52c4d90d5d3ef88d9ca5c6a16798cbdbab4d7b79b5b6e1713d9cbfc213463f551}{Analysis\+::\+Select\+::\+Event\+::\+Unknown} = 0x0000
+ \}\begin{DoxyCompactList}\small\item\em Failure level indicators. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_aa2ea119b568bdc629fe0077b4c4fd87c}{Analysis\+::\+Config\+::\+Jet\+Finder\+::set\+Jet\+Definition} (fastjet\+::\+Jet\+Algorithm jetalg, double rjet)
+\begin{DoxyCompactList}\small\item\em Set up a jet definition. \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_a3131a94663fdf8f592d4ded2d6be9393}{Analysis\+::\+Config\+::\+Jet\+Finder\+::setup\+Voronoi} (fastjet\+::\+Voronoi\+Area\+Spec vas=voronoi\+Spec)
+\begin{DoxyCompactList}\small\item\em Jet area definition update (Voronoi) \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_a6fa594e4a45f2951131d57cdf56d7bad}{Analysis\+::\+Config\+::\+Jet\+Finder\+::setup\+Ghosted} (fastjet\+::\+Ghosted\+Area\+Spec gas=ghosted\+Spec, bool expl=false)
+\begin{DoxyCompactList}\small\item\em Jet area definition update (ghosted area) \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_a57809760613f058ed73218ccb272b948}{Analysis\+::\+Config\+::\+Reco\+Jet\+::set\+Jet\+Definition} (fastjet\+::\+Jet\+Algorithm jetalg, double rjet)
+\begin{DoxyCompactList}\small\item\em Set up a jet definition. \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_a4fc6b347f3137794f8a2083cfadfe1ab}{Analysis\+::\+Config\+::\+Reco\+Jet\+::setup\+Voronoi} (fastjet\+::\+Voronoi\+Area\+Spec vas=voronoi\+Spec)
+\begin{DoxyCompactList}\small\item\em Jet area definition update (Voronoi) \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_a763aa07f1bb2f03fe29298a77f0a0c68}{Analysis\+::\+Config\+::\+Reco\+Jet\+::setup\+Ghosted} (fastjet\+::\+Ghosted\+Area\+Spec gas=ghosted\+Spec, bool expl=false)
+\begin{DoxyCompactList}\small\item\em Jet area definition update (ghosted area) \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_a483f9e093914b5a94c91df3a771fe890}{Analysis\+::\+Config\+::\+Truth\+Jet\+::set\+Jet\+Definition} (fastjet\+::\+Jet\+Algorithm jetalg, double rjet)
+\begin{DoxyCompactList}\small\item\em Set up a jet definition. \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_a5c5eb24dbfb9c811a772cc12ecd0a4cc}{Analysis\+::\+Config\+::\+Truth\+Jet\+::setup\+Voronoi} (fastjet\+::\+Voronoi\+Area\+Spec vas=voronoi\+Spec)
+\begin{DoxyCompactList}\small\item\em Jet area definition update (Voronoi) \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_a369676042ed8902d6f4dd9aa6dea3c23}{Analysis\+::\+Config\+::\+Truth\+Jet\+::setup\+Ghosted} (fastjet\+::\+Ghosted\+Area\+Spec gas=ghosted\+Spec, bool expl=false)
+\begin{DoxyCompactList}\small\item\em Jet area definition update (ghosted area) \end{DoxyCompactList}\item 
+static bool \hyperlink{namespaceAnalysis_1_1Select_1_1Event_ae6355636c7fd09c619df02ac9b82ea76}{Analysis\+::\+Select\+::\+Event\+::check} (unsigned int flvl, Failure\+Lvl test)
+\begin{DoxyCompactList}\small\item\em Check if given {\ttfamily Failure\+Level} is passed. \end{DoxyCompactList}\item 
+static bool \hyperlink{namespaceAnalysis_1_1Select_1_1Event_a6b609361cb4fb560e2f8c3e7329f38d0}{Analysis\+::\+Select\+::\+Event\+::pass} (unsigned int flvl)
+\begin{DoxyCompactList}\small\item\em Check if given failure level indicator is a \char`\"{}pass\char`\"{}. \end{DoxyCompactList}\item 
+static bool \hyperlink{namespaceAnalysis_1_1Select_1_1Event_a19a75502cbbe89bb3bf3b6a847aa081c}{Analysis\+::\+Select\+::\+Event\+::pass\+Truth\+Jet} (unsigned int flvl)
+\begin{DoxyCompactList}\small\item\em Check if given failure level indicator flags \char`\"{}passing truth jet selections\char`\"{}. \end{DoxyCompactList}\item 
+static bool \hyperlink{namespaceAnalysis_1_1Select_1_1Event_ab14c62eab67d11e0ea5d3f5c9587e58f}{Analysis\+::\+Select\+::\+Event\+::pass\+Reco\+Jet} (unsigned int flvl)
+\begin{DoxyCompactList}\small\item\em Check if given failure level indicator flags \char`\"{}passing reco jet selections\char`\"{}. \end{DoxyCompactList}\item 
+static bool \hyperlink{namespaceAnalysis_1_1Select_1_1Event_a9536d732c6d6377a8899b30b7569102e}{Analysis\+::\+Select\+::\+Event\+::pass\+Leptons} (unsigned int flvl)
+\begin{DoxyCompactList}\small\item\em Check if given failure level indicator flags \char`\"{}passing lepton selections\char`\"{}. \end{DoxyCompactList}\item 
+static bool \hyperlink{namespaceAnalysis_1_1Select_1_1Event_a58269c4d9ac0f09f6c46f6185fffc720}{Analysis\+::\+Select\+::\+Event\+::pass\+Topology} (unsigned int flvl)
+\begin{DoxyCompactList}\small\item\em Check if given failure level indicator flags \char`\"{}passing topology selections\char`\"{}. \end{DoxyCompactList}\item 
+static bool \hyperlink{namespaceAnalysis_1_1Select_1_1Event_a47502e772035183d09ef7699edc27ce2}{Analysis\+::\+Select\+::\+Event\+::fail} (unsigned int flvl)
+\begin{DoxyCompactList}\small\item\em Check if given failure level indicator is a \char`\"{}fail\char`\"{}. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1FastJet_a39011989fc3200fab3514e41fb072bdb}{Analysis\+::\+Fast\+Jet\+::area} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{namespaceAnalysis_1_1Config_1_1Job_aabd902531ff651c92a08fa9f986e2046}{Analysis\+::\+Config\+::\+Job\+::print\+Debug} = false
+\begin{DoxyCompactList}\small\item\em Controls debug printing ({\ttfamily true} is \char`\"{}on\char`\"{}) \end{DoxyCompactList}\item 
+static int \hyperlink{namespaceAnalysis_1_1Config_1_1Job_a1cbee93d8fe720cde075eb23877eb114}{Analysis\+::\+Config\+::\+Job\+::msgs\+Debug} = 20
+\begin{DoxyCompactList}\small\item\em Maxiumum number of debug messages. \end{DoxyCompactList}\item 
+static int \hyperlink{namespaceAnalysis_1_1Config_1_1Job_a5db682379b8905ddba5cc6b4093555d2}{Analysis\+::\+Config\+::\+Job\+::ticker\+Freq} = 500
+\begin{DoxyCompactList}\small\item\em Ticker frequency controls message on processed number of input events (default every 500 events) \end{DoxyCompactList}\item 
+static bool \hyperlink{namespaceAnalysis_1_1Config_1_1Job_a745c1fecd2479d21b556bfb812e3805b}{Analysis\+::\+Config\+::\+Job\+::do\+Sliding\+Window\+Rho} = false
+\begin{DoxyCompactList}\small\item\em Tunrs on/off $ \rho(\eta) $ calculation using sliding windows (default {\ttfamily false} os \char`\"{}off\char`\"{}) \end{DoxyCompactList}\item 
+static int \hyperlink{namespaceAnalysis_1_1Config_1_1Input_a6b14e2a15595b34711b62b77d22cd759}{Analysis\+::\+Config\+::\+Input\+::n\+Events} = -\/1
+\begin{DoxyCompactList}\small\item\em Number of events to be processed in this job (default -\/1 means all available on input) \end{DoxyCompactList}\item 
+static std\+::string \hyperlink{namespaceAnalysis_1_1Config_1_1Output_a29f1fb8da8e579fa6db674009ae8ed44}{Analysis\+::\+Config\+::\+Output\+::file} = \char`\"{}jetanalysis.\+root\char`\"{}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceAnalysis_1_1Config_1_1Output}{Output} file name. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_af8dfcbb2cc7b1fd0d76546cc4b2984bd}{Analysis\+::\+Config\+::\+Jet\+Finder\+::radius} = 0.\+4
+\begin{DoxyCompactList}\small\item\em Distance parameter (default $ R = 0.4 $) \end{DoxyCompactList}\item 
+static fastjet\+::\+Jet\+Algorithm \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_abce841a2f75b96e943dc5e2be875765b}{Analysis\+::\+Config\+::\+Jet\+Finder\+::algo} = fastjet\+::antikt\+\_\+algorithm
+\begin{DoxyCompactList}\small\item\em Jet algorithm (default is anti-\/kt) \end{DoxyCompactList}\item 
+static fastjet\+::\+Jet\+Definition \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_aba0bf7a22523481843fb40dd34488c8c}{Analysis\+::\+Config\+::\+Jet\+Finder\+::definition} = fastjet\+::\+Jet\+Definition(algo,radius)
+\begin{DoxyCompactList}\small\item\em Jet definition (default is Anti-\/kt, $ R = 0.4 $) \end{DoxyCompactList}\item 
+static fastjet\+::\+Area\+Type \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_a42b6e6b7c1bebe8646790c377d569664}{Analysis\+::\+Config\+::\+Jet\+Finder\+::area\+Type} = fastjet\+::voronoi\+\_\+area
+\begin{DoxyCompactList}\small\item\em Type of jet area (default Voronoi) \end{DoxyCompactList}\item 
+static fastjet\+::\+Voronoi\+Area\+Spec \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_a63a996b81ad4a7216c5652fb216c0ed2}{Analysis\+::\+Config\+::\+Jet\+Finder\+::voronoi\+Spec} = fastjet\+::\+Voronoi\+Spec(0.\+9)
+\begin{DoxyCompactList}\small\item\em Voronoi area specs (default resolution 0.\+9) \end{DoxyCompactList}\item 
+static fastjet\+::\+Ghosted\+Areaspec \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_a69fd2afa3ea463941c31076604b1f430}{Analysis\+::\+Config\+::\+Jet\+Finder\+::ghosted\+Spec} = fastjet\+::\+Ghosted\+Area\+Spec(\hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_aa11187307efce66323ce38d6afdd75d7}{Analysis\+::\+Select\+::\+Calo\+Signal\+::rap\+Min},\hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_a358398a6fbba8bcfd3f534ccbf838aa8}{Analysis\+::\+Select\+::\+Calo\+Signal\+::rap\+Max})
+\begin{DoxyCompactList}\small\item\em Ghosted area specs (default $ -4.9 < y < 4.9 $ for jet input) \end{DoxyCompactList}\item 
+static fastjet\+::\+Area\+Definition \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_a2b26c98f62ad8322f8f593fc0dea22af}{Analysis\+::\+Config\+::\+Jet\+Finder\+::area\+Def} = fastjet\+::\+Area\+Definition(area\+Type,voronoi\+Spec)
+\begin{DoxyCompactList}\small\item\em Jet area definition (default Voronoi) \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_a794023c376e6d0221d52f71275229b41}{Analysis\+::\+Config\+::\+Reco\+Jet\+::radius} = 0.\+4
+\begin{DoxyCompactList}\small\item\em Distance parameter (default $ R = 0.4 $) \end{DoxyCompactList}\item 
+static fastjet\+::\+Jet\+Algorithm \hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_afe52c6bcca8e10c9c07996cbf4dc6a59}{Analysis\+::\+Config\+::\+Reco\+Jet\+::algo} = fastjet\+::antikt\+\_\+algorithm
+\begin{DoxyCompactList}\small\item\em Jet algorithm (default is anti-\/kt) \end{DoxyCompactList}\item 
+static fastjet\+::\+Jet\+Definition \hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_ae0c23bbd5e0420037cbbb9f7929da17f}{Analysis\+::\+Config\+::\+Reco\+Jet\+::definition} = fastjet\+::\+Jet\+Definition(algo,radius)
+\begin{DoxyCompactList}\small\item\em Jet definition (default is Anti-\/kt, $ R = 0.4 $) \end{DoxyCompactList}\item 
+static fastjet\+::\+Area\+Type \hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_a7c2d1fae6f1b2f14bf18c5a2ac3d106f}{Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Type} = fastjet\+::voronoi\+\_\+area
+\begin{DoxyCompactList}\small\item\em Type of jet area (default Voronoi) \end{DoxyCompactList}\item 
+static fastjet\+::\+Voronoi\+Area\+Spec \hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_a851b86d5a4096ee867e561f0489a4062}{Analysis\+::\+Config\+::\+Reco\+Jet\+::voronoi\+Spec} = fastjet\+::\+Voronoi\+Spec(0.\+9)
+\begin{DoxyCompactList}\small\item\em Voronoi area specs (default resolution 0.\+9) \end{DoxyCompactList}\item 
+static fastjet\+::\+Ghosted\+Areaspec \hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_a319c43bb7084593808400c0ac0b2f5a6}{Analysis\+::\+Config\+::\+Reco\+Jet\+::ghosted\+Spec} = fastjet\+::\+Ghosted\+Area\+Spec(\hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_aa11187307efce66323ce38d6afdd75d7}{Analysis\+::\+Select\+::\+Calo\+Signal\+::rap\+Min},\hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_a358398a6fbba8bcfd3f534ccbf838aa8}{Analysis\+::\+Select\+::\+Calo\+Signal\+::rap\+Max})
+\begin{DoxyCompactList}\small\item\em Ghosted area specs (default $ -4.9 < y < 4.9 $ for jet input) \end{DoxyCompactList}\item 
+static fastjet\+::\+Area\+Definition \hyperlink{namespaceAnalysis_1_1Config_1_1RecoJet_a327f69062972ac03aac1dd7464fe778b}{Analysis\+::\+Config\+::\+Reco\+Jet\+::area\+Def} = fastjet\+::\+Area\+Definition(area\+Type,voronoi\+Spec)
+\begin{DoxyCompactList}\small\item\em Jet area definition (default Voronoi) \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_a6a947195217aef2c4d4c6360017bab95}{Analysis\+::\+Config\+::\+Truth\+Jet\+::radius} = 0.\+4
+\begin{DoxyCompactList}\small\item\em Distance parameter (default $ R = 0.4 $) \end{DoxyCompactList}\item 
+static fastjet\+::\+Jet\+Algorithm \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_ac60138634b23bdc579520adf99f9393f}{Analysis\+::\+Config\+::\+Truth\+Jet\+::algo} = fastjet\+::antikt\+\_\+algorithm
+\begin{DoxyCompactList}\small\item\em Jet algorithm (default is anti-\/kt) \end{DoxyCompactList}\item 
+static fastjet\+::\+Jet\+Definition \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_a15280a9c639a88c02bf1e3794b6ec29d}{Analysis\+::\+Config\+::\+Truth\+Jet\+::definition} = fastjet\+::\+Jet\+Definition(algo,radius)
+\begin{DoxyCompactList}\small\item\em Jet definition (default is Anti-\/kt, $ R = 0.4 $) \end{DoxyCompactList}\item 
+static fastjet\+::\+Area\+Type \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_a1d08c937d56d2b35cdc78f99825a6af2}{Analysis\+::\+Config\+::\+Truth\+Jet\+::area\+Type} = fastjet\+::voronoi\+\_\+area
+\begin{DoxyCompactList}\small\item\em Type of jet area (default Voronoi) \end{DoxyCompactList}\item 
+static fastjet\+::\+Voronoi\+Area\+Spec \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_aacd5481a0b6ada44cb0c879204391075}{Analysis\+::\+Config\+::\+Truth\+Jet\+::voronoi\+Spec} = fastjet\+::\+Voronoi\+Spec(0.\+9)
+\begin{DoxyCompactList}\small\item\em Voronoi area specs (default resolution 0.\+9) \end{DoxyCompactList}\item 
+static fastjet\+::\+Ghosted\+Areaspec \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_a661169c3a6db009e6993226459cf8124}{Analysis\+::\+Config\+::\+Truth\+Jet\+::ghosted\+Spec} = fastjet\+::\+Ghosted\+Area\+Spec(\hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_aa11187307efce66323ce38d6afdd75d7}{Analysis\+::\+Select\+::\+Calo\+Signal\+::rap\+Min},\hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_a358398a6fbba8bcfd3f534ccbf838aa8}{Analysis\+::\+Select\+::\+Calo\+Signal\+::rap\+Max})
+\begin{DoxyCompactList}\small\item\em Ghosted area specs (default $ -4.9 < y < 4.9 $ for jet input) \end{DoxyCompactList}\item 
+static fastjet\+::\+Area\+Definition \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_aaaf974e7a2655200c6cd5aa5b6f86f90}{Analysis\+::\+Config\+::\+Truth\+Jet\+::area\+Def} = fastjet\+::\+Area\+Definition(area\+Type,voronoi\+Spec)
+\begin{DoxyCompactList}\small\item\em Jet area definition (default Voronoi) \end{DoxyCompactList}\item 
+static size\+\_\+t \hyperlink{namespaceAnalysis_1_1Config_1_1RhoProfile_aed9bc5e8b5b6b35cf2eb5462c04c4221}{Analysis\+::\+Config\+::\+Rho\+Profile\+::n\+Bins} = 99
+\begin{DoxyCompactList}\small\item\em Number of rapdity bins. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Config_1_1RhoProfile_a75f726356d3f7bb7894942b568f83123}{Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Min} = -\/4.\+95
+\begin{DoxyCompactList}\small\item\em Lower boundary of rapidity range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Config_1_1RhoProfile_aee14811464e345a118e1e64077014c2d}{Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Max} = 4.\+95
+\begin{DoxyCompactList}\small\item\em Upper boundary of rapidity range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Config_1_1RhoProfile_a6a12ebe70b6648825eead16dff1159fd}{Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Min} = -\/2.\+0
+\begin{DoxyCompactList}\small\item\em Lower boundary of central rapidity region. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Config_1_1RhoProfile_ab78a2585916e0761da7090b86d5c762b}{Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Max} = 2.\+0
+\begin{DoxyCompactList}\small\item\em Upper boundary of central rapidity region. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Config_1_1RhoProfile_a0d0b2059ea054c907e9ef66dd1bc3604}{Analysis\+::\+Config\+::\+Rho\+Profile\+::window} = 0.\+8
+\begin{DoxyCompactList}\small\item\em Width of rapidity window. \end{DoxyCompactList}\item 
+static bool \hyperlink{namespaceAnalysis_1_1Config_1_1RhoProfile_af8222f6942cc30594db578bb98a39b3b}{Analysis\+::\+Config\+::\+Rho\+Profile\+::store\+Objects} = false
+\begin{DoxyCompactList}\small\item\em Store invidual signal object pointers in window if {\ttfamily true}; else only store $ \rho $ value. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_af7dbdbda43aa5be9d83a31fc3b41ac14}{Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin} = 20000.
+\begin{DoxyCompactList}\small\item\em $ p_{\rm T,jet}^{\rm min} [MeV] $ \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_ac41d804583ac29fe7c1f64a692b8a747}{Analysis\+::\+Select\+::\+Reco\+Jet\+::eta\+Min} = -\/4.\+5
+\begin{DoxyCompactList}\small\item\em Lower boundary of $ \eta $ range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_ae6e8687dcd257798bc0849d786c4a7e0}{Analysis\+::\+Select\+::\+Reco\+Jet\+::eta\+Max} = 4.\+5
+\begin{DoxyCompactList}\small\item\em Upper boundary of $ \eta $ range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_a5e056f65c8f2f9b0ad358760fc0f4481}{Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Min} = eta\+Min
+\begin{DoxyCompactList}\small\item\em Lower boundary of rapidity range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_ada7395a2f03291db87208b68e4030d92}{Analysis\+::\+Select\+::\+Reco\+Jet\+::rap\+Max} = eta\+Max
+\begin{DoxyCompactList}\small\item\em Upper boundary of rapidity range. \end{DoxyCompactList}\item 
+static size\+\_\+t \hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_a66b9735f564115b3ac0b7a823291b689}{Analysis\+::\+Select\+::\+Reco\+Jet\+::num\+Min} = 0
+\begin{DoxyCompactList}\small\item\em Minimum number of jets with $ p_{\rm T,jet} > p_{\rm T,jet}^{\rm min} $ required. \end{DoxyCompactList}\item 
+static size\+\_\+t \hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_a2ebaef4812757f83c5b2a29519e93e6d}{Analysis\+::\+Select\+::\+Reco\+Jet\+::num\+Max} = std\+::numeric\+\_\+limits$<$size\+\_\+t$>$\+::max()
+\begin{DoxyCompactList}\small\item\em Maximum number of jets with $ p_{\rm T,jet} > p_{\rm T,jet}^{\rm min} $ considered. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1RecoJet_a731f85162ee98774ae0a5f52aab27498}{Analysis\+::\+Select\+::\+Reco\+Jet\+::iso\+DeltaR} = std\+::numeric\+\_\+limits$<$double$>$\+::min()
+\begin{DoxyCompactList}\small\item\em Minimum angular distance between the two jets with highest $ p_{\rm T,jet} $ required. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1TruthJet_a861b3fa8b899e322a5f8a8d04a707220}{Analysis\+::\+Select\+::\+Truth\+Jet\+::p\+Tmin} = Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin/2.
+\begin{DoxyCompactList}\small\item\em $ p_{\rm T,jet}^{\rm min} [MeV] $ \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1TruthJet_a37b231bdadb05d096c3542de8387283f}{Analysis\+::\+Select\+::\+Truth\+Jet\+::eta\+Min} = -\/4.\+5
+\begin{DoxyCompactList}\small\item\em Lower boundary of $ \eta $ range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1TruthJet_a667ad09951ba9ba785549ec2e4a10770}{Analysis\+::\+Select\+::\+Truth\+Jet\+::eta\+Max} = 4.\+5
+\begin{DoxyCompactList}\small\item\em Upper boundary of $ \eta $ range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1TruthJet_ac25d5e19383f354b51fb4eec2d0b5d97}{Analysis\+::\+Select\+::\+Truth\+Jet\+::rap\+Min} = eta\+Min
+\begin{DoxyCompactList}\small\item\em Lower boundary of rapidity range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1TruthJet_a1f15c201f6726e1fb1251c65df7204cf}{Analysis\+::\+Select\+::\+Truth\+Jet\+::rap\+Max} = eta\+Max
+\begin{DoxyCompactList}\small\item\em Upper boundary of rapidity range. \end{DoxyCompactList}\item 
+static size\+\_\+t \hyperlink{namespaceAnalysis_1_1Select_1_1TruthJet_aa181b8b794140e329394a3a941e18138}{Analysis\+::\+Select\+::\+Truth\+Jet\+::num\+Min} = 2
+\begin{DoxyCompactList}\small\item\em Minimum number of jets with $ p_{\rm T,jet} > p_{\rm T,jet}^{\rm min} $ required. \end{DoxyCompactList}\item 
+static size\+\_\+t \hyperlink{namespaceAnalysis_1_1Select_1_1TruthJet_a3e73a3d49de39243c85530cbc79563b6}{Analysis\+::\+Select\+::\+Truth\+Jet\+::num\+Max} = 4
+\begin{DoxyCompactList}\small\item\em Maximum number of jets with $ p_{\rm T,jet} > p_{\rm T,jet}^{\rm min} $ considered. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1TruthJet_a194aba6714870814928ce1f6490f42cf}{Analysis\+::\+Select\+::\+Truth\+Jet\+::iso\+DeltaR} = 1.\+0
+\begin{DoxyCompactList}\small\item\em Isolation radius against other truth jets. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1TruthJet_a697911d5caa69806e031195dc61cade4}{Analysis\+::\+Select\+::\+Truth\+Jet\+::lepton\+DeltaR} = iso\+DeltaR
+\begin{DoxyCompactList}\small\item\em Isolation radius against leptons. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1TruthJet_ad6f1403d6765ca907d71e550adf59b0d}{Analysis\+::\+Select\+::\+Truth\+Jet\+::lepton\+Pt\+Min} = p\+Tmin
+\begin{DoxyCompactList}\small\item\em $ p_{{\rm T},\ell}^{\rm min} [MeV] $ for leptons considered for isolation \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_a70d769912979c438eb760d8a20cccbe0}{Analysis\+::\+Select\+::\+Matched\+Jet\+::p\+Tmin} = Analysis\+::\+Select\+::\+Reco\+Jet\+::p\+Tmin
+\begin{DoxyCompactList}\small\item\em $ p_{\rm T,jet}^{\rm min} [MeV] $ \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_a228bc6198c8f81574a0a079278850e20}{Analysis\+::\+Select\+::\+Matched\+Jet\+::eta\+Min} = -\/4.\+5
+\begin{DoxyCompactList}\small\item\em Lower boundary of $ \eta $ range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_aace30370f95bae87ac3c44a942dc718d}{Analysis\+::\+Select\+::\+Matched\+Jet\+::eta\+Max} = 4.\+5
+\begin{DoxyCompactList}\small\item\em Upper boundary of $ \eta $ range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_a4b14791609e4c5ca3c66c1811cbab05c}{Analysis\+::\+Select\+::\+Matched\+Jet\+::rap\+Min} = eta\+Min
+\begin{DoxyCompactList}\small\item\em Lower boundary of rapidity range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_ac94f07d8da9fb774050861e765aa7f9e}{Analysis\+::\+Select\+::\+Matched\+Jet\+::rap\+Max} = eta\+Max
+\begin{DoxyCompactList}\small\item\em Upper boundary of rapidity range. \end{DoxyCompactList}\item 
+static size\+\_\+t \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_a528450e4a45949ec4d94d15cfaef73ce}{Analysis\+::\+Select\+::\+Matched\+Jet\+::num\+Min} = Analysis\+::\+Select\+::\+Truth\+Jet\+::num\+Min
+\begin{DoxyCompactList}\small\item\em Minimum number of jets with $ p_{\rm T,jet} > p_{\rm T,jet}^{\rm min} $ required. \end{DoxyCompactList}\item 
+static size\+\_\+t \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_afc778d9fb3fb78bc47fe0d1cabbde8ad}{Analysis\+::\+Select\+::\+Matched\+Jet\+::num\+Max} = Analysis\+::\+Select\+::\+Truth\+Jet\+::num\+Max
+\begin{DoxyCompactList}\small\item\em Maximum number of jets with $ p_{\rm T,jet} > p_{\rm T,jet}^{\rm min} $ considered. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_a1fd4c19e756cb09ffce16b4e28f29b1e}{Analysis\+::\+Select\+::\+Matched\+Jet\+::iso\+DeltaR} = std\+::numeric\+\_\+limits$<$double$>$\+::min()
+\begin{DoxyCompactList}\small\item\em Isolation radius against other matched jets. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1MatchedJet_ad59f2cab2bdc032b32b4ce0321ecfbb1}{Analysis\+::\+Select\+::\+Matched\+Jet\+::matchR} = 0.\+4
+\begin{DoxyCompactList}\small\item\em $ R_{\rm match} $ such that $ \Delta R = \sqrt{\Delta y^{2}+\Delta\phi^{2}} < R_{\rm match} $ is matched \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_a1a58695e9774b4a545d92fca555eb0c0}{Analysis\+::\+Select\+::\+Calo\+Signal\+::e\+Min} = std\+::numeric\+\_\+limits$<$double$>$\+::min()
+\begin{DoxyCompactList}\small\item\em Minimum signal considered \mbox{[}MeV\mbox{]}. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_afe6b59ea6218484d4f8d976594af5cba}{Analysis\+::\+Select\+::\+Calo\+Signal\+::e\+Min\+Reco} = 0.
+\begin{DoxyCompactList}\small\item\em Minimum reconstructed energy requirement for physics object reconstruction \mbox{[}MeV\mbox{]}. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_abeb7a2c3395cdb72a38f5834405bf805}{Analysis\+::\+Select\+::\+Calo\+Signal\+::time\+Min} = std\+::numeric\+\_\+limits$<$double$>$\+::min()
+\begin{DoxyCompactList}\small\item\em Lower boundary of acceptable signal time range \mbox{[}ns\mbox{]}. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_a74dfc4bcd69d76f68f67e638a3b26e67}{Analysis\+::\+Select\+::\+Calo\+Signal\+::time\+Max} = std\+::numeric\+\_\+limits$<$double$>$\+::max()
+\begin{DoxyCompactList}\small\item\em Upper boundary of acceptable signal time range \mbox{[}ns\mbox{]}. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_a84374213c119a3c9850969eb36fca6d9}{Analysis\+::\+Select\+::\+Calo\+Signal\+::signif\+Min} = std\+::numeric\+\_\+limits$<$double$>$\+::min()
+\begin{DoxyCompactList}\small\item\em Lower boundary for signal significance. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_a2bb73d45f1bf8d8d81e7be8a8d247e47}{Analysis\+::\+Select\+::\+Calo\+Signal\+::signif\+Max} = std\+::numeric\+\_\+limits$<$double$>$\+::max()
+\begin{DoxyCompactList}\small\item\em Upper boundary for signal significance. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_af20c529b123696be2ab71aaa25906edb}{Analysis\+::\+Select\+::\+Calo\+Signal\+::eta\+Min} = -\/4.\+9
+\begin{DoxyCompactList}\small\item\em Lower boundary of $ \eta $ range for signal. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_a24fdf3ac5549dff1f349eb1cb4146352}{Analysis\+::\+Select\+::\+Calo\+Signal\+::eta\+Max} = 4.\+9
+\begin{DoxyCompactList}\small\item\em Upper boundary of $ \eta $ range for signal. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_aa11187307efce66323ce38d6afdd75d7}{Analysis\+::\+Select\+::\+Calo\+Signal\+::rap\+Min} = eta\+Min
+\begin{DoxyCompactList}\small\item\em Lower boundary rapidity range for signal. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_a358398a6fbba8bcfd3f534ccbf838aa8}{Analysis\+::\+Select\+::\+Calo\+Signal\+::rap\+Max} = eta\+Max
+\begin{DoxyCompactList}\small\item\em Upper boundary rapidity range for signal. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1Particle_ab5299c0a57bfa014570ccdeded3bcaf5}{Analysis\+::\+Select\+::\+Particle\+::eta\+Extend} = 1.
+\begin{DoxyCompactList}\small\item\em Extension of detector $ \eta $ coverage for particles. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1Particle_ac17ab5165e634e471d1d520d814a8e69}{Analysis\+::\+Select\+::\+Particle\+::eta\+Min} = Calo\+Signal\+::eta\+Min-\/eta\+Extend
+\begin{DoxyCompactList}\small\item\em Lower boundary of $ \eta $ range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1Particle_a216c67e30d7e332f2da3e29fe69a9c06}{Analysis\+::\+Select\+::\+Particle\+::eta\+Max} = Calo\+Signal\+::eta\+Max+eta\+Extend
+\begin{DoxyCompactList}\small\item\em Upper boundary of $ \eta $ range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1Particle_a74ff6d11b36b671ebc16e69953b5fa26}{Analysis\+::\+Select\+::\+Particle\+::rap\+Min} = eta\+Min
+\begin{DoxyCompactList}\small\item\em Lower boundary rapidity range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1Particle_ae064bc4211aab509277062751d7b5bf2}{Analysis\+::\+Select\+::\+Particle\+::rap\+Max} = eta\+Max
+\begin{DoxyCompactList}\small\item\em Upper boundary rapidity range. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1Event_a7b2bce93ace6ef0368b6e38ccd809ed0}{Analysis\+::\+Select\+::\+Event\+::rap\+Gap\+Min} = 1.\+0
+\begin{DoxyCompactList}\small\item\em Minimum required rapidity gap. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1Event_a46517b487f23e3507e9b714039ead277}{Analysis\+::\+Select\+::\+Event\+::rap\+Gap\+Max} = \hyperlink{namespaceAnalysis_1_1Select_1_1TruthJet_a667ad09951ba9ba785549ec2e4a10770}{Analysis\+::\+Select\+::\+Truth\+Jet\+::eta\+Max} -\/ \hyperlink{namespaceAnalysis_1_1Select_1_1TruthJet_a37b231bdadb05d096c3542de8387283f}{Analysis\+::\+Select\+::\+Truth\+Jet\+::eta\+Min}
+\begin{DoxyCompactList}\small\item\em Maximum required apidity gap. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1Event_a5be60eaed61b702f72c99039d08478bd}{Analysis\+::\+Select\+::\+Event\+::rap\+Gap} = rap\+Gap\+Min
+\begin{DoxyCompactList}\small\item\em Minimum required rapidity gap. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1Event_ae9452563af166c95dc76ce45889435a1}{Analysis\+::\+Select\+::\+Event\+::s\+Hat} = 2600000. $\ast$ 2600000.
+\begin{DoxyCompactList}\small\item\em Central $ \hat{s} [MeV] $. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1Event_afc8b09ec51a480d59ceb969a6e984788}{Analysis\+::\+Select\+::\+Event\+::s\+Hat\+Min} = 0.\+75$\ast$s\+Hat
+\begin{DoxyCompactList}\small\item\em Lower boundary $ \hat{s} $ range \mbox{[}MeV\mbox{]}. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1Event_a5a398a3f4f0590598003266da5bb6d9f}{Analysis\+::\+Select\+::\+Event\+::s\+Hat\+Max} = 1.\+25$\ast$s\+Hat
+\begin{DoxyCompactList}\small\item\em Upper boundary $ \hat{s} $ range \mbox{[}MeV\mbox{]}. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1Event_aad3b80c550b598d2523d76c1819f69fc}{Analysis\+::\+Select\+::\+Event\+::min\+Minv} = std\+::sqrt(s\+Hat\+Min)
+\begin{DoxyCompactList}\small\item\em Lower edge invariant mass window \mbox{[}MeV\mbox{]}. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1Select_1_1Event_ac8ebe80d80c112512ad10d3092e21fb1}{Analysis\+::\+Select\+::\+Event\+::max\+Minv} = std\+::sqrt(s\+Hat\+Max)
+\begin{DoxyCompactList}\small\item\em Upper edge invariant mass window \mbox{[}MeV\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf Input data specifications}\par
+{\em Data directory
+
+The default expects a directory named {\ttfamily data} in the current working directory }\begin{DoxyCompactItemize}
+\item 
+static std\+::string \hyperlink{namespaceAnalysis_1_1Config_1_1Input_a73db141eb393d7a7835899cf5e857b2d}{Analysis\+::\+Config\+::\+Input\+::data\+Dir} = \char`\"{}./data\char`\"{}
+\begin{DoxyCompactList}\small\item\em File name mask. \end{DoxyCompactList}\item 
+static std\+::string \hyperlink{namespaceAnalysis_1_1Config_1_1Input_a899bf3cd0603807b96f93b2ff5e58311}{Analysis\+::\+Config\+::\+Input\+::file\+Mask} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em File name mask. \end{DoxyCompactList}\item 
+static int \hyperlink{namespaceAnalysis_1_1Config_1_1Input_a3b76605b518ed07f9f6984fb80f40039}{Analysis\+::\+Config\+::\+Input\+::n\+Files} = -\/1
+\begin{DoxyCompactList}\small\item\em Number of files on input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Input data type indicators}
+\label{_amgrp56599f4f4c9ceb6580b8aadff0ee7e3e}%
+Input data type for this job (default is {\ttfamily Topo\+Cluster}) \begin{DoxyCompactItemize}
+\item 
+static Selector \hyperlink{namespaceAnalysis_1_1Config_1_1Input_a768360b14e622980b67a7f09f524415c}{Analysis\+::\+Config\+::\+Input\+::collection} = Topo\+Cluster
+\begin{DoxyCompactList}\small\item\em Human-\/readable translation of input data type (non-\/modifiable) \end{DoxyCompactList}\item 
+static const std\+::vector$<$ std\+::string $>$ \hyperlink{namespaceAnalysis_1_1Config_1_1Input_a91cee154e576aa79ee787627d6aca540}{Analysis\+::\+Config\+::\+Input\+::names} = \{ \char`\"{}Topo\+Cluster\char`\"{}, \char`\"{}Topo\+Tower\char`\"{}, \char`\"{}Topo\+Tower\+Fine\char`\"{}, \char`\"{}Unknown\char`\"{} \}
+\begin{DoxyCompactList}\small\item\em Human-\/readable translation of input data type (non-\/modifiable) \end{DoxyCompactList}\item 
+static const std\+::vector$<$ Selector $>$ \hyperlink{namespaceAnalysis_1_1Config_1_1Input_aad61028452c46869efe0b2dc1274a2b6}{Analysis\+::\+Config\+::\+Input\+::types} = \{ Topo\+Cluster, Topo\+Tower, Topo\+Tower\+Fine, Unknown \}
+\begin{DoxyCompactList}\small\item\em List of all availbale types with same sequence (non-\/modifiable) \end{DoxyCompactList}\item 
+static std\+::map$<$ Selector, std\+::string $>$ \hyperlink{namespaceAnalysis_1_1Config_1_1Input_a3464419de97f63c4c1740c3fde0deff0}{Analysis\+::\+Config\+::\+Input\+::selector\+Name\+Lookup} = std\+::map$<$Selector,std\+::string$>$()
+\begin{DoxyCompactList}\small\item\em Lookup of human-\/readable input data type names (type-\/$>$name) \end{DoxyCompactList}\item 
+static std\+::map$<$ std\+::string, Selector $>$ \hyperlink{namespaceAnalysis_1_1Config_1_1Input_ab48a0d60ba640c5a21e979d16e58115c}{Analysis\+::\+Config\+::\+Input\+::selector\+Lookup} = std\+::map$<$std\+::string,Selector$>$()
+\begin{DoxyCompactList}\small\item\em Inverse lookup of input data type (name-\/$>$type) \end{DoxyCompactList}\item 
+static bool \hyperlink{namespaceAnalysis_1_1Config_1_1Input_af64e34d8da610aae7d8e1af4f21e092e}{Analysis\+::\+Config\+::\+Input\+::is\+Topo\+Cluster} ()
+\begin{DoxyCompactList}\small\item\em Returns {\ttfamily true} if actual type is {\ttfamily Topo\+Cluster}. \end{DoxyCompactList}\item 
+static bool \hyperlink{namespaceAnalysis_1_1Config_1_1Input_a8e48910b447b8c7667f8bcac33850d41}{Analysis\+::\+Config\+::\+Input\+::is\+Topo\+Tower} ()
+\begin{DoxyCompactList}\small\item\em Returns {\ttfamily true} if actual type is {\ttfamily Topo\+Topwer} ( $ \Delta\eta\times\Delta\phi = 0.1\times 0.1) $) \end{DoxyCompactList}\item 
+static bool \hyperlink{namespaceAnalysis_1_1Config_1_1Input_ad8bc3f4c2a336a8776a1ebe56aaa3b7c}{Analysis\+::\+Config\+::\+Input\+::is\+Topo\+Tower\+Fine} ()
+\begin{DoxyCompactList}\small\item\em Returns {\ttfamily true} if actual type is {\ttfamily Topo\+Topwer} ( $ \Delta\eta\times\Delta\phi = 0.05\times 0.05) $) \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceAnalysis_1_1Config_1_1Input_a2e06dcb1733ba407a5398c4a4bc0a43f}{Analysis\+::\+Config\+::\+Input\+::fill\+Selector\+Maps} ()
+\begin{DoxyCompactList}\small\item\em Function filling lookup and reverse lookup. \end{DoxyCompactList}\item 
+static const std\+::string \& \hyperlink{namespaceAnalysis_1_1Config_1_1Input_aa5d9fccd604bbebe94b3ce68f9a5fbe7}{Analysis\+::\+Config\+::\+Input\+::selector\+Name} (Selector stype)
+\begin{DoxyCompactList}\small\item\em Function accessing input data type name for a given type tag. \end{DoxyCompactList}\item 
+static Selector \hyperlink{namespaceAnalysis_1_1Config_1_1Input_aab66e95b8ef82678b43dbab59db6ce0e}{Analysis\+::\+Config\+::\+Input\+::selector\+Type} (const std\+::string \&sname)
+\begin{DoxyCompactList}\small\item\em Function accessing input data type tag for a given type name. \end{DoxyCompactList}\end{DoxyCompactItemize}

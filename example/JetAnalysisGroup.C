@@ -1,0 +1,70 @@
+
+#include "AnalysisHelper.h"
+#include "JetAnalysisGroup.h"
+
+#include <TString.h>
+
+JetAnalysisGroup::JetAnalysisGroup(const std::string& name)
+  : Analysis::GroupBase(name)
+  , h_njet((TH1D*)0)
+  , h_ptjet((TH1D*)0)
+  , h_rapjet((TH1D*)0)
+  , d_pt_rapjet((TH2D*)0)
+{ this->book(); }
+
+JetAnalysisGroup::~JetAnalysisGroup() 
+{ }
+
+bool JetAnalysisGroup::isBooked() {
+  return h_njet != 0; 
+}
+
+bool JetAnalysisGroup::book()
+{
+  static std::string _mname = "JetAnalsyisGroup::Book";
+
+  if ( isBooked() ) { PRINT_WARNING( _mname, "histograms already booked" ); return false; }
+
+  size_t nhists(0);
+
+  int njBin(200); double njMin(-0.5); double njMax(njMin+njBin);
+  h_njet = AH::book1D<TH1D>(histName("h_njet").c_str(), "Number of Jets", njBin,njMin,njMax,"N_{jet}");
+  h_njet->GetYaxis()->SetTitle(axisTitle("Entries per %.0f count(s)",h_njet->GetBinWidth(1)).c_str());
+  ++nhists;
+
+  int ptBin(200); double ptMin(0.); double ptMax(2000.);
+  h_ptjet = AH::book1D<TH1D>(histName("h_ptjet").c_str(),"Jet Transverse Momentum",ptBin,ptMin,ptMax,"p_{T}^{jet} [GeV]");
+  h_ptjet->GetYaxis()->SetTitle(axisTitle("#partialN/#partialp_{T} [1/(%.1f GeV)]",h_ptjet->GetBinWidth(1)).c_str());
+  ++nhists;
+
+  int rapBin(101); double rapMin(-5.05); double rapMax(5.05);
+  h_rapjet = AH::book1D<TH1D>(histName("h_rapjet").c_str(),"Jet Rapidity",rapBin,rapMin,rapMax,"Rapidity y");
+  h_rapjet->GetYaxis()->SetTitle(axisTitle("#partialN/#partialy [1/(%.1f units of rapidity)]",h_rapjet->GetBinWidth(1)).c_str());
+  ++nhists;
+
+  d_pt_rapjet = AH::book2D<TH2D>(histName("d_pt_rapjet").c_str(),"Jet Transverse Momentum vs Rapidity",rapBin,rapMin,rapMax,ptBin,ptMin,ptMax,"Rapidity y","p_{T}^{jet} [GeV]");
+  d_pt_rapjet->GetZaxis()->SetTitle(axisTitle("#partial^{2}N/(#partialy #partialp_{T} [1/(%.1f#times%.1f GeV#times unit rapidity)]",h_ptjet->GetBinWidth(1),h_rapjet->GetBinWidth(1)).c_str());
+  ++nhists;
+ 
+  PRINT_INFO( _mname, "booked %zu histograms", nhists );
+
+  return nhists>0;
+}
+
+bool JetAnalysisGroup::fill(const std::vector<fastjet::PseudoJet>& pjets)
+{
+  double njets(static_cast<double>(pjets.size()));
+  h_njet->Fill(njets);
+
+  // loop jets
+  for ( auto pj : pjets ) { 
+    double pt(pj.pt()/Analysis::Units::GeV);
+    double rap(pj.rap());
+    h_ptjet->Fill(pt);
+    h_rapjet->Fill(rap);
+    d_pt_rapjet->Fill(rap,pt);
+  }
+
+  return njets > 0;
+}
+

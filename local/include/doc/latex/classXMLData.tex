@@ -1,0 +1,154 @@
+\hypertarget{classXMLData}{}\section{X\+M\+L\+Data Class Reference}
+\label{classXMLData}\index{X\+M\+L\+Data@{X\+M\+L\+Data}}
+
+
+{\ttfamily \#include $<$X\+M\+L\+Data.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classXMLData_a3d4c884d857cd0db231b1e4295ff7646}{X\+M\+L\+Data} (const std\+::string \&block\+Name=\char`\"{}X\+M\+L\+Data\char`\"{})
+\item 
+virtual \hyperlink{classXMLData_ae746ab310c4b4f18a81379265191983b}{$\sim$\+X\+M\+L\+Data} ()
+\item 
+{\footnotesize template$<$class T $>$ }\\long int \hyperlink{classXMLData_affa7b3d998e644bfc89d1168f71fbf7d}{fill\+Event} (T $\ast$data, long int jentry)
+\item 
+const std\+::vector$<$ std\+::string $>$ \& \hyperlink{classXMLData_ab9c5d9f8aa1324cd6656729bc66ec6a7}{get\+Event} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classXMLData_a80c50c730903cf0e6ff2aa8b600beb26}{\+\_\+add\+To\+Evt} (const char $\ast$buffer)
+\item 
+int \hyperlink{classXMLData_a5cb05847cd0623d14534098b95b8b0c6}{\+\_\+open\+Evt} ()
+\item 
+int \hyperlink{classXMLData_a2b0fb567314a11f2153024452ade64b8}{\+\_\+close\+Evt} ()
+\item 
+int \hyperlink{classXMLData_a29719955516b4303845bdffccd10bf35}{\+\_\+open\+Block} (const char $\ast$buffer)
+\item 
+int \hyperlink{classXMLData_af1c0ebf8fbacf3c35104aa1356c0e7db}{\+\_\+close\+Block} (const char $\ast$buffer)
+\item 
+int \hyperlink{classXMLData_a6997a67e3583007ad770f21136907b57}{\+\_\+open\+Block} (const std\+::string \&str)
+\item 
+int \hyperlink{classXMLData_ade230a42918687179e395b15ce0663e2}{\+\_\+close\+Block} (const std\+::string \&str)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{classXMLData_a56529a9696113e52d999e0ec06a7518e}{\+\_\+event}
+\item 
+int \hyperlink{classXMLData_a07f720693c1142a662d03e0b9e4e4a08}{\+\_\+event\+Ctr}
+\item 
+std\+::string \hyperlink{classXMLData_af2100a3d690087205daa728d1e1e93f8}{\+\_\+block\+Name}
+\item 
+long int \hyperlink{classXMLData_a25fa9065737de2504d3941c4a36a456e}{\+\_\+nbytes}
+\item 
+int \hyperlink{classXMLData_a56bb09b671afb05abefff1406070a7a3}{\+\_\+records}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{X\+M\+L\+Data@{X\+M\+L\+Data}!X\+M\+L\+Data@{X\+M\+L\+Data}}
+\index{X\+M\+L\+Data@{X\+M\+L\+Data}!X\+M\+L\+Data@{X\+M\+L\+Data}}
+\subsubsection[{\texorpdfstring{X\+M\+L\+Data(const std\+::string \&block\+Name=""X\+M\+L\+Data"")}{XMLData(const std::string &blockName="XMLData")}}]{\setlength{\rightskip}{0pt plus 5cm}X\+M\+L\+Data\+::\+X\+M\+L\+Data (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{block\+Name = {\ttfamily \char`\"{}XMLData\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classXMLData_a3d4c884d857cd0db231b1e4295ff7646}{}\label{classXMLData_a3d4c884d857cd0db231b1e4295ff7646}
+\index{X\+M\+L\+Data@{X\+M\+L\+Data}!````~X\+M\+L\+Data@{$\sim$\+X\+M\+L\+Data}}
+\index{````~X\+M\+L\+Data@{$\sim$\+X\+M\+L\+Data}!X\+M\+L\+Data@{X\+M\+L\+Data}}
+\subsubsection[{\texorpdfstring{$\sim$\+X\+M\+L\+Data()}{~XMLData()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual X\+M\+L\+Data\+::$\sim$\+X\+M\+L\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classXMLData_ae746ab310c4b4f18a81379265191983b}{}\label{classXMLData_ae746ab310c4b4f18a81379265191983b}
+
+
+\subsection{Member Function Documentation}
+\index{X\+M\+L\+Data@{X\+M\+L\+Data}!\+\_\+add\+To\+Evt@{\+\_\+add\+To\+Evt}}
+\index{\+\_\+add\+To\+Evt@{\+\_\+add\+To\+Evt}!X\+M\+L\+Data@{X\+M\+L\+Data}}
+\subsubsection[{\texorpdfstring{\+\_\+add\+To\+Evt(const char $\ast$buffer)}{_addToEvt(const char *buffer)}}]{\setlength{\rightskip}{0pt plus 5cm}int X\+M\+L\+Data\+::\+\_\+add\+To\+Evt (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{buffer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classXMLData_a80c50c730903cf0e6ff2aa8b600beb26}{}\label{classXMLData_a80c50c730903cf0e6ff2aa8b600beb26}
+\index{X\+M\+L\+Data@{X\+M\+L\+Data}!\+\_\+close\+Block@{\+\_\+close\+Block}}
+\index{\+\_\+close\+Block@{\+\_\+close\+Block}!X\+M\+L\+Data@{X\+M\+L\+Data}}
+\subsubsection[{\texorpdfstring{\+\_\+close\+Block(const char $\ast$buffer)}{_closeBlock(const char *buffer)}}]{\setlength{\rightskip}{0pt plus 5cm}int X\+M\+L\+Data\+::\+\_\+close\+Block (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{buffer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classXMLData_af1c0ebf8fbacf3c35104aa1356c0e7db}{}\label{classXMLData_af1c0ebf8fbacf3c35104aa1356c0e7db}
+\index{X\+M\+L\+Data@{X\+M\+L\+Data}!\+\_\+close\+Block@{\+\_\+close\+Block}}
+\index{\+\_\+close\+Block@{\+\_\+close\+Block}!X\+M\+L\+Data@{X\+M\+L\+Data}}
+\subsubsection[{\texorpdfstring{\+\_\+close\+Block(const std\+::string \&str)}{_closeBlock(const std::string &str)}}]{\setlength{\rightskip}{0pt plus 5cm}int X\+M\+L\+Data\+::\+\_\+close\+Block (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classXMLData_ade230a42918687179e395b15ce0663e2}{}\label{classXMLData_ade230a42918687179e395b15ce0663e2}
+\index{X\+M\+L\+Data@{X\+M\+L\+Data}!\+\_\+close\+Evt@{\+\_\+close\+Evt}}
+\index{\+\_\+close\+Evt@{\+\_\+close\+Evt}!X\+M\+L\+Data@{X\+M\+L\+Data}}
+\subsubsection[{\texorpdfstring{\+\_\+close\+Evt()}{_closeEvt()}}]{\setlength{\rightskip}{0pt plus 5cm}int X\+M\+L\+Data\+::\+\_\+close\+Evt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classXMLData_a2b0fb567314a11f2153024452ade64b8}{}\label{classXMLData_a2b0fb567314a11f2153024452ade64b8}
+\index{X\+M\+L\+Data@{X\+M\+L\+Data}!\+\_\+open\+Block@{\+\_\+open\+Block}}
+\index{\+\_\+open\+Block@{\+\_\+open\+Block}!X\+M\+L\+Data@{X\+M\+L\+Data}}
+\subsubsection[{\texorpdfstring{\+\_\+open\+Block(const char $\ast$buffer)}{_openBlock(const char *buffer)}}]{\setlength{\rightskip}{0pt plus 5cm}int X\+M\+L\+Data\+::\+\_\+open\+Block (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{buffer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classXMLData_a29719955516b4303845bdffccd10bf35}{}\label{classXMLData_a29719955516b4303845bdffccd10bf35}
+\index{X\+M\+L\+Data@{X\+M\+L\+Data}!\+\_\+open\+Block@{\+\_\+open\+Block}}
+\index{\+\_\+open\+Block@{\+\_\+open\+Block}!X\+M\+L\+Data@{X\+M\+L\+Data}}
+\subsubsection[{\texorpdfstring{\+\_\+open\+Block(const std\+::string \&str)}{_openBlock(const std::string &str)}}]{\setlength{\rightskip}{0pt plus 5cm}int X\+M\+L\+Data\+::\+\_\+open\+Block (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classXMLData_a6997a67e3583007ad770f21136907b57}{}\label{classXMLData_a6997a67e3583007ad770f21136907b57}
+\index{X\+M\+L\+Data@{X\+M\+L\+Data}!\+\_\+open\+Evt@{\+\_\+open\+Evt}}
+\index{\+\_\+open\+Evt@{\+\_\+open\+Evt}!X\+M\+L\+Data@{X\+M\+L\+Data}}
+\subsubsection[{\texorpdfstring{\+\_\+open\+Evt()}{_openEvt()}}]{\setlength{\rightskip}{0pt plus 5cm}int X\+M\+L\+Data\+::\+\_\+open\+Evt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classXMLData_a5cb05847cd0623d14534098b95b8b0c6}{}\label{classXMLData_a5cb05847cd0623d14534098b95b8b0c6}
+\index{X\+M\+L\+Data@{X\+M\+L\+Data}!fill\+Event@{fill\+Event}}
+\index{fill\+Event@{fill\+Event}!X\+M\+L\+Data@{X\+M\+L\+Data}}
+\subsubsection[{\texorpdfstring{fill\+Event(\+T $\ast$data, long int jentry)}{fillEvent(T *data, long int jentry)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ long int X\+M\+L\+Data\+::fill\+Event (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{data, }
+\item[{long int}]{jentry}
+\end{DoxyParamCaption}
+)}\hypertarget{classXMLData_affa7b3d998e644bfc89d1168f71fbf7d}{}\label{classXMLData_affa7b3d998e644bfc89d1168f71fbf7d}
+\index{X\+M\+L\+Data@{X\+M\+L\+Data}!get\+Event@{get\+Event}}
+\index{get\+Event@{get\+Event}!X\+M\+L\+Data@{X\+M\+L\+Data}}
+\subsubsection[{\texorpdfstring{get\+Event() const }{getEvent() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$ std\+::string $>$ \& X\+M\+L\+Data\+::get\+Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classXMLData_ab9c5d9f8aa1324cd6656729bc66ec6a7}{}\label{classXMLData_ab9c5d9f8aa1324cd6656729bc66ec6a7}
+
+
+\subsection{Member Data Documentation}
+\index{X\+M\+L\+Data@{X\+M\+L\+Data}!\+\_\+block\+Name@{\+\_\+block\+Name}}
+\index{\+\_\+block\+Name@{\+\_\+block\+Name}!X\+M\+L\+Data@{X\+M\+L\+Data}}
+\subsubsection[{\texorpdfstring{\+\_\+block\+Name}{_blockName}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string X\+M\+L\+Data\+::\+\_\+block\+Name\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classXMLData_af2100a3d690087205daa728d1e1e93f8}{}\label{classXMLData_af2100a3d690087205daa728d1e1e93f8}
+\index{X\+M\+L\+Data@{X\+M\+L\+Data}!\+\_\+event@{\+\_\+event}}
+\index{\+\_\+event@{\+\_\+event}!X\+M\+L\+Data@{X\+M\+L\+Data}}
+\subsubsection[{\texorpdfstring{\+\_\+event}{_event}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::string$>$ X\+M\+L\+Data\+::\+\_\+event\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classXMLData_a56529a9696113e52d999e0ec06a7518e}{}\label{classXMLData_a56529a9696113e52d999e0ec06a7518e}
+\index{X\+M\+L\+Data@{X\+M\+L\+Data}!\+\_\+event\+Ctr@{\+\_\+event\+Ctr}}
+\index{\+\_\+event\+Ctr@{\+\_\+event\+Ctr}!X\+M\+L\+Data@{X\+M\+L\+Data}}
+\subsubsection[{\texorpdfstring{\+\_\+event\+Ctr}{_eventCtr}}]{\setlength{\rightskip}{0pt plus 5cm}int X\+M\+L\+Data\+::\+\_\+event\+Ctr\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classXMLData_a07f720693c1142a662d03e0b9e4e4a08}{}\label{classXMLData_a07f720693c1142a662d03e0b9e4e4a08}
+\index{X\+M\+L\+Data@{X\+M\+L\+Data}!\+\_\+nbytes@{\+\_\+nbytes}}
+\index{\+\_\+nbytes@{\+\_\+nbytes}!X\+M\+L\+Data@{X\+M\+L\+Data}}
+\subsubsection[{\texorpdfstring{\+\_\+nbytes}{_nbytes}}]{\setlength{\rightskip}{0pt plus 5cm}long int X\+M\+L\+Data\+::\+\_\+nbytes\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classXMLData_a25fa9065737de2504d3941c4a36a456e}{}\label{classXMLData_a25fa9065737de2504d3941c4a36a456e}
+\index{X\+M\+L\+Data@{X\+M\+L\+Data}!\+\_\+records@{\+\_\+records}}
+\index{\+\_\+records@{\+\_\+records}!X\+M\+L\+Data@{X\+M\+L\+Data}}
+\subsubsection[{\texorpdfstring{\+\_\+records}{_records}}]{\setlength{\rightskip}{0pt plus 5cm}int X\+M\+L\+Data\+::\+\_\+records\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classXMLData_a56bb09b671afb05abefff1406070a7a3}{}\label{classXMLData_a56bb09b671afb05abefff1406070a7a3}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{XMLData_8h}{X\+M\+L\+Data.\+h}\end{DoxyCompactItemize}

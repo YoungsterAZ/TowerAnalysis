@@ -1,0 +1,898 @@
+\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo}{}\section{Analysis\+:\+:Fast\+Jet\+:\+:Calo\+Signal\+Info Class Reference}
+\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo}\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+
+
+{\ttfamily \#include $<$Analysis\+Data.\+h$>$}
+
+Inheritance diagram for Analysis\+:\+:Fast\+Jet\+:\+:Calo\+Signal\+Info\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classAnalysis_1_1FastJet_1_1CaloSignalInfo}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675}{Type} \{ \\*
+\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675acf1212505f289985f1e261fbbca13484}{Topo\+Cluster} = 0x01, 
+\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675a8a62dc4a7b24c36d548a3e382d32a403}{Topo\+Tower} =0x02, 
+\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675adfd6d8fa14b4f9e9e42564c26c0773ae}{Topo\+Tower\+Norm} = 0x02, 
+\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675aa6b1555b17060efe7771635af1a87519}{Topo\+Tower\+Coarse} = 0x02, 
+\\*
+\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675ae4a6680d4c780d03251c9065791e2792}{Topo\+Tower\+Fine} = 0x04, 
+\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675a263dc44fe7b5d0fd7c5d761e23c8ea9a}{Unknown} = 0x00
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a1c052e698143cf8df61401bf14211c63}{Calo\+Signal\+Info} (int idx, \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675}{Type} stype)
+\item 
+\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a6e6e4b3fddd49811dbe358bdd9925e2c}{Calo\+Signal\+Info} ()
+\item 
+\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ad95c893fa0a848f5e9d236f6f8a95754}{Calo\+Signal\+Info} (const \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo}{Calo\+Signal\+Info} \&ci)
+\item 
+\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a44997a907fd4e790004a96ff9839c7b3}{Calo\+Signal\+Info} (const \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo}{Calo\+Signal\+Info} $\ast$ci)
+\item 
+virtual \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_af5f8d21c9cc239c7353d74901fa23101}{$\sim$\+Calo\+Signal\+Info} ()
+\item 
+\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675}{Type} \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_abac003e16f1fae225bb6d3627a71e8ac}{type} () const 
+\item 
+\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675}{Type} \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a4ce902eef34836cb0736e6c133294a69}{type} (const std\+::string \&\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_acc8335b43ac3e8cc2cc040c230b50aa3}{type\+Name}) const 
+\item 
+const std\+::string \& \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_acc8335b43ac3e8cc2cc040c230b50aa3}{type\+Name} () const 
+\item 
+void \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac8ec46a412dbacf12caca458a0aec2f0}{set\+Area} (double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a4998572743794def4adae57cf3865a2c}{area})
+\item 
+void \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a2003366c8743fc150442bf638d15b688}{set\+P\+TD} (double ptd)
+\item 
+void \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a5e765abf01922d438c57d917d4ed4c73}{set\+E\+P\+OS} (double epos)
+\item 
+void \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a187b575d702f519644f2182217967b75}{set\+Time} (double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a74925b32feb684ee5c4629f126519be7}{time})
+\item 
+void \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a1690e94963b3c31c00dcfbdc8aba7067}{set\+Type} (\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675}{Type} type\+Id)
+\item 
+void \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a41827f5221f07e060ce86d0fd82ddda5}{set\+Type\+Name} (const std\+::string \&\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_acc8335b43ac3e8cc2cc040c230b50aa3}{type\+Name})
+\item 
+void \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a273f8e95a73022aa25565216a4508852}{set\+OrigE} (double e)
+\item 
+double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a6c825d60c49876434ca6d5535c8e24e2}{fixed\+Area} () const 
+\item 
+double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a4998572743794def4adae57cf3865a2c}{area} () const 
+\item 
+double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ae7a8771287aac7e9f3de29768f21fb0d}{P\+TD} () const 
+\item 
+double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ad0af2ed179c09d0adf74331e9a4a6e08}{E\+P\+OS} () const 
+\item 
+double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a74925b32feb684ee5c4629f126519be7}{time} () const 
+\item 
+double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a04cfca843c49a95befabfa6b1dcdc9b3}{origE} () const 
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf Set object status}\par
+{\em Set status to \char`\"{}empty\char`\"{} (no reference data) }\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_ab87ca9e42c15c24c8f54bad4b9674d0c}{set\+Empty} ()
+\begin{DoxyCompactList}\small\item\em Set status to \char`\"{}faulty\char`\"{} (broken/invalid) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a0c5efdcfb658e75538dd5ec29c27afe0}{set\+Faulty} ()
+\begin{DoxyCompactList}\small\item\em Set status to \char`\"{}faulty\char`\"{} (broken/invalid) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_ab22ff88713e1ad12bd2311cc4f1c998c}{set\+Ghost} ()
+\begin{DoxyCompactList}\small\item\em Set status to \char`\"{}ghosted\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Access object status and data}\par
+{\em Retrieve reference index (or status indicator)
+
+\begin{DoxyReturn}{Returns}
+Reference index if $>$= 0 (may still be invalid -\/ no checking); if $<$0 returns status. 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+virtual int \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a687e6a814e58e5737108ef24aef047df}{index} () const 
+\begin{DoxyCompactList}\small\item\em Check if empty. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a4b987d1bba6c854cf9310596abbd3572}{is\+Empty} () const 
+\begin{DoxyCompactList}\small\item\em Check if empty. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a74601c143cb58b3bb62e0842b416beed}{is\+Faulty} () const 
+\begin{DoxyCompactList}\small\item\em Check if faulty/broken/invalid. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_ad7b1ceba9d2ab04e7e7000577fe95198}{is\+Usable} () const 
+\begin{DoxyCompactList}\small\item\em Check if usable. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a92d2abe359ed4b794c546a23a9e1ccbe}{is\+Ghost} () const 
+\begin{DoxyCompactList}\small\item\em Check if ghost. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_aa4008fb819a90eba42de259914b9f799}{def\+Time} ()
+\item 
+static bool \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ad3987a22c21aafdb3f074dfe6c15ddd4}{is\+Calo\+Signal} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static bool \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a1d00cdcaf5f0c17d9d6aa07f1ec3e486}{has\+Calo\+Area} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a5585d0b0e21cf7261fbfdd37d88de689}{calo\+Area} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ab1772259e0578e51056a8e1cc8cdd342}{calo\+Fixed\+Area} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a3cc740a3b70b82def83ffb9a6ff43cd3}{calo\+P\+TD} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac68b4786735b76e511b2f9b801025833}{calo\+E\+P\+OS} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static const std\+::string \& \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a4bcba28ea7871f884c727df5f4d2520b}{signal\+Name} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675}{Type} \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a761a65bf1c957b4d7f0d37cf6f85d351}{signal\+Type} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a815a75eb24f274d882f700e35aaf34b0}{calo\+Time} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_afb7471b4f7adcd5c4a0fe86f8c7d486b}{origE} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static bool \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a79ba59c5af9a4bc2e641ab2e54e8d50b}{is\+Empty} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static bool \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a18b23aae344587ff280a046e70af1d29}{is\+Usable} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static bool \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a4682fdc7e258328293b05951f55cc7a1}{is\+Ghost} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static bool \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a681f1076b15320ea55e7104b4fe01c3a}{has\+User\+Info} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static int \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a767f93f891d045f209198cdf72fddf36}{user\+Index} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a60da06d7be16ac2b2456058812c02dd2}{\+\_\+fill\+Maps} ()
+\item 
+static \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675}{Type} \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a5523d02e32bfeac621414ac3708da634}{\+\_\+get\+Type} (const std\+::string \&name)
+\item 
+static const std\+::string \& \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ae8d06605ae61b010fba0605ccd626681}{\+\_\+get\+Name} (\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675}{Type} stype)
+\item 
+static double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a100c863de34ba4181d425a4c4609da83}{\+\_\+get\+Fixed\+Area} (\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675}{Type} stype)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675}{Type} \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ab46f3aed35f69718e0faa3b4aa4580a7}{\+\_\+type\+Id}
+\item 
+std\+::string \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ad359585157bcda1da4b08560ce2d4977}{\+\_\+type\+Name}
+\item 
+double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_aa6d9e317ef5ec7c3e75770e068552190}{\+\_\+area}
+\item 
+double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a4824760bad2a7b7683145a95e667a436}{\+\_\+\+P\+TD}
+\item 
+double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a332e388462beecce5426c3c3dfd43240}{\+\_\+\+E\+P\+OS}
+\item 
+double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ae6fd205bf7cf2490b9fb0f1878e0ae37}{\+\_\+time}
+\item 
+double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a55ae2c4227e431ea9f322461173628a6}{\+\_\+origE}
+\item 
+int \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_ad9aa33e317aea2b675493b664cc718a3}{\+\_\+idx}
+\begin{DoxyCompactList}\small\item\em Index to underlying structure holding data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675}{Type}, std\+::string $>$ \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a02077135796cf03c3d55144e7201c2db}{\+\_\+map\+Type\+Name} = std\+::map$<$\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675}{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+Type},std\+::string$>$()
+\item 
+static std\+::map$<$ std\+::string, \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675}{Type} $>$ \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_abf6ff7b4cc2f83468d4c8e4ce19e9845}{\+\_\+map\+Name\+Type} = std\+::map$<$std\+::string,\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675}{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+Type}$>$()
+\item 
+static std\+::map$<$ \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675}{Type}, double $>$ \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a239a18104bf9715d803b912b668fce21}{\+\_\+map\+Fixed\+Area} = std\+::map$<$\hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675}{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+Type},double$>$()
+\item 
+static double \hyperlink{classAnalysis_1_1FastJet_1_1CaloSignalInfo_acd4a5a250d92298dd91d4081be322f72}{\+\_\+def\+Time} = -\/999.
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 370 of file Analysis\+Data.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!Type@{Type}}
+\index{Type@{Type}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{Type}{Type}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+Type}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Topo\+Cluster@{Topo\+Cluster}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!Topo\+Cluster@{Topo\+Cluster}}\item[{\em 
+Topo\+Cluster\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675acf1212505f289985f1e261fbbca13484}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675acf1212505f289985f1e261fbbca13484}
+}]\index{Topo\+Tower@{Topo\+Tower}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!Topo\+Tower@{Topo\+Tower}}\item[{\em 
+Topo\+Tower\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675a8a62dc4a7b24c36d548a3e382d32a403}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675a8a62dc4a7b24c36d548a3e382d32a403}
+}]\index{Topo\+Tower\+Norm@{Topo\+Tower\+Norm}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!Topo\+Tower\+Norm@{Topo\+Tower\+Norm}}\item[{\em 
+Topo\+Tower\+Norm\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675adfd6d8fa14b4f9e9e42564c26c0773ae}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675adfd6d8fa14b4f9e9e42564c26c0773ae}
+}]\index{Topo\+Tower\+Coarse@{Topo\+Tower\+Coarse}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!Topo\+Tower\+Coarse@{Topo\+Tower\+Coarse}}\item[{\em 
+Topo\+Tower\+Coarse\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675aa6b1555b17060efe7771635af1a87519}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675aa6b1555b17060efe7771635af1a87519}
+}]\index{Topo\+Tower\+Fine@{Topo\+Tower\+Fine}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!Topo\+Tower\+Fine@{Topo\+Tower\+Fine}}\item[{\em 
+Topo\+Tower\+Fine\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675ae4a6680d4c780d03251c9065791e2792}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675ae4a6680d4c780d03251c9065791e2792}
+}]\index{Unknown@{Unknown}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!Unknown@{Unknown}}\item[{\em 
+Unknown\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675a263dc44fe7b5d0fd7c5d761e23c8ea9a}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac03e8f6d7fb631eab49a9ab02cda7675a263dc44fe7b5d0fd7c5d761e23c8ea9a}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 373 of file Analysis\+Data.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!Calo\+Signal\+Info@{Calo\+Signal\+Info}}
+\index{Calo\+Signal\+Info@{Calo\+Signal\+Info}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{Calo\+Signal\+Info(int idx, Type stype)}{CaloSignalInfo(int idx, Type stype)}}]{\setlength{\rightskip}{0pt plus 5cm}Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+Calo\+Signal\+Info (
+\begin{DoxyParamCaption}
+\item[{int}]{idx, }
+\item[{{\bf Type}}]{stype}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a1c052e698143cf8df61401bf14211c63}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a1c052e698143cf8df61401bf14211c63}
+
+
+Definition at line 412 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!Calo\+Signal\+Info@{Calo\+Signal\+Info}}
+\index{Calo\+Signal\+Info@{Calo\+Signal\+Info}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{Calo\+Signal\+Info()}{CaloSignalInfo()}}]{\setlength{\rightskip}{0pt plus 5cm}Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+Calo\+Signal\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a6e6e4b3fddd49811dbe358bdd9925e2c}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a6e6e4b3fddd49811dbe358bdd9925e2c}
+
+
+Definition at line 422 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!Calo\+Signal\+Info@{Calo\+Signal\+Info}}
+\index{Calo\+Signal\+Info@{Calo\+Signal\+Info}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{Calo\+Signal\+Info(const Calo\+Signal\+Info \&ci)}{CaloSignalInfo(const CaloSignalInfo &ci)}}]{\setlength{\rightskip}{0pt plus 5cm}Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+Calo\+Signal\+Info (
+\begin{DoxyParamCaption}
+\item[{const {\bf Calo\+Signal\+Info} \&}]{ci}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ad95c893fa0a848f5e9d236f6f8a95754}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ad95c893fa0a848f5e9d236f6f8a95754}
+
+
+Definition at line 432 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!Calo\+Signal\+Info@{Calo\+Signal\+Info}}
+\index{Calo\+Signal\+Info@{Calo\+Signal\+Info}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{Calo\+Signal\+Info(const Calo\+Signal\+Info $\ast$ci)}{CaloSignalInfo(const CaloSignalInfo *ci)}}]{\setlength{\rightskip}{0pt plus 5cm}Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+Calo\+Signal\+Info (
+\begin{DoxyParamCaption}
+\item[{const {\bf Calo\+Signal\+Info} $\ast$}]{ci}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a44997a907fd4e790004a96ff9839c7b3}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a44997a907fd4e790004a96ff9839c7b3}
+
+
+Definition at line 442 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!````~Calo\+Signal\+Info@{$\sim$\+Calo\+Signal\+Info}}
+\index{````~Calo\+Signal\+Info@{$\sim$\+Calo\+Signal\+Info}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{$\sim$\+Calo\+Signal\+Info()}{~CaloSignalInfo()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::$\sim$\+Calo\+Signal\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_af5f8d21c9cc239c7353d74901fa23101}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_af5f8d21c9cc239c7353d74901fa23101}
+
+
+Definition at line 443 of file Analysis\+Data.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!\+\_\+fill\+Maps@{\+\_\+fill\+Maps}}
+\index{\+\_\+fill\+Maps@{\+\_\+fill\+Maps}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+fill\+Maps()}{_fillMaps()}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+\_\+fill\+Maps (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a60da06d7be16ac2b2456058812c02dd2}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a60da06d7be16ac2b2456058812c02dd2}
+
+
+Definition at line 379 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!\+\_\+get\+Fixed\+Area@{\+\_\+get\+Fixed\+Area}}
+\index{\+\_\+get\+Fixed\+Area@{\+\_\+get\+Fixed\+Area}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+get\+Fixed\+Area(\+Type stype)}{_getFixedArea(Type stype)}}]{\setlength{\rightskip}{0pt plus 5cm}static double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+\_\+get\+Fixed\+Area (
+\begin{DoxyParamCaption}
+\item[{{\bf Type}}]{stype}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a100c863de34ba4181d425a4c4609da83}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a100c863de34ba4181d425a4c4609da83}
+
+
+Definition at line 396 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!\+\_\+get\+Name@{\+\_\+get\+Name}}
+\index{\+\_\+get\+Name@{\+\_\+get\+Name}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+get\+Name(\+Type stype)}{_getName(Type stype)}}]{\setlength{\rightskip}{0pt plus 5cm}static const std\+::string\& Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+\_\+get\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Type}}]{stype}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ae8d06605ae61b010fba0605ccd626681}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ae8d06605ae61b010fba0605ccd626681}
+
+
+Definition at line 391 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!\+\_\+get\+Type@{\+\_\+get\+Type}}
+\index{\+\_\+get\+Type@{\+\_\+get\+Type}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+get\+Type(const std\+::string \&name)}{_getType(const std::string &name)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Type} Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+\_\+get\+Type (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a5523d02e32bfeac621414ac3708da634}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a5523d02e32bfeac621414ac3708da634}
+
+
+Definition at line 386 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!area@{area}}
+\index{area@{area}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{area() const }{area() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::area (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a4998572743794def4adae57cf3865a2c}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a4998572743794def4adae57cf3865a2c}
+
+
+Definition at line 458 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!calo\+Area@{calo\+Area}}
+\index{calo\+Area@{calo\+Area}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{calo\+Area(const fastjet\+::\+Pseudo\+Jet \&pj)}{caloArea(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::calo\+Area (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a5585d0b0e21cf7261fbfdd37d88de689}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a5585d0b0e21cf7261fbfdd37d88de689}
+
+
+Definition at line 467 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!calo\+E\+P\+OS@{calo\+E\+P\+OS}}
+\index{calo\+E\+P\+OS@{calo\+E\+P\+OS}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{calo\+E\+P\+O\+S(const fastjet\+::\+Pseudo\+Jet \&pj)}{caloEPOS(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::calo\+E\+P\+OS (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac68b4786735b76e511b2f9b801025833}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac68b4786735b76e511b2f9b801025833}
+
+
+Definition at line 470 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!calo\+Fixed\+Area@{calo\+Fixed\+Area}}
+\index{calo\+Fixed\+Area@{calo\+Fixed\+Area}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{calo\+Fixed\+Area(const fastjet\+::\+Pseudo\+Jet \&pj)}{caloFixedArea(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::calo\+Fixed\+Area (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ab1772259e0578e51056a8e1cc8cdd342}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ab1772259e0578e51056a8e1cc8cdd342}
+
+
+Definition at line 468 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!calo\+P\+TD@{calo\+P\+TD}}
+\index{calo\+P\+TD@{calo\+P\+TD}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{calo\+P\+T\+D(const fastjet\+::\+Pseudo\+Jet \&pj)}{caloPTD(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::calo\+P\+TD (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a3cc740a3b70b82def83ffb9a6ff43cd3}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a3cc740a3b70b82def83ffb9a6ff43cd3}
+
+
+Definition at line 469 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!calo\+Time@{calo\+Time}}
+\index{calo\+Time@{calo\+Time}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{calo\+Time(const fastjet\+::\+Pseudo\+Jet \&pj)}{caloTime(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::calo\+Time (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a815a75eb24f274d882f700e35aaf34b0}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a815a75eb24f274d882f700e35aaf34b0}
+
+
+Definition at line 473 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!def\+Time@{def\+Time}}
+\index{def\+Time@{def\+Time}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{def\+Time()}{defTime()}}]{\setlength{\rightskip}{0pt plus 5cm}static double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::def\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_aa4008fb819a90eba42de259914b9f799}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_aa4008fb819a90eba42de259914b9f799}
+
+
+Definition at line 462 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!E\+P\+OS@{E\+P\+OS}}
+\index{E\+P\+OS@{E\+P\+OS}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{E\+P\+O\+S() const }{EPOS() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+E\+P\+OS (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ad0af2ed179c09d0adf74331e9a4a6e08}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ad0af2ed179c09d0adf74331e9a4a6e08}
+
+
+Definition at line 460 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!fixed\+Area@{fixed\+Area}}
+\index{fixed\+Area@{fixed\+Area}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{fixed\+Area() const }{fixedArea() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::fixed\+Area (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a6c825d60c49876434ca6d5535c8e24e2}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a6c825d60c49876434ca6d5535c8e24e2}
+
+
+Definition at line 457 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!has\+Calo\+Area@{has\+Calo\+Area}}
+\index{has\+Calo\+Area@{has\+Calo\+Area}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{has\+Calo\+Area(const fastjet\+::\+Pseudo\+Jet \&pj)}{hasCaloArea(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::has\+Calo\+Area (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a1d00cdcaf5f0c17d9d6aa07f1ec3e486}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a1d00cdcaf5f0c17d9d6aa07f1ec3e486}
+
+
+Definition at line 466 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!has\+User\+Info@{has\+User\+Info}}
+\index{has\+User\+Info@{has\+User\+Info}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{has\+User\+Info(const fastjet\+::\+Pseudo\+Jet \&pj)}{hasUserInfo(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::has\+User\+Info (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a681f1076b15320ea55e7104b4fe01c3a}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a681f1076b15320ea55e7104b4fe01c3a}
+
+
+Definition at line 357 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!index@{index}}
+\index{index@{index}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{index() const }{index() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a687e6a814e58e5737108ef24aef047df}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a687e6a814e58e5737108ef24aef047df}
+
+
+Check if empty. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if empty. 
+\end{DoxyReturn}
+
+
+Definition at line 338 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!is\+Calo\+Signal@{is\+Calo\+Signal}}
+\index{is\+Calo\+Signal@{is\+Calo\+Signal}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{is\+Calo\+Signal(const fastjet\+::\+Pseudo\+Jet \&pj)}{isCaloSignal(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::is\+Calo\+Signal (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ad3987a22c21aafdb3f074dfe6c15ddd4}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ad3987a22c21aafdb3f074dfe6c15ddd4}
+
+
+Definition at line 465 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{is\+Empty() const }{isEmpty() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a4b987d1bba6c854cf9310596abbd3572}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a4b987d1bba6c854cf9310596abbd3572}
+
+
+Check if empty. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if empty. 
+\end{DoxyReturn}
+
+
+Definition at line 342 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{is\+Empty(const fastjet\+::\+Pseudo\+Jet \&pj)}{isEmpty(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::is\+Empty (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a79ba59c5af9a4bc2e641ab2e54e8d50b}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a79ba59c5af9a4bc2e641ab2e54e8d50b}
+
+
+Definition at line 362 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!is\+Faulty@{is\+Faulty}}
+\index{is\+Faulty@{is\+Faulty}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{is\+Faulty() const }{isFaulty() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::is\+Faulty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a74601c143cb58b3bb62e0842b416beed}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a74601c143cb58b3bb62e0842b416beed}
+
+
+Check if faulty/broken/invalid. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if faulty. 
+\end{DoxyReturn}
+
+
+Definition at line 346 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!is\+Ghost@{is\+Ghost}}
+\index{is\+Ghost@{is\+Ghost}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{is\+Ghost() const }{isGhost() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::is\+Ghost (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a92d2abe359ed4b794c546a23a9e1ccbe}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a92d2abe359ed4b794c546a23a9e1ccbe}
+
+
+Check if ghost. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} of associated {\ttfamily fastjet\+::\+Pseudo\+Jet} is ghosted 
+\end{DoxyReturn}
+
+
+Definition at line 354 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!is\+Ghost@{is\+Ghost}}
+\index{is\+Ghost@{is\+Ghost}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{is\+Ghost(const fastjet\+::\+Pseudo\+Jet \&pj)}{isGhost(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::is\+Ghost (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a4682fdc7e258328293b05951f55cc7a1}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a4682fdc7e258328293b05951f55cc7a1}
+
+
+Definition at line 366 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!is\+Usable@{is\+Usable}}
+\index{is\+Usable@{is\+Usable}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{is\+Usable() const }{isUsable() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::is\+Usable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_ad7b1ceba9d2ab04e7e7000577fe95198}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_ad7b1ceba9d2ab04e7e7000577fe95198}
+
+
+Check if usable. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if usable -\/ no indication that the index is valid! 
+\end{DoxyReturn}
+
+
+Definition at line 350 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!is\+Usable@{is\+Usable}}
+\index{is\+Usable@{is\+Usable}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{is\+Usable(const fastjet\+::\+Pseudo\+Jet \&pj)}{isUsable(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::is\+Usable (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a18b23aae344587ff280a046e70af1d29}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a18b23aae344587ff280a046e70af1d29}
+
+
+Definition at line 364 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!origE@{origE}}
+\index{origE@{origE}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{orig\+E() const }{origE() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::origE (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a04cfca843c49a95befabfa6b1dcdc9b3}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a04cfca843c49a95befabfa6b1dcdc9b3}
+
+
+Definition at line 463 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!origE@{origE}}
+\index{origE@{origE}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{orig\+E(const fastjet\+::\+Pseudo\+Jet \&pj)}{origE(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::origE (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_afb7471b4f7adcd5c4a0fe86f8c7d486b}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_afb7471b4f7adcd5c4a0fe86f8c7d486b}
+
+
+Definition at line 474 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!P\+TD@{P\+TD}}
+\index{P\+TD@{P\+TD}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{P\+T\+D() const }{PTD() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+P\+TD (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ae7a8771287aac7e9f3de29768f21fb0d}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ae7a8771287aac7e9f3de29768f21fb0d}
+
+
+Definition at line 459 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!set\+Area@{set\+Area}}
+\index{set\+Area@{set\+Area}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{set\+Area(double area)}{setArea(double area)}}]{\setlength{\rightskip}{0pt plus 5cm}void Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::set\+Area (
+\begin{DoxyParamCaption}
+\item[{double}]{area}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac8ec46a412dbacf12caca458a0aec2f0}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ac8ec46a412dbacf12caca458a0aec2f0}
+
+
+Definition at line 449 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!set\+Empty@{set\+Empty}}
+\index{set\+Empty@{set\+Empty}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{set\+Empty()}{setEmpty()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::set\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_ab87ca9e42c15c24c8f54bad4b9674d0c}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_ab87ca9e42c15c24c8f54bad4b9674d0c}
+
+
+Set status to \char`\"{}faulty\char`\"{} (broken/invalid) 
+
+
+
+Definition at line 326 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!set\+E\+P\+OS@{set\+E\+P\+OS}}
+\index{set\+E\+P\+OS@{set\+E\+P\+OS}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{set\+E\+P\+O\+S(double epos)}{setEPOS(double epos)}}]{\setlength{\rightskip}{0pt plus 5cm}void Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::set\+E\+P\+OS (
+\begin{DoxyParamCaption}
+\item[{double}]{epos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a5e765abf01922d438c57d917d4ed4c73}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a5e765abf01922d438c57d917d4ed4c73}
+
+
+Definition at line 451 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!set\+Faulty@{set\+Faulty}}
+\index{set\+Faulty@{set\+Faulty}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{set\+Faulty()}{setFaulty()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::set\+Faulty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a0c5efdcfb658e75538dd5ec29c27afe0}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a0c5efdcfb658e75538dd5ec29c27afe0}
+
+
+Set status to \char`\"{}faulty\char`\"{} (broken/invalid) 
+
+
+
+Definition at line 328 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!set\+Ghost@{set\+Ghost}}
+\index{set\+Ghost@{set\+Ghost}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{set\+Ghost()}{setGhost()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::set\+Ghost (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_ab22ff88713e1ad12bd2311cc4f1c998c}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_ab22ff88713e1ad12bd2311cc4f1c998c}
+
+
+Set status to \char`\"{}ghosted\char`\"{}. 
+
+
+
+Definition at line 330 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!set\+OrigE@{set\+OrigE}}
+\index{set\+OrigE@{set\+OrigE}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{set\+Orig\+E(double e)}{setOrigE(double e)}}]{\setlength{\rightskip}{0pt plus 5cm}void Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::set\+OrigE (
+\begin{DoxyParamCaption}
+\item[{double}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a273f8e95a73022aa25565216a4508852}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a273f8e95a73022aa25565216a4508852}
+
+
+Definition at line 455 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!set\+P\+TD@{set\+P\+TD}}
+\index{set\+P\+TD@{set\+P\+TD}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{set\+P\+T\+D(double ptd)}{setPTD(double ptd)}}]{\setlength{\rightskip}{0pt plus 5cm}void Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::set\+P\+TD (
+\begin{DoxyParamCaption}
+\item[{double}]{ptd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a2003366c8743fc150442bf638d15b688}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a2003366c8743fc150442bf638d15b688}
+
+
+Definition at line 450 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!set\+Time@{set\+Time}}
+\index{set\+Time@{set\+Time}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{set\+Time(double time)}{setTime(double time)}}]{\setlength{\rightskip}{0pt plus 5cm}void Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::set\+Time (
+\begin{DoxyParamCaption}
+\item[{double}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a187b575d702f519644f2182217967b75}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a187b575d702f519644f2182217967b75}
+
+
+Definition at line 452 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!set\+Type@{set\+Type}}
+\index{set\+Type@{set\+Type}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{set\+Type(\+Type type\+Id)}{setType(Type typeId)}}]{\setlength{\rightskip}{0pt plus 5cm}void Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::set\+Type (
+\begin{DoxyParamCaption}
+\item[{{\bf Type}}]{type\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a1690e94963b3c31c00dcfbdc8aba7067}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a1690e94963b3c31c00dcfbdc8aba7067}
+
+
+Definition at line 453 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!set\+Type\+Name@{set\+Type\+Name}}
+\index{set\+Type\+Name@{set\+Type\+Name}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{set\+Type\+Name(const std\+::string \&type\+Name)}{setTypeName(const std::string &typeName)}}]{\setlength{\rightskip}{0pt plus 5cm}void Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::set\+Type\+Name (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{type\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a41827f5221f07e060ce86d0fd82ddda5}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a41827f5221f07e060ce86d0fd82ddda5}
+
+
+Definition at line 454 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!signal\+Name@{signal\+Name}}
+\index{signal\+Name@{signal\+Name}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{signal\+Name(const fastjet\+::\+Pseudo\+Jet \&pj)}{signalName(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static const std\+::string\& Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::signal\+Name (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a4bcba28ea7871f884c727df5f4d2520b}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a4bcba28ea7871f884c727df5f4d2520b}
+
+
+Definition at line 471 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!signal\+Type@{signal\+Type}}
+\index{signal\+Type@{signal\+Type}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{signal\+Type(const fastjet\+::\+Pseudo\+Jet \&pj)}{signalType(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Type} Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::signal\+Type (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a761a65bf1c957b4d7f0d37cf6f85d351}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a761a65bf1c957b4d7f0d37cf6f85d351}
+
+
+Definition at line 472 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!time@{time}}
+\index{time@{time}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{time() const }{time() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a74925b32feb684ee5c4629f126519be7}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a74925b32feb684ee5c4629f126519be7}
+
+
+Definition at line 461 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!type@{type}}
+\index{type@{type}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{type() const }{type() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Type} Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_abac003e16f1fae225bb6d3627a71e8ac}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_abac003e16f1fae225bb6d3627a71e8ac}
+
+
+Definition at line 445 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!type@{type}}
+\index{type@{type}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{type(const std\+::string \&type\+Name) const }{type(const std::string &typeName) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Type} Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::type (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{type\+Name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a4ce902eef34836cb0736e6c133294a69}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a4ce902eef34836cb0736e6c133294a69}
+
+
+Definition at line 446 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!type\+Name@{type\+Name}}
+\index{type\+Name@{type\+Name}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{type\+Name() const }{typeName() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string\& Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::type\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_acc8335b43ac3e8cc2cc040c230b50aa3}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_acc8335b43ac3e8cc2cc040c230b50aa3}
+
+
+Definition at line 447 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!user\+Index@{user\+Index}}
+\index{user\+Index@{user\+Index}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{user\+Index(const fastjet\+::\+Pseudo\+Jet \&pj)}{userIndex(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::user\+Index (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a767f93f891d045f209198cdf72fddf36}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a767f93f891d045f209198cdf72fddf36}
+
+
+Definition at line 359 of file Analysis\+Data.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!\+\_\+area@{\+\_\+area}}
+\index{\+\_\+area@{\+\_\+area}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+area}{_area}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+\_\+area\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_aa6d9e317ef5ec7c3e75770e068552190}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_aa6d9e317ef5ec7c3e75770e068552190}
+
+
+Definition at line 406 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!\+\_\+def\+Time@{\+\_\+def\+Time}}
+\index{\+\_\+def\+Time@{\+\_\+def\+Time}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+def\+Time}{_defTime}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+\_\+def\+Time = -\/999.\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_acd4a5a250d92298dd91d4081be322f72}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_acd4a5a250d92298dd91d4081be322f72}
+
+
+Definition at line 402 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!\+\_\+\+E\+P\+OS@{\+\_\+\+E\+P\+OS}}
+\index{\+\_\+\+E\+P\+OS@{\+\_\+\+E\+P\+OS}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+\+E\+P\+OS}{_EPOS}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+\_\+\+E\+P\+OS\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a332e388462beecce5426c3c3dfd43240}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a332e388462beecce5426c3c3dfd43240}
+
+
+Definition at line 408 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!\+\_\+idx@{\+\_\+idx}}
+\index{\+\_\+idx@{\+\_\+idx}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+idx}{_idx}}]{\setlength{\rightskip}{0pt plus 5cm}int Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::\+\_\+idx\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_ad9aa33e317aea2b675493b664cc718a3}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_ad9aa33e317aea2b675493b664cc718a3}
+
+
+Index to underlying structure holding data. 
+
+
+
+Definition at line 305 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!\+\_\+map\+Fixed\+Area@{\+\_\+map\+Fixed\+Area}}
+\index{\+\_\+map\+Fixed\+Area@{\+\_\+map\+Fixed\+Area}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+map\+Fixed\+Area}{_mapFixedArea}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$ {\bf Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+Type}, double $>$ Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+\_\+map\+Fixed\+Area = std\+::map$<${\bf Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+Type},double$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a239a18104bf9715d803b912b668fce21}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a239a18104bf9715d803b912b668fce21}
+
+
+Definition at line 377 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!\+\_\+map\+Name\+Type@{\+\_\+map\+Name\+Type}}
+\index{\+\_\+map\+Name\+Type@{\+\_\+map\+Name\+Type}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+map\+Name\+Type}{_mapNameType}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$ std\+::string, {\bf Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+Type} $>$ Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+\_\+map\+Name\+Type = std\+::map$<$std\+::string,{\bf Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+Type}$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_abf6ff7b4cc2f83468d4c8e4ce19e9845}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_abf6ff7b4cc2f83468d4c8e4ce19e9845}
+
+
+Definition at line 376 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!\+\_\+map\+Type\+Name@{\+\_\+map\+Type\+Name}}
+\index{\+\_\+map\+Type\+Name@{\+\_\+map\+Type\+Name}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+map\+Type\+Name}{_mapTypeName}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$ {\bf Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+Type}, std\+::string $>$ Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+\_\+map\+Type\+Name = std\+::map$<${\bf Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+Type},std\+::string$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a02077135796cf03c3d55144e7201c2db}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a02077135796cf03c3d55144e7201c2db}
+
+
+Definition at line 375 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!\+\_\+origE@{\+\_\+origE}}
+\index{\+\_\+origE@{\+\_\+origE}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+origE}{_origE}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+\_\+origE\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a55ae2c4227e431ea9f322461173628a6}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a55ae2c4227e431ea9f322461173628a6}
+
+
+Definition at line 410 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!\+\_\+\+P\+TD@{\+\_\+\+P\+TD}}
+\index{\+\_\+\+P\+TD@{\+\_\+\+P\+TD}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+\+P\+TD}{_PTD}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+\_\+\+P\+TD\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a4824760bad2a7b7683145a95e667a436}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_a4824760bad2a7b7683145a95e667a436}
+
+
+Definition at line 407 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!\+\_\+time@{\+\_\+time}}
+\index{\+\_\+time@{\+\_\+time}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+time}{_time}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+\_\+time\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ae6fd205bf7cf2490b9fb0f1878e0ae37}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ae6fd205bf7cf2490b9fb0f1878e0ae37}
+
+
+Definition at line 409 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!\+\_\+type\+Id@{\+\_\+type\+Id}}
+\index{\+\_\+type\+Id@{\+\_\+type\+Id}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+type\+Id}{_typeId}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Type} Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+\_\+type\+Id\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ab46f3aed35f69718e0faa3b4aa4580a7}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ab46f3aed35f69718e0faa3b4aa4580a7}
+
+
+Definition at line 404 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}!\+\_\+type\+Name@{\+\_\+type\+Name}}
+\index{\+\_\+type\+Name@{\+\_\+type\+Name}!Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info@{Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+type\+Name}{_typeName}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Analysis\+::\+Fast\+Jet\+::\+Calo\+Signal\+Info\+::\+\_\+type\+Name\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ad359585157bcda1da4b08560ce2d4977}{}\label{classAnalysis_1_1FastJet_1_1CaloSignalInfo_ad359585157bcda1da4b08560ce2d4977}
+
+
+Definition at line 405 of file Analysis\+Data.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{AnalysisData_8h}{Analysis\+Data.\+h}\end{DoxyCompactItemize}

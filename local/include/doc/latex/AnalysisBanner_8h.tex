@@ -1,0 +1,51 @@
+\hypertarget{AnalysisBanner_8h}{}\section{Analysis\+Banner.\+h File Reference}
+\label{AnalysisBanner_8h}\index{Analysis\+Banner.\+h@{Analysis\+Banner.\+h}}
+{\ttfamily \#include \char`\"{}Analysis\+Utils.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceAnalysis}{Analysis}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceAnalysis}{Analysis} configuration data. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1Banner}{Analysis\+::\+Banner}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceAnalysis_1_1Banner}{Banner} printout. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1Banner_1_1TopoCluster}{Analysis\+::\+Banner\+::\+Topo\+Cluster}
+\begin{DoxyCompactList}\small\item\em Topo-\/cluster. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1Banner_1_1TopoTower}{Analysis\+::\+Banner\+::\+Topo\+Tower}
+\begin{DoxyCompactList}\small\item\em Topo-\/tower (standard $ \Delta\eta\times\Delta\phi = 0.1\times 0.1 $ ) \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1Banner_1_1TopoTowerFine}{Analysis\+::\+Banner\+::\+Topo\+Tower\+Fine}
+\begin{DoxyCompactList}\small\item\em Topo-\/tower (fine $ \Delta\eta\times\Delta\phi = 0.05\times 0.05 $ ) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}{\bf Printers}\par
+{\em A collection of functions printing banners or list of strings.
+
+A line-\/feed and carriage return is printed after each string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em module} & name of the module invoking the print \\
+\hline
+{\em banner} & lines of text \\
+\hline
+\end{DoxyParams}
+}\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{namespaceAnalysis_1_1Banner_a5c24f8135036c4f91da82124b65cc108}{Analysis\+::\+Banner\+::print} (const std\+::string \&module, const std\+::vector$<$ std\+::string $>$ \&banner)
+\begin{DoxyCompactList}\small\item\em Print any list of strings. \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceAnalysis_1_1Banner_a5ee1340f2640f11e204af4eb2f704745}{Analysis\+::\+Banner\+::print\+Topo\+Cluster} (const std\+::string \&module)
+\begin{DoxyCompactList}\small\item\em Print topo-\/cluster banner. \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceAnalysis_1_1Banner_a851db5eaedf96ef99e7ca109e27288e2}{Analysis\+::\+Banner\+::print\+Topo\+Tower} (const std\+::string \&module)
+\begin{DoxyCompactList}\small\item\em Print topo-\/tower ( $ \Delta\eta\times\Delta\phi = 0.1\times 0.1 $ ) banner. \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceAnalysis_1_1Banner_a45f4f0c5ea5f9bda4915a909828f3e1a}{Analysis\+::\+Banner\+::print\+Topo\+Tower\+Fine} (const std\+::string \&module)
+\begin{DoxyCompactList}\small\item\em Print topo-\/tower ( $ \Delta\eta\times\Delta\phi = 0.05\times 0.05 $ ) banner. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::vector$<$ std\+::string $>$ \hyperlink{namespaceAnalysis_1_1Banner_1_1TopoCluster_abceaa1529e8c7c09c75e73fefdbcf8f1}{Analysis\+::\+Banner\+::\+Topo\+Cluster\+::text}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceAnalysis_1_1Banner}{Banner} data. \end{DoxyCompactList}\item 
+static const std\+::vector$<$ std\+::string $>$ \hyperlink{namespaceAnalysis_1_1Banner_1_1TopoTower_aa34a322d74236067c435f60c9bd76847}{Analysis\+::\+Banner\+::\+Topo\+Tower\+::text}
+\item 
+static const std\+::vector$<$ std\+::string $>$ \hyperlink{namespaceAnalysis_1_1Banner_1_1TopoTowerFine_a5429950d1207be6f4f8d7d0eaa62be34}{Analysis\+::\+Banner\+::\+Topo\+Tower\+Fine\+::text}
+\end{DoxyCompactItemize}

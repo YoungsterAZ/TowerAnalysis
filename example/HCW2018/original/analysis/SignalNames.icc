@@ -1,0 +1,5 @@
+// -*- c++ -*-
+#ifndef SIGNALNAMES_ICC
+#define SIGNALNAMES_ICC
+static const std::vector<std::string> signalNames = { "topoclus", "topotowf", "topotow" };
+#endif

@@ -1,0 +1,5 @@
+// -*- c++ -*-
+#ifndef DIRNAMES_ICC
+#define DIRNAMES_ICC
+std::vector<std::string> dirNames = { "JAPU+INCL", "JAPU+TIME", "CSPU+INCL", "CSPU+TIME", "CSSK+INCL", "CSSK+TIME" };
+#endif

@@ -1,0 +1,266 @@
+\hypertarget{namespaceHistUtils}{}\section{Hist\+Utils Namespace Reference}
+\label{namespaceHistUtils}\index{Hist\+Utils@{Hist\+Utils}}
+
+
+Histogram utilities.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classHistUtils_1_1HistMgr}{Hist\+Mgr}
+\begin{DoxyCompactList}\small\item\em Histogram manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110}{Stats} \{ \hyperlink{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110ae57ec394e887bc7762c6476186d7eaf8}{Mean} =0x11, 
+\hyperlink{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110abf140a74893a9708698f76a4ee416789}{Median} =0x12, 
+\hyperlink{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110a1058d6eb74658ec382948203fe444f2e}{R\+MS} =0x21, 
+\hyperlink{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110ae0759b6d55043d68f3704e920af7c8a1}{Unknown} =0x00
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::map$<$ int, std\+::string $>$ \& \hyperlink{namespaceHistUtils_a763ef83bda6c72effba6b89023f6ed51}{fstats} ()
+\item 
+static const std\+::string \& \hyperlink{namespaceHistUtils_abdbe4f180f6fd3236fd6f8ceb9166862}{lookup\+Stats} (\hyperlink{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110}{Stats} s)
+\item 
+static bool \hyperlink{namespaceHistUtils_a75d5e50c598254d5415d2b2e1919eae9}{stats} (T\+H1D $\ast$h, double \&m, double \&dm, \hyperlink{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110}{Stats} s=\hyperlink{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110ae57ec394e887bc7762c6476186d7eaf8}{Mean})
+\item 
+static bool \hyperlink{namespaceHistUtils_a0ae5e8fb9c5a958bacd0827d3d05a7bf}{stats} (T\+H1D $\ast$h, double \&m, double \&dl, double \&dh, \hyperlink{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110}{Stats} s=\hyperlink{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110ae57ec394e887bc7762c6476186d7eaf8}{Mean})
+\item 
+static std\+::vector$<$ T\+H1D $\ast$ $>$ \hyperlink{namespaceHistUtils_a383a62e11470b0d24d33f2c464b72f59}{extract} (T\+H2D $\ast$d, const std\+::string \&name, int along\+Axis)
+\item 
+static T\+Graph\+Asymm\+Errors $\ast$ \hyperlink{namespaceHistUtils_a9abc1fea2a65fb19bf19bb1be852d7fa}{graph} (T\+H2D $\ast$d, const std\+::string \&name, int along\+Axis, \hyperlink{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110}{Stats} s=\hyperlink{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110ae57ec394e887bc7762c6476186d7eaf8}{Mean})
+\item 
+static bool \hyperlink{namespaceHistUtils_ad08060ea4a76cdf48a806c40b4374954}{scale2D} (T\+H2D $\ast$h, double scale)
+\item 
+static std\+::string \hyperlink{namespaceHistUtils_a58dcc08a0178093c596c86b8b99b5f8d}{print\+File} (const std\+::string \&pre, const std\+::string \&post, const std\+::string \&ext=\hyperlink{namespaceHistUtils_acb065721325221957da36e6ac87c0062}{print\+Ext})
+\item 
+static double \hyperlink{namespaceHistUtils_af92ee23ad35cba919099610d716bbb93}{mean} (T\+Graph $\ast$gr, double xmin, double xmax)
+\item 
+static std\+::string \hyperlink{namespaceHistUtils_a7c2fb7126abd490e2b35d9f0da8e334b}{form\+Str} (const std\+::string \&dirn, const std\+::string \&pref, const std\+::string \&tag)
+\item 
+static std\+::string \hyperlink{namespaceHistUtils_a278ca8855cbfe4846e64ea99c1071d87}{form\+Str} (const std\+::string \&dirn, const std\+::string \&pref, const std\+::string \&tag, const std\+::string \&postf)
+\item 
+static void \hyperlink{namespaceHistUtils_a5b9e3c8e95d0626bd82c113eaf0ff84d}{draw\+Calo\+Bounds} (double ymin, double ymax, int ndc)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ int, std\+::string $>$ \hyperlink{namespaceHistUtils_aa3bb9be93085f86cfa38e98f525f525b}{stats\+\_\+lu} = std\+::map$<$int,std\+::string$>$()
+\item 
+static const std\+::string \hyperlink{namespaceHistUtils_ab479dbe64897488a53c190bf8eba173c}{print\+Dir} = \char`\"{}./pdf\char`\"{}
+\item 
+static const std\+::string \hyperlink{namespaceHistUtils_acb065721325221957da36e6ac87c0062}{print\+Ext} = \char`\"{}pdf\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Histogram utilities. 
+
+\subsection{Enumeration Type Documentation}
+\index{Hist\+Utils@{Hist\+Utils}!Stats@{Stats}}
+\index{Stats@{Stats}!Hist\+Utils@{Hist\+Utils}}
+\subsubsection[{\texorpdfstring{Stats}{Stats}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Hist\+Utils\+::\+Stats}}\hypertarget{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110}{}\label{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Mean@{Mean}!Hist\+Utils@{Hist\+Utils}}\index{Hist\+Utils@{Hist\+Utils}!Mean@{Mean}}\item[{\em 
+Mean\hypertarget{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110ae57ec394e887bc7762c6476186d7eaf8}{}\label{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110ae57ec394e887bc7762c6476186d7eaf8}
+}]\index{Median@{Median}!Hist\+Utils@{Hist\+Utils}}\index{Hist\+Utils@{Hist\+Utils}!Median@{Median}}\item[{\em 
+Median\hypertarget{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110abf140a74893a9708698f76a4ee416789}{}\label{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110abf140a74893a9708698f76a4ee416789}
+}]\index{R\+MS@{R\+MS}!Hist\+Utils@{Hist\+Utils}}\index{Hist\+Utils@{Hist\+Utils}!R\+MS@{R\+MS}}\item[{\em 
+R\+MS\hypertarget{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110a1058d6eb74658ec382948203fe444f2e}{}\label{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110a1058d6eb74658ec382948203fe444f2e}
+}]\index{Unknown@{Unknown}!Hist\+Utils@{Hist\+Utils}}\index{Hist\+Utils@{Hist\+Utils}!Unknown@{Unknown}}\item[{\em 
+Unknown\hypertarget{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110ae0759b6d55043d68f3704e920af7c8a1}{}\label{namespaceHistUtils_aee957b08165ec79d9ab22d3985938110ae0759b6d55043d68f3704e920af7c8a1}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 33 of file Hist\+Utils.\+h.
+
+
+
+\subsection{Function Documentation}
+\index{Hist\+Utils@{Hist\+Utils}!draw\+Calo\+Bounds@{draw\+Calo\+Bounds}}
+\index{draw\+Calo\+Bounds@{draw\+Calo\+Bounds}!Hist\+Utils@{Hist\+Utils}}
+\subsubsection[{\texorpdfstring{draw\+Calo\+Bounds(double ymin, double ymax, int ndc)}{drawCaloBounds(double ymin, double ymax, int ndc)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Hist\+Utils\+::draw\+Calo\+Bounds (
+\begin{DoxyParamCaption}
+\item[{double}]{ymin, }
+\item[{double}]{ymax, }
+\item[{int}]{ndc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceHistUtils_a5b9e3c8e95d0626bd82c113eaf0ff84d}{}\label{namespaceHistUtils_a5b9e3c8e95d0626bd82c113eaf0ff84d}
+
+
+Definition at line 297 of file Hist\+Utils.\+h.
+
+\index{Hist\+Utils@{Hist\+Utils}!extract@{extract}}
+\index{extract@{extract}!Hist\+Utils@{Hist\+Utils}}
+\subsubsection[{\texorpdfstring{extract(\+T\+H2\+D $\ast$d, const std\+::string \&name, int along\+Axis)}{extract(TH2D *d, const std::string &name, int alongAxis)}}]{\setlength{\rightskip}{0pt plus 5cm}static std\+::vector$<$T\+H1D$\ast$$>$ Hist\+Utils\+::extract (
+\begin{DoxyParamCaption}
+\item[{T\+H2D $\ast$}]{d, }
+\item[{const std\+::string \&}]{name, }
+\item[{int}]{along\+Axis}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceHistUtils_a383a62e11470b0d24d33f2c464b72f59}{}\label{namespaceHistUtils_a383a62e11470b0d24d33f2c464b72f59}
+
+
+Definition at line 167 of file Hist\+Utils.\+h.
+
+\index{Hist\+Utils@{Hist\+Utils}!form\+Str@{form\+Str}}
+\index{form\+Str@{form\+Str}!Hist\+Utils@{Hist\+Utils}}
+\subsubsection[{\texorpdfstring{form\+Str(const std\+::string \&dirn, const std\+::string \&pref, const std\+::string \&tag)}{formStr(const std::string &dirn, const std::string &pref, const std::string &tag)}}]{\setlength{\rightskip}{0pt plus 5cm}static std\+::string Hist\+Utils\+::form\+Str (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{dirn, }
+\item[{const std\+::string \&}]{pref, }
+\item[{const std\+::string \&}]{tag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceHistUtils_a7c2fb7126abd490e2b35d9f0da8e334b}{}\label{namespaceHistUtils_a7c2fb7126abd490e2b35d9f0da8e334b}
+
+
+Definition at line 290 of file Hist\+Utils.\+h.
+
+\index{Hist\+Utils@{Hist\+Utils}!form\+Str@{form\+Str}}
+\index{form\+Str@{form\+Str}!Hist\+Utils@{Hist\+Utils}}
+\subsubsection[{\texorpdfstring{form\+Str(const std\+::string \&dirn, const std\+::string \&pref, const std\+::string \&tag, const std\+::string \&postf)}{formStr(const std::string &dirn, const std::string &pref, const std::string &tag, const std::string &postf)}}]{\setlength{\rightskip}{0pt plus 5cm}static std\+::string Hist\+Utils\+::form\+Str (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{dirn, }
+\item[{const std\+::string \&}]{pref, }
+\item[{const std\+::string \&}]{tag, }
+\item[{const std\+::string \&}]{postf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceHistUtils_a278ca8855cbfe4846e64ea99c1071d87}{}\label{namespaceHistUtils_a278ca8855cbfe4846e64ea99c1071d87}
+
+
+Definition at line 294 of file Hist\+Utils.\+h.
+
+\index{Hist\+Utils@{Hist\+Utils}!fstats@{fstats}}
+\index{fstats@{fstats}!Hist\+Utils@{Hist\+Utils}}
+\subsubsection[{\texorpdfstring{fstats()}{fstats()}}]{\setlength{\rightskip}{0pt plus 5cm}static const std\+::map$<$int,std\+::string$>$\& Hist\+Utils\+::fstats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceHistUtils_a763ef83bda6c72effba6b89023f6ed51}{}\label{namespaceHistUtils_a763ef83bda6c72effba6b89023f6ed51}
+
+
+Definition at line 40 of file Hist\+Utils.\+h.
+
+\index{Hist\+Utils@{Hist\+Utils}!graph@{graph}}
+\index{graph@{graph}!Hist\+Utils@{Hist\+Utils}}
+\subsubsection[{\texorpdfstring{graph(\+T\+H2\+D $\ast$d, const std\+::string \&name, int along\+Axis, Stats s=\+Mean)}{graph(TH2D *d, const std::string &name, int alongAxis, Stats s=Mean)}}]{\setlength{\rightskip}{0pt plus 5cm}static T\+Graph\+Asymm\+Errors$\ast$ Hist\+Utils\+::graph (
+\begin{DoxyParamCaption}
+\item[{T\+H2D $\ast$}]{d, }
+\item[{const std\+::string \&}]{name, }
+\item[{int}]{along\+Axis, }
+\item[{{\bf Stats}}]{s = {\ttfamily {\bf Mean}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceHistUtils_a9abc1fea2a65fb19bf19bb1be852d7fa}{}\label{namespaceHistUtils_a9abc1fea2a65fb19bf19bb1be852d7fa}
+
+
+Definition at line 196 of file Hist\+Utils.\+h.
+
+\index{Hist\+Utils@{Hist\+Utils}!lookup\+Stats@{lookup\+Stats}}
+\index{lookup\+Stats@{lookup\+Stats}!Hist\+Utils@{Hist\+Utils}}
+\subsubsection[{\texorpdfstring{lookup\+Stats(\+Stats s)}{lookupStats(Stats s)}}]{\setlength{\rightskip}{0pt plus 5cm}static const std\+::string\& Hist\+Utils\+::lookup\+Stats (
+\begin{DoxyParamCaption}
+\item[{{\bf Stats}}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceHistUtils_abdbe4f180f6fd3236fd6f8ceb9166862}{}\label{namespaceHistUtils_abdbe4f180f6fd3236fd6f8ceb9166862}
+
+
+Definition at line 55 of file Hist\+Utils.\+h.
+
+\index{Hist\+Utils@{Hist\+Utils}!mean@{mean}}
+\index{mean@{mean}!Hist\+Utils@{Hist\+Utils}}
+\subsubsection[{\texorpdfstring{mean(\+T\+Graph $\ast$gr, double xmin, double xmax)}{mean(TGraph *gr, double xmin, double xmax)}}]{\setlength{\rightskip}{0pt plus 5cm}static double Hist\+Utils\+::mean (
+\begin{DoxyParamCaption}
+\item[{T\+Graph $\ast$}]{gr, }
+\item[{double}]{xmin, }
+\item[{double}]{xmax}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceHistUtils_af92ee23ad35cba919099610d716bbb93}{}\label{namespaceHistUtils_af92ee23ad35cba919099610d716bbb93}
+
+
+Definition at line 278 of file Hist\+Utils.\+h.
+
+\index{Hist\+Utils@{Hist\+Utils}!print\+File@{print\+File}}
+\index{print\+File@{print\+File}!Hist\+Utils@{Hist\+Utils}}
+\subsubsection[{\texorpdfstring{print\+File(const std\+::string \&pre, const std\+::string \&post, const std\+::string \&ext=print\+Ext)}{printFile(const std::string &pre, const std::string &post, const std::string &ext=printExt)}}]{\setlength{\rightskip}{0pt plus 5cm}static std\+::string Hist\+Utils\+::print\+File (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{pre, }
+\item[{const std\+::string \&}]{post, }
+\item[{const std\+::string \&}]{ext = {\ttfamily {\bf print\+Ext}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceHistUtils_a58dcc08a0178093c596c86b8b99b5f8d}{}\label{namespaceHistUtils_a58dcc08a0178093c596c86b8b99b5f8d}
+
+
+Definition at line 275 of file Hist\+Utils.\+h.
+
+\index{Hist\+Utils@{Hist\+Utils}!scale2D@{scale2D}}
+\index{scale2D@{scale2D}!Hist\+Utils@{Hist\+Utils}}
+\subsubsection[{\texorpdfstring{scale2\+D(\+T\+H2\+D $\ast$h, double scale)}{scale2D(TH2D *h, double scale)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Hist\+Utils\+::scale2D (
+\begin{DoxyParamCaption}
+\item[{T\+H2D $\ast$}]{h, }
+\item[{double}]{scale}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceHistUtils_ad08060ea4a76cdf48a806c40b4374954}{}\label{namespaceHistUtils_ad08060ea4a76cdf48a806c40b4374954}
+
+
+Definition at line 257 of file Hist\+Utils.\+h.
+
+\index{Hist\+Utils@{Hist\+Utils}!stats@{stats}}
+\index{stats@{stats}!Hist\+Utils@{Hist\+Utils}}
+\subsubsection[{\texorpdfstring{stats(\+T\+H1\+D $\ast$h, double \&m, double \&dm, Stats s=\+Mean)}{stats(TH1D *h, double &m, double &dm, Stats s=Mean)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Hist\+Utils\+::stats (
+\begin{DoxyParamCaption}
+\item[{T\+H1D $\ast$}]{h, }
+\item[{double \&}]{m, }
+\item[{double \&}]{dm, }
+\item[{{\bf Stats}}]{s = {\ttfamily {\bf Mean}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceHistUtils_a75d5e50c598254d5415d2b2e1919eae9}{}\label{namespaceHistUtils_a75d5e50c598254d5415d2b2e1919eae9}
+
+
+Definition at line 69 of file Hist\+Utils.\+h.
+
+\index{Hist\+Utils@{Hist\+Utils}!stats@{stats}}
+\index{stats@{stats}!Hist\+Utils@{Hist\+Utils}}
+\subsubsection[{\texorpdfstring{stats(\+T\+H1\+D $\ast$h, double \&m, double \&dl, double \&dh, Stats s=\+Mean)}{stats(TH1D *h, double &m, double &dl, double &dh, Stats s=Mean)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Hist\+Utils\+::stats (
+\begin{DoxyParamCaption}
+\item[{T\+H1D $\ast$}]{h, }
+\item[{double \&}]{m, }
+\item[{double \&}]{dl, }
+\item[{double \&}]{dh, }
+\item[{{\bf Stats}}]{s = {\ttfamily {\bf Mean}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceHistUtils_a0ae5e8fb9c5a958bacd0827d3d05a7bf}{}\label{namespaceHistUtils_a0ae5e8fb9c5a958bacd0827d3d05a7bf}
+
+
+Definition at line 113 of file Hist\+Utils.\+h.
+
+
+
+\subsection{Variable Documentation}
+\index{Hist\+Utils@{Hist\+Utils}!print\+Dir@{print\+Dir}}
+\index{print\+Dir@{print\+Dir}!Hist\+Utils@{Hist\+Utils}}
+\subsubsection[{\texorpdfstring{print\+Dir}{printDir}}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string Hist\+Utils\+::print\+Dir = \char`\"{}./pdf\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceHistUtils_ab479dbe64897488a53c190bf8eba173c}{}\label{namespaceHistUtils_ab479dbe64897488a53c190bf8eba173c}
+
+
+Definition at line 273 of file Hist\+Utils.\+h.
+
+\index{Hist\+Utils@{Hist\+Utils}!print\+Ext@{print\+Ext}}
+\index{print\+Ext@{print\+Ext}!Hist\+Utils@{Hist\+Utils}}
+\subsubsection[{\texorpdfstring{print\+Ext}{printExt}}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string Hist\+Utils\+::print\+Ext = \char`\"{}pdf\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceHistUtils_acb065721325221957da36e6ac87c0062}{}\label{namespaceHistUtils_acb065721325221957da36e6ac87c0062}
+
+
+Definition at line 274 of file Hist\+Utils.\+h.
+
+\index{Hist\+Utils@{Hist\+Utils}!stats\+\_\+lu@{stats\+\_\+lu}}
+\index{stats\+\_\+lu@{stats\+\_\+lu}!Hist\+Utils@{Hist\+Utils}}
+\subsubsection[{\texorpdfstring{stats\+\_\+lu}{stats_lu}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$int,std\+::string$>$ Hist\+Utils\+::stats\+\_\+lu = std\+::map$<$int,std\+::string$>$()\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceHistUtils_aa3bb9be93085f86cfa38e98f525f525b}{}\label{namespaceHistUtils_aa3bb9be93085f86cfa38e98f525f525b}
+
+
+Definition at line 39 of file Hist\+Utils.\+h.
+

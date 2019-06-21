@@ -1,0 +1,191 @@
+\hypertarget{namespaceAnalysis_1_1Config_1_1TruthJet}{}\section{Analysis\+:\+:Config\+:\+:Truth\+Jet Namespace Reference}
+\label{namespaceAnalysis_1_1Config_1_1TruthJet}\index{Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}}
+
+
+Truth (generated particle level) jet.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_a483f9e093914b5a94c91df3a771fe890}{set\+Jet\+Definition} (fastjet\+::\+Jet\+Algorithm jetalg, double rjet)
+\begin{DoxyCompactList}\small\item\em Set up a jet definition. \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_a5c5eb24dbfb9c811a772cc12ecd0a4cc}{setup\+Voronoi} (fastjet\+::\+Voronoi\+Area\+Spec vas=\hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_aacd5481a0b6ada44cb0c879204391075}{voronoi\+Spec})
+\begin{DoxyCompactList}\small\item\em Jet area definition update (Voronoi) \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_a369676042ed8902d6f4dd9aa6dea3c23}{setup\+Ghosted} (fastjet\+::\+Ghosted\+Area\+Spec gas=\hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_a661169c3a6db009e6993226459cf8124}{ghosted\+Spec}, bool expl=false)
+\begin{DoxyCompactList}\small\item\em Jet area definition update (ghosted area) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_a6a947195217aef2c4d4c6360017bab95}{radius} = 0.\+4
+\begin{DoxyCompactList}\small\item\em Distance parameter (default $ R = 0.4 $) \end{DoxyCompactList}\item 
+static fastjet\+::\+Jet\+Algorithm \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_ac60138634b23bdc579520adf99f9393f}{algo} = fastjet\+::antikt\+\_\+algorithm
+\begin{DoxyCompactList}\small\item\em Jet algorithm (default is anti-\/kt) \end{DoxyCompactList}\item 
+static fastjet\+::\+Jet\+Definition \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_a15280a9c639a88c02bf1e3794b6ec29d}{definition} = fastjet\+::\+Jet\+Definition(\hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_ac60138634b23bdc579520adf99f9393f}{algo},\hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_a6a947195217aef2c4d4c6360017bab95}{radius})
+\begin{DoxyCompactList}\small\item\em Jet definition (default is Anti-\/kt, $ R = 0.4 $) \end{DoxyCompactList}\item 
+static fastjet\+::\+Area\+Type \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_a1d08c937d56d2b35cdc78f99825a6af2}{area\+Type} = fastjet\+::voronoi\+\_\+area
+\begin{DoxyCompactList}\small\item\em Type of jet area (default Voronoi) \end{DoxyCompactList}\item 
+static fastjet\+::\+Voronoi\+Area\+Spec \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_aacd5481a0b6ada44cb0c879204391075}{voronoi\+Spec} = fastjet\+::\+Voronoi\+Spec(0.\+9)
+\begin{DoxyCompactList}\small\item\em Voronoi area specs (default resolution 0.\+9) \end{DoxyCompactList}\item 
+static fastjet\+::\+Ghosted\+Areaspec \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_a661169c3a6db009e6993226459cf8124}{ghosted\+Spec} = fastjet\+::\+Ghosted\+Area\+Spec(\hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_aa11187307efce66323ce38d6afdd75d7}{Analysis\+::\+Select\+::\+Calo\+Signal\+::rap\+Min},\hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_a358398a6fbba8bcfd3f534ccbf838aa8}{Analysis\+::\+Select\+::\+Calo\+Signal\+::rap\+Max})
+\begin{DoxyCompactList}\small\item\em Ghosted area specs (default $ -4.9 < y < 4.9 $ for jet input) \end{DoxyCompactList}\item 
+static fastjet\+::\+Area\+Definition \hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_aaaf974e7a2655200c6cd5aa5b6f86f90}{area\+Def} = fastjet\+::\+Area\+Definition(\hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_a1d08c937d56d2b35cdc78f99825a6af2}{area\+Type},\hyperlink{namespaceAnalysis_1_1Config_1_1TruthJet_aacd5481a0b6ada44cb0c879204391075}{voronoi\+Spec})
+\begin{DoxyCompactList}\small\item\em Jet area definition (default Voronoi) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Truth (generated particle level) jet. 
+
+\subsection{Function Documentation}
+\index{Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}!set\+Jet\+Definition@{set\+Jet\+Definition}}
+\index{set\+Jet\+Definition@{set\+Jet\+Definition}!Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}}
+\subsubsection[{\texorpdfstring{set\+Jet\+Definition(fastjet\+::\+Jet\+Algorithm jetalg, double rjet)}{setJetDefinition(fastjet::JetAlgorithm jetalg, double rjet)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Analysis\+::\+Config\+::\+Truth\+Jet\+::set\+Jet\+Definition (
+\begin{DoxyParamCaption}
+\item[{fastjet\+::\+Jet\+Algorithm}]{jetalg, }
+\item[{double}]{rjet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1TruthJet_a483f9e093914b5a94c91df3a771fe890}{}\label{namespaceAnalysis_1_1Config_1_1TruthJet_a483f9e093914b5a94c91df3a771fe890}
+
+
+Set up a jet definition. 
+
+This function implements a consistent update of all parameters associated with the jet definition. 
+\begin{DoxyParams}{Parameters}
+{\em jetalg} & jet algorithm implementation tag (from \hyperlink{namespaceAnalysis_1_1FastJet}{Fast\+Jet}) \\
+\hline
+{\em rjet} & jet algorithm distance parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 17 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}!setup\+Ghosted@{setup\+Ghosted}}
+\index{setup\+Ghosted@{setup\+Ghosted}!Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}}
+\subsubsection[{\texorpdfstring{setup\+Ghosted(fastjet\+::\+Ghosted\+Area\+Spec gas=ghosted\+Spec, bool expl=false)}{setupGhosted(fastjet::GhostedAreaSpec gas=ghostedSpec, bool expl=false)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Analysis\+::\+Config\+::\+Truth\+Jet\+::setup\+Ghosted (
+\begin{DoxyParamCaption}
+\item[{fastjet\+::\+Ghosted\+Area\+Spec}]{gas = {\ttfamily {\bf ghosted\+Spec}}, }
+\item[{bool}]{expl = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1TruthJet_a369676042ed8902d6f4dd9aa6dea3c23}{}\label{namespaceAnalysis_1_1Config_1_1TruthJet_a369676042ed8902d6f4dd9aa6dea3c23}
+
+
+Jet area definition update (ghosted area) 
+
+Provides consistent update to all related configuration variables. 
+\begin{DoxyParams}{Parameters}
+{\em gas} & ghosted area specs (defaults to {\ttfamily ghosted\+Spec}) \\
+\hline
+{\em expl} & implements explicit ghosts if {\ttfamily true}; defaults to {\ttfamily false} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}!setup\+Voronoi@{setup\+Voronoi}}
+\index{setup\+Voronoi@{setup\+Voronoi}!Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}}
+\subsubsection[{\texorpdfstring{setup\+Voronoi(fastjet\+::\+Voronoi\+Area\+Spec vas=voronoi\+Spec)}{setupVoronoi(fastjet::VoronoiAreaSpec vas=voronoiSpec)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Analysis\+::\+Config\+::\+Truth\+Jet\+::setup\+Voronoi (
+\begin{DoxyParamCaption}
+\item[{fastjet\+::\+Voronoi\+Area\+Spec}]{vas = {\ttfamily {\bf voronoi\+Spec}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1TruthJet_a5c5eb24dbfb9c811a772cc12ecd0a4cc}{}\label{namespaceAnalysis_1_1Config_1_1TruthJet_a5c5eb24dbfb9c811a772cc12ecd0a4cc}
+
+
+Jet area definition update (Voronoi) 
+
+Provides consistent update to all related configuration variables. 
+\begin{DoxyParams}{Parameters}
+{\em vas} & Voronoi area specs (defaults to {\ttfamily voronoi\+Spec}) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file Analysis\+Data.\+h.
+
+
+
+\subsection{Variable Documentation}
+\index{Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}!algo@{algo}}
+\index{algo@{algo}!Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}}
+\subsubsection[{\texorpdfstring{algo}{algo}}]{\setlength{\rightskip}{0pt plus 5cm}fastjet\+::\+Jet\+Algorithm Analysis\+::\+Config\+::\+Truth\+Jet\+::algo = fastjet\+::antikt\+\_\+algorithm\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1TruthJet_ac60138634b23bdc579520adf99f9393f}{}\label{namespaceAnalysis_1_1Config_1_1TruthJet_ac60138634b23bdc579520adf99f9393f}
+
+
+Jet algorithm (default is anti-\/kt) 
+
+
+
+Definition at line 6 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}!area\+Def@{area\+Def}}
+\index{area\+Def@{area\+Def}!Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}}
+\subsubsection[{\texorpdfstring{area\+Def}{areaDef}}]{\setlength{\rightskip}{0pt plus 5cm}fastjet\+::\+Area\+Definition Analysis\+::\+Config\+::\+Truth\+Jet\+::area\+Def = fastjet\+::\+Area\+Definition({\bf area\+Type},{\bf voronoi\+Spec})\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1TruthJet_aaaf974e7a2655200c6cd5aa5b6f86f90}{}\label{namespaceAnalysis_1_1Config_1_1TruthJet_aaaf974e7a2655200c6cd5aa5b6f86f90}
+
+
+Jet area definition (default Voronoi) 
+
+\begin{DoxyWarning}{Warning}
+Note that any change of {\ttfamily area\+Type}, {\ttfamily voronoi\+Spec}, and/or {\ttfamily ghosted\+Spec} through a direct assignment requires to update of {\ttfamily area\+Def} by hand for consistency. It is highly recommended to use the {\ttfamily set\+Area\+Defintion} function for a consistent configuration update. 
+\end{DoxyWarning}
+
+
+Definition at line 33 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}!area\+Type@{area\+Type}}
+\index{area\+Type@{area\+Type}!Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}}
+\subsubsection[{\texorpdfstring{area\+Type}{areaType}}]{\setlength{\rightskip}{0pt plus 5cm}fastjet\+::\+Area\+Type Analysis\+::\+Config\+::\+Truth\+Jet\+::area\+Type = fastjet\+::voronoi\+\_\+area\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1TruthJet_a1d08c937d56d2b35cdc78f99825a6af2}{}\label{namespaceAnalysis_1_1Config_1_1TruthJet_a1d08c937d56d2b35cdc78f99825a6af2}
+
+
+Type of jet area (default Voronoi) 
+
+
+
+Definition at line 23 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}!definition@{definition}}
+\index{definition@{definition}!Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}}
+\subsubsection[{\texorpdfstring{definition}{definition}}]{\setlength{\rightskip}{0pt plus 5cm}fastjet\+::\+Jet\+Definition Analysis\+::\+Config\+::\+Truth\+Jet\+::definition = fastjet\+::\+Jet\+Definition({\bf algo},{\bf radius})\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1TruthJet_a15280a9c639a88c02bf1e3794b6ec29d}{}\label{namespaceAnalysis_1_1Config_1_1TruthJet_a15280a9c639a88c02bf1e3794b6ec29d}
+
+
+Jet definition (default is Anti-\/kt, $ R = 0.4 $) 
+
+\begin{DoxyWarning}{Warning}
+Note that any change to {\ttfamily radius} and/or {\ttfamily algo} through assignments requires to update this definition by hand. It is highly recommended to use the {\ttfamily set\+Jet\+Defintion} function for a consistent configuration update. 
+\end{DoxyWarning}
+
+
+Definition at line 11 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}!ghosted\+Spec@{ghosted\+Spec}}
+\index{ghosted\+Spec@{ghosted\+Spec}!Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}}
+\subsubsection[{\texorpdfstring{ghosted\+Spec}{ghostedSpec}}]{\setlength{\rightskip}{0pt plus 5cm}fastjet\+::\+Ghosted\+Areaspec Analysis\+::\+Config\+::\+Truth\+Jet\+::ghosted\+Spec = fastjet\+::\+Ghosted\+Area\+Spec({\bf Analysis\+::\+Select\+::\+Calo\+Signal\+::rap\+Min},{\bf Analysis\+::\+Select\+::\+Calo\+Signal\+::rap\+Max})\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1TruthJet_a661169c3a6db009e6993226459cf8124}{}\label{namespaceAnalysis_1_1Config_1_1TruthJet_a661169c3a6db009e6993226459cf8124}
+
+
+Ghosted area specs (default $ -4.9 < y < 4.9 $ for jet input) 
+
+
+
+Definition at line 27 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}!radius@{radius}}
+\index{radius@{radius}!Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}}
+\subsubsection[{\texorpdfstring{radius}{radius}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Config\+::\+Truth\+Jet\+::radius = 0.\+4\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1TruthJet_a6a947195217aef2c4d4c6360017bab95}{}\label{namespaceAnalysis_1_1Config_1_1TruthJet_a6a947195217aef2c4d4c6360017bab95}
+
+
+Distance parameter (default $ R = 0.4 $) 
+
+
+
+Definition at line 4 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}!voronoi\+Spec@{voronoi\+Spec}}
+\index{voronoi\+Spec@{voronoi\+Spec}!Analysis\+::\+Config\+::\+Truth\+Jet@{Analysis\+::\+Config\+::\+Truth\+Jet}}
+\subsubsection[{\texorpdfstring{voronoi\+Spec}{voronoiSpec}}]{\setlength{\rightskip}{0pt plus 5cm}fastjet\+::\+Voronoi\+Area\+Spec Analysis\+::\+Config\+::\+Truth\+Jet\+::voronoi\+Spec = fastjet\+::\+Voronoi\+Spec(0.\+9)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1TruthJet_aacd5481a0b6ada44cb0c879204391075}{}\label{namespaceAnalysis_1_1Config_1_1TruthJet_aacd5481a0b6ada44cb0c879204391075}
+
+
+Voronoi area specs (default resolution 0.\+9) 
+
+
+
+Definition at line 25 of file Analysis\+Data.\+h.
+

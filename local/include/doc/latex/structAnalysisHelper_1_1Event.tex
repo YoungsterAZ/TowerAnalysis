@@ -1,0 +1,156 @@
+\hypertarget{structAnalysisHelper_1_1Event}{}\section{Analysis\+Helper\+:\+:Event Struct Reference}
+\label{structAnalysisHelper_1_1Event}\index{Analysis\+Helper\+::\+Event@{Analysis\+Helper\+::\+Event}}
+
+
+{\ttfamily \#include $<$Analysis\+Helper.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\static double \hyperlink{structAnalysisHelper_1_1Event_af3364ef6561569708980d6e0079909f4}{central\+Rho} (T $\ast$data, const std\+::string \&scale=\char`\"{}lcw\char`\"{})
+\item 
+{\footnotesize template$<$class T $>$ }\\static double \hyperlink{structAnalysisHelper_1_1Event_a13bc666c3375e53e185408073763f6e2}{central\+Sigma} (T $\ast$data, const std\+::string \&scale=\char`\"{}lcw\char`\"{})
+\item 
+{\footnotesize template$<$class T $>$ }\\static double \hyperlink{structAnalysisHelper_1_1Event_a5551c4c4ceca1feede52ebd4adede5b9}{central\+Area} (T $\ast$data, const std\+::string \&scale=\char`\"{}lcw\char`\"{})
+\item 
+{\footnotesize template$<$class T $>$ }\\static bool \hyperlink{structAnalysisHelper_1_1Event_a4c730fa25ae67fad7c57d676a3042812}{central\+Density} (T $\ast$data, const std\+::string \&scale, double \&rho, double \&sigma, double \&area)
+\item 
+{\footnotesize template$<$class T $>$ }\\static double \hyperlink{structAnalysisHelper_1_1Event_a056c3a5eabb31e1505af71d3a30225d6}{mu} (T $\ast$data)
+\item 
+{\footnotesize template$<$class T $>$ }\\static double \hyperlink{structAnalysisHelper_1_1Event_a63eb20f78715700503217a465cfc1644}{npv} (T $\ast$data)
+\item 
+static double \hyperlink{structAnalysisHelper_1_1Event_a1bf695030f403f0b69cbaab287bafb49}{central\+Rho} (\hyperlink{classSlidingWindow_1_1Window}{Sliding\+Window\+::\+Window} \&rho\+Prof, double rap\+Min=\hyperlink{namespaceAnalysis_1_1Config_1_1RhoProfile_a6a12ebe70b6648825eead16dff1159fd}{Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Min}, double rap\+Max=\hyperlink{namespaceAnalysis_1_1Config_1_1RhoProfile_ab78a2585916e0761da7090b86d5c762b}{Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Max})
+\item 
+static double \hyperlink{structAnalysisHelper_1_1Event_a592203326e894cca1cf0a6cce0de9d8e}{central\+Sigma} (\hyperlink{classSlidingWindow_1_1Window}{Sliding\+Window\+::\+Window} \&rho\+Prof, double rap\+Min=\hyperlink{namespaceAnalysis_1_1Config_1_1RhoProfile_a6a12ebe70b6648825eead16dff1159fd}{Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Min}, double rap\+Max=\hyperlink{namespaceAnalysis_1_1Config_1_1RhoProfile_ab78a2585916e0761da7090b86d5c762b}{Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Max})
+\item 
+static bool \hyperlink{structAnalysisHelper_1_1Event_a7074b84321d9134b867626f29f35fe34}{central\+Density} (\hyperlink{classSlidingWindow_1_1Window}{Sliding\+Window\+::\+Window} \&rho\+Prof, double \&rho, double \&sigma, double rap\+Min=\hyperlink{namespaceAnalysis_1_1Config_1_1RhoProfile_a6a12ebe70b6648825eead16dff1159fd}{Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Min}, double rap\+Max=\hyperlink{namespaceAnalysis_1_1Config_1_1RhoProfile_ab78a2585916e0761da7090b86d5c762b}{Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Max})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 1130 of file Analysis\+Helper.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{Analysis\+Helper\+::\+Event@{Analysis\+Helper\+::\+Event}!central\+Area@{central\+Area}}
+\index{central\+Area@{central\+Area}!Analysis\+Helper\+::\+Event@{Analysis\+Helper\+::\+Event}}
+\subsubsection[{\texorpdfstring{central\+Area(\+T $\ast$data, const std\+::string \&scale=""lcw"")}{centralArea(T *data, const std::string &scale="lcw")}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ static double Analysis\+Helper\+::\+Event\+::central\+Area (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{data, }
+\item[{const std\+::string \&}]{scale = {\ttfamily \char`\"{}lcw\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1Event_a5551c4c4ceca1feede52ebd4adede5b9}{}\label{structAnalysisHelper_1_1Event_a5551c4c4ceca1feede52ebd4adede5b9}
+
+
+Definition at line 1138 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Event@{Analysis\+Helper\+::\+Event}!central\+Density@{central\+Density}}
+\index{central\+Density@{central\+Density}!Analysis\+Helper\+::\+Event@{Analysis\+Helper\+::\+Event}}
+\subsubsection[{\texorpdfstring{central\+Density(\+T $\ast$data, const std\+::string \&scale, double \&rho, double \&sigma, double \&area)}{centralDensity(T *data, const std::string &scale, double &rho, double &sigma, double &area)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ static bool Analysis\+Helper\+::\+Event\+::central\+Density (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{data, }
+\item[{const std\+::string \&}]{scale, }
+\item[{double \&}]{rho, }
+\item[{double \&}]{sigma, }
+\item[{double \&}]{area}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1Event_a4c730fa25ae67fad7c57d676a3042812}{}\label{structAnalysisHelper_1_1Event_a4c730fa25ae67fad7c57d676a3042812}
+
+
+Definition at line 1141 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Event@{Analysis\+Helper\+::\+Event}!central\+Density@{central\+Density}}
+\index{central\+Density@{central\+Density}!Analysis\+Helper\+::\+Event@{Analysis\+Helper\+::\+Event}}
+\subsubsection[{\texorpdfstring{central\+Density(\+Sliding\+Window\+::\+Window \&rho\+Prof, double \&rho, double \&sigma, double rap\+Min=\+Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Min, double rap\+Max=\+Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Max)}{centralDensity(SlidingWindow::Window &rhoProf, double &rho, double &sigma, double rapMin=Analysis::Config::RhoProfile::rapCtrlMin, double rapMax=Analysis::Config::RhoProfile::rapCtrlMax)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+Helper\+::\+Event\+::central\+Density (
+\begin{DoxyParamCaption}
+\item[{{\bf Sliding\+Window\+::\+Window} \&}]{rho\+Prof, }
+\item[{double \&}]{rho, }
+\item[{double \&}]{sigma, }
+\item[{double}]{rap\+Min = {\ttfamily {\bf Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Min}}, }
+\item[{double}]{rap\+Max = {\ttfamily {\bf Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Max}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1Event_a7074b84321d9134b867626f29f35fe34}{}\label{structAnalysisHelper_1_1Event_a7074b84321d9134b867626f29f35fe34}
+
+
+Definition at line 1177 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Event@{Analysis\+Helper\+::\+Event}!central\+Rho@{central\+Rho}}
+\index{central\+Rho@{central\+Rho}!Analysis\+Helper\+::\+Event@{Analysis\+Helper\+::\+Event}}
+\subsubsection[{\texorpdfstring{central\+Rho(\+T $\ast$data, const std\+::string \&scale=""lcw"")}{centralRho(T *data, const std::string &scale="lcw")}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ static double Analysis\+Helper\+::\+Event\+::central\+Rho (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{data, }
+\item[{const std\+::string \&}]{scale = {\ttfamily \char`\"{}lcw\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1Event_af3364ef6561569708980d6e0079909f4}{}\label{structAnalysisHelper_1_1Event_af3364ef6561569708980d6e0079909f4}
+
+
+Definition at line 1132 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Event@{Analysis\+Helper\+::\+Event}!central\+Rho@{central\+Rho}}
+\index{central\+Rho@{central\+Rho}!Analysis\+Helper\+::\+Event@{Analysis\+Helper\+::\+Event}}
+\subsubsection[{\texorpdfstring{central\+Rho(\+Sliding\+Window\+::\+Window \&rho\+Prof, double rap\+Min=\+Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Min, double rap\+Max=\+Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Max)}{centralRho(SlidingWindow::Window &rhoProf, double rapMin=Analysis::Config::RhoProfile::rapCtrlMin, double rapMax=Analysis::Config::RhoProfile::rapCtrlMax)}}]{\setlength{\rightskip}{0pt plus 5cm}static double Analysis\+Helper\+::\+Event\+::central\+Rho (
+\begin{DoxyParamCaption}
+\item[{{\bf Sliding\+Window\+::\+Window} \&}]{rho\+Prof, }
+\item[{double}]{rap\+Min = {\ttfamily {\bf Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Min}}, }
+\item[{double}]{rap\+Max = {\ttfamily {\bf Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Max}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1Event_a1bf695030f403f0b69cbaab287bafb49}{}\label{structAnalysisHelper_1_1Event_a1bf695030f403f0b69cbaab287bafb49}
+
+
+Definition at line 1158 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Event@{Analysis\+Helper\+::\+Event}!central\+Sigma@{central\+Sigma}}
+\index{central\+Sigma@{central\+Sigma}!Analysis\+Helper\+::\+Event@{Analysis\+Helper\+::\+Event}}
+\subsubsection[{\texorpdfstring{central\+Sigma(\+T $\ast$data, const std\+::string \&scale=""lcw"")}{centralSigma(T *data, const std::string &scale="lcw")}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ static double Analysis\+Helper\+::\+Event\+::central\+Sigma (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{data, }
+\item[{const std\+::string \&}]{scale = {\ttfamily \char`\"{}lcw\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1Event_a13bc666c3375e53e185408073763f6e2}{}\label{structAnalysisHelper_1_1Event_a13bc666c3375e53e185408073763f6e2}
+
+
+Definition at line 1135 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Event@{Analysis\+Helper\+::\+Event}!central\+Sigma@{central\+Sigma}}
+\index{central\+Sigma@{central\+Sigma}!Analysis\+Helper\+::\+Event@{Analysis\+Helper\+::\+Event}}
+\subsubsection[{\texorpdfstring{central\+Sigma(\+Sliding\+Window\+::\+Window \&rho\+Prof, double rap\+Min=\+Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Min, double rap\+Max=\+Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Max)}{centralSigma(SlidingWindow::Window &rhoProf, double rapMin=Analysis::Config::RhoProfile::rapCtrlMin, double rapMax=Analysis::Config::RhoProfile::rapCtrlMax)}}]{\setlength{\rightskip}{0pt plus 5cm}static double Analysis\+Helper\+::\+Event\+::central\+Sigma (
+\begin{DoxyParamCaption}
+\item[{{\bf Sliding\+Window\+::\+Window} \&}]{rho\+Prof, }
+\item[{double}]{rap\+Min = {\ttfamily {\bf Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Min}}, }
+\item[{double}]{rap\+Max = {\ttfamily {\bf Analysis\+::\+Config\+::\+Rho\+Profile\+::rap\+Ctrl\+Max}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1Event_a592203326e894cca1cf0a6cce0de9d8e}{}\label{structAnalysisHelper_1_1Event_a592203326e894cca1cf0a6cce0de9d8e}
+
+
+Definition at line 1166 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Event@{Analysis\+Helper\+::\+Event}!mu@{mu}}
+\index{mu@{mu}!Analysis\+Helper\+::\+Event@{Analysis\+Helper\+::\+Event}}
+\subsubsection[{\texorpdfstring{mu(\+T $\ast$data)}{mu(T *data)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ static double Analysis\+Helper\+::\+Event\+::mu (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1Event_a056c3a5eabb31e1505af71d3a30225d6}{}\label{structAnalysisHelper_1_1Event_a056c3a5eabb31e1505af71d3a30225d6}
+
+
+Definition at line 1154 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Event@{Analysis\+Helper\+::\+Event}!npv@{npv}}
+\index{npv@{npv}!Analysis\+Helper\+::\+Event@{Analysis\+Helper\+::\+Event}}
+\subsubsection[{\texorpdfstring{npv(\+T $\ast$data)}{npv(T *data)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ static double Analysis\+Helper\+::\+Event\+::npv (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1Event_a63eb20f78715700503217a465cfc1644}{}\label{structAnalysisHelper_1_1Event_a63eb20f78715700503217a465cfc1644}
+
+
+Definition at line 1156 of file Analysis\+Helper.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{AnalysisHelper_8h}{Analysis\+Helper.\+h}\end{DoxyCompactItemize}

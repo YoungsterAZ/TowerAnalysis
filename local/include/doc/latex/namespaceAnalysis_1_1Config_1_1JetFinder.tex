@@ -1,0 +1,183 @@
+\hypertarget{namespaceAnalysis_1_1Config_1_1JetFinder}{}\section{Analysis\+:\+:Config\+:\+:Jet\+Finder Namespace Reference}
+\label{namespaceAnalysis_1_1Config_1_1JetFinder}\index{Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_aa2ea119b568bdc629fe0077b4c4fd87c}{set\+Jet\+Definition} (fastjet\+::\+Jet\+Algorithm jetalg, double rjet)
+\begin{DoxyCompactList}\small\item\em Set up a jet definition. \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_a3131a94663fdf8f592d4ded2d6be9393}{setup\+Voronoi} (fastjet\+::\+Voronoi\+Area\+Spec vas=\hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_a63a996b81ad4a7216c5652fb216c0ed2}{voronoi\+Spec})
+\begin{DoxyCompactList}\small\item\em Jet area definition update (Voronoi) \end{DoxyCompactList}\item 
+static void \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_a6fa594e4a45f2951131d57cdf56d7bad}{setup\+Ghosted} (fastjet\+::\+Ghosted\+Area\+Spec gas=\hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_a69fd2afa3ea463941c31076604b1f430}{ghosted\+Spec}, bool expl=false)
+\begin{DoxyCompactList}\small\item\em Jet area definition update (ghosted area) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_af8dfcbb2cc7b1fd0d76546cc4b2984bd}{radius} = 0.\+4
+\begin{DoxyCompactList}\small\item\em Distance parameter (default $ R = 0.4 $) \end{DoxyCompactList}\item 
+static fastjet\+::\+Jet\+Algorithm \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_abce841a2f75b96e943dc5e2be875765b}{algo} = fastjet\+::antikt\+\_\+algorithm
+\begin{DoxyCompactList}\small\item\em Jet algorithm (default is anti-\/kt) \end{DoxyCompactList}\item 
+static fastjet\+::\+Jet\+Definition \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_aba0bf7a22523481843fb40dd34488c8c}{definition} = fastjet\+::\+Jet\+Definition(\hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_abce841a2f75b96e943dc5e2be875765b}{algo},\hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_af8dfcbb2cc7b1fd0d76546cc4b2984bd}{radius})
+\begin{DoxyCompactList}\small\item\em Jet definition (default is Anti-\/kt, $ R = 0.4 $) \end{DoxyCompactList}\item 
+static fastjet\+::\+Area\+Type \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_a42b6e6b7c1bebe8646790c377d569664}{area\+Type} = fastjet\+::voronoi\+\_\+area
+\begin{DoxyCompactList}\small\item\em Type of jet area (default Voronoi) \end{DoxyCompactList}\item 
+static fastjet\+::\+Voronoi\+Area\+Spec \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_a63a996b81ad4a7216c5652fb216c0ed2}{voronoi\+Spec} = fastjet\+::\+Voronoi\+Spec(0.\+9)
+\begin{DoxyCompactList}\small\item\em Voronoi area specs (default resolution 0.\+9) \end{DoxyCompactList}\item 
+static fastjet\+::\+Ghosted\+Areaspec \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_a69fd2afa3ea463941c31076604b1f430}{ghosted\+Spec} = fastjet\+::\+Ghosted\+Area\+Spec(\hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_aa11187307efce66323ce38d6afdd75d7}{Analysis\+::\+Select\+::\+Calo\+Signal\+::rap\+Min},\hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_a358398a6fbba8bcfd3f534ccbf838aa8}{Analysis\+::\+Select\+::\+Calo\+Signal\+::rap\+Max})
+\begin{DoxyCompactList}\small\item\em Ghosted area specs (default $ -4.9 < y < 4.9 $ for jet input) \end{DoxyCompactList}\item 
+static fastjet\+::\+Area\+Definition \hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_a2b26c98f62ad8322f8f593fc0dea22af}{area\+Def} = fastjet\+::\+Area\+Definition(\hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_a42b6e6b7c1bebe8646790c377d569664}{area\+Type},\hyperlink{namespaceAnalysis_1_1Config_1_1JetFinder_a63a996b81ad4a7216c5652fb216c0ed2}{voronoi\+Spec})
+\begin{DoxyCompactList}\small\item\em Jet area definition (default Voronoi) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}!set\+Jet\+Definition@{set\+Jet\+Definition}}
+\index{set\+Jet\+Definition@{set\+Jet\+Definition}!Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}}
+\subsubsection[{\texorpdfstring{set\+Jet\+Definition(fastjet\+::\+Jet\+Algorithm jetalg, double rjet)}{setJetDefinition(fastjet::JetAlgorithm jetalg, double rjet)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Analysis\+::\+Config\+::\+Jet\+Finder\+::set\+Jet\+Definition (
+\begin{DoxyParamCaption}
+\item[{fastjet\+::\+Jet\+Algorithm}]{jetalg, }
+\item[{double}]{rjet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1JetFinder_aa2ea119b568bdc629fe0077b4c4fd87c}{}\label{namespaceAnalysis_1_1Config_1_1JetFinder_aa2ea119b568bdc629fe0077b4c4fd87c}
+
+
+Set up a jet definition. 
+
+This function implements a consistent update of all parameters associated with the jet definition. 
+\begin{DoxyParams}{Parameters}
+{\em jetalg} & jet algorithm implementation tag (from \hyperlink{namespaceAnalysis_1_1FastJet}{Fast\+Jet}) \\
+\hline
+{\em rjet} & jet algorithm distance parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 17 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}!setup\+Ghosted@{setup\+Ghosted}}
+\index{setup\+Ghosted@{setup\+Ghosted}!Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}}
+\subsubsection[{\texorpdfstring{setup\+Ghosted(fastjet\+::\+Ghosted\+Area\+Spec gas=ghosted\+Spec, bool expl=false)}{setupGhosted(fastjet::GhostedAreaSpec gas=ghostedSpec, bool expl=false)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Analysis\+::\+Config\+::\+Jet\+Finder\+::setup\+Ghosted (
+\begin{DoxyParamCaption}
+\item[{fastjet\+::\+Ghosted\+Area\+Spec}]{gas = {\ttfamily {\bf ghosted\+Spec}}, }
+\item[{bool}]{expl = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1JetFinder_a6fa594e4a45f2951131d57cdf56d7bad}{}\label{namespaceAnalysis_1_1Config_1_1JetFinder_a6fa594e4a45f2951131d57cdf56d7bad}
+
+
+Jet area definition update (ghosted area) 
+
+Provides consistent update to all related configuration variables. 
+\begin{DoxyParams}{Parameters}
+{\em gas} & ghosted area specs (defaults to {\ttfamily ghosted\+Spec}) \\
+\hline
+{\em expl} & implements explicit ghosts if {\ttfamily true}; defaults to {\ttfamily false} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}!setup\+Voronoi@{setup\+Voronoi}}
+\index{setup\+Voronoi@{setup\+Voronoi}!Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}}
+\subsubsection[{\texorpdfstring{setup\+Voronoi(fastjet\+::\+Voronoi\+Area\+Spec vas=voronoi\+Spec)}{setupVoronoi(fastjet::VoronoiAreaSpec vas=voronoiSpec)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Analysis\+::\+Config\+::\+Jet\+Finder\+::setup\+Voronoi (
+\begin{DoxyParamCaption}
+\item[{fastjet\+::\+Voronoi\+Area\+Spec}]{vas = {\ttfamily {\bf voronoi\+Spec}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1JetFinder_a3131a94663fdf8f592d4ded2d6be9393}{}\label{namespaceAnalysis_1_1Config_1_1JetFinder_a3131a94663fdf8f592d4ded2d6be9393}
+
+
+Jet area definition update (Voronoi) 
+
+Provides consistent update to all related configuration variables. 
+\begin{DoxyParams}{Parameters}
+{\em vas} & Voronoi area specs (defaults to {\ttfamily voronoi\+Spec}) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file Analysis\+Data.\+h.
+
+
+
+\subsection{Variable Documentation}
+\index{Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}!algo@{algo}}
+\index{algo@{algo}!Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}}
+\subsubsection[{\texorpdfstring{algo}{algo}}]{\setlength{\rightskip}{0pt plus 5cm}fastjet\+::\+Jet\+Algorithm Analysis\+::\+Config\+::\+Jet\+Finder\+::algo = fastjet\+::antikt\+\_\+algorithm\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1JetFinder_abce841a2f75b96e943dc5e2be875765b}{}\label{namespaceAnalysis_1_1Config_1_1JetFinder_abce841a2f75b96e943dc5e2be875765b}
+
+
+Jet algorithm (default is anti-\/kt) 
+
+
+
+Definition at line 6 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}!area\+Def@{area\+Def}}
+\index{area\+Def@{area\+Def}!Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}}
+\subsubsection[{\texorpdfstring{area\+Def}{areaDef}}]{\setlength{\rightskip}{0pt plus 5cm}fastjet\+::\+Area\+Definition Analysis\+::\+Config\+::\+Jet\+Finder\+::area\+Def = fastjet\+::\+Area\+Definition({\bf area\+Type},{\bf voronoi\+Spec})\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1JetFinder_a2b26c98f62ad8322f8f593fc0dea22af}{}\label{namespaceAnalysis_1_1Config_1_1JetFinder_a2b26c98f62ad8322f8f593fc0dea22af}
+
+
+Jet area definition (default Voronoi) 
+
+\begin{DoxyWarning}{Warning}
+Note that any change of {\ttfamily area\+Type}, {\ttfamily voronoi\+Spec}, and/or {\ttfamily ghosted\+Spec} through a direct assignment requires to update of {\ttfamily area\+Def} by hand for consistency. It is highly recommended to use the {\ttfamily set\+Area\+Defintion} function for a consistent configuration update. 
+\end{DoxyWarning}
+
+
+Definition at line 33 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}!area\+Type@{area\+Type}}
+\index{area\+Type@{area\+Type}!Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}}
+\subsubsection[{\texorpdfstring{area\+Type}{areaType}}]{\setlength{\rightskip}{0pt plus 5cm}fastjet\+::\+Area\+Type Analysis\+::\+Config\+::\+Jet\+Finder\+::area\+Type = fastjet\+::voronoi\+\_\+area\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1JetFinder_a42b6e6b7c1bebe8646790c377d569664}{}\label{namespaceAnalysis_1_1Config_1_1JetFinder_a42b6e6b7c1bebe8646790c377d569664}
+
+
+Type of jet area (default Voronoi) 
+
+
+
+Definition at line 23 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}!definition@{definition}}
+\index{definition@{definition}!Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}}
+\subsubsection[{\texorpdfstring{definition}{definition}}]{\setlength{\rightskip}{0pt plus 5cm}fastjet\+::\+Jet\+Definition Analysis\+::\+Config\+::\+Jet\+Finder\+::definition = fastjet\+::\+Jet\+Definition({\bf algo},{\bf radius})\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1JetFinder_aba0bf7a22523481843fb40dd34488c8c}{}\label{namespaceAnalysis_1_1Config_1_1JetFinder_aba0bf7a22523481843fb40dd34488c8c}
+
+
+Jet definition (default is Anti-\/kt, $ R = 0.4 $) 
+
+\begin{DoxyWarning}{Warning}
+Note that any change to {\ttfamily radius} and/or {\ttfamily algo} through assignments requires to update this definition by hand. It is highly recommended to use the {\ttfamily set\+Jet\+Defintion} function for a consistent configuration update. 
+\end{DoxyWarning}
+
+
+Definition at line 11 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}!ghosted\+Spec@{ghosted\+Spec}}
+\index{ghosted\+Spec@{ghosted\+Spec}!Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}}
+\subsubsection[{\texorpdfstring{ghosted\+Spec}{ghostedSpec}}]{\setlength{\rightskip}{0pt plus 5cm}fastjet\+::\+Ghosted\+Areaspec Analysis\+::\+Config\+::\+Jet\+Finder\+::ghosted\+Spec = fastjet\+::\+Ghosted\+Area\+Spec({\bf Analysis\+::\+Select\+::\+Calo\+Signal\+::rap\+Min},{\bf Analysis\+::\+Select\+::\+Calo\+Signal\+::rap\+Max})\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1JetFinder_a69fd2afa3ea463941c31076604b1f430}{}\label{namespaceAnalysis_1_1Config_1_1JetFinder_a69fd2afa3ea463941c31076604b1f430}
+
+
+Ghosted area specs (default $ -4.9 < y < 4.9 $ for jet input) 
+
+
+
+Definition at line 27 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}!radius@{radius}}
+\index{radius@{radius}!Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}}
+\subsubsection[{\texorpdfstring{radius}{radius}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Config\+::\+Jet\+Finder\+::radius = 0.\+4\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1JetFinder_af8dfcbb2cc7b1fd0d76546cc4b2984bd}{}\label{namespaceAnalysis_1_1Config_1_1JetFinder_af8dfcbb2cc7b1fd0d76546cc4b2984bd}
+
+
+Distance parameter (default $ R = 0.4 $) 
+
+
+
+Definition at line 4 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}!voronoi\+Spec@{voronoi\+Spec}}
+\index{voronoi\+Spec@{voronoi\+Spec}!Analysis\+::\+Config\+::\+Jet\+Finder@{Analysis\+::\+Config\+::\+Jet\+Finder}}
+\subsubsection[{\texorpdfstring{voronoi\+Spec}{voronoiSpec}}]{\setlength{\rightskip}{0pt plus 5cm}fastjet\+::\+Voronoi\+Area\+Spec Analysis\+::\+Config\+::\+Jet\+Finder\+::voronoi\+Spec = fastjet\+::\+Voronoi\+Spec(0.\+9)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespaceAnalysis_1_1Config_1_1JetFinder_a63a996b81ad4a7216c5652fb216c0ed2}{}\label{namespaceAnalysis_1_1Config_1_1JetFinder_a63a996b81ad4a7216c5652fb216c0ed2}
+
+
+Voronoi area specs (default resolution 0.\+9) 
+
+
+
+Definition at line 25 of file Analysis\+Data.\+h.
+

@@ -1,0 +1,266 @@
+\hypertarget{AnalysisHelper_8h}{}\section{Analysis\+Helper.\+h File Reference}
+\label{AnalysisHelper_8h}\index{Analysis\+Helper.\+h@{Analysis\+Helper.\+h}}
+{\ttfamily \#include \char`\"{}Analysis\+Data.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Analysis\+Utils.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Analysis\+Banner.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Sliding\+Window.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Hist\+Utils.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fastjet/\+Pseudo\+Jet.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fastjet/\+Jet\+Definition.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fastjet/\+Cluster\+Sequence\+Area.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fastjet/\+Area\+Definition.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fastjet/\+Ghosted\+Area\+Spec.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fastjet/\+Selector.\+hh\char`\"{}}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$list$>$}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$limits$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$boost/tuple/tuple.\+hpp$>$}\\*
+{\ttfamily \#include $<$T\+H1.\+h$>$}\\*
+{\ttfamily \#include $<$T\+File.\+h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classHistUtils_1_1HistMgr}{Hist\+Utils\+::\+Hist\+Mgr}
+\begin{DoxyCompactList}\small\item\em Histogram manager. \end{DoxyCompactList}\item 
+struct \hyperlink{structAnalysisHelper}{Analysis\+Helper}
+\begin{DoxyCompactList}\small\item\em Collection of useful functions to support analysis. \end{DoxyCompactList}\item 
+struct \hyperlink{structAnalysisHelper_1_1FastJet}{Analysis\+Helper\+::\+Fast\+Jet}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structAnalysisHelper_1_1FastJet}{Fast\+Jet} helpers. \end{DoxyCompactList}\item 
+struct \hyperlink{structAnalysisHelper_1_1CaloSignal}{Analysis\+Helper\+::\+Calo\+Signal}
+\begin{DoxyCompactList}\small\item\em Pseudo\+Jet representation of calorimeter signals (general aspects) \end{DoxyCompactList}\item 
+struct \hyperlink{structAnalysisHelper_1_1TopoCluster}{Analysis\+Helper\+::\+Topo\+Cluster}
+\begin{DoxyCompactList}\small\item\em Pseudo\+Jet representation of topo-\/cluster. \end{DoxyCompactList}\item 
+struct \hyperlink{structAnalysisHelper_1_1TopoTower}{Analysis\+Helper\+::\+Topo\+Tower}
+\begin{DoxyCompactList}\small\item\em Pseudo\+Jet representation of standard topo-\/tower $ \Delta\eta\times\Delta\phi = 0.1\times 0.1 $. \end{DoxyCompactList}\item 
+struct \hyperlink{structAnalysisHelper_1_1TopoTowerFine}{Analysis\+Helper\+::\+Topo\+Tower\+Fine}
+\begin{DoxyCompactList}\small\item\em Pseudo\+Jet representation of topo-\/tower. \end{DoxyCompactList}\item 
+struct \hyperlink{structAnalysisHelper_1_1PseudoJetGetter}{Analysis\+Helper\+::\+Pseudo\+Jet\+Getter}
+\item 
+struct \hyperlink{structAnalysisHelper_1_1Event}{Analysis\+Helper\+::\+Event}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceAnalysis}{Analysis}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespaceAnalysis}{Analysis} configuration data. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1InternalRef}{Analysis\+::\+Internal\+Ref}
+\begin{DoxyCompactList}\small\item\em Internal references. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1InternalRef_1_1Untrusted}{Analysis\+::\+Internal\+Ref\+::\+Untrusted}
+\begin{DoxyCompactList}\small\item\em Modifiable references. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1InternalRef_1_1Trusted}{Analysis\+::\+Internal\+Ref\+::\+Trusted}
+\begin{DoxyCompactList}\small\item\em Non-\/modifiable references. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1FastJet}{Analysis\+::\+Fast\+Jet}
+\begin{DoxyCompactList}\small\item\em {\ttfamily \hyperlink{namespaceAnalysis_1_1FastJet}{Fast\+Jet}} related data structures \end{DoxyCompactList}\item 
+ \hyperlink{namespaceAnalysis_1_1FastJet_1_1Ghosts}{Analysis\+::\+Fast\+Jet\+::\+Ghosts}
+\begin{DoxyCompactList}\small\item\em Ghosted {\ttfamily fastjet\+::\+Pseudo\+Jet} specifications. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceHistUtils}{Hist\+Utils}
+\begin{DoxyCompactList}\small\item\em Histogram utilities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{AnalysisHelper_8h_a6007a59b47f9653651808332167ebf6c}{\+\_\+\+I\+M\+P\+L\+\_\+\+P\+J\+\_\+\+E\+X\+T\+R\+A\+CT}(T\+AG,  T\+Y\+PE)
+\item 
+\#define \hyperlink{AnalysisHelper_8h_a9fffeb25176c5a44fdb8df76c1bfa35a}{\+\_\+\+I\+M\+P\+L\+\_\+\+P\+J\+\_\+\+V\+E\+C\+T\+\_\+\+E\+X\+T\+R\+A\+CT}(T\+AG,  S\+C\+A\+LE,  I\+F\+LG)
+\item 
+\#define \hyperlink{AnalysisHelper_8h_acaec138f25a6b354dda6ace59ff89524}{\+\_\+\+C\+F\+G\+\_\+\+S\+TR}(S\+T\+RG,  N\+A\+ME,  V\+A\+L\+UE,  F\+L\+AG)
+\item 
+\#define \hyperlink{AnalysisHelper_8h_aac4f407ae99d242ec54f4c25663f7c9f}{\+\_\+\+C\+F\+G\+\_\+\+L\+OG}(S\+T\+RG,  N\+A\+ME,  V\+A\+L\+UE,  F\+L\+AG)
+\item 
+\#define \hyperlink{AnalysisHelper_8h_ab7aadcc2560b326c4ec631ca39a19513}{\+\_\+\+C\+F\+G\+\_\+\+E\+NM}(S\+T\+RG,  N\+A\+ME,  V\+A\+L\+UE,  F\+L\+AG)
+\item 
+\#define \hyperlink{AnalysisHelper_8h_a9fffe81cd7e9ee3d432b8fbbd5b6279d}{\+\_\+\+C\+F\+G\+\_\+\+I\+NT}(S\+T\+RG,  N\+A\+ME,  V\+A\+L\+UE,  F\+L\+AG)
+\item 
+\#define \hyperlink{AnalysisHelper_8h_ad4a0786ad32eae9b3d4b2aea881f34de}{\+\_\+\+C\+F\+G\+\_\+\+D\+BL}(S\+T\+RG,  N\+A\+ME,  V\+A\+L\+UE,  F\+L\+AG)      
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structAnalysisHelper}{Analysis\+Helper} \hyperlink{AnalysisHelper_8h_a0c2a264adb48da831b33653dcd897b74}{AH}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \hyperlink{namespaceAnalysis_1_1InternalRef_1_1Untrusted_af67827e0785b8a3fc082a287e1a03f14}{Analysis\+::\+Internal\+Ref\+::\+Untrusted\+::pj\+Store} = std\+::vector$<$fastjet\+::\+Pseudo\+Jet$>$()
+\begin{DoxyCompactList}\small\item\em {\ttfamily fastjet\+::\+Pseudo\+Jet} vector \end{DoxyCompactList}\item 
+static const std\+::vector$<$ fastjet\+::\+Pseudo\+Jet $>$ \hyperlink{namespaceAnalysis_1_1InternalRef_1_1Trusted_ae5f4c662b47b5cb2b0158ccd22583a20}{Analysis\+::\+Internal\+Ref\+::\+Trusted\+::pj\+Store} = std\+::vector$<$fastjet\+::\+Pseudo\+Jet$>$()
+\begin{DoxyCompactList}\small\item\em {\ttfamily fastjet\+::\+Pseudo\+Jet} vector \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1FastJet_1_1Ghosts_a22e0fc0b5688c128c5a0caa65b6a4794}{Analysis\+::\+Fast\+Jet\+::\+Ghosts\+::nominal\+Pt} = fastjet\+::gas\+::def\+\_\+mean\+\_\+ghost\+\_\+pt$\ast$1000.
+\begin{DoxyCompactList}\small\item\em Nominal $ p_{\rm T} $ \mbox{[}MeV\mbox{]}. \end{DoxyCompactList}\item 
+static double \hyperlink{namespaceAnalysis_1_1FastJet_1_1Ghosts_af83d2982eca3608672efba570c5209b2}{Analysis\+::\+Fast\+Jet\+::\+Ghosts\+::filter\+Pt} = 1.\+1$\ast$nominal\+Pt
+\begin{DoxyCompactList}\small\item\em filter $ p_{\rm T} $ threshold \mbox{[}MeV\mbox{]} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{Analysis\+Helper.\+h@{Analysis\+Helper.\+h}!\+\_\+\+C\+F\+G\+\_\+\+D\+BL@{\+\_\+\+C\+F\+G\+\_\+\+D\+BL}}
+\index{\+\_\+\+C\+F\+G\+\_\+\+D\+BL@{\+\_\+\+C\+F\+G\+\_\+\+D\+BL}!Analysis\+Helper.\+h@{Analysis\+Helper.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+C\+F\+G\+\_\+\+D\+BL}{_CFG_DBL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+C\+F\+G\+\_\+\+D\+BL(
+\begin{DoxyParamCaption}
+\item[{}]{S\+T\+RG, }
+\item[{}]{N\+A\+ME, }
+\item[{}]{V\+A\+L\+UE, }
+\item[{}]{F\+L\+AG}
+\end{DoxyParamCaption}
+)}\hypertarget{AnalysisHelper_8h_ad4a0786ad32eae9b3d4b2aea881f34de}{}\label{AnalysisHelper_8h_ad4a0786ad32eae9b3d4b2aea881f34de}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} ( Analysis::Utils::String::fetchValue( STRG, #NAME, VALUE ) ) \{ \(\backslash\)
+    std::string pstr( #NAME );                      \(\backslash\)
+    Analysis::Print::Info(\textcolor{stringliteral}{"AnalysisHelper::readCfg"},\textcolor{stringliteral}{"# property %-s %-24.3g [%.3g]"}, 
+      Analysis::Utils::String::fill(pstr,64).c\_str(), VALUE, NAME ); \(\backslash\)
+    NAME = VALUE ;                          \(\backslash\)
+    FLAG = \textcolor{keyword}{true};                            \(\backslash\)
+  \}
+\end{DoxyCode}
+
+
+Definition at line 113 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper.\+h@{Analysis\+Helper.\+h}!\+\_\+\+C\+F\+G\+\_\+\+E\+NM@{\+\_\+\+C\+F\+G\+\_\+\+E\+NM}}
+\index{\+\_\+\+C\+F\+G\+\_\+\+E\+NM@{\+\_\+\+C\+F\+G\+\_\+\+E\+NM}!Analysis\+Helper.\+h@{Analysis\+Helper.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+C\+F\+G\+\_\+\+E\+NM}{_CFG_ENM}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+C\+F\+G\+\_\+\+E\+NM(
+\begin{DoxyParamCaption}
+\item[{}]{S\+T\+RG, }
+\item[{}]{N\+A\+ME, }
+\item[{}]{V\+A\+L\+UE, }
+\item[{}]{F\+L\+AG}
+\end{DoxyParamCaption}
+)}\hypertarget{AnalysisHelper_8h_ab7aadcc2560b326c4ec631ca39a19513}{}\label{AnalysisHelper_8h_ab7aadcc2560b326c4ec631ca39a19513}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} ( Analysis::Utils::String::fetchValue( STRG, #NAME, VALUE ) ) \{  \(\backslash\)
+    std::string pstr( #NAME );                      \(\backslash\)
+    std::string tstr(\hyperlink{namespaceAnalysis_1_1Config_1_1Input_aa5d9fccd604bbebe94b3ce68f9a5fbe7}{Analysis::Config::Input::selectorName}( NAME ));   
+      \(\backslash\)
+    Analysis::Print::Info(\textcolor{stringliteral}{"AnalysisHelper::readCfg"},\textcolor{stringliteral}{"# property %-s %-24s [%s]"}, 
+      Analysis::Utils::String::fill(pstr,64).c\_str(), VALUE.c\_str(), tstr.c\_str() ); \(\backslash\)
+    FLAG = \textcolor{keyword}{true};                            \(\backslash\)
+  \}
+\end{DoxyCode}
+
+
+Definition at line 99 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper.\+h@{Analysis\+Helper.\+h}!\+\_\+\+C\+F\+G\+\_\+\+I\+NT@{\+\_\+\+C\+F\+G\+\_\+\+I\+NT}}
+\index{\+\_\+\+C\+F\+G\+\_\+\+I\+NT@{\+\_\+\+C\+F\+G\+\_\+\+I\+NT}!Analysis\+Helper.\+h@{Analysis\+Helper.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+C\+F\+G\+\_\+\+I\+NT}{_CFG_INT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+C\+F\+G\+\_\+\+I\+NT(
+\begin{DoxyParamCaption}
+\item[{}]{S\+T\+RG, }
+\item[{}]{N\+A\+ME, }
+\item[{}]{V\+A\+L\+UE, }
+\item[{}]{F\+L\+AG}
+\end{DoxyParamCaption}
+)}\hypertarget{AnalysisHelper_8h_a9fffe81cd7e9ee3d432b8fbbd5b6279d}{}\label{AnalysisHelper_8h_a9fffe81cd7e9ee3d432b8fbbd5b6279d}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} ( Analysis::Utils::String::fetchValue( STRG, #NAME, VALUE ) ) \{  \(\backslash\)
+    std::string pstr( #NAME );                      \(\backslash\)
+    Analysis::Print::Info(\textcolor{stringliteral}{"AnalysisHelper::readCfg"},\textcolor{stringliteral}{"# property %-s %-24i [%i]"}, 
+      Analysis::Utils::String::fill(pstr,64).c\_str(), VALUE, NAME ); \(\backslash\)
+    NAME = VALUE ;                          \(\backslash\)
+    FLAG = \textcolor{keyword}{true};                            \(\backslash\)
+  \}
+\end{DoxyCode}
+
+
+Definition at line 106 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper.\+h@{Analysis\+Helper.\+h}!\+\_\+\+C\+F\+G\+\_\+\+L\+OG@{\+\_\+\+C\+F\+G\+\_\+\+L\+OG}}
+\index{\+\_\+\+C\+F\+G\+\_\+\+L\+OG@{\+\_\+\+C\+F\+G\+\_\+\+L\+OG}!Analysis\+Helper.\+h@{Analysis\+Helper.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+C\+F\+G\+\_\+\+L\+OG}{_CFG_LOG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+C\+F\+G\+\_\+\+L\+OG(
+\begin{DoxyParamCaption}
+\item[{}]{S\+T\+RG, }
+\item[{}]{N\+A\+ME, }
+\item[{}]{V\+A\+L\+UE, }
+\item[{}]{F\+L\+AG}
+\end{DoxyParamCaption}
+)}\hypertarget{AnalysisHelper_8h_aac4f407ae99d242ec54f4c25663f7c9f}{}\label{AnalysisHelper_8h_aac4f407ae99d242ec54f4c25663f7c9f}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} ( Analysis::Utils::String::fetchValue( STRG, #NAME, VALUE ) ) \{  \(\backslash\)
+    std::string pstr( #NAME );                      \(\backslash\)
+    std::string tag = NAME ? \textcolor{stringliteral}{"true"} : \textcolor{stringliteral}{"false"};              \(\backslash\)
+    PRINT\_INFO( \textcolor{stringliteral}{"AnalysisHelper::readCfg"},\textcolor{stringliteral}{"# property %-s %-24s [%s]"}, Analysis::Utils::String::fill(pstr,6
+      4).c\_str(), VALUE.c\_str(), tag.c\_str() ); \(\backslash\)
+    NAME = VALUE == \textcolor{stringliteral}{"true"};                     \(\backslash\)
+    FLAG + \textcolor{keyword}{true};                            \(\backslash\)
+  \}
+\end{DoxyCode}
+
+
+Definition at line 91 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper.\+h@{Analysis\+Helper.\+h}!\+\_\+\+C\+F\+G\+\_\+\+S\+TR@{\+\_\+\+C\+F\+G\+\_\+\+S\+TR}}
+\index{\+\_\+\+C\+F\+G\+\_\+\+S\+TR@{\+\_\+\+C\+F\+G\+\_\+\+S\+TR}!Analysis\+Helper.\+h@{Analysis\+Helper.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+C\+F\+G\+\_\+\+S\+TR}{_CFG_STR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+C\+F\+G\+\_\+\+S\+TR(
+\begin{DoxyParamCaption}
+\item[{}]{S\+T\+RG, }
+\item[{}]{N\+A\+ME, }
+\item[{}]{V\+A\+L\+UE, }
+\item[{}]{F\+L\+AG}
+\end{DoxyParamCaption}
+)}\hypertarget{AnalysisHelper_8h_acaec138f25a6b354dda6ace59ff89524}{}\label{AnalysisHelper_8h_acaec138f25a6b354dda6ace59ff89524}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} ( Analysis::Utils::String::fetchValue( STRG, #NAME, VALUE ) ) \{  \(\backslash\)
+    std::string pstr( #NAME );                      \(\backslash\)
+    PRINT\_INFO( \textcolor{stringliteral}{"AnalysisHelper::readCfg"},\textcolor{stringliteral}{"# property %-s %-24s [%s]"}, Analysis::Utils::String::fill(pstr,6
+      4).c\_str(), VALUE.c\_str(), NAME.c\_str() ); \(\backslash\)
+    NAME = VALUE;                           \(\backslash\)
+    FLAG = \textcolor{keyword}{true};                            \(\backslash\)
+  \}
+\end{DoxyCode}
+
+
+Definition at line 84 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper.\+h@{Analysis\+Helper.\+h}!\+\_\+\+I\+M\+P\+L\+\_\+\+P\+J\+\_\+\+E\+X\+T\+R\+A\+CT@{\+\_\+\+I\+M\+P\+L\+\_\+\+P\+J\+\_\+\+E\+X\+T\+R\+A\+CT}}
+\index{\+\_\+\+I\+M\+P\+L\+\_\+\+P\+J\+\_\+\+E\+X\+T\+R\+A\+CT@{\+\_\+\+I\+M\+P\+L\+\_\+\+P\+J\+\_\+\+E\+X\+T\+R\+A\+CT}!Analysis\+Helper.\+h@{Analysis\+Helper.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+I\+M\+P\+L\+\_\+\+P\+J\+\_\+\+E\+X\+T\+R\+A\+CT}{_IMPL_PJ_EXTRACT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+I\+M\+P\+L\+\_\+\+P\+J\+\_\+\+E\+X\+T\+R\+A\+CT(
+\begin{DoxyParamCaption}
+\item[{}]{T\+AG, }
+\item[{}]{T\+Y\+PE}
+\end{DoxyParamCaption}
+)}\hypertarget{AnalysisHelper_8h_a6007a59b47f9653651808332167ebf6c}{}\label{AnalysisHelper_8h_a6007a59b47f9653651808332167ebf6c}
+
+
+Definition at line 38 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper.\+h@{Analysis\+Helper.\+h}!\+\_\+\+I\+M\+P\+L\+\_\+\+P\+J\+\_\+\+V\+E\+C\+T\+\_\+\+E\+X\+T\+R\+A\+CT@{\+\_\+\+I\+M\+P\+L\+\_\+\+P\+J\+\_\+\+V\+E\+C\+T\+\_\+\+E\+X\+T\+R\+A\+CT}}
+\index{\+\_\+\+I\+M\+P\+L\+\_\+\+P\+J\+\_\+\+V\+E\+C\+T\+\_\+\+E\+X\+T\+R\+A\+CT@{\+\_\+\+I\+M\+P\+L\+\_\+\+P\+J\+\_\+\+V\+E\+C\+T\+\_\+\+E\+X\+T\+R\+A\+CT}!Analysis\+Helper.\+h@{Analysis\+Helper.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+I\+M\+P\+L\+\_\+\+P\+J\+\_\+\+V\+E\+C\+T\+\_\+\+E\+X\+T\+R\+A\+CT}{_IMPL_PJ_VECT_EXTRACT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+I\+M\+P\+L\+\_\+\+P\+J\+\_\+\+V\+E\+C\+T\+\_\+\+E\+X\+T\+R\+A\+CT(
+\begin{DoxyParamCaption}
+\item[{}]{T\+AG, }
+\item[{}]{S\+C\+A\+LE, }
+\item[{}]{I\+F\+LG}
+\end{DoxyParamCaption}
+)}\hypertarget{AnalysisHelper_8h_a9fffeb25176c5a44fdb8df76c1bfa35a}{}\label{AnalysisHelper_8h_a9fffeb25176c5a44fdb8df76c1bfa35a}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+std::vector<fastjet::PseudoJet> pjVec; pjVec.reserve(data-> TAG##\_pt->size()); \(\backslash\)
+  for ( \textcolor{keywordtype}{size\_t} idx(0); idx<data-> TAG##\_e->size() ; ++idx ) \{       \(\backslash\)
+    fastjet::PseudoJet pj = pseudoJet\_##SCALE( data, idx, ! IFLG ); \(\backslash\)
+    if ( !\hyperlink{structAnalysisHelper_1_1FastJet_a495b38c1db87612bbeb1d9f9d3634c63}{AnalysisHelper::FastJet::isEmpty}(pj) && ( pj.rap() > 
+      \hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_aa11187307efce66323ce38d6afdd75d7}{Analysis::Select::CaloSignal::rapMin} && pj.rap() < 
+      \hyperlink{namespaceAnalysis_1_1Select_1_1CaloSignal_a358398a6fbba8bcfd3f534ccbf838aa8}{Analysis::Select::CaloSignal::rapMax} ) ) \{ pjVec.push\_back( pj ); \} \(\backslash\)
+  \}                                 \(\backslash\)
+  return pjVec
+\end{DoxyCode}
+
+
+Definition at line 77 of file Analysis\+Helper.\+h.
+
+
+
+\subsection{Typedef Documentation}
+\index{Analysis\+Helper.\+h@{Analysis\+Helper.\+h}!AH@{AH}}
+\index{AH@{AH}!Analysis\+Helper.\+h@{Analysis\+Helper.\+h}}
+\subsubsection[{\texorpdfstring{AH}{AH}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Analysis\+Helper} {\bf AH}}\hypertarget{AnalysisHelper_8h_a0c2a264adb48da831b33653dcd897b74}{}\label{AnalysisHelper_8h_a0c2a264adb48da831b33653dcd897b74}
+
+
+Definition at line 1253 of file Analysis\+Helper.\+h.
+

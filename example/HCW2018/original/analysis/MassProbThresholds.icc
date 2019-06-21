@@ -1,0 +1,40 @@
+// -*- c++ -*- 
+#ifndef CONTEXT_PLOTPROBRELS
+#include "ProbThresholds.icc"
+#endif
+
+std::vector<double> v_mbins = { 0.1, 0.25, 0.5, 0.75, 1., 2., 3., 4., 5., 7.5, 10., 12.5, 15., 20., 25., 30., 35., 40., 45., 50., 60., 70., 80., 90., 100. }; //, 125., 150., 175., 200., 250. };
+double* a_mbins = &v_mbins[0];
+int     n_mbins(v_mbins.size()-1);
+
+#ifndef CONTEXT_PLOTPROBRELS
+int nb(n_mbins); 
+allHists.resize(lThresholds.size()-1,(TH1D*)0);
+sigHists.resize(lThresholds.size()-1,(TH1D*)0);
+bckHists.resize(lThresholds.size()-1,(TH1D*)0);
+
+for ( size_t i(1); i<lThresholds.size(); ++i ) {
+  std::string hname(TString::Format("h_var_all_%03.0f_%03.0f",std::max(std::abs(lThresholds.at(i-1)*100.),0.),std::min(std::abs(lThresholds.at(i)*100.),100.)).Data());
+  std::string sname(TString::Format("h_var_sig_%03.0f_%03.0f",std::max(std::abs(lThresholds.at(i-1)*100.),0.),std::min(std::abs(lThresholds.at(i)*100.),100.)).Data());
+  std::string bname(TString::Format("h_var_bck_%03.0f_%03.0f",std::max(std::abs(lThresholds.at(i-1)*100.),0.),std::min(std::abs(lThresholds.at(i)*100.),100.)).Data());
+  allHists[i-1] = new TH1D(hname.c_str(),"variable",nb,a_mbins); allHists[i-1]->Sumw2();
+  sigHists[i-1] = new TH1D(sname.c_str(),"variable",nb,a_mbins); sigHists[i-1]->Sumw2();
+  bckHists[i-1] = new TH1D(bname.c_str(),"variable",nb,a_mbins); bckHists[i-1]->Sumw2();
+ }
+
+printf("Module[MassProbThresholds] - *DONE* histogram booking, list sizes %zu (all) %zu (signal) %zu (pile-up)\n",allHists.size(),sigHists.size(),bckHists.size());
+
+for ( size_t i(0); i<allHists.size(); ++i ) {
+  if ( allHists.at(i) != 0 ) { 
+    allHists[i]->SetLineColor(hlColor.at(i)); allHists[i]->SetMarkerColor(hmColor.at(i)); allHists[i]->SetMarkerStyle(20); allHists[i]->SetMarkerSize(0.75);
+    sigHists[i]->SetLineColor(hlColor.at(i)); sigHists[i]->SetMarkerColor(hmColor.at(i)); sigHists[i]->SetMarkerStyle(22); sigHists[i]->SetMarkerSize(0.75);
+    bckHists[i]->SetLineColor(hlColor.at(i)); bckHists[i]->SetMarkerColor(hmColor.at(i)); bckHists[i]->SetMarkerStyle(23); bckHists[i]->SetMarkerSize(0.75);
+  } else {
+    printf("Module[MassProbThresholds] - *PROBLEM* index %2zu cannot allocate expected histogram for this index\n",i);
+  }
+}
+
+printf("Module[MassProbThresholds] - *DONE* histogram styling\n");
+#endif
+
+

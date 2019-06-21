@@ -1,0 +1,49 @@
+// -*- c++ -*-
+#ifndef TUPLEFILENAMES_ICC
+#define TUPLEFILENAMES_ICC
+#ifdef DIRNAMES_ICC
+#undef DIRNAMES_ICC
+#endif
+#include "DirNames.icc"
+#ifdef SIGNALNAMES_ICC
+#undef SIGNALNAMES_ICC
+#endif
+#include "SignalNames.icc"
+#ifdef PROCNAMES_ICC
+#undef PROCNAMES_ICC
+#endif
+#include "ProcNames.icc"
+std::vector<std::string> tupleFileNames = { "tuple/JAPU+INCL_topoclus_tuple.root",
+					    "tuple/JAPU+TIME_topoclus_tuple.root",
+					    "tuple/CSPU+INCL_topoclus_tuple.root",
+					    "tuple/CSPU+TIME_topoclus_tuple.root",
+					    "tuple/CSSK+INCL_topoclus_tuple.root",
+					    "tuple/CSSK+TIME_topoclus_tuple.root",
+					    "tuple/JAPU+INCL_topotow_tuple.root",
+					    "tuple/JAPU+TIME_topotow_tuple.root",
+					    "tuple/CSPU+INCL_topotow_tuple.root",
+					    "tuple/CSPU+TIME_topotow_tuple.root",
+					    "tuple/CSSK+INCL_topotow_tuple.root",
+					    "tuple/CSSK+TIME_topotow_tuple.root",
+					    "tuple/JAPU+INCL_topotowf_tuple.root",
+					    "tuple/JAPU+TIME_topotowf_tuple.root",
+					    "tuple/CSPU+INCL_topotowf_tuple.root",
+					    "tuple/CSPU+TIME_topotowf_tuple.root",
+					    "tuple/CSSK+INCL_topotowf_tuple.root",
+					    "tuple/CSSK+TIME_topotowf_tuple.root" };
+
+#include "DirNames.icc"
+
+std::map<std::string,std::string> tupleFileDirs;
+std::map<std::string,std::string> tupleFileSignals;
+std::map<std::string,std::string> tupleFileProc;
+
+for ( auto fn : tupleFileNames ) { 
+  for ( auto dn : dirNames    ) { if ( fn.find(dn) != std::string::npos ) { tupleFileDirs[fn]    = dn; break; } }
+  for ( auto sn : signalNames ) { if ( fn.find(sn) != std::string::npos ) { tupleFileSignals[fn] = sn; break; } } 
+  for ( auto pn : procNames   ) { if ( fn.find(pn) != std::string::npos ) { tupleFileProc[fn]    = pn; break; } }
+ }
+
+printf("Module[TupleFileNames] - directory lookup table size i s%zu; signal names lookup table size is %zu; process names lookup size is %zu.\n",
+       tupleFileDirs.size(),tupleFileSignals.size(),tupleFileProc.size());
+#endif

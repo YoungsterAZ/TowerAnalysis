@@ -1,0 +1,53 @@
+// -*- c++ -*-
+///@brief Distance parameter (default @f$ R = 0.4 @f$)
+static double                  radius     = 0.4;
+///@brief Jet algorithm (default is anti-kt)
+static fastjet::JetAlgorithm   algo       = fastjet::antikt_algorithm;
+///@brief Jet definition (default is Anti-kt, @f$ R = 0.4 @f$)
+///
+///@warning Note that any change to @c radius and/or @c algo through assignments requires to update this definition by hand.
+/// It is highly recommended to use the @c setJetDefintion function for a consistent configuration update.  
+static fastjet::JetDefinition  definition = fastjet::JetDefinition(algo,radius);
+///@brief Set up a jet definition
+///
+/// This function implements a consistent update of all parameters associated with the jet definition.
+/// @param jetalg jet algorithm implementation tag (from FastJet)
+/// @param rjet   jet algorithm distance parameter 
+static void setJetDefinition(fastjet::JetAlgorithm jetalg,double rjet) {
+  radius = rjet;
+  algo   = jetalg;
+  definition = fastjet::JetDefinition(algo,radius);
+}
+///@brief Type of jet area (default Voronoi)
+static fastjet::AreaType       areaType     = fastjet::voronoi_area;
+///@brief Voronoi area specs (default resolution 0.9)
+static fastjet::VoronoiAreaSpec voronoiSpec = fastjet::VoronoiAreaSpec(0.9);
+///@brief Ghosted area specs (default @f$ -4.9 < y < 4.9 @f$ for jet input)
+static fastjet::GhostedAreaSpec ghostedSpec = fastjet::GhostedAreaSpec(Analysis::Select::CaloSignal::rapMin,Analysis::Select::CaloSignal::rapMax);
+///@brief Jet area definition (default Voronoi)
+///
+///@warning Note that any change of @c areaType, @c voronoiSpec, and/or @c ghostedSpec through a direct assignment requires to 
+/// update of @c areaDef by hand for consistency. It is highly recommended to use the @c setAreaDefintion function 
+/// for a consistent configuration update. 
+static fastjet::AreaDefinition areaDef      = fastjet::AreaDefinition(areaType,voronoiSpec);
+///@brief Jet area definition update (Voronoi)
+///
+/// Provides consistent update to all related configuration variables.
+/// @param vas Voronoi area specs (defaults to @c voronoiSpec)
+static void setupVoronoi(fastjet::VoronoiAreaSpec vas=voronoiSpec) {
+  areaType    = fastjet::voronoi_area;
+  voronoiSpec = vas;
+  areaDef     = fastjet::AreaDefinition(areaType,voronoiSpec);
+}
+///@brief Jet area definition update (ghosted area)
+///
+/// Provides consistent update to all related configuration variables.
+/// @param gas ghosted area specs (defaults to @c ghostedSpec)
+/// @param expl implements explicit ghosts if @c true; defaults to @c false
+static void setupGhosted(fastjet::GhostedAreaSpec gas=ghostedSpec,bool expl=false) { \
+  areaType    = expl ? fastjet::active_area_explicit_ghosts : fastjet::active_area; \
+  ghostedSpec = gas;							\
+  areaDef     = fastjet::AreaDefinition(areaType,ghostedSpec);		\
+}
+
+

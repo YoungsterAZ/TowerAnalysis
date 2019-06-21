@@ -1,0 +1,347 @@
+\hypertarget{structAnalysisHelper_1_1FastJet}{}\section{Analysis\+Helper\+:\+:Fast\+Jet Struct Reference}
+\label{structAnalysisHelper_1_1FastJet}\index{Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}}
+
+
+\hyperlink{structAnalysisHelper_1_1FastJet}{Fast\+Jet} helpers.  
+
+
+
+
+{\ttfamily \#include $<$Analysis\+Helper.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{Indent}{\bf General user info access}\par
+{\em Check if certain information is attached to, or the state of this information attachment for, a {\ttfamily fastjet\+::\+Pseudo\+Jet} object
+
+
+\begin{DoxyParams}{Parameters}
+{\em pj} & reference to non-\/modifiable {\ttfamily fastjet\+::\+Pseudo\+Jet} object \\
+\hline
+\end{DoxyParams}
+}\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{structAnalysisHelper_1_1FastJet_a495b38c1db87612bbeb1d9f9d3634c63}{is\+Empty} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\begin{DoxyCompactList}\small\item\em Attached information empty if {\ttfamily false}. \end{DoxyCompactList}\item 
+static bool \hyperlink{structAnalysisHelper_1_1FastJet_a61a31eef8ab3e4166208707f2b5551a7}{has\+User\+Info} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\begin{DoxyCompactList}\small\item\em Information is attached if {\ttfamily true}. \end{DoxyCompactList}\item 
+static int \hyperlink{structAnalysisHelper_1_1FastJet_a27ddda4131fd0dffbf383882ff10e6c0}{user\+Index} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\begin{DoxyCompactList}\small\item\em User assigned index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Calorimeter signal info}\par
+{\em Check if attached information describes a calorimeter signal
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if yes
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pj} & reference to non-\/modifiable {\ttfamily fastjet\+::\+Pseudo\+Jet} object\\
+\hline
+\end{DoxyParams}
+Both functions have identical behaviour. }\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{structAnalysisHelper_1_1FastJet_a78dd1bc2743d8a94b8b80a4f1749f3b2}{has\+Calo\+Signal\+Info} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static bool \hyperlink{structAnalysisHelper_1_1FastJet_aafc1a2a0d61a011325f5e7e90de2f5e7}{is\+Calo\+Signal} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Truth particle info access}\par
+{\em Check if certain information is attached to, or the state of this information attachment for, a {\ttfamily fastjet\+::\+Pseudo\+Jet} object
+
+
+\begin{DoxyParams}{Parameters}
+{\em pj} & reference to non-\/modifiable {\ttfamily fastjet\+::\+Pseudo\+Jet} object \\
+\hline
+\end{DoxyParams}
+}\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{structAnalysisHelper_1_1FastJet_a7f2d471a8532314e77e7aa09b0d910be}{has\+Truth\+Info} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\begin{DoxyCompactList}\small\item\em Checks if truth information is available ( {\ttfamily true} ) \end{DoxyCompactList}\item 
+static bool \hyperlink{structAnalysisHelper_1_1FastJet_a3486c68b6851741bba9066ad03f15a05}{is\+Truth\+Particle} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\begin{DoxyCompactList}\small\item\em Checks if truth information is available ( {\ttfamily true} ) \end{DoxyCompactList}\item 
+static int \hyperlink{structAnalysisHelper_1_1FastJet_a027968b8c18bfb098f88308d81cf39ea}{pdg} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\begin{DoxyCompactList}\small\item\em P\+DG code of associated truth particle. \end{DoxyCompactList}\item 
+static int \hyperlink{structAnalysisHelper_1_1FastJet_ac9110679d145b63a2f755de051ea4974}{status} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\begin{DoxyCompactList}\small\item\em Generator status code. \end{DoxyCompactList}\item 
+static double \hyperlink{structAnalysisHelper_1_1FastJet_ac94926cb2fb936c40fcf88c149785b2f}{charge} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\begin{DoxyCompactList}\small\item\em Particle charge. \end{DoxyCompactList}\item 
+static bool \hyperlink{structAnalysisHelper_1_1FastJet_a1ea0e8cdbeeded3cbd2c2aef3647fc33}{is\+Hadron} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\begin{DoxyCompactList}\small\item\em Checks if particle is a hadron ({\ttfamily true}) or not ({\ttfamily false}) \end{DoxyCompactList}\item 
+static bool \hyperlink{structAnalysisHelper_1_1FastJet_a2fd75d11fdfc60434c57467aa798e811}{is\+Lepton} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\begin{DoxyCompactList}\small\item\em Checks if particle is a lepton ({\ttfamily true}) or not ({\ttfamily false}) \end{DoxyCompactList}\item 
+static bool \hyperlink{structAnalysisHelper_1_1FastJet_a06daab465ab6d937417c9c2e3c15ae34}{is\+Neutrino} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\begin{DoxyCompactList}\small\item\em Checks if particle is a neutrino ({\ttfamily true}) or not ({\ttfamily false}) \end{DoxyCompactList}\item 
+static bool \hyperlink{structAnalysisHelper_1_1FastJet_aa0529ad04de358d2eafce2d62c13294c}{is\+Charged} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\begin{DoxyCompactList}\small\item\em Checks if particle is a charged ({\ttfamily true}) or neutral ({\ttfamily false}) \end{DoxyCompactList}\item 
+static bool \hyperlink{structAnalysisHelper_1_1FastJet_adc293a40e376cd1ac951e66c9e43738e}{is\+Neutral} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\begin{DoxyCompactList}\small\item\em Checks if particle is a neutral ({\ttfamily true}) or charged ({\ttfamily false}) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+\hyperlink{structAnalysisHelper_1_1FastJet}{Fast\+Jet} helpers. 
+
+Details on how arbritary information can be attached to a {\ttfamily fastjet\+::\+Pseudo\+Jet} object can be found at \href{http://fastjet.fr/}{\tt fastjet.\+fr}, with specifics \href{http://fastjet.fr/repo/doxygen-3.3.1/classfastjet_1_1PseudoJet.html}{\tt here}. 
+
+Definition at line 300 of file Analysis\+Helper.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}!charge@{charge}}
+\index{charge@{charge}!Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}}
+\subsubsection[{\texorpdfstring{charge(const fastjet\+::\+Pseudo\+Jet \&pj)}{charge(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static double Analysis\+Helper\+::\+Fast\+Jet\+::charge (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1FastJet_ac94926cb2fb936c40fcf88c149785b2f}{}\label{structAnalysisHelper_1_1FastJet_ac94926cb2fb936c40fcf88c149785b2f}
+
+
+Particle charge. 
+
+\begin{DoxyReturn}{Returns}
+Particle charge in units of the electron charge $ e $. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+If no \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo}{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info} object is attached, the return value is 0. 
+\end{DoxyWarning}
+
+
+Definition at line 335 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}!has\+Calo\+Signal\+Info@{has\+Calo\+Signal\+Info}}
+\index{has\+Calo\+Signal\+Info@{has\+Calo\+Signal\+Info}!Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}}
+\subsubsection[{\texorpdfstring{has\+Calo\+Signal\+Info(const fastjet\+::\+Pseudo\+Jet \&pj)}{hasCaloSignalInfo(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+Helper\+::\+Fast\+Jet\+::has\+Calo\+Signal\+Info (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1FastJet_a78dd1bc2743d8a94b8b80a4f1749f3b2}{}\label{structAnalysisHelper_1_1FastJet_a78dd1bc2743d8a94b8b80a4f1749f3b2}
+
+
+Definition at line 322 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}!has\+Truth\+Info@{has\+Truth\+Info}}
+\index{has\+Truth\+Info@{has\+Truth\+Info}!Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}}
+\subsubsection[{\texorpdfstring{has\+Truth\+Info(const fastjet\+::\+Pseudo\+Jet \&pj)}{hasTruthInfo(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+Helper\+::\+Fast\+Jet\+::has\+Truth\+Info (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1FastJet_a7f2d471a8532314e77e7aa09b0d910be}{}\label{structAnalysisHelper_1_1FastJet_a7f2d471a8532314e77e7aa09b0d910be}
+
+
+Checks if truth information is available ( {\ttfamily true} ) 
+
+
+
+Definition at line 329 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}!has\+User\+Info@{has\+User\+Info}}
+\index{has\+User\+Info@{has\+User\+Info}!Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}}
+\subsubsection[{\texorpdfstring{has\+User\+Info(const fastjet\+::\+Pseudo\+Jet \&pj)}{hasUserInfo(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+Helper\+::\+Fast\+Jet\+::has\+User\+Info (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1FastJet_a61a31eef8ab3e4166208707f2b5551a7}{}\label{structAnalysisHelper_1_1FastJet_a61a31eef8ab3e4166208707f2b5551a7}
+
+
+Information is attached if {\ttfamily true}. 
+
+
+
+Definition at line 308 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}!is\+Calo\+Signal@{is\+Calo\+Signal}}
+\index{is\+Calo\+Signal@{is\+Calo\+Signal}!Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}}
+\subsubsection[{\texorpdfstring{is\+Calo\+Signal(const fastjet\+::\+Pseudo\+Jet \&pj)}{isCaloSignal(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+Helper\+::\+Fast\+Jet\+::is\+Calo\+Signal (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1FastJet_aafc1a2a0d61a011325f5e7e90de2f5e7}{}\label{structAnalysisHelper_1_1FastJet_aafc1a2a0d61a011325f5e7e90de2f5e7}
+
+
+Definition at line 323 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}!is\+Charged@{is\+Charged}}
+\index{is\+Charged@{is\+Charged}!Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}}
+\subsubsection[{\texorpdfstring{is\+Charged(const fastjet\+::\+Pseudo\+Jet \&pj)}{isCharged(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+Helper\+::\+Fast\+Jet\+::is\+Charged (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1FastJet_aa0529ad04de358d2eafce2d62c13294c}{}\label{structAnalysisHelper_1_1FastJet_aa0529ad04de358d2eafce2d62c13294c}
+
+
+Checks if particle is a charged ({\ttfamily true}) or neutral ({\ttfamily false}) 
+
+\begin{DoxyWarning}{Warning}
+If no \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo}{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info} object is attached, {\ttfamily false} is returned. 
+\end{DoxyWarning}
+
+
+Definition at line 343 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}}
+\subsubsection[{\texorpdfstring{is\+Empty(const fastjet\+::\+Pseudo\+Jet \&pj)}{isEmpty(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+Helper\+::\+Fast\+Jet\+::is\+Empty (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1FastJet_a495b38c1db87612bbeb1d9f9d3634c63}{}\label{structAnalysisHelper_1_1FastJet_a495b38c1db87612bbeb1d9f9d3634c63}
+
+
+Attached information empty if {\ttfamily false}. 
+
+
+
+Definition at line 307 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}!is\+Hadron@{is\+Hadron}}
+\index{is\+Hadron@{is\+Hadron}!Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}}
+\subsubsection[{\texorpdfstring{is\+Hadron(const fastjet\+::\+Pseudo\+Jet \&pj)}{isHadron(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+Helper\+::\+Fast\+Jet\+::is\+Hadron (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1FastJet_a1ea0e8cdbeeded3cbd2c2aef3647fc33}{}\label{structAnalysisHelper_1_1FastJet_a1ea0e8cdbeeded3cbd2c2aef3647fc33}
+
+
+Checks if particle is a hadron ({\ttfamily true}) or not ({\ttfamily false}) 
+
+
+
+Definition at line 337 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}!is\+Lepton@{is\+Lepton}}
+\index{is\+Lepton@{is\+Lepton}!Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}}
+\subsubsection[{\texorpdfstring{is\+Lepton(const fastjet\+::\+Pseudo\+Jet \&pj)}{isLepton(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+Helper\+::\+Fast\+Jet\+::is\+Lepton (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1FastJet_a2fd75d11fdfc60434c57467aa798e811}{}\label{structAnalysisHelper_1_1FastJet_a2fd75d11fdfc60434c57467aa798e811}
+
+
+Checks if particle is a lepton ({\ttfamily true}) or not ({\ttfamily false}) 
+
+\begin{DoxyWarning}{Warning}
+If no \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo}{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info} object is attached, {\ttfamily false} is returned. 
+\end{DoxyWarning}
+
+
+Definition at line 339 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}!is\+Neutral@{is\+Neutral}}
+\index{is\+Neutral@{is\+Neutral}!Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}}
+\subsubsection[{\texorpdfstring{is\+Neutral(const fastjet\+::\+Pseudo\+Jet \&pj)}{isNeutral(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+Helper\+::\+Fast\+Jet\+::is\+Neutral (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1FastJet_adc293a40e376cd1ac951e66c9e43738e}{}\label{structAnalysisHelper_1_1FastJet_adc293a40e376cd1ac951e66c9e43738e}
+
+
+Checks if particle is a neutral ({\ttfamily true}) or charged ({\ttfamily false}) 
+
+\begin{DoxyWarning}{Warning}
+If no \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo}{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info} object is attached, {\ttfamily false} is returned. 
+\end{DoxyWarning}
+
+
+Definition at line 345 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}!is\+Neutrino@{is\+Neutrino}}
+\index{is\+Neutrino@{is\+Neutrino}!Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}}
+\subsubsection[{\texorpdfstring{is\+Neutrino(const fastjet\+::\+Pseudo\+Jet \&pj)}{isNeutrino(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+Helper\+::\+Fast\+Jet\+::is\+Neutrino (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1FastJet_a06daab465ab6d937417c9c2e3c15ae34}{}\label{structAnalysisHelper_1_1FastJet_a06daab465ab6d937417c9c2e3c15ae34}
+
+
+Checks if particle is a neutrino ({\ttfamily true}) or not ({\ttfamily false}) 
+
+\begin{DoxyWarning}{Warning}
+If no \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo}{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info} object is attached, {\ttfamily false} is returned. 
+\end{DoxyWarning}
+
+
+Definition at line 341 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}!is\+Truth\+Particle@{is\+Truth\+Particle}}
+\index{is\+Truth\+Particle@{is\+Truth\+Particle}!Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}}
+\subsubsection[{\texorpdfstring{is\+Truth\+Particle(const fastjet\+::\+Pseudo\+Jet \&pj)}{isTruthParticle(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+Helper\+::\+Fast\+Jet\+::is\+Truth\+Particle (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1FastJet_a3486c68b6851741bba9066ad03f15a05}{}\label{structAnalysisHelper_1_1FastJet_a3486c68b6851741bba9066ad03f15a05}
+
+
+Checks if truth information is available ( {\ttfamily true} ) 
+
+
+
+Definition at line 330 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}!pdg@{pdg}}
+\index{pdg@{pdg}!Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}}
+\subsubsection[{\texorpdfstring{pdg(const fastjet\+::\+Pseudo\+Jet \&pj)}{pdg(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Analysis\+Helper\+::\+Fast\+Jet\+::pdg (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1FastJet_a027968b8c18bfb098f88308d81cf39ea}{}\label{structAnalysisHelper_1_1FastJet_a027968b8c18bfb098f88308d81cf39ea}
+
+
+P\+DG code of associated truth particle. 
+
+\begin{DoxyReturn}{Returns}
+Valid P\+DG code as documented \href{http://pdg.lbl.gov/2017/reviews/rpp2017-rev-monte-carlo-numbering.pdf}{\tt here}. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+If no \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo}{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info} object is attached, the return value is 0. 
+\end{DoxyWarning}
+
+
+Definition at line 331 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}!status@{status}}
+\index{status@{status}!Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}}
+\subsubsection[{\texorpdfstring{status(const fastjet\+::\+Pseudo\+Jet \&pj)}{status(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Analysis\+Helper\+::\+Fast\+Jet\+::status (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1FastJet_ac9110679d145b63a2f755de051ea4974}{}\label{structAnalysisHelper_1_1FastJet_ac9110679d145b63a2f755de051ea4974}
+
+
+Generator status code. 
+
+\begin{DoxyReturn}{Returns}
+Generator status code with generator dependent interpretation. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+If no \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo}{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info} object is attached, the return value is 0. 
+\end{DoxyWarning}
+
+
+Definition at line 333 of file Analysis\+Helper.\+h.
+
+\index{Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}!user\+Index@{user\+Index}}
+\index{user\+Index@{user\+Index}!Analysis\+Helper\+::\+Fast\+Jet@{Analysis\+Helper\+::\+Fast\+Jet}}
+\subsubsection[{\texorpdfstring{user\+Index(const fastjet\+::\+Pseudo\+Jet \&pj)}{userIndex(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Analysis\+Helper\+::\+Fast\+Jet\+::user\+Index (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structAnalysisHelper_1_1FastJet_a27ddda4131fd0dffbf383882ff10e6c0}{}\label{structAnalysisHelper_1_1FastJet_a27ddda4131fd0dffbf383882ff10e6c0}
+
+
+User assigned index. 
+
+\begin{DoxyWarning}{Warning}
+Do not use the return value of \hyperlink{structAnalysisHelper_1_1FastJet_a27ddda4131fd0dffbf383882ff10e6c0}{user\+Index()} as reference into a vector. It can be negative or otherwise out of range, because it is also used as a state indicator. 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000002}{Todo}]Fix the {\ttfamily \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a687e6a814e58e5737108ef24aef047df}{Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::index()}} behaviour (split index feature from status indicator) \end{DoxyRefDesc}
+
+
+Definition at line 309 of file Analysis\+Helper.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{AnalysisHelper_8h}{Analysis\+Helper.\+h}\end{DoxyCompactItemize}

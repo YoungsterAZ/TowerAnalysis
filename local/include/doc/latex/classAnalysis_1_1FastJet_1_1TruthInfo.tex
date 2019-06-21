@@ -1,0 +1,635 @@
+\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo}{}\section{Analysis\+:\+:Fast\+Jet\+:\+:Truth\+Info Class Reference}
+\label{classAnalysis_1_1FastJet_1_1TruthInfo}\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+
+
+{\ttfamily \#include $<$Analysis\+Data.\+h$>$}
+
+Inheritance diagram for Analysis\+:\+:Fast\+Jet\+:\+:Truth\+Info\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classAnalysis_1_1FastJet_1_1TruthInfo}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a9f95f6e6557d67d77703a816fc913746}{Truth\+Info} ()
+\item 
+\hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a983c57b1d61815b8e61e6debafc9a376}{Truth\+Info} (int idx, int \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_ac1a7c34a77d7f0fc815ede73c35607ad}{pdg}, int \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a52a4e57c1e862882218f1e20ca9220c8}{status}, double \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a7d09bc00a310b2511bfc0ee4de23360c}{charge})
+\item 
+\hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a0f0755f08f4cd85e21e646b0fbd6e47d}{Truth\+Info} (const \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo}{Truth\+Info} \&ti)
+\item 
+virtual \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a62a6d53a837ff38df9f7a7328bfb4d45}{$\sim$\+Truth\+Info} ()
+\item 
+int \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_ac1a7c34a77d7f0fc815ede73c35607ad}{pdg} () const 
+\item 
+int \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a52a4e57c1e862882218f1e20ca9220c8}{status} () const 
+\item 
+double \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a7d09bc00a310b2511bfc0ee4de23360c}{charge} () const 
+\item 
+bool \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a1cdab47e0a01229a93aeebdbfbc4a993}{is\+Lepton} () const 
+\item 
+bool \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_ac6f4703af5217047f0bc92f7853068a4}{is\+Hadron} () const 
+\item 
+bool \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a87297aa11e7f43dd729cdb709406a4d5}{is\+Neutrino} () const 
+\item 
+bool \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a1b994926fce41dc264134f1e61bdef00}{is\+Charged} () const 
+\item 
+bool \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a4edb489e915f6fcd967e8aa5b08b1027}{is\+Neutral} () const 
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf Set object status}\par
+{\em Set status to \char`\"{}empty\char`\"{} (no reference data) }\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_ab87ca9e42c15c24c8f54bad4b9674d0c}{set\+Empty} ()
+\begin{DoxyCompactList}\small\item\em Set status to \char`\"{}faulty\char`\"{} (broken/invalid) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a0c5efdcfb658e75538dd5ec29c27afe0}{set\+Faulty} ()
+\begin{DoxyCompactList}\small\item\em Set status to \char`\"{}faulty\char`\"{} (broken/invalid) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_ab22ff88713e1ad12bd2311cc4f1c998c}{set\+Ghost} ()
+\begin{DoxyCompactList}\small\item\em Set status to \char`\"{}ghosted\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Access object status and data}\par
+{\em Retrieve reference index (or status indicator)
+
+\begin{DoxyReturn}{Returns}
+Reference index if $>$= 0 (may still be invalid -\/ no checking); if $<$0 returns status. 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+virtual int \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a687e6a814e58e5737108ef24aef047df}{index} () const 
+\begin{DoxyCompactList}\small\item\em Check if empty. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a4b987d1bba6c854cf9310596abbd3572}{is\+Empty} () const 
+\begin{DoxyCompactList}\small\item\em Check if empty. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a74601c143cb58b3bb62e0842b416beed}{is\+Faulty} () const 
+\begin{DoxyCompactList}\small\item\em Check if faulty/broken/invalid. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_ad7b1ceba9d2ab04e7e7000577fe95198}{is\+Usable} () const 
+\begin{DoxyCompactList}\small\item\em Check if usable. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a92d2abe359ed4b794c546a23a9e1ccbe}{is\+Ghost} () const 
+\begin{DoxyCompactList}\small\item\em Check if ghost. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a62a082245c4c8d8d370c7087de193dd4}{is\+Truth\+Particle} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static int \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_ae1c07a279249c17a4d23c332291db118}{pdg} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static int \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_ac12a01abd7648c60dd46f555c9c1a80d}{status} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static double \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_af2cae2b143b988d8df611b0b66c744e2}{charge} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static bool \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a4444f96f6c8fe5ff215cff9d9ca34415}{is\+Hadron} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static bool \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a872fd6a63380813b5cbfac09372c3057}{is\+Lepton} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static bool \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a223902efb31a681c06d507ff6971c95b}{is\+Neutrino} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static bool \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a0c53d9c724ca822ec93efa84fcfbbafd}{is\+Charged} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static bool \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a41b32998acd985a82b5da1928b9723b7}{is\+Neutral} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static bool \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a79ba59c5af9a4bc2e641ab2e54e8d50b}{is\+Empty} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static bool \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a18b23aae344587ff280a046e70af1d29}{is\+Usable} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static bool \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a4682fdc7e258328293b05951f55cc7a1}{is\+Ghost} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static bool \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a681f1076b15320ea55e7104b4fe01c3a}{has\+User\+Info} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\item 
+static int \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_a767f93f891d045f209198cdf72fddf36}{user\+Index} (const fastjet\+::\+Pseudo\+Jet \&pj)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a667df4369792991c7882f89bc120e3e1}{\+\_\+pdg}
+\item 
+int \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a9da9ba4c65c112317584823af4de0bd7}{\+\_\+status}
+\item 
+double \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a44a9ca75492ca6e4e788e559f9afb1e7}{\+\_\+charge}
+\item 
+bool \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a3a86cf67d7da9be46ccd842723a75bcb}{\+\_\+is\+Hadron}
+\item 
+bool \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_afa94b750c98dede7d4fa6a48c459dd5d}{\+\_\+is\+Lepton}
+\item 
+bool \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a18a62f405e19e57214a4ca36f815a2a0}{\+\_\+is\+Neutrino}
+\item 
+int \hyperlink{classAnalysis_1_1FastJet_1_1UserInfo_ad9aa33e317aea2b675493b664cc718a3}{\+\_\+idx}
+\begin{DoxyCompactList}\small\item\em Index to underlying structure holding data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::vector$<$ int $>$ \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a23c0cd8c38cbc6613aafb00170365437}{\+\_\+leptons} = \{ 11, -\/11, 13, -\/13, 15, -\/15, 17, -\/17 \}
+\item 
+static const std\+::vector$<$ int $>$ \hyperlink{classAnalysis_1_1FastJet_1_1TruthInfo_a79f2101d71790e8f4a9bbb42843b3c26}{\+\_\+neutrinos} = \{ 12, -\/12, 14, -\/14, 16, -\/16, 18, -\/18 \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 492 of file Analysis\+Data.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!Truth\+Info@{Truth\+Info}}
+\index{Truth\+Info@{Truth\+Info}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{Truth\+Info()}{TruthInfo()}}]{\setlength{\rightskip}{0pt plus 5cm}Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::\+Truth\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a9f95f6e6557d67d77703a816fc913746}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a9f95f6e6557d67d77703a816fc913746}
+
+
+Definition at line 505 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!Truth\+Info@{Truth\+Info}}
+\index{Truth\+Info@{Truth\+Info}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{Truth\+Info(int idx, int pdg, int status, double charge)}{TruthInfo(int idx, int pdg, int status, double charge)}}]{\setlength{\rightskip}{0pt plus 5cm}Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::\+Truth\+Info (
+\begin{DoxyParamCaption}
+\item[{int}]{idx, }
+\item[{int}]{pdg, }
+\item[{int}]{status, }
+\item[{double}]{charge}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a983c57b1d61815b8e61e6debafc9a376}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a983c57b1d61815b8e61e6debafc9a376}
+
+
+Definition at line 514 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!Truth\+Info@{Truth\+Info}}
+\index{Truth\+Info@{Truth\+Info}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{Truth\+Info(const Truth\+Info \&ti)}{TruthInfo(const TruthInfo &ti)}}]{\setlength{\rightskip}{0pt plus 5cm}Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::\+Truth\+Info (
+\begin{DoxyParamCaption}
+\item[{const {\bf Truth\+Info} \&}]{ti}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a0f0755f08f4cd85e21e646b0fbd6e47d}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a0f0755f08f4cd85e21e646b0fbd6e47d}
+
+
+Definition at line 530 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!````~Truth\+Info@{$\sim$\+Truth\+Info}}
+\index{````~Truth\+Info@{$\sim$\+Truth\+Info}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{$\sim$\+Truth\+Info()}{~TruthInfo()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::$\sim$\+Truth\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a62a6d53a837ff38df9f7a7328bfb4d45}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a62a6d53a837ff38df9f7a7328bfb4d45}
+
+
+Definition at line 539 of file Analysis\+Data.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!charge@{charge}}
+\index{charge@{charge}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{charge() const }{charge() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::charge (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a7d09bc00a310b2511bfc0ee4de23360c}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a7d09bc00a310b2511bfc0ee4de23360c}
+
+
+Definition at line 542 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!charge@{charge}}
+\index{charge@{charge}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{charge(const fastjet\+::\+Pseudo\+Jet \&pj)}{charge(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static double Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::charge (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_af2cae2b143b988d8df611b0b66c744e2}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_af2cae2b143b988d8df611b0b66c744e2}
+
+
+Definition at line 556 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!has\+User\+Info@{has\+User\+Info}}
+\index{has\+User\+Info@{has\+User\+Info}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{has\+User\+Info(const fastjet\+::\+Pseudo\+Jet \&pj)}{hasUserInfo(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::has\+User\+Info (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a681f1076b15320ea55e7104b4fe01c3a}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a681f1076b15320ea55e7104b4fe01c3a}
+
+
+Definition at line 357 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!index@{index}}
+\index{index@{index}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{index() const }{index() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a687e6a814e58e5737108ef24aef047df}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a687e6a814e58e5737108ef24aef047df}
+
+
+Check if empty. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if empty. 
+\end{DoxyReturn}
+
+
+Definition at line 338 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!is\+Charged@{is\+Charged}}
+\index{is\+Charged@{is\+Charged}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{is\+Charged() const }{isCharged() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::is\+Charged (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a1b994926fce41dc264134f1e61bdef00}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a1b994926fce41dc264134f1e61bdef00}
+
+
+Definition at line 546 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!is\+Charged@{is\+Charged}}
+\index{is\+Charged@{is\+Charged}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{is\+Charged(const fastjet\+::\+Pseudo\+Jet \&pj)}{isCharged(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::is\+Charged (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a0c53d9c724ca822ec93efa84fcfbbafd}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a0c53d9c724ca822ec93efa84fcfbbafd}
+
+
+Definition at line 564 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{is\+Empty() const }{isEmpty() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a4b987d1bba6c854cf9310596abbd3572}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a4b987d1bba6c854cf9310596abbd3572}
+
+
+Check if empty. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if empty. 
+\end{DoxyReturn}
+
+
+Definition at line 342 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{is\+Empty(const fastjet\+::\+Pseudo\+Jet \&pj)}{isEmpty(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::is\+Empty (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a79ba59c5af9a4bc2e641ab2e54e8d50b}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a79ba59c5af9a4bc2e641ab2e54e8d50b}
+
+
+Definition at line 362 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!is\+Faulty@{is\+Faulty}}
+\index{is\+Faulty@{is\+Faulty}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{is\+Faulty() const }{isFaulty() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::is\+Faulty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a74601c143cb58b3bb62e0842b416beed}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a74601c143cb58b3bb62e0842b416beed}
+
+
+Check if faulty/broken/invalid. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if faulty. 
+\end{DoxyReturn}
+
+
+Definition at line 346 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!is\+Ghost@{is\+Ghost}}
+\index{is\+Ghost@{is\+Ghost}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{is\+Ghost() const }{isGhost() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::is\+Ghost (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a92d2abe359ed4b794c546a23a9e1ccbe}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a92d2abe359ed4b794c546a23a9e1ccbe}
+
+
+Check if ghost. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} of associated {\ttfamily fastjet\+::\+Pseudo\+Jet} is ghosted 
+\end{DoxyReturn}
+
+
+Definition at line 354 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!is\+Ghost@{is\+Ghost}}
+\index{is\+Ghost@{is\+Ghost}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{is\+Ghost(const fastjet\+::\+Pseudo\+Jet \&pj)}{isGhost(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::is\+Ghost (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a4682fdc7e258328293b05951f55cc7a1}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a4682fdc7e258328293b05951f55cc7a1}
+
+
+Definition at line 366 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!is\+Hadron@{is\+Hadron}}
+\index{is\+Hadron@{is\+Hadron}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{is\+Hadron() const }{isHadron() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::is\+Hadron (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_ac6f4703af5217047f0bc92f7853068a4}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_ac6f4703af5217047f0bc92f7853068a4}
+
+
+Definition at line 544 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!is\+Hadron@{is\+Hadron}}
+\index{is\+Hadron@{is\+Hadron}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{is\+Hadron(const fastjet\+::\+Pseudo\+Jet \&pj)}{isHadron(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::is\+Hadron (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a4444f96f6c8fe5ff215cff9d9ca34415}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a4444f96f6c8fe5ff215cff9d9ca34415}
+
+
+Definition at line 558 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!is\+Lepton@{is\+Lepton}}
+\index{is\+Lepton@{is\+Lepton}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{is\+Lepton() const }{isLepton() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::is\+Lepton (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a1cdab47e0a01229a93aeebdbfbc4a993}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a1cdab47e0a01229a93aeebdbfbc4a993}
+
+
+Definition at line 543 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!is\+Lepton@{is\+Lepton}}
+\index{is\+Lepton@{is\+Lepton}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{is\+Lepton(const fastjet\+::\+Pseudo\+Jet \&pj)}{isLepton(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::is\+Lepton (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a872fd6a63380813b5cbfac09372c3057}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a872fd6a63380813b5cbfac09372c3057}
+
+
+Definition at line 560 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!is\+Neutral@{is\+Neutral}}
+\index{is\+Neutral@{is\+Neutral}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{is\+Neutral() const }{isNeutral() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::is\+Neutral (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a4edb489e915f6fcd967e8aa5b08b1027}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a4edb489e915f6fcd967e8aa5b08b1027}
+
+
+Definition at line 547 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!is\+Neutral@{is\+Neutral}}
+\index{is\+Neutral@{is\+Neutral}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{is\+Neutral(const fastjet\+::\+Pseudo\+Jet \&pj)}{isNeutral(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::is\+Neutral (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a41b32998acd985a82b5da1928b9723b7}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a41b32998acd985a82b5da1928b9723b7}
+
+
+Definition at line 566 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!is\+Neutrino@{is\+Neutrino}}
+\index{is\+Neutrino@{is\+Neutrino}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{is\+Neutrino() const }{isNeutrino() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::is\+Neutrino (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a87297aa11e7f43dd729cdb709406a4d5}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a87297aa11e7f43dd729cdb709406a4d5}
+
+
+Definition at line 545 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!is\+Neutrino@{is\+Neutrino}}
+\index{is\+Neutrino@{is\+Neutrino}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{is\+Neutrino(const fastjet\+::\+Pseudo\+Jet \&pj)}{isNeutrino(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::is\+Neutrino (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a223902efb31a681c06d507ff6971c95b}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a223902efb31a681c06d507ff6971c95b}
+
+
+Definition at line 562 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!is\+Truth\+Particle@{is\+Truth\+Particle}}
+\index{is\+Truth\+Particle@{is\+Truth\+Particle}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{is\+Truth\+Particle(const fastjet\+::\+Pseudo\+Jet \&pj)}{isTruthParticle(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::is\+Truth\+Particle (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a62a082245c4c8d8d370c7087de193dd4}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a62a082245c4c8d8d370c7087de193dd4}
+
+
+Definition at line 549 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!is\+Usable@{is\+Usable}}
+\index{is\+Usable@{is\+Usable}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{is\+Usable() const }{isUsable() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::is\+Usable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_ad7b1ceba9d2ab04e7e7000577fe95198}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_ad7b1ceba9d2ab04e7e7000577fe95198}
+
+
+Check if usable. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if usable -\/ no indication that the index is valid! 
+\end{DoxyReturn}
+
+
+Definition at line 350 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!is\+Usable@{is\+Usable}}
+\index{is\+Usable@{is\+Usable}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{is\+Usable(const fastjet\+::\+Pseudo\+Jet \&pj)}{isUsable(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::is\+Usable (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a18b23aae344587ff280a046e70af1d29}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a18b23aae344587ff280a046e70af1d29}
+
+
+Definition at line 364 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!pdg@{pdg}}
+\index{pdg@{pdg}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{pdg() const }{pdg() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::pdg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_ac1a7c34a77d7f0fc815ede73c35607ad}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_ac1a7c34a77d7f0fc815ede73c35607ad}
+
+
+Definition at line 540 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!pdg@{pdg}}
+\index{pdg@{pdg}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{pdg(const fastjet\+::\+Pseudo\+Jet \&pj)}{pdg(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::pdg (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_ae1c07a279249c17a4d23c332291db118}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_ae1c07a279249c17a4d23c332291db118}
+
+
+Definition at line 552 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!set\+Empty@{set\+Empty}}
+\index{set\+Empty@{set\+Empty}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{set\+Empty()}{setEmpty()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::set\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_ab87ca9e42c15c24c8f54bad4b9674d0c}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_ab87ca9e42c15c24c8f54bad4b9674d0c}
+
+
+Set status to \char`\"{}faulty\char`\"{} (broken/invalid) 
+
+
+
+Definition at line 326 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!set\+Faulty@{set\+Faulty}}
+\index{set\+Faulty@{set\+Faulty}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{set\+Faulty()}{setFaulty()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::set\+Faulty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a0c5efdcfb658e75538dd5ec29c27afe0}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a0c5efdcfb658e75538dd5ec29c27afe0}
+
+
+Set status to \char`\"{}faulty\char`\"{} (broken/invalid) 
+
+
+
+Definition at line 328 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!set\+Ghost@{set\+Ghost}}
+\index{set\+Ghost@{set\+Ghost}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{set\+Ghost()}{setGhost()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::set\+Ghost (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_ab22ff88713e1ad12bd2311cc4f1c998c}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_ab22ff88713e1ad12bd2311cc4f1c998c}
+
+
+Set status to \char`\"{}ghosted\char`\"{}. 
+
+
+
+Definition at line 330 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!status@{status}}
+\index{status@{status}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{status() const }{status() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a52a4e57c1e862882218f1e20ca9220c8}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a52a4e57c1e862882218f1e20ca9220c8}
+
+
+Definition at line 541 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!status@{status}}
+\index{status@{status}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{status(const fastjet\+::\+Pseudo\+Jet \&pj)}{status(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::status (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_ac12a01abd7648c60dd46f555c9c1a80d}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_ac12a01abd7648c60dd46f555c9c1a80d}
+
+
+Definition at line 554 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!user\+Index@{user\+Index}}
+\index{user\+Index@{user\+Index}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{user\+Index(const fastjet\+::\+Pseudo\+Jet \&pj)}{userIndex(const fastjet::PseudoJet &pj)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::user\+Index (
+\begin{DoxyParamCaption}
+\item[{const fastjet\+::\+Pseudo\+Jet \&}]{pj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_a767f93f891d045f209198cdf72fddf36}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_a767f93f891d045f209198cdf72fddf36}
+
+
+Definition at line 359 of file Analysis\+Data.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!\+\_\+charge@{\+\_\+charge}}
+\index{\+\_\+charge@{\+\_\+charge}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+charge}{_charge}}]{\setlength{\rightskip}{0pt plus 5cm}double Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::\+\_\+charge\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a44a9ca75492ca6e4e788e559f9afb1e7}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a44a9ca75492ca6e4e788e559f9afb1e7}
+
+
+Definition at line 500 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!\+\_\+idx@{\+\_\+idx}}
+\index{\+\_\+idx@{\+\_\+idx}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+idx}{_idx}}]{\setlength{\rightskip}{0pt plus 5cm}int Analysis\+::\+Fast\+Jet\+::\+User\+Info\+::\+\_\+idx\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\hypertarget{classAnalysis_1_1FastJet_1_1UserInfo_ad9aa33e317aea2b675493b664cc718a3}{}\label{classAnalysis_1_1FastJet_1_1UserInfo_ad9aa33e317aea2b675493b664cc718a3}
+
+
+Index to underlying structure holding data. 
+
+
+
+Definition at line 305 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!\+\_\+is\+Hadron@{\+\_\+is\+Hadron}}
+\index{\+\_\+is\+Hadron@{\+\_\+is\+Hadron}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+is\+Hadron}{_isHadron}}]{\setlength{\rightskip}{0pt plus 5cm}bool Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::\+\_\+is\+Hadron\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a3a86cf67d7da9be46ccd842723a75bcb}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a3a86cf67d7da9be46ccd842723a75bcb}
+
+
+Definition at line 501 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!\+\_\+is\+Lepton@{\+\_\+is\+Lepton}}
+\index{\+\_\+is\+Lepton@{\+\_\+is\+Lepton}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+is\+Lepton}{_isLepton}}]{\setlength{\rightskip}{0pt plus 5cm}bool Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::\+\_\+is\+Lepton\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_afa94b750c98dede7d4fa6a48c459dd5d}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_afa94b750c98dede7d4fa6a48c459dd5d}
+
+
+Definition at line 502 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!\+\_\+is\+Neutrino@{\+\_\+is\+Neutrino}}
+\index{\+\_\+is\+Neutrino@{\+\_\+is\+Neutrino}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+is\+Neutrino}{_isNeutrino}}]{\setlength{\rightskip}{0pt plus 5cm}bool Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::\+\_\+is\+Neutrino\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a18a62f405e19e57214a4ca36f815a2a0}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a18a62f405e19e57214a4ca36f815a2a0}
+
+
+Definition at line 503 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!\+\_\+leptons@{\+\_\+leptons}}
+\index{\+\_\+leptons@{\+\_\+leptons}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+leptons}{_leptons}}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$ int $>$ Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::\+\_\+leptons = \{ 11, -\/11, 13, -\/13, 15, -\/15, 17, -\/17 \}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a23c0cd8c38cbc6613aafb00170365437}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a23c0cd8c38cbc6613aafb00170365437}
+
+
+Definition at line 495 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!\+\_\+neutrinos@{\+\_\+neutrinos}}
+\index{\+\_\+neutrinos@{\+\_\+neutrinos}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+neutrinos}{_neutrinos}}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$ int $>$ Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::\+\_\+neutrinos = \{ 12, -\/12, 14, -\/14, 16, -\/16, 18, -\/18 \}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a79f2101d71790e8f4a9bbb42843b3c26}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a79f2101d71790e8f4a9bbb42843b3c26}
+
+
+Definition at line 496 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!\+\_\+pdg@{\+\_\+pdg}}
+\index{\+\_\+pdg@{\+\_\+pdg}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+pdg}{_pdg}}]{\setlength{\rightskip}{0pt plus 5cm}int Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::\+\_\+pdg\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a667df4369792991c7882f89bc120e3e1}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a667df4369792991c7882f89bc120e3e1}
+
+
+Definition at line 498 of file Analysis\+Data.\+h.
+
+\index{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}!\+\_\+status@{\+\_\+status}}
+\index{\+\_\+status@{\+\_\+status}!Analysis\+::\+Fast\+Jet\+::\+Truth\+Info@{Analysis\+::\+Fast\+Jet\+::\+Truth\+Info}}
+\subsubsection[{\texorpdfstring{\+\_\+status}{_status}}]{\setlength{\rightskip}{0pt plus 5cm}int Analysis\+::\+Fast\+Jet\+::\+Truth\+Info\+::\+\_\+status\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classAnalysis_1_1FastJet_1_1TruthInfo_a9da9ba4c65c112317584823af4de0bd7}{}\label{classAnalysis_1_1FastJet_1_1TruthInfo_a9da9ba4c65c112317584823af4de0bd7}
+
+
+Definition at line 499 of file Analysis\+Data.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{AnalysisData_8h}{Analysis\+Data.\+h}\end{DoxyCompactItemize}

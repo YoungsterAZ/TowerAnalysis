@@ -1,0 +1,4 @@
+// -*- c++ -*-
+std::vector<double> effthresh = {
+  
+}

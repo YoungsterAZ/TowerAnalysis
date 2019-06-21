@@ -1,0 +1,298 @@
+\hypertarget{classSlidingWindow_1_1Bin}{}\section{Sliding\+Window\+:\+:Bin Class Reference}
+\label{classSlidingWindow_1_1Bin}\index{Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}}
+
+
+\hyperlink{classSlidingWindow_1_1Bin}{Bin} descriptors.  
+
+
+
+
+{\ttfamily \#include $<$Sliding\+Window.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSlidingWindow_1_1Bin_a0e213295f7091e2a90c4771c497bc205}{Bin} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classSlidingWindow_1_1Bin_a5ac8937e75aa0e4dcab05ebf0ad9b7d3}{Bin} (double center, double area, double left, double right)
+\begin{DoxyCompactList}\small\item\em Loaded constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classSlidingWindow_1_1Bin_a96c2732a0aee9b69780c05defaec51e8}{$\sim$\+Bin} ()
+\begin{DoxyCompactList}\small\item\em Base class destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf Bin description access}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual double \hyperlink{classSlidingWindow_1_1Bin_a341340989bfd98e0e5b8c77501fb87f6}{bin\+Center} () const 
+\begin{DoxyCompactList}\small\item\em Return bin center. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classSlidingWindow_1_1Bin_ab54bc0cf4a1e5224c3d57d7b32e21420}{bin\+Area} () const 
+\begin{DoxyCompactList}\small\item\em Return bin area. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classSlidingWindow_1_1Bin_ad6af68e450a7be9404a0b8e7b47fc52f}{bin\+Lower} () const 
+\begin{DoxyCompactList}\small\item\em Return lower edge of bin. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classSlidingWindow_1_1Bin_a86f9d616c1f7673cd41be174779c836c}{bin\+Upper} () const 
+\begin{DoxyCompactList}\small\item\em Return upper edge of bin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Operations on and with bins}\par
+{\em Check if value is in bin
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if given value $ x \in [X_{\rm left},X_{\rm right}] $
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & value to be checked \\
+\hline
+\end{DoxyParams}
+}\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classSlidingWindow_1_1Bin_a238ef3032c3d5f3e8a0502c1a3d15619}{in\+Bin} (double value) const 
+\begin{DoxyCompactList}\small\item\em Define bin order. \end{DoxyCompactList}\item 
+bool \hyperlink{classSlidingWindow_1_1Bin_a1fb3205c96d69bd836414372fdd56c9b}{operator$<$} (const \hyperlink{classSlidingWindow_1_1Bin}{Bin} \&bin) const 
+\begin{DoxyCompactList}\small\item\em Define bin order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Private Attributes}
+\begin{Indent}{\bf Bin description}\par
+{\em Left (lower) bin edge }\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classSlidingWindow_1_1Bin_a46a807a48bdf12a4cf8b2ccadb7a5ac7}{m\+\_\+left}
+\begin{DoxyCompactList}\small\item\em Right (upper) bin edge. \end{DoxyCompactList}\item 
+double \hyperlink{classSlidingWindow_1_1Bin_acda727a7789040fde0f10ac1c0c79bab}{m\+\_\+right}
+\begin{DoxyCompactList}\small\item\em Right (upper) bin edge. \end{DoxyCompactList}\item 
+double \hyperlink{classSlidingWindow_1_1Bin_a6b5b0a0ef26124b8d6a889af4f4c1b8f}{m\+\_\+center}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classSlidingWindow_1_1Bin}{Bin} center. \end{DoxyCompactList}\item 
+double \hyperlink{classSlidingWindow_1_1Bin_acf2994cc62ec5cc5e3d364fdd32a8cc8}{m\+\_\+area}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classSlidingWindow_1_1Bin}{Bin} area. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+\hyperlink{classSlidingWindow_1_1Bin}{Bin} descriptors. 
+
+Definition at line 21 of file Sliding\+Window.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}!Bin@{Bin}}
+\index{Bin@{Bin}!Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}}
+\subsubsection[{\texorpdfstring{Bin()}{Bin()}}]{\setlength{\rightskip}{0pt plus 5cm}Sliding\+Window\+::\+Bin\+::\+Bin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Bin_a0e213295f7091e2a90c4771c497bc205}{}\label{classSlidingWindow_1_1Bin_a0e213295f7091e2a90c4771c497bc205}
+
+
+Default constructor. 
+
+Constructs non-\/described (useless) bin 
+
+Definition at line 27 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}!Bin@{Bin}}
+\index{Bin@{Bin}!Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}}
+\subsubsection[{\texorpdfstring{Bin(double center, double area, double left, double right)}{Bin(double center, double area, double left, double right)}}]{\setlength{\rightskip}{0pt plus 5cm}Sliding\+Window\+::\+Bin\+::\+Bin (
+\begin{DoxyParamCaption}
+\item[{double}]{center, }
+\item[{double}]{area, }
+\item[{double}]{left, }
+\item[{double}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Bin_a5ac8937e75aa0e4dcab05ebf0ad9b7d3}{}\label{classSlidingWindow_1_1Bin_a5ac8937e75aa0e4dcab05ebf0ad9b7d3}
+
+
+Loaded constructor. 
+
+Constructs fully described bin
+
+
+\begin{DoxyParams}{Parameters}
+{\em center} & bin center \\
+\hline
+{\em area} & bin area \\
+\hline
+{\em left} & bin lower (left) edge \\
+\hline
+{\em right} & bin upper (right) edge\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This bin description class allows for overlapping and/or asymmetric bins, meaning center, area, left and right edge can be independently defined with the only expectation that left $<$ center $<$ right for operations. 
+\end{DoxyNote}
+
+
+Definition at line 40 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}!````~Bin@{$\sim$\+Bin}}
+\index{````~Bin@{$\sim$\+Bin}!Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}}
+\subsubsection[{\texorpdfstring{$\sim$\+Bin()}{~Bin()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Sliding\+Window\+::\+Bin\+::$\sim$\+Bin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classSlidingWindow_1_1Bin_a96c2732a0aee9b69780c05defaec51e8}{}\label{classSlidingWindow_1_1Bin_a96c2732a0aee9b69780c05defaec51e8}
+
+
+Base class destructor. 
+
+
+
+Definition at line 42 of file Sliding\+Window.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}!bin\+Area@{bin\+Area}}
+\index{bin\+Area@{bin\+Area}!Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}}
+\subsubsection[{\texorpdfstring{bin\+Area() const }{binArea() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Sliding\+Window\+::\+Bin\+::bin\+Area (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classSlidingWindow_1_1Bin_ab54bc0cf4a1e5224c3d57d7b32e21420}{}\label{classSlidingWindow_1_1Bin_ab54bc0cf4a1e5224c3d57d7b32e21420}
+
+
+Return bin area. 
+
+
+
+Definition at line 47 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}!bin\+Center@{bin\+Center}}
+\index{bin\+Center@{bin\+Center}!Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}}
+\subsubsection[{\texorpdfstring{bin\+Center() const }{binCenter() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Sliding\+Window\+::\+Bin\+::bin\+Center (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classSlidingWindow_1_1Bin_a341340989bfd98e0e5b8c77501fb87f6}{}\label{classSlidingWindow_1_1Bin_a341340989bfd98e0e5b8c77501fb87f6}
+
+
+Return bin center. 
+
+
+
+Definition at line 46 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}!bin\+Lower@{bin\+Lower}}
+\index{bin\+Lower@{bin\+Lower}!Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}}
+\subsubsection[{\texorpdfstring{bin\+Lower() const }{binLower() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Sliding\+Window\+::\+Bin\+::bin\+Lower (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classSlidingWindow_1_1Bin_ad6af68e450a7be9404a0b8e7b47fc52f}{}\label{classSlidingWindow_1_1Bin_ad6af68e450a7be9404a0b8e7b47fc52f}
+
+
+Return lower edge of bin. 
+
+
+
+Definition at line 48 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}!bin\+Upper@{bin\+Upper}}
+\index{bin\+Upper@{bin\+Upper}!Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}}
+\subsubsection[{\texorpdfstring{bin\+Upper() const }{binUpper() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Sliding\+Window\+::\+Bin\+::bin\+Upper (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classSlidingWindow_1_1Bin_a86f9d616c1f7673cd41be174779c836c}{}\label{classSlidingWindow_1_1Bin_a86f9d616c1f7673cd41be174779c836c}
+
+
+Return upper edge of bin. 
+
+
+
+Definition at line 49 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}!in\+Bin@{in\+Bin}}
+\index{in\+Bin@{in\+Bin}!Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}}
+\subsubsection[{\texorpdfstring{in\+Bin(double value) const }{inBin(double value) const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Sliding\+Window\+::\+Bin\+::in\+Bin (
+\begin{DoxyParamCaption}
+\item[{double}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classSlidingWindow_1_1Bin_a238ef3032c3d5f3e8a0502c1a3d15619}{}\label{classSlidingWindow_1_1Bin_a238ef3032c3d5f3e8a0502c1a3d15619}
+
+
+Define bin order. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if center of given (referenced) bin is smaller than center of this bin
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em bin} & reference to non-\/modifiable bin descriptor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}}
+\subsubsection[{\texorpdfstring{operator$<$(const Bin \&bin) const }{operator<(const Bin &bin) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Sliding\+Window\+::\+Bin\+::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bin} \&}]{bin}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSlidingWindow_1_1Bin_a1fb3205c96d69bd836414372fdd56c9b}{}\label{classSlidingWindow_1_1Bin_a1fb3205c96d69bd836414372fdd56c9b}
+
+
+Define bin order. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if center of given (referenced) bin is smaller than center of this bin
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em bin} & reference to non-\/modifiable bin descriptor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 65 of file Sliding\+Window.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}!m\+\_\+area@{m\+\_\+area}}
+\index{m\+\_\+area@{m\+\_\+area}!Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}}
+\subsubsection[{\texorpdfstring{m\+\_\+area}{m_area}}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Bin\+::m\+\_\+area\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classSlidingWindow_1_1Bin_acf2994cc62ec5cc5e3d364fdd32a8cc8}{}\label{classSlidingWindow_1_1Bin_acf2994cc62ec5cc5e3d364fdd32a8cc8}
+
+
+\hyperlink{classSlidingWindow_1_1Bin}{Bin} area. 
+
+
+
+Definition at line 81 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}!m\+\_\+center@{m\+\_\+center}}
+\index{m\+\_\+center@{m\+\_\+center}!Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}}
+\subsubsection[{\texorpdfstring{m\+\_\+center}{m_center}}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Bin\+::m\+\_\+center\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classSlidingWindow_1_1Bin_a6b5b0a0ef26124b8d6a889af4f4c1b8f}{}\label{classSlidingWindow_1_1Bin_a6b5b0a0ef26124b8d6a889af4f4c1b8f}
+
+
+\hyperlink{classSlidingWindow_1_1Bin}{Bin} center. 
+
+
+
+Definition at line 79 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}!m\+\_\+left@{m\+\_\+left}}
+\index{m\+\_\+left@{m\+\_\+left}!Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}}
+\subsubsection[{\texorpdfstring{m\+\_\+left}{m_left}}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Bin\+::m\+\_\+left\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classSlidingWindow_1_1Bin_a46a807a48bdf12a4cf8b2ccadb7a5ac7}{}\label{classSlidingWindow_1_1Bin_a46a807a48bdf12a4cf8b2ccadb7a5ac7}
+
+
+Right (upper) bin edge. 
+
+
+
+Definition at line 75 of file Sliding\+Window.\+h.
+
+\index{Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}!m\+\_\+right@{m\+\_\+right}}
+\index{m\+\_\+right@{m\+\_\+right}!Sliding\+Window\+::\+Bin@{Sliding\+Window\+::\+Bin}}
+\subsubsection[{\texorpdfstring{m\+\_\+right}{m_right}}]{\setlength{\rightskip}{0pt plus 5cm}double Sliding\+Window\+::\+Bin\+::m\+\_\+right\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classSlidingWindow_1_1Bin_acda727a7789040fde0f10ac1c0c79bab}{}\label{classSlidingWindow_1_1Bin_acda727a7789040fde0f10ac1c0c79bab}
+
+
+Right (upper) bin edge. 
+
+
+
+Definition at line 77 of file Sliding\+Window.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{SlidingWindow_8h}{Sliding\+Window.\+h}\end{DoxyCompactItemize}

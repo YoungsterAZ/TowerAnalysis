@@ -1,0 +1,327 @@
+
+####################################################
+## Welcome to the AZ self-configured root session ##
+####################################################
+
+## [rootlogon] Preloading ATLAS style macros from path "/export/home/lochp/data2/CaloSignals/local" [from environment]
+## [rootlogon] Applying ATLAS style settings...
+## [rootlogon] Preloading application include path "/export/home/lochp/data2/CaloSignals/local/include" [from environment]
+## [rootlogon] ----------------------------------------------------------------------- FastJet v3.3.0 configuration (begin)
+## [rootlogon] FastJet path           "/export/home/lochp/app"
+## [rootlogon] FastJet include        "/export/home/lochp/app/include"
+## [rootlogon] FastJet lib            "/export/home/lochp/app/lib/libfastjet.so"
+## [rootlogon] FastJet tool lib       "/export/home/lochp/app/lib/libfastjettools.so"
+## [rootlogon] FastJet contrib path   "/export/home/lochp/app/include/contrib"
+## [rootlogon] ----------------------------------------------------------------------- FastJet v3.3.0 configuration (end)
+
+
+Processing execute.C...
+
+[AnalysisHelper::readCfg]  INFO    ################################################################################
+[AnalysisHelper::readCfg]  INFO    # configuration file "jetanalysis.cfg" opened for reading
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Config::Job::printDebug .............................. true                     [false]
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Config::Job::msgsDebug ............................... 20                       [20]
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Config::Job::tickerFreq .............................. 500                      [500]
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Config::Input::collection ............................ TopoCluster              [TopoCluster]
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Config::Input::nEvents ............................... 500                      [-1]
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Config::Job::doSlidingWindowRho ...................... true                     [false]
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Config::Input::dataDir ............................... /export/share/data2/lochp/CaloSignals/Student/data [./data]
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Config::Input::fileMask .............................. %s/vbf2600_tower_tuple_%03i.root []
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Config::Output::file ................................. vbf2600_topoclus_rapgap_5.0_hemi_iso_1.0.root [jetanalysis.root]
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Select::Event::rapGap ................................ 5                        [1]
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Select::Event::minMinv ............................... 1e+06                    [2.25e+06]
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Select::Event::maxMinv ............................... 7e+06                    [2.91e+06]
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Select::Event::Decay::minMinv ........................ 4e+04                    [4e+04]
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Select::Event::Decay::maxMinv ........................ 5e+05                    [1.6e+05]
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Select::Event::Decay::rapMin ......................... -2                       [-2.5]
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Select::Event::Decay::rapMax ......................... 2                        [2.5]
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Select::TruthJet::isoDeltaR .......................... 1                        [1]
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Select::RecoJet::isoDeltaR ........................... 0                        [2.23e-308]
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Select::MatchedJet::isoDeltaR ........................ 0                        [2.23e-308]
+[AnalysisHelper::readCfg]  INFO    # property Analysis::Select::MatchedJet::matchR ........................... 0.4                      [0.4]
+[AnalysisHelper::readCfg]  INFO    ################################################################################
+
+
+[JetAnalysisExample::J...] INFO      +-------------------------------------------------------------------+
+[JetAnalysisExample::J...] INFO     +-------------------------------------------------------------------+|
+[JetAnalysisExample::J...] INFO     | #####  ###  ####   ###   ###  #     #   #  #### ##### ##### ####  ||
+[JetAnalysisExample::J...] INFO     |   #   #   # #   # #   # #   # #     #   # #       #   #     #   # ||
+[JetAnalysisExample::J...] INFO     |   #   #   # ####  #   # #     #     #   #  ###    #   ###   ####  ||
+[JetAnalysisExample::J...] INFO     |   #   #   # #     #   # #   # #     #   #     #   #   #     #  %  ||
+q[JetAnalysisExample::J...] INFO     |   #    ###  #      ###   ###  #####  ###  ####    #   ##### #   % |+
+[JetAnalysisExample::J...] INFO     +-------------------------------------------------------------------+
+
+[JetAnalysisExample::J...] INFO    read configuration file "jetanalysis.cfg"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_000.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_001.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_002.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_003.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_004.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_005.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_006.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_007.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_008.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_009.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_010.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_011.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_012.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_013.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_014.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_015.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_016.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_017.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_018.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_019.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_020.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_021.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_022.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_023.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_024.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_025.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_026.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_027.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_028.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_029.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_030.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_031.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_032.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_033.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_034.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_035.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_036.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_037.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_038.root" to chain "CollectionTree"
+[JetAnalysisExample::J...] INFO    connect file "/export/share/data2/lochp/CaloSignals/Student/data/vbf2600_tower_tuple_039.root" to chain "CollectionTree"
+[HistUtils::openFile]      INFO    ##########################################################################
+[HistUtils::openFile]      INFO    # File "vbf2600_topoclus_rapgap_5.0_hemi_iso_1.0.root" opened for output #
+[HistUtils::openFile]      INFO    ##########################################################################
+[JetAnalsyisGroup::Book]   INFO    group [Inclusive/Truth] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Inclusive/DcyTruth] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Inclusive/DcyTruthSelected] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Initial/Jets/Truth] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Initial/Jets/DcyTruth] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Initial/Leptons] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Initial/Jets/Calo] booked 7 histograms
+[TwoJetAnalsyisGroup::...] INFO    group [Initial/Jets/Calo/Signal] booked 18 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Final/Jets/Truth] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Final/Jets/DcyTruth] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Final/Leptons] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Final/Jets/Calo] booked 7 histograms
+[TwoJetAnalsyisGroup::...] INFO    group [Final/Jets/Calo/Signal] booked 18 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Final/MatchedJets/Truth] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Final/UnmatchedJets/Truth] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Final/MatchedJets/Calo] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Final/UnmatchedJets/Calo] booked 7 histograms
+[TopoAnalsyisGroup::Book]  INFO    group [Final/MatchedJets/Calo] booked 8 histograms
+[TwoJetAnalsyisGroup::...] INFO    group [Final/MatchedJets/Calo/Signal] booked 18 histograms
+[TwoJetAnalsyisGroup::...] INFO    group [Final/UnmatchedJets/Calo/Signal] booked 18 histograms
+[TwoJetAnalsyisGroup::...] INFO    group [Final/SingleMatchedJets/Calo/Signal] booked 18 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Final/Jets/Calo/PUAreaAccept] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Final/Jets/Calo/PUAreaReject] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Final/MatchedJets/Calo/PUAreaAccept] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Final/MatchedJets/Calo/PUAreaReject] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Final/UnmatchedJets/Calo/PUAreaAccept] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Final/UnmatchedJets/Calo/PUAreaReject] booked 7 histograms
+[TwoJetAnalsyisGroup::...] INFO    group [Final/Jets/Calo/PUArea/Signal] booked 18 histograms
+[TwoJetAnalsyisGroup::...] INFO    group [Final/MatchedJets/Calo/PUArea/Signal] booked 18 histograms
+[TwoJetAnalsyisGroup::...] INFO    group [Final/UnmatchedJets/Calo/PUArea/Signal] booked 18 histograms
+[TwoJetAnalsyisGroup::...] INFO    group [Final/SingleMatchedJets/Calo/PUArea/Signal] booked 18 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Selected/Jets/Truth] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Selected/Jets/DcyTruth] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Selected/Leptons] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Selected/Jets/Calo] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Selected/MatchedJets/Truth] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Selected/UnmatchedJets/Truth] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Selected/MatchedJets/Calo] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Selected/UnmatchedJets/Calo] booked 7 histograms
+[TopoAnalsyisGroup::Book]  INFO    group [Selected/MatchedJets/Calo] booked 8 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Selected/Jets/Calo/PUArea] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Selected/MatchedJets/Calo/PUArea] booked 7 histograms
+[JetAnalsyisGroup::Book]   INFO    group [Selected/UnmatchedJets/Calo/PUArea] booked 7 histograms
+[TopoAnalsyisGroup::Book]  INFO    group [Selected/MatchedJets/Calo/PUArea] booked 8 histograms
+[TwoJetAnalsyisGroup::...] INFO    group [Selected/Jets/Calo/PUArea/Signal] booked 18 histograms
+[TwoJetAnalsyisGroup::...] INFO    group [Selected/MatchedJets/Calo/PUArea/Signal] booked 18 histograms
+[TwoJetAnalsyisGroup::...] INFO    group [Selected/UnmatchedJets/Calo/PUArea/Signal] booked 18 histograms
+[TwoJetAnalsyisGroup::...] INFO    group [Selected/SingleMatchedJets/Calo/PUArea/Signal] booked 18 histograms
+[JetAnalysisExample::Loop] INFO    #-----------------------------------------
+[JetAnalysisExample::Loop] INFO    # analyzing TopoCluster
+[JetAnalysisExample::Loop] INFO    #-----------------------------------------
+[SlidingWindow::Window...] INFO    Collector/area cache size 99/99, reserved 10000 in 99 bins
+[SlidingWindow::Window...] INFO    Specifications
+[SlidingWindow::Window...] INFO    Number of bins ........... 98
+[SlidingWindow::Window...] INFO    Range .................... [-4.95, 4.95]
+[SlidingWindow::Window...] INFO    Bin width ................  0.10
+[SlidingWindow::Window...] INFO    Window size ..............  0.80
+[SlidingWindow::Window...] INFO    Window index range ....... +/-4
+[SlidingWindow::Window...] INFO    Rho calculation based on . "CatchmentArea (zero-area inclusion)"
+[JetAnalysisExample::Loop] INFO    requested number of event to be analyzed   500, available  20000
+[JetAnalysisExample::Loop] INFO    event (read/total)   1/500
+[JetAnalysisExample::Loop] DEBUG   event     1: try to get truth jets
+[AH::truthJets()]          INFO    fetch truth jets with lepton isolation
+[AH::applyLeptonIsolat...] INFO    found  2 leptons,  1 isolated jets, out of  1
+[JetAnalysisExample::Loop] DEBUG   event     1: succeeded getting truth jets
+[JetAnalysisExample::Loop] DEBUG   event     2: try to get truth jets
+[JetAnalysisExample::Loop] DEBUG   event     2: succeeded getting truth jets
+[JetAnalysisExample::Loop] DEBUG   event 25: found  2 truth leptons
+[PseudoJetBuilder (reset)] DEBUG   user index -1
+[PseudoJetBuilder (reset)] DEBUG   user index -1
+[PseudoJetBuilder (reset)] DEBUG   user index -1
+[PseudoJetBuilder (reset)] DEBUG   user index -1
+[PseudoJetBuilder (reset)] DEBUG   user index -1
+[PseudoJetBuilder (reset)] DEBUG   user index -1
+[PseudoJetBuilder (reset)] DEBUG   user index -1
+[PseudoJetBuilder (reset)] DEBUG   user index -1
+[PseudoJetBuilder (reset)] DEBUG   user index -1
+[PseudoJetBuilder (reset)] DEBUG   user index -1
+[PseudoJetBuilder (reset)] DEBUG   user index -1
+[PseudoJetBuilder (reset)] DEBUG   user index -1
+[PseudoJetBuilder (reset)] DEBUG   user index -1
+[PseudoJetBuilder (reset)] DEBUG   user index -1
+[PseudoJetBuilder (reset)] DEBUG   user index -1
+[PseudoJetBuilder (reset)] DEBUG   user index -1
+[PseudoJetBuilder (reset)] DEBUG   user index -1
+[PseudoJetBuilder (reset)] DEBUG   user index -1
+[PseudoJetBuilder (reset)] DEBUG   user index -1
+[PseudoJetBuilder (reset)] DEBUG   user index -1 [final message 20/1000]
+[AH::getTopoClusters]      DEBUG   user index 0
+[AH::getTopoClusters]      DEBUG   user index 1
+[AH::getTopoClusters]      DEBUG   user index 2
+[AH::getTopoClusters]      DEBUG   user index 3
+[AH::getTopoClusters]      DEBUG   user index 4
+[AH::getTopoClusters]      DEBUG   user index 5
+[AH::getTopoClusters]      DEBUG   user index 6
+[AH::getTopoClusters]      DEBUG   user index 7
+[AH::getTopoClusters]      DEBUG   user index 8
+[AH::getTopoClusters]      DEBUG   user index 9
+[AH::getTopoClusters]      DEBUG   user index 10
+[AH::getTopoClusters]      DEBUG   user index 11
+[AH::getTopoClusters]      DEBUG   user index 12
+[AH::getTopoClusters]      DEBUG   user index 13
+[AH::getTopoClusters]      DEBUG   user index 14
+[AH::getTopoClusters]      DEBUG   user index 15
+[AH::getTopoClusters]      DEBUG   user index 16
+[AH::getTopoClusters]      DEBUG   user index 17
+[AH::getTopoClusters]      DEBUG   user index 18
+[AH::getTopoClusters]      DEBUG   user index 19 [final message 20/1000]
+#--------------------------------------------------------------------------
+#                         FastJet release 3.3.0
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           http://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the terms of the GNU GPLv2.
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code
+# and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+[JetAnalysisExample::Loop] DEBUG    
+[JetAnalysisExample::Loop] DEBUG   #######################################################################################################
+[JetAnalysisExample::Loop] DEBUG   ##### Calorimeter signal type "  TopoCluster" has   586 signals
+[JetAnalysisExample::Loop] DEBUG   #######################################################################################################
+[JetAnalysisExample::Loop] DEBUG   #  #     pT [GeV]     y   phi [rad]  t [ns]   E [GeV]   E+ [GeV] Eorig [GeV]   Area   PtD  
+[JetAnalysisExample::Loop] DEBUG   #     0    37.901  -2.372    1.941    -0.568   204.902   169.984    204.902    0.006  0.400           #
+[JetAnalysisExample::Loop] DEBUG   #     1    19.286   1.647   -3.096    -0.920    51.895    42.240     51.895    0.017  0.460           #
+[JetAnalysisExample::Loop] DEBUG   #     2    18.504   0.183    2.900    -0.166    18.815    14.656     18.815    0.063  0.628           #
+[JetAnalysisExample::Loop] DEBUG   #     3    16.306  -2.451    1.941    -2.262    95.254    71.168     95.254    0.021  0.383           #
+[JetAnalysisExample::Loop] DEBUG   #     4    10.919  -2.900   -0.813     0.487    99.476    66.048     99.476    0.233  0.423           #
+[JetAnalysisExample::Loop] DEBUG   #     5     9.171  -2.172    1.943   -10.897    40.772    39.680     40.772    0.038  0.306           #
+[JetAnalysisExample::Loop] DEBUG   #     6    11.221   3.497    2.235    -5.515   185.332   120.320    185.332    0.389  0.372           #
+[JetAnalysisExample::Loop] DEBUG   #     7    12.169   0.382   -2.798    -1.663    13.069     8.576     13.069    0.010  0.480           #
+[JetAnalysisExample::Loop] DEBUG   #     8     6.780  -2.305    1.953     0.633    34.317    28.416     34.317    0.008  0.296           #
+[JetAnalysisExample::Loop] DEBUG   #     9     6.054  -1.777   -0.618     0.110    18.414    17.536     18.414    0.039  0.368           # [final message 20/1000]
+[JetAnalysisGroup::Fill]   DEBUG   found jets from calorimeter objects with timing info
+[JetAnalysisGroup::Fill]   DEBUG   jet area   0.795
+[JetAnalysisGroup::Fill]   DEBUG    
+[JetAnalysisGroup::Fill]   DEBUG   #######################################################################################################
+[JetAnalysisGroup::Fill]   DEBUG   ##### Calorimeter signal type "  TopoCluster" has    15 signals
+[JetAnalysisGroup::Fill]   DEBUG   #######################################################################################################
+[JetAnalysisGroup::Fill]   DEBUG   #  #     pT [GeV]     y   phi [rad]  t [ns]   E [GeV]   E+ [GeV] Eorig [GeV]   Area   PtD  
+[JetAnalysisGroup::Fill]   DEBUG   #     0     3.120  -2.049    1.728    -0.200    12.307     8.448     12.307    0.036  0.425           #
+[JetAnalysisGroup::Fill]   DEBUG   #     1     1.167  -2.183    1.627    -0.204     5.239     2.272      5.239    0.099  0.496           #
+[JetAnalysisGroup::Fill]   DEBUG   #     2     2.002  -2.054    1.828     0.404     7.936     4.864      7.936    0.053  0.404           #
+[JetAnalysisGroup::Fill]   DEBUG   #     3     9.171  -2.172    1.943   -10.897    40.772    39.680     40.772    0.038  0.306           #
+[JetAnalysisGroup::Fill]   DEBUG   #     4     3.043  -2.594    1.920   -21.221    20.473    11.776     20.473    0.190  0.483           #
+[JetAnalysisGroup::Fill]   DEBUG   #     5     1.994  -2.539    2.082     5.003    12.714     7.328     12.714    0.095  0.510           #
+[JetAnalysisGroup::Fill]   DEBUG   #     6     3.980  -2.472    2.122    -3.242    23.745    14.464     23.745    0.080  0.235           #
+[JetAnalysisGroup::Fill]   DEBUG   #     7     1.391  -2.316    2.119    -0.796     7.120     3.184      7.120    0.091  0.375           #
+[JetAnalysisGroup::Fill]   DEBUG   #     8     1.333  -2.241    1.997    -4.685     6.333     3.776      6.333    0.018  0.362           #
+[JetAnalysisGroup::Fill]   DEBUG   #     9     2.701  -2.285    2.022     6.463    13.405     7.744     13.405    0.009  0.317           #
+[JetAnalysisGroup::Fill]   DEBUG   #    10     4.116  -2.445    1.992    -2.668    23.901    19.456     23.901    0.012  0.336           #
+[JetAnalysisGroup::Fill]   DEBUG   #    11    16.306  -2.451    1.941    -2.262    95.254    71.168     95.254    0.021  0.383           #
+[JetAnalysisGroup::Fill]   DEBUG   #    12     6.780  -2.305    1.953     0.633    34.317    28.416     34.317    0.008  0.296           # [final message 20/1000]
+[TwoJetAnalysisGroup::...] DEBUG   found jet from calorimeter objects with timing info
+[TwoJetAnalysisGroup::...] DEBUG   calo time is -0.200438
+[TwoJetAnalysisGroup::...] DEBUG   calo time is -0.204047
+[TwoJetAnalysisGroup::...] DEBUG   calo time is 0.404445
+[TwoJetAnalysisGroup::...] DEBUG   calo time is -10.896749
+[TwoJetAnalysisGroup::...] DEBUG   calo time is -21.220760
+[TwoJetAnalysisGroup::...] DEBUG   calo time is 5.003102
+[TwoJetAnalysisGroup::...] DEBUG   calo time is -3.242408
+[TwoJetAnalysisGroup::...] DEBUG   calo time is -0.795967
+[TwoJetAnalysisGroup::...] DEBUG   calo time is -4.685046
+[TwoJetAnalysisGroup::...] DEBUG   calo time is 6.463296
+[TwoJetAnalysisGroup::...] DEBUG   calo time is -2.668321
+[TwoJetAnalysisGroup::...] DEBUG   calo time is -2.262402
+[TwoJetAnalysisGroup::...] DEBUG   calo time is 0.633180
+[TwoJetAnalysisGroup::...] DEBUG   calo time is -0.568359
+[TwoJetAnalysisGroup::...] DEBUG   calo time is -0.762017
+[TwoJetAnalysisGroup::...] DEBUG   found jet from calorimeter objects with timing info
+[TwoJetAnalysisGroup::...] DEBUG   calo time is 48.835064
+[TwoJetAnalysisGroup::...] DEBUG   calo time is -999.000000
+[TwoJetAnalysisGroup::...] DEBUG   calo time is 0.073300 [final message 20/1000]
+[JetAnalysisExample::L...] DEBUG   truth jet index    0 calo jet index    0 delta R =   0.009
+[JetAnalysisExample::L...] DEBUG   truth jet index    1 calo jet index    1 delta R =   0.024
+[JetAnalysisExample::L...] DEBUG   truth jet index    2 calo jet index   28 delta R =   0.025
+[JetAnalysisExample::L...] DEBUG   truth jet index    3 calo jet index   30 delta R =   0.223
+[SlidingWindow::Window...] DEBUG   Entering with flags and pointers:
+[SlidingWindow::Window...] DEBUG   isDead        [false] -- continue
+[SlidingWindow::Window...] DEBUG   firstCall     [true]  -- exiting without error
+[JetAnalysisExample::L...] DEBUG   truth jet index    0 calo jet index    0 delta R =   0.048
+[JetAnalysisExample::L...] DEBUG   truth jet index    1 calo jet index    1 delta R =   0.017
+[SlidingWindow::Window...] DEBUG   Entering with flags and pointers:
+[SlidingWindow::Window...] DEBUG   isDead        [false] -- continue
+[SlidingWindow::Window...] DEBUG   firstCall     [false] -- continue
+[SlidingWindow::Window...] DEBUG   eta bin  1 of 99 # of rho entries 0
+[SlidingWindow::Window...] DEBUG   eta bin  2 of 99 # of rho entries 0
+[SlidingWindow::Window...] DEBUG   eta bin  3 of 99 # of rho entries 0
+[SlidingWindow::Window...] DEBUG   eta bin  4 of 99 # of rho entries 0
+[SlidingWindow::Window...] DEBUG   eta bin  5 of 99 # of rho entries 0
+[SlidingWindow::Window...] DEBUG   eta bin  6 of 99 # of rho entries 0
+[SlidingWindow::Window...] DEBUG   eta bin  7 of 99 # of rho entries 0
+[SlidingWindow::Window...] DEBUG   eta bin  8 of 99 # of rho entries 0
+[SlidingWindow::Window...] DEBUG   eta bin  9 of 99 # of rho entries 0
+[SlidingWindow::Window...] DEBUG   eta bin 10 of 99 # of rho entries 0
+[SlidingWindow::Window...] DEBUG   eta bin 11 of 99 # of rho entries 0
+[SlidingWindow::Window...] DEBUG   eta bin 12 of 99 # of rho entries 2
+[SlidingWindow::Window...] DEBUG   eta bin 13 of 99 # of rho entries 2
+[SlidingWindow::Window...] DEBUG   eta bin 14 of 99 # of rho entries 3 [final message 20/1000]
+[JetAnalysisExample::L...] DEBUG   truth jet index    0 calo jet index    0 delta R =   0.016
+[JetAnalysisExample::L...] DEBUG   truth jet index    1 calo jet index    1 delta R =   0.025
+[JetAnalysisExample::L...] DEBUG   truth jet index    2 calo jet index    7 delta R =   0.049
+[JetAnalysisExample::L...] DEBUG   truth jet index    0 calo jet index    0 delta R =   0.015
+[JetAnalysisExample::L...] DEBUG   truth jet index    1 calo jet index    1 delta R =   0.049
+[JetAnalysisExample::L...] DEBUG   truth jet index    2 calo jet index    2 delta R =   0.012
+[JetAnalysisExample::L...] DEBUG   truth jet index    0 calo jet index    3 delta R =   0.127
+[JetAnalysisExample::L...] DEBUG   truth jet index    0 calo jet index    0 delta R =   0.013
+[JetAnalysisExample::L...] DEBUG   truth jet index    1 calo jet index    1 delta R =   0.013
+[JetAnalysisExample::L...] DEBUG   truth jet index    2 calo jet index   14 delta R =   0.055
+[JetAnalysisExample::L...] DEBUG   truth jet index    0 calo jet index    0 delta R =   0.017
+[JetAnalysisExample::L...] DEBUG   truth jet index    1 calo jet index    5 delta R =   0.024
+[JetAnalysisExample::L...] DEBUG   truth jet index    2 calo jet index   13 delta R =   0.112
+[JetAnalysisExample::L...] DEBUG   truth jet index    0 calo jet index    0 delta R =   0.013 [final message 20/1000]
+[JetAnalysisExample::Loop] INFO    event (read/total) 500/500
+[JetAnalysisExample::Loop] INFO    [begin] cutflow summary >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[JetAnalysisExample::Loop] INFO    events after cut                                 EventsIn (bin  1): 500 (100.0%)
+[JetAnalysisExample::Loop] INFO    events after cut                          Data consistent (bin  2): 433 ( 86.6%)
+[JetAnalysisExample::Loop] INFO    events after cut              #DeltaR_{iso}^{truth} < 1.0 (bin  3): 399 ( 79.8%)
+[JetAnalysisExample::Loop] INFO    events after cut                      N_{jet}^{truth} > 2 (bin  4): 323 ( 64.6%)
+[JetAnalysisExample::Loop] INFO    events after cut                    N_{jet}^{calo} #geq 2 (bin  5): 323 ( 64.6%)
+[JetAnalysisExample::Loop] INFO    events after cut 1000.0 < M_{inv}^{calo-jet} < 7000.0 GeV (bin  6): 245 ( 49.0%)
+[JetAnalysisExample::Loop] INFO    events after cut   y_{jet1}^{calo}#timesy_{jet2}^{calo}<0 (bin  7): 227 ( 45.4%)
+[JetAnalysisExample::Loop] INFO    events after cut                    #Delta y^{calo} > 5.0 (bin  8): 160 ( 32.0%)
+[JetAnalysisExample::Loop] INFO    events after cut                       Exclusive Matching (bin  9): 152 ( 30.4%)
+[JetAnalysisExample::Loop] INFO    [end]   Cutflow summary <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[JetAnalysisExample::L...] INFO    write 242 histograms
+[HistUtils::closeFile]     INFO    file "vbf2600_topoclus_rapgap_5.0_hemi_iso_1.0.root" closing
